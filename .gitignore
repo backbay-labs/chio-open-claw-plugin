@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.local
+var/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.log
+.DS_Store
+coverage/
+.vscode/
+.idea/
+smoke-results/

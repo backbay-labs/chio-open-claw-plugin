@@ -1,0 +1,44 @@
+{
+  "name": "@chio/openclaw",
+  "version": "0.2.0",
+  "description": "Ship signed Chio agents from Slack, Discord, and Telegram — real passkey countersigning, real ed25519 receipts, real trust-plane bonded capabilities.",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "prepack": "node ./scripts/prep-publish.mjs && npm run build",
+    "postpack": "node ./scripts/restore-publish.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@chio-protocol/sdk": "file:../arc/packages/sdk/chio-ts",
+    "@chio/bridge": "file:../chio-bridge",
+    "@hono/node-server": "^1.13.0",
+    "@simplewebauthn/server": "^11.0.0",
+    "@slack/bolt": "^3.21.0",
+    "better-sqlite3": "^11.3.0",
+    "discord.js": "^14.15.0",
+    "grammy": "^1.30.0",
+    "hono": "^4.6.0",
+    "yaml": "^2.5.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "~5.7.0"
+  },
+  "license": "Apache-2.0"
+}

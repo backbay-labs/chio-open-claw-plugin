@@ -1,0 +1,122 @@
+name: release
+
+# SLSA L3 + Sigstore provenance + reproducible build for:
+#   1. @chio/openclaw  (npm tarball on npmjs.org)
+#   2. ghcr.io/owner/chio-openclaw:<tag>  (Docker image on GHCR)
+#
+# Both artifacts are built from the same tag + source tree and are bound to
+# the same SLSA provenance statements (different subjects, same ref).
+#
+# Secrets referenced:
+#   NPM_TOKEN  — npm publish auth (skip if using npm Trusted Publishers).
+#   GITHUB_TOKEN (built-in) — GHCR push; Sigstore keyless signing.
+#
+# Placeholders:
+#   owner/chio-ci-actions — swap to your GH org before pushing.
+#   ghcr.io/owner/chio-openclaw — owner slug must match your GH org.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        required: false
+        default: "v0.0.0-dev"
+      dry-run:
+        required: false
+        default: "true"
+
+permissions:
+  contents: read
+  id-token: write       # npm --provenance, cosign keyless, SLSA generator
+  packages: write       # GHCR push
+  attestations: write
+
+jobs:
+  build-npm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      artifact-name: ${{ steps.hash.outputs.artifact-name }}
+      hashes: ${{ steps.hash.outputs.hashes }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build + pack + publish npm
+        id: publish
+        uses: owner/chio-ci-actions/publish-chio@v0.1.0
+        with:
+          artifact-type: npm
+          package-name: "@chio/openclaw"
+          tag: ${{ github.event.inputs.tag || github.ref_name }}
+          dry-run: ${{ github.event.inputs.dry-run || 'false' }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Compute subjects
+        id: hash
+        run: |
+          set -euo pipefail
+          name="$(basename "${{ steps.publish.outputs.artifact-path }}")"
+          sha="${{ steps.publish.outputs.artifact-sha256 }}"
+          echo "hashes=$(printf '%s  %s\n' "$sha" "$name" | base64 -w0)" >> "$GITHUB_OUTPUT"
+          echo "artifact-name=$name" >> "$GITHUB_OUTPUT"
+
+  build-docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      image-ref: ${{ steps.publish.outputs.artifact-path }}
+      image-digest: ${{ steps.publish.outputs.artifact-sha256 }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build + push + sign image
+        id: publish
+        uses: owner/chio-ci-actions/publish-chio@v0.1.0
+        with:
+          artifact-type: docker
+          package-name: "chio-openclaw"
+          # Placeholder: swap owner/ for your GH org when pushing.
+          docker-image: "ghcr.io/owner/chio-openclaw"
+          # Build context is the monorepo parent so the Dockerfile can COPY
+          # sibling repos (chio-bridge, arc/packages/sdk/chio-ts). Docker
+          # forbids `../` in COPY, so we lift the context instead.
+          docker-context: ".."
+          docker-file: "chio-open-claw-plugin/Dockerfile"
+          tag: ${{ github.event.inputs.tag || github.ref_name }}
+          dry-run: ${{ github.event.inputs.dry-run || 'false' }}
+
+  provenance-npm:
+    needs: [build-npm]
+    permissions:
+      id-token: write
+      contents: read
+      actions: read
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.0.0
+    with:
+      base64-subjects: ${{ needs.build-npm.outputs.hashes }}
+      upload-assets: true
+      provenance-name: "${{ needs.build-npm.outputs.artifact-name }}.intoto.jsonl"
+
+  provenance-docker:
+    needs: [build-docker]
+    permissions:
+      id-token: write
+      contents: read
+      actions: read
+      packages: write
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@v2.0.0
+    with:
+      # Placeholder: owner/ → your GH org.
+      image: "ghcr.io/owner/chio-openclaw"
+      digest: ${{ needs.build-docker.outputs.image-digest }}
+      registry-username: ${{ github.actor }}
+    secrets:
+      registry-password: ${{ secrets.GITHUB_TOKEN }}

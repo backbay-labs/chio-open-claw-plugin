@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OpenClaw · register passkey</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 520px; margin: 3rem auto; padding: 0 1rem; color: #111; }
+    h1 { font-size: 1.4rem; margin-bottom: .2rem; }
+    .meta { color: #666; font-size: .85rem; margin-bottom: 1.5rem; }
+    button { background: #e86a3a; color: white; border: 0; font-size: 1rem; padding: .75rem 1.25rem; border-radius: 8px; cursor: pointer; }
+    pre { background: #f4f4f4; padding: .75rem; border-radius: 6px; font-size: .8rem; white-space: pre-wrap; word-break: break-all; }
+    .ok { color: #1a7f37; }
+    .err { color: #b3261e; }
+  </style>
+</head>
+<body>
+  <h1>Register a passkey</h1>
+  <p class="meta">Registering <code>__USER__</code> on <code>__PLATFORM__</code>.</p>
+  <p>After registration, countersign actions in chat will route here for a real WebAuthn ceremony.</p>
+  <button id="go">Create passkey</button>
+  <p id="status"></p>
+  <pre id="result" hidden></pre>
+
+  <script>
+    const b64urlToBuffer = (v) => {
+      const s = v.replace(/-/g, '+').replace(/_/g, '/');
+      const pad = s.length % 4 === 0 ? '' : '='.repeat(4 - (s.length % 4));
+      const bin = atob(s + pad);
+      const out = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+      return out.buffer;
+    };
+    const bufToB64url = (buf) => {
+      const bytes = new Uint8Array(buf);
+      let bin = '';
+      for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+      return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    };
+
+    const TOKEN = "__TOKEN__";
+    const statusEl = document.getElementById("status");
+    const resultEl = document.getElementById("result");
+    const btn = document.getElementById("go");
+
+    async function run() {
+      btn.disabled = true;
+      statusEl.textContent = "requesting challenge…";
+      const chRes = await fetch("/register/challenge", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token: TOKEN }),
+      });
+      if (!chRes.ok) {
+        statusEl.textContent = "challenge failed";
+        statusEl.className = "err";
+        btn.disabled = false;
+        return;
+      }
+      const options = await chRes.json();
+      const publicKey = {
+        ...options,
+        challenge: b64urlToBuffer(options.challenge),
+        user: { ...options.user, id: b64urlToBuffer(options.user.id) },
+        excludeCredentials: (options.excludeCredentials || []).map(c => ({
+          ...c, id: b64urlToBuffer(c.id),
+        })),
+      };
+
+      let cred;
+      try {
+        statusEl.textContent = "follow your browser's passkey prompt…";
+        cred = await navigator.credentials.create({ publicKey });
+      } catch (err) {
+        statusEl.textContent = "cancelled: " + err.message;
+        statusEl.className = "err";
+        btn.disabled = false;
+        return;
+      }
+
+      const response = {
+        id: cred.id,
+        rawId: bufToB64url(cred.rawId),
+        type: cred.type,
+        response: {
+          attestationObject: bufToB64url(cred.response.attestationObject),
+          clientDataJSON: bufToB64url(cred.response.clientDataJSON),
+          transports: cred.response.getTransports
+            ? cred.response.getTransports()
+            : [],
+        },
+        clientExtensionResults: cred.getClientExtensionResults
+          ? cred.getClientExtensionResults()
+          : {},
+        authenticatorAttachment: cred.authenticatorAttachment,
+      };
+
+      statusEl.textContent = "verifying…";
+      const vRes = await fetch("/register/verify", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token: TOKEN, response }),
+      });
+      const data = await vRes.json();
+      if (vRes.ok) {
+        statusEl.textContent = "registered — return to chat";
+        statusEl.className = "ok";
+      } else {
+        statusEl.textContent = "rejected: " + (data.error || vRes.status);
+        statusEl.className = "err";
+        btn.disabled = false;
+      }
+      resultEl.hidden = false;
+      resultEl.textContent = JSON.stringify(data, null, 2);
+    }
+    btn.addEventListener("click", run);
+  </script>
+</body>
+</html>

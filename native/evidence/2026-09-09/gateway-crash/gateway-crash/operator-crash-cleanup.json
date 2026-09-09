@@ -1,0 +1,19 @@
+{
+  "containers": [
+    {
+      "container": "chio-openclaw-agent-72dab0f3-ac22-4ed2-a49e-32fc00481534",
+      "wasRunning": true,
+      "operatorRemoved": true
+    },
+    {
+      "container": "chio-openclaw-relay-72dab0f3-ac22-4ed2-a49e-32fc00481534",
+      "wasRunning": true,
+      "operatorRemoved": true
+    }
+  ],
+  "networkRemoved": true,
+  "volumesPreserved": [
+    "chio-required-openclaw-state-72dab0f3-ac22-4ed2-a49e-32fc00481534",
+    "chio-required-openclaw-control-72dab0f3-ac22-4ed2-a49e-32fc00481534"
+  ]
+}

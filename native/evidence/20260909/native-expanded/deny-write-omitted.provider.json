@@ -1,0 +1,13 @@
+{
+  "name": "deny-write-omitted",
+  "tool": "write",
+  "toolCallId": "call_385ee6eb4dec44d1bdf667b4a22306d4",
+  "arguments": {
+    "path": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-e4rW9t/workspace/forbidden-omitted.txt",
+    "content": "FORBIDDEN"
+  },
+  "requests": [],
+  "exitCode": 1,
+  "markerPresent": false,
+  "resourceRequests": 0
+}

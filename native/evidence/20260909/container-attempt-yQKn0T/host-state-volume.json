@@ -1,0 +1,13 @@
+{
+  "binary": "docker",
+  "args": [
+    "volume",
+    "create",
+    "chio-openclaw-state-0e2061e9-4d91-4f64-94da-ee4cdf8bc774"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "chio-openclaw-state-0e2061e9-4d91-4f64-94da-ee4cdf8bc774\n",
+  "stderr": "",
+  "elapsedMs": 21
+}

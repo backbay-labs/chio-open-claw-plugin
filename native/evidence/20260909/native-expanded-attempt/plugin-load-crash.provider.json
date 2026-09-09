@@ -1,0 +1,14 @@
+{
+  "name": "plugin-load-crash",
+  "tool": "chio_call",
+  "arguments": {
+    "tool": "write_file",
+    "arguments": {
+      "path": "forbidden.txt"
+    }
+  },
+  "requests": [],
+  "exitCode": 1,
+  "markerPresent": null,
+  "resourceRequests": 0
+}

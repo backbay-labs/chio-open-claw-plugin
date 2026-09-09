@@ -1,0 +1,13 @@
+{
+  "imageId": "sha256:39fed560462bb68bf7f091d37f63a408a11bad9c1444e31cda88d31181fcda9e",
+  "node": "v22.23.1",
+  "platform": "linux",
+  "release": "6.8.0-64-generic",
+  "arch": "arm64",
+  "sourceHashes": {
+    "index.mjs": "06302396fda47c52f06690ad2e4bf6976517412051c0b3b91036f9cbb3315754",
+    "plugin.mjs": "02a63ada63acfd4bae592209a26f269cd72376ebeab249379f85805b34529857",
+    "journal.mjs": "bd032d2718ba340a174b5502303b528d05502436f41786431790c808a3e890b0",
+    "profile.mjs": "8b33b28f43b24de39fda1f6543ed32919af778df4beecd0a4100b4975e90f453"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "binary": "docker",
+  "args": [
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--user",
+    "1000:1000",
+    "--mount",
+    "type=volume,src=chio-openclaw-state-5a7d60a5-73cc-49d4-abee-2825032dc515,dst=/state",
+    "--entrypoint",
+    "node",
+    "chio-openclaw-host:20260909",
+    "-e",
+    "const fs=require('node:fs');const p='/state/journal';const files=fs.readdirSync(p).filter(n=>n.endsWith('.pending.json'));if(files.length!==1)throw new Error('expected one operator-reviewed pending record');const file=p+'/'+files[0];const r=JSON.parse(fs.readFileSync(file,'utf8'));fs.renameSync(file,p+'/'+r.request.requestId+'.operator-reconciled.json');console.log(JSON.stringify({action:'operator-archived-observed-denial',requestId:r.request.requestId}));"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "{\"action\":\"operator-archived-observed-denial\",\"requestId\":\"122d5a57afaefb88a5f253a8ae163bac82176c739d649cf4c43ec48d205a518c\"}\n",
+  "stderr": "",
+  "elapsedMs": 184
+}

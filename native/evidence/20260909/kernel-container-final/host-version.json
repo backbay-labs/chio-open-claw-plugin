@@ -1,0 +1,29 @@
+{
+  "binary": "docker",
+  "args": [
+    "run",
+    "--rm",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--user",
+    "1000:1000",
+    "--pids-limit",
+    "128",
+    "--memory",
+    "2g",
+    "--tmpfs",
+    "/tmp:rw,nosuid,nodev,size=256m",
+    "--mount",
+    "type=volume,src=chio-openclaw-state-5a7d60a5-73cc-49d4-abee-2825032dc515,dst=/state",
+    "chio-openclaw-host:20260909",
+    "--version"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "OpenClaw 2026.5.20 (e510042)\n",
+  "stderr": "",
+  "elapsedMs": 254
+}

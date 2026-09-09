@@ -1,0 +1,15 @@
+{
+  "name": "plugin-load-crash",
+  "tool": "chio_call",
+  "toolCallId": "call_bdcfd0cf3536449d90af4674bbe6586f",
+  "arguments": {
+    "tool": "write_file",
+    "arguments": {
+      "path": "forbidden.txt"
+    }
+  },
+  "requests": [],
+  "exitCode": 1,
+  "markerPresent": null,
+  "resourceRequests": 0
+}

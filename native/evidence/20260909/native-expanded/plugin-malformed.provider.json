@@ -1,0 +1,15 @@
+{
+  "name": "plugin-malformed",
+  "tool": "chio_call",
+  "toolCallId": "call_2b2cfe87379e45a4a86b2121bd170054",
+  "arguments": {
+    "tool": "write_file",
+    "arguments": {
+      "path": "forbidden.txt"
+    }
+  },
+  "requests": [],
+  "exitCode": 1,
+  "markerPresent": null,
+  "resourceRequests": 0
+}

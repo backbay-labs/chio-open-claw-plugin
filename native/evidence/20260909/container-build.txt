@@ -1,0 +1,56 @@
+
+> @chio/openclaw-kernel@0.1.0 build
+> node --check src/index.mjs && node --check src/plugin.mjs && node --check src/journal.mjs
+
+{"name":"@chio/openclaw-kernel","version":"0.1.0","artifact":"/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-image-mjAMnv/chio-openclaw-kernel-0.1.0.tgz","sha256":"74d3d2432198c73216b30ec2f25e977b923db0e3e616005aed1da85789764fa4","bundled":["@chio/bridge"]}
+#0 building with "colima" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 635B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22-bookworm-slim@sha256:6c74791e557ce11fc957704f6d4fe134a7bc8d6f5ca4403205b2966bd488f6b3
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/library/node:22-bookworm-slim@sha256:6c74791e557ce11fc957704f6d4fe134a7bc8d6f5ca4403205b2966bd488f6b3
+#4 resolve docker.io/library/node:22-bookworm-slim@sha256:6c74791e557ce11fc957704f6d4fe134a7bc8d6f5ca4403205b2966bd488f6b3 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.84MB 0.0s done
+#5 DONE 0.0s
+
+#6 [2/6] RUN npm install --global --ignore-scripts openclaw@2026.5.20
+#6 CACHED
+
+#7 [3/6] COPY chio-openclaw-kernel-0.1.0.tgz /opt/chio-package.tgz
+#7 DONE 0.0s
+
+#8 [4/6] RUN npm install --prefix /opt/chio --ignore-scripts --offline --no-audit --no-fund /opt/chio-package.tgz     && rm /opt/chio-package.tgz
+#8 3.339 
+#8 3.339 added 1 package in 3s
+#8 DONE 3.4s
+
+#9 [5/6] COPY proxy.mjs /opt/chio/proxy.mjs
+#9 DONE 0.0s
+
+#10 [6/6] WORKDIR /tmp
+#10 DONE 0.0s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.3s done
+#11 exporting manifest sha256:75bd6c19f08649fc7ed2be7bac5b52d8485a5ecc5cd54468462387cf32547706 done
+#11 exporting config sha256:c6cca026b2b7735f34bf32f0ee1a27c3f87a45d1dac771b9641a72b1e30eb4e1 done
+#11 exporting attestation manifest sha256:c734c32a926a5491f5b7147d6689aa3d1f00d2d85cfdf57b47a2f6bd9afc3467 done
+#11 exporting manifest list sha256:39fed560462bb68bf7f091d37f63a408a11bad9c1444e31cda88d31181fcda9e done
+#11 naming to docker.io/library/chio-openclaw-host:20260909 done
+#11 unpacking to docker.io/library/chio-openclaw-host:20260909 0.1s done
+#11 DONE 0.4s
+
+View build details: docker-desktop://dashboard/build/colima/colima/spkqedof1oqvl6py0qbnu13v1
+Container build context retained at /var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-image-mjAMnv

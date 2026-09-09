@@ -1,0 +1,12 @@
+{
+  "name": "deny-exec-omitted",
+  "tool": "exec",
+  "toolCallId": "call_6e33c55fb5574c2cbbf2fdafd2948b89",
+  "arguments": {
+    "command": "printf FORBIDDEN > '/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-bWwdxr/workspace/forbidden-omitted.txt'"
+  },
+  "requests": [],
+  "exitCode": 1,
+  "markerPresent": false,
+  "resourceRequests": 0
+}

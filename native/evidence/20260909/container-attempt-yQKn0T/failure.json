@@ -1,0 +1,5 @@
+{
+  "error": "AssertionError [ERR_ASSERTION]: kernel-useful-write: {\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"13c7437c4b7c292c8dc1b3ee33ee5156d6ef010b410f90d86681358f25b82bde\",\"reason\":\"kernel unavailable or malformed handshake before dispatch\"}\n+ actual - expected\n\n+ 'not_dispatched'\n- 'completed'\n",
+  "stack": "AssertionError [ERR_ASSERTION]: kernel-useful-write: {\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"13c7437c4b7c292c8dc1b3ee33ee5156d6ef010b410f90d86681358f25b82bde\",\"reason\":\"kernel unavailable or malformed handshake before dispatch\"}\n+ actual - expected\n\n+ 'not_dispatched'\n- 'completed'\n\n    at runCase (file:///Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/test/real-host.mjs:162:37)\n    at async file:///Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/test/real-host.mjs:211:5",
+  "runDir": "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-yQKn0T"
+}

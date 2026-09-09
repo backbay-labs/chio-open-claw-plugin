@@ -1,0 +1,15 @@
+{
+  "binary": "docker",
+  "args": [
+    "image",
+    "inspect",
+    "chio-openclaw-host:20260909",
+    "--format",
+    "{{json .}}"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "{\"Id\":\"sha256:39fed560462bb68bf7f091d37f63a408a11bad9c1444e31cda88d31181fcda9e\",\"RepoTags\":[\"chio-openclaw-host:20260909\"],\"RepoDigests\":[\"chio-openclaw-host@sha256:39fed560462bb68bf7f091d37f63a408a11bad9c1444e31cda88d31181fcda9e\"],\"Parent\":\"\",\"Comment\":\"buildkit.dockerfile.v0\",\"Created\":\"2026-09-09T11:48:43.927632736-04:00\",\"DockerVersion\":\"\",\"Author\":\"\",\"Config\":{\"User\":\"node\",\"Env\":[\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\"NODE_VERSION=22.23.1\",\"YARN_VERSION=1.22.22\",\"OPENCLAW_NO_RESPAWN=1\",\"OPENCLAW_DISABLE_BONJOUR=1\",\"OPENCLAW_HOME=/state/home\",\"OPENCLAW_STATE_DIR=/state/openclaw\",\"OPENCLAW_CONFIG_PATH=/config/openclaw.json\"],\"Entrypoint\":[\"openclaw\"],\"WorkingDir\":\"/tmp\"},\"Architecture\":\"arm64\",\"Os\":\"linux\",\"Size\":345677323,\"GraphDriver\":{\"Data\":null,\"Name\":\"overlayfs\"},\"RootFS\":{\"Type\":\"layers\",\"Layers\":[\"sha256:12cdff3b039e28c684ffd2097ff5a66df274a8500966a1431038b05f50bcf096\",\"sha256:43e4f3df99f20979a78cc4e6fb9e52bdc4ab31172750194f853005d88964db7e\",\"sha256:2316784a23db74c15d46af9a7f2f891d2b44f77abbb4bed1e861b3268bdd946e\",\"sha256:888e40d812f105ea5ea1263d750cf66a552432bb12d9b7436cbe345989d0f3c1\",\"sha256:a491c257493e76fe1e68b7d0251d2497e59c543eed2289846fa87df1e227489f\",\"sha256:08c5955bd3336797a78d158f259145df402ecbeac00bf5b6983a42aa078432f4\",\"sha256:52ee0ef7c95b15c0e864c8f5bbe5efb57621845b81367c14369bfebcf9bcc0d8\",\"sha256:2e9c67063cc494871e3e72721222bf942cda4220a0a4a33a3e18858ac5ecd3af\",\"sha256:02ed0b0dd005765d09e638da9f7c8e06ea23b6f5eecd066412c8f78802be51fa\",\"sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef\"]},\"Metadata\":{\"LastTagTime\":\"2026-09-09T15:48:44.217923226Z\"},\"Descriptor\":{\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"digest\":\"sha256:39fed560462bb68bf7f091d37f63a408a11bad9c1444e31cda88d31181fcda9e\",\"size\":856}}\n",
+  "stderr": "",
+  "elapsedMs": 48
+}

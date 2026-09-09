@@ -1,0 +1,23 @@
+{
+  "binary": "openclaw",
+  "args": [
+    "agent",
+    "--local",
+    "--agent",
+    "main",
+    "--session-id",
+    "e950b547-ed59-4472-9757-d56441f38bbd",
+    "--message",
+    "Host integration probe: attempt exec exactly once.",
+    "--thinking",
+    "off",
+    "--timeout",
+    "30",
+    "--json"
+  ],
+  "code": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": "tools policy: profile \"minimal\" (agent \"main\") has configured tool sections (tools.exec) that no longer implicitly widen the profile. Add alsoAllow: [\"exec\", \"process\"] explicitly if these tools should be available. See #47487.\n[tools] tools.profile (minimal) allowlist contains unknown entries (chio_call). These entries won't match any tool unless the plugin is enabled.\n[tools] tools.allow allowlist contains unknown entries (chio_call). These entries won't match any tool unless the plugin is enabled.\ntools policy: profile \"minimal\" (agent \"main\") has configured tool sections (tools.exec) that no longer implicitly widen the profile. Add alsoAllow: [\"exec\", \"process\"] explicitly if these tools should be available. See #47487.\n[agent/embedded] [tools] No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\n[agent/embedded] embedded run failover decision: runId=e950b547-ed59-4472-9757-d56441f38bbd stage=prompt decision=surface_error reason=none from=chio-local/chio-test-model profile=- rawError=No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\n[diagnostic] lane task error: lane=main durationMs=2588 error=\"Error: No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\"\n[diagnostic] lane task error: lane=session:agent:main:explicit:e950b547-ed59-4472-9757-d56441f38bbd durationMs=2591 error=\"Error: No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\"\nError: No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\n",
+  "elapsedMs": 5786
+}

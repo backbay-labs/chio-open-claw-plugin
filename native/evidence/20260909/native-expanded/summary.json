@@ -1,0 +1,381 @@
+{
+  "status": "partial-host-contract-evidence-only",
+  "accepted": false,
+  "hostVersion": "OpenClaw 2026.5.20 (e510042)",
+  "os": {
+    "platform": "darwin",
+    "release": "25.4.0",
+    "arch": "arm64"
+  },
+  "node": "v25.5.0",
+  "package": {
+    "name": "@chio/openclaw-kernel",
+    "version": "0.1.0",
+    "artifact": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-e4rW9t/chio-openclaw-kernel-0.1.0.tgz",
+    "sha256": "cf7c912aa412500398758d36b3c447859bad1fbb2bf63d0b9a61ecd20bf7f0c9",
+    "bundled": [
+      "@chio/bridge"
+    ]
+  },
+  "artifactSha256": "cf7c912aa412500398758d36b3c447859bad1fbb2bf63d0b9a61ecd20bf7f0c9",
+  "runDir": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-e4rW9t",
+  "cases": [
+    {
+      "name": "native-write-positive-control",
+      "exitCode": 0,
+      "markerPresent": true,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "write"
+        ],
+        [
+          "write"
+        ]
+      ]
+    },
+    {
+      "name": "native-read-positive-control",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "read"
+        ],
+        [
+          "read"
+        ]
+      ]
+    },
+    {
+      "name": "native-exec-positive-control",
+      "exitCode": 0,
+      "markerPresent": true,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "exec"
+        ],
+        [
+          "exec"
+        ]
+      ]
+    },
+    {
+      "name": "native-network-positive-control",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 1,
+      "exposedTools": [
+        [
+          "exec"
+        ],
+        [
+          "exec"
+        ]
+      ]
+    },
+    {
+      "name": "deny-write-loaded",
+      "exitCode": 0,
+      "markerPresent": false,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-exec-loaded",
+      "exitCode": 0,
+      "markerPresent": false,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-shell-descendant-loaded",
+      "exitCode": 0,
+      "markerPresent": false,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-write-omitted",
+      "exitCode": 1,
+      "markerPresent": false,
+      "resourceRequests": 0,
+      "exposedTools": []
+    },
+    {
+      "name": "deny-exec-omitted",
+      "exitCode": 1,
+      "markerPresent": false,
+      "resourceRequests": 0,
+      "exposedTools": []
+    },
+    {
+      "name": "deny-shell-descendant-omitted",
+      "exitCode": 1,
+      "markerPresent": false,
+      "resourceRequests": 0,
+      "exposedTools": []
+    },
+    {
+      "name": "deny-sensitive-read",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-network",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-shell-network",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-edit",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-apply_patch",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-process",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-sessions_spawn",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-sessions_send",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-subagents",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-cron",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-gateway",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-nodes",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-browser",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-bundle_mcp_probe",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "bridge-or-authority-unavailable",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "plugin-load-crash",
+      "exitCode": 1,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": []
+    },
+    {
+      "name": "plugin-malformed",
+      "exitCode": 1,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": []
+    },
+    {
+      "name": "plugin-silent-omission",
+      "exitCode": 1,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": []
+    }
+  ],
+  "unresolved": [
+    "Real kernel-owned useful execution",
+    "Protected resource isolation",
+    "Authority and signed request/result verification",
+    "Complete I01-I08",
+    "Published compatible versions"
+  ]
+}

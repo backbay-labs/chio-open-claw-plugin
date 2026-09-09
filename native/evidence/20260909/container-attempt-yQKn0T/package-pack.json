@@ -1,0 +1,12 @@
+{
+  "binary": "node",
+  "args": [
+    "scripts/pack-release.mjs",
+    "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-yQKn0T"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "\n> @chio/openclaw-kernel@0.1.0 build\n> node --check src/index.mjs && node --check src/plugin.mjs && node --check src/journal.mjs\n\n{\"name\":\"@chio/openclaw-kernel\",\"version\":\"0.1.0\",\"artifact\":\"/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-yQKn0T/chio-openclaw-kernel-0.1.0.tgz\",\"sha256\":\"81c171bd0a151835e62e0c47cb88eca16bbec27f092904a894122c06f03d4601\",\"bundled\":[\"@chio/bridge\"]}\n",
+  "stderr": "",
+  "elapsedMs": 2456
+}

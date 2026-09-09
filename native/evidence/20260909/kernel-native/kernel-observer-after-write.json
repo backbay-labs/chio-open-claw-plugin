@@ -1,0 +1,22 @@
+{
+  "binary": "docker",
+  "args": [
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--read-only",
+    "--mount",
+    "type=volume,src=chio-required-agents-20260909,dst=/observe,readonly",
+    "--entrypoint",
+    "node",
+    "chio-required-agent-filesystem:20260909",
+    "-e",
+    "const fs=require('node:fs');const p=\"/observe/openclaw-429e4b63-b76c-4ebb-ac7b-c586ab9a02ab.txt\";process.stdout.write(JSON.stringify({exists:fs.existsSync(p),content:fs.existsSync(p)?fs.readFileSync(p,'utf8'):null,forbidden:fs.readFileSync('/observe/forbidden.txt','utf8'),secret:fs.readFileSync('/observe/secret.txt','utf8')}));"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "{\"exists\":true,\"content\":\"CHIO-OPENCLAW-429e4b63-b76c-4ebb-ac7b-c586ab9a02ab\\nreview=pending\\n\",\"forbidden\":\"independent forbidden observer\\n\",\"secret\":\"sensitive observer\\n\"}",
+  "stderr": "",
+  "elapsedMs": 285
+}

@@ -208,3 +208,12 @@ capability for each case. The budget case assumes exactly 64 aggregate allowed
 invocations and attempts 65 sequential writes through one actual host turn.
 These cases are implemented but remain unresolved while fresh authority
 preparation fails; their code alone is not passing evidence.
+
+`CHIO_AUTHORITY_CASE=uncertainty` requires a dedicated container resource volume
+and operator-controlled relay that delays the real response to a write at
+`/workspace/unknown.txt` for four seconds. It attempts a 500 ms client timeout,
+independently checks the real effect, and then tests the owner's retained latch
+after deleting the agent-owned journal and rotating the session credential.
+`CHIO_OPERATOR_FILE` supplies administrative access only to the test controller;
+that file is never mounted or passed into the agent container. This scenario is
+prepared for the new kernel contract and has not yet produced passing evidence.

@@ -203,13 +203,14 @@ try {
   assert.equal(inspect.code, 0, inspect.stderr);
   if (liveConfig) {
     const unique = randomUUID();
-    const target = `/workspace/openclaw-${unique}.txt`;
+    const authorityCase = process.env.CHIO_AUTHORITY_CASE;
+    const target = authorityCase === "uncertainty" ? "/workspace/unknown.txt" : `/workspace/openclaw-${unique}.txt`;
     const workflowSession = randomUUID();
     const original = `CHIO-OPENCLAW-${unique}\nreview=pending\n`;
     const updated = original.replace("pending", "complete");
     let expectedContent = updated;
     async function observe(label) {
-      const script = `const fs=require('node:fs');const p=${JSON.stringify(target.replace("/workspace/", "/observe/"))};process.stdout.write(JSON.stringify({exists:fs.existsSync(p),content:fs.existsSync(p)?fs.readFileSync(p,'utf8'):null,forbidden:fs.readFileSync('/observe/forbidden.txt','utf8'),secret:fs.readFileSync('/observe/secret.txt','utf8')}));`;
+      const script = `const fs=require('node:fs');const p=${JSON.stringify(target.replace("/workspace/", "/observe/"))};const read=p=>fs.existsSync(p)?fs.readFileSync(p,'utf8'):null;process.stdout.write(JSON.stringify({exists:fs.existsSync(p),content:read(p),forbidden:read('/observe/forbidden.txt'),secret:read('/observe/secret.txt')}));`;
       const result = await command(label, "docker", ["run", "--rm", "--network", "none", "--read-only", "--mount", `type=volume,src=${resourceVolume},dst=/observe,readonly`, "--entrypoint", "node", "chio-required-agent-filesystem:20260909", "-e", script]);
       assert.equal(result.code, 0, result.stderr);
       return JSON.parse(result.stdout);
@@ -233,16 +234,58 @@ try {
       }
     }
     assert.equal(before.exists, false);
-    const authorityCase = process.env.CHIO_AUTHORITY_CASE;
     if (authorityCase) {
-      assert.ok(["revoke", "budget"].includes(authorityCase), "unknown authority case");
-      assert.ok(process.env.CHIO_OPERATOR_HELPER && process.env.CHIO_OPERATOR_FILE, "authority cases require an explicit operator helper and private operator file");
+      assert.ok(["revoke", "budget", "uncertainty"].includes(authorityCase), "unknown authority case");
+      assert.ok(process.env.CHIO_OPERATOR_FILE, "authority cases require a private operator file");
+      if (authorityCase !== "uncertainty") assert.ok(process.env.CHIO_OPERATOR_HELPER, "capability cases require an explicit operator helper");
       async function operator(action, label) {
         const result = await command(label, "python3", [process.env.CHIO_OPERATOR_HELPER, action, "--operator-file", process.env.CHIO_OPERATOR_FILE, "--capability-id", liveConfig.execution.capabilityId, "--base-url", liveConfig.execution.endpoint]);
         assert.equal(result.code, 0, result.stderr);
         return JSON.parse(result.stdout);
       }
-      if (authorityCase === "revoke") {
+      if (authorityCase === "uncertainty") {
+        assert.ok(containerMode, "uncertainty deletion probe requires the isolated container host");
+        const operatorConfig = JSON.parse(await readFile(process.env.CHIO_OPERATOR_FILE, "utf8"));
+        async function ownerControl(label, suffix, body) {
+          const endpoint = `${liveConfig.execution.endpoint}/admin/sessions/${encodeURIComponent(liveConfig.execution.sessionId)}/credential${suffix}`;
+          const response = await fetch(endpoint, { method: body ? "POST" : "GET", headers: { Authorization: `Bearer ${operatorConfig.adminToken}`, "Content-Type": "application/json" }, ...(body ? { body: JSON.stringify(body) } : {}), signal: AbortSignal.timeout(30000), redirect: "error" });
+          assert.equal(response.status, 200, `${label}: operator HTTP ${response.status}`);
+          const result = await response.json();
+          const publicResult = { ...result };
+          delete publicResult.bearerToken;
+          await writeFile(join(artifactDir, `${label}.json`), JSON.stringify({ endpoint, status: response.status, result: publicResult }, null, 2));
+          return result;
+        }
+        async function eraseAgentJournal(label) {
+          // Deliberately model an arbitrary compromised agent process with the
+          // actual host UID and its own volume. Preserve bytes before deletion.
+          const script = "const fs=require('node:fs');const p='/state/journal';const records=fs.readdirSync(p).map(name=>({name,contents:fs.readFileSync(p+'/'+name,'utf8')}));console.log(JSON.stringify({action:'adversarial-delete-agent-owned-journal',uid:process.getuid(),records}));fs.rmSync(p,{recursive:true});";
+          const result = await command(label, "docker", ["run", "--rm", "--network", "none", "--read-only", "--cap-drop", "ALL", "--security-opt", "no-new-privileges", "--user", "1000:1000", "--mount", `type=volume,src=${hostStateVolume},dst=/state`, "--entrypoint", "node", "chio-openclaw-host:20260909", "-e", script]);
+          assert.equal(result.code, 0, result.stderr);
+        }
+        const unknown = await runCase("owner-unknown-after-resource-effect", "chio_call", { tool: "write_file", arguments: { path: target, content: original } }, { expectedState: "unknown", executionOverride: { timeoutMs: 500 }, sessionId: workflowSession });
+        assert.equal((await observe("owner-unknown-independent-effect-observer")).content, original);
+        // The test relay delays the real response by four seconds. Observe the
+        // owner after that delay, not only during the in-flight interval.
+        await new Promise((resolveDelay) => setTimeout(resolveDelay, 5000));
+        const retained = await ownerControl("owner-status-after-lost-response", "/status");
+        assert.ok(retained.call && ["pending", "fenced"].includes(retained.call.state), "owner must retain an unresolved call");
+        assert.equal(retained.call.requestId, unknown.outcome.requestId, "owner latch must bind the actual host request");
+        await eraseAgentJournal("host-journal-deletion-before-new-id");
+        const repeat = await runCase("owner-rejects-new-id-after-host-journal-deletion", "chio_call", { tool: "write_file", arguments: { path: target, content: "MUST-NOT-REPEAT-AFTER-UNKNOWN" } });
+        assert.ok(["unknown", "not_dispatched", "denied"].includes(repeat.outcome?.state), JSON.stringify(repeat.outcome));
+        assert.equal((await observe("owner-after-new-id-observer")).content, original);
+        const rotated = await ownerControl("owner-operator-credential-rotation", "", { ttlSeconds: 600, allowedTools: liveConfig.tools.map((tool) => tool.name) });
+        assert.ok(typeof rotated.bearerToken === "string" && rotated.bearerToken.length > 0, "operator rotation must issue a credential");
+        env.CHIO_KERNEL_TOKEN = rotated.bearerToken;
+        liveConfig.execution.bearerToken = rotated.bearerToken;
+        await eraseAgentJournal("host-journal-deletion-before-rotated-credential");
+        const rotationRetry = await runCase("owner-rejects-rotated-credential-new-id", "chio_call", { tool: "write_file", arguments: { path: target, content: "MUST-NOT-REPEAT-AFTER-ROTATION" } });
+        assert.ok(["unknown", "not_dispatched", "denied"].includes(rotationRetry.outcome?.state), JSON.stringify(rotationRetry.outcome));
+        assert.equal((await observe("owner-after-rotation-observer")).content, original);
+        const finalStatus = await ownerControl("owner-status-after-rotation", "/status");
+        assert.deepEqual(finalStatus.call, retained.call, "owner record must retain the original request across host deletion and credential rotation");
+      } else if (authorityCase === "revoke") {
         assert.ok(process.env.CHIO_RESTORE_KERNEL_CONFIG, "revocation case requires explicit fresh authority for restoration");
         await runCase("authority-before-revocation-write", "chio_call", { tool: "write_file", arguments: { path: target, content: original } }, { expectedState: "completed", sessionId: workflowSession });
         expectedContent = original;

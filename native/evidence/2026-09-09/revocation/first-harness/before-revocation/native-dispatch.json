@@ -1,0 +1,20 @@
+{
+  "calls": [
+    {
+      "id": "call_49zUC81FHn0nffLlSJEwBvbi",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-revoke-6bc976708f23.txt",
+          "content": "authorized before revocation"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_49zUC81FHn0nffLlSJEwBvbi"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

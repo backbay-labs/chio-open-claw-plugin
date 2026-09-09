@@ -1,0 +1,31 @@
+
+> @chio/openclaw-kernel@0.1.0 test
+> node --test test/*.test.mjs
+
+✔ Docker inventory failure cannot establish successful cleanup (515.395666ms)
+✔ guest delivery verification: none (6.245833ms)
+✔ guest delivery verification: result (1.339292ms)
+✔ guest delivery verification: stale-request (0.81325ms)
+✔ guest delivery verification: signature (1.126042ms)
+✔ a stale missing-completion read cannot redispatch after acquiring the lock (102.230125ms)
+✔ a stale missing-completion read with changed arguments cleans its new lock (99.61775ms)
+✔ model transport permits only inline Chio tool history (1.040875ms)
+✔ model output budget cannot grow beyond the supported mode (0.120667ms)
+✔ same host operation is dispatched once, bound to host caller and canonical arguments (39.968375ms)
+✔ unknown outcome fences subsequent calls and survives recreated plugin (9.892792ms)
+✔ completed cache is bound to the operator authority configuration (27.102583ms)
+✔ missing trusted identity, injected authority, and cancelled calls never dispatch (1.260792ms)
+✔ parallel dispatch is fenced before a second effect starts (26.927542ms)
+✔ configuration changes and non-Chio hooks block before dispatch (1.348667ms)
+✔ runtime precedence and per-agent skills cannot bypass the pinned provider profile (0.772458ms)
+✔ signed post-effect denial and unverified success cannot release the session fence (19.538084ms)
+✔ known pre-dispatch failure releases the fence for a later fresh operation (43.986542ms)
+✔ a verified completed tool error remains an error to the host (30.146834ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 652.296083

@@ -1,0 +1,5 @@
+
+> @chio/openclaw-kernel@0.1.0 build
+> node --check src/index.mjs && node --check src/plugin.mjs && node --check src/journal.mjs
+
+{"name":"@chio/openclaw-kernel","version":"0.1.0","artifact":"/tmp/chio-openclaw-watchdog-package-r3-20260909/chio-openclaw-kernel-0.1.0.tgz","sha256":"ba6b80e71598ec8f01205ef7d443f71fdb2df78fe4b3cad576d9107518f3b6c5","bundled":["@chio/bridge"]}

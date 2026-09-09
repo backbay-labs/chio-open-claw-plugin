@@ -4,6 +4,7 @@ import {readFile,writeFile,mkdir,lstat,readdir} from "node:fs/promises";
 import {resolve,join} from "node:path";
 import {randomUUID,createHash} from "node:crypto";
 import {spawn,spawnSync} from "node:child_process";
+import {fileURLToPath} from "node:url";
 import {parseArgs} from "node:util";
 import {startGatewayHttp} from "@chio/bridge";
 import {startModelRelay} from "../src/model-relay.mjs";
@@ -22,7 +23,7 @@ const image=JSON.parse(docker(["image","inspect",values.image]))[0];
 if(image.Id!==values.image)throw new Error("Host image identity changed");
 const id=randomUUID(),network=`chio-required-openclaw-${id}`,relayName=`chio-openclaw-relay-${id}`,agentName=`chio-openclaw-agent-${id}`,volume=`chio-required-openclaw-state-${id}`,controlVolume=`chio-required-openclaw-control-${id}`;
 const transport=await startGatewayHttp(config);
-let model,networkCreated=false,relayCreated=false;
+let model,watchdog,watchdogFinished,networkCreated=false,relayCreated=false;
 try{
  const confirmed=new Set();let confirmations=Promise.resolve();
  model=await startModelRelay(process.env.OPENAI_API_KEY,"gpt-4.1-mini",async results=>{
@@ -56,6 +57,9 @@ try{
  docker(["run","--rm","-i","--network","none","--read-only","--cap-drop","ALL","--user","0","--mount",`type=volume,src=${controlVolume},dst=/config`,"--entrypoint","node",values.image,"-e","const f=require('fs');const b=f.readFileSync(0);JSON.parse(b);f.writeFileSync('/config/openclaw.json',b,{mode:0o444,flag:'wx'});const fd=f.openSync('/config/openclaw.json','r');f.fsyncSync(fd);f.closeSync(fd)"],JSON.stringify(cfg));
  const manifest={schema:"chio.openclaw.protected-run.v1",image:values.image,network,relayName,agentName,volume,controlVolume,sessionId:id,gatewayConfigSha256:createHash("sha256").update(await readFile(configPath)).digest("hex"),kernelAuthority:{sessionId:config.execution.sessionId,capabilityId:config.execution.capabilityId,serverId:config.execution.serverId},acceptance:"unresolved"};
  await writeFile(join(state,"launch.json"),JSON.stringify(manifest,null,2)+"\n",{mode:0o600});
+ const watchdogEnv=Object.fromEntries(Object.entries(process.env).filter(([key])=>["PATH","HOME","DOCKER_HOST","DOCKER_CONTEXT","DOCKER_CONFIG","LANG"].includes(key)));
+ watchdog=spawn(process.execPath,[fileURLToPath(new URL("./cleanup-watchdog.mjs",import.meta.url)),state],{env:watchdogEnv,stdio:["pipe","ignore","inherit"]});
+ watchdogFinished=new Promise(resolve=>{watchdog.once("error",()=>resolve(1));watchdog.once("close",code=>resolve(code??1));});
  const args=["run","--rm","--name",agentName,"--network",network,"--dns","127.0.0.1","--read-only","--cap-drop","ALL","--security-opt","no-new-privileges","--user","1000:1000","--pids-limit","128","--memory","2g","--tmpfs","/tmp:rw,nosuid,nodev,size=256m","--mount",`type=volume,src=${volume},dst=/state`,"--mount",`type=volume,src=${controlVolume},dst=/config,readonly`,"--env","CHIO_GATEWAY_TOKEN",values.image,"agent","--local","--session-id",id,"--message",values.prompt,"--json"];
  const host=spawn("docker",args,{env:{...process.env,CHIO_GATEWAY_TOKEN:transport.token},stdio:["ignore","pipe","pipe"]});
  const stdout=[],stderr=[];host.stdout.on("data",bytes=>{stdout.push(bytes);process.stdout.write(bytes);});host.stderr.on("data",bytes=>{stderr.push(bytes);process.stderr.write(bytes);});
@@ -77,6 +81,13 @@ try{
 }finally{
  await transport.close();await model?.close();
  if(model)await writeFile(join(state,"model-relay.json"),JSON.stringify(model.events,null,2)+"\n",{mode:0o600});
+ if(watchdog){
+  watchdog.stdin.end();const cleanupCode=await watchdogFinished;
+  if(cleanupCode!==0){
+   process.exitCode=2;
+   try{const terminalPath=join(state,"terminal.json"),terminal=JSON.parse(await readFile(terminalPath,"utf8"));await writeFile(terminalPath,JSON.stringify({...terminal,exitCode:2,cleanup:"unresolved"})+"\n");}catch{}
+  }
+ }
  if(relayCreated){try{docker(["rm","-f",relayName]);}catch{}}
  if(networkCreated){try{docker(["network","rm",network]);}catch{}}
  // Keep the host state volume and private records for operator recovery.

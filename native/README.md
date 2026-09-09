@@ -102,3 +102,11 @@ containers before recovery. For removal, revoke authority and preserve evidence,
 then remove only the recorded isolated containers, volumes, image and package
 when no unresolved outcome remains. Final lifecycle qualification is still
 required; these procedures do not establish I08 acceptance.
+
+A private cleanup watchdog observes the launcher's pipe lifetime. At the tested
+post-dispatch SIGKILL cutpoint, it removes only the recorded agent/relay
+containers and their empty network after verifying image and network identity.
+State and control volumes remain for operator recovery. Cleanup has bounded
+retries and records failure explicitly; earlier creation-time crash cutpoints
+still require separate qualification. The watchdog does not acknowledge or
+redispatch protected operations.

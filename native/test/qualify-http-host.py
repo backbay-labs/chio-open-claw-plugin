@@ -12,6 +12,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import uuid
+import time
 
 
 def save(path, value):
@@ -24,6 +25,7 @@ for name in ["operator-state", "package-dir", "output"]:
 parser.add_argument("--fault-injector", type=Path)
 parser.add_argument("--result-fault-injector", type=Path)
 parser.add_argument("--image", required=True)
+parser.add_argument("--require-watchdog-cleanup", action="store_true")
 parser.add_argument("--cases", nargs="+", choices=["useful", "secret", "forbidden-write", "host-response-loss", "result-substitution", "aggregate-budget", "gateway-crash"], default=["useful", "secret", "forbidden-write"])
 a = parser.parse_args()
 a.bridge = a.package_dir / "node_modules/@chio/bridge"
@@ -81,7 +83,7 @@ for case in a.cases:
         target = evidence / label; target.mkdir(mode=0o700)
         (target / "host.stdout.txt").write_text(completed.stdout)
         (target / "host.stderr.txt").write_text(completed.stderr)
-        for filename in ["launch.json", "terminal.json", "model-relay.json", "host.stdout.json", "host.stderr.txt"]:
+        for filename in ["launch.json", "terminal.json", "model-relay.json", "host.stdout.json", "host.stderr.txt", "watchdog-cleanup.json"]:
             if (runtime / filename).is_file():
                 shutil.copy2(runtime / filename, target / filename)
         terminal = json.loads((runtime / "terminal.json").read_text()) if (runtime / "terminal.json").exists() else {}
@@ -132,8 +134,20 @@ for case in a.cases:
                 # SIGKILL skips launcher cleanup. Only this run's exact names
                 # are eligible for operator cleanup; keep both evidence volumes.
                 cleanup = []
+                invocation = json.loads((evidence / "initial/command.json").read_text())['command']
+                runtime = Path(invocation[invocation.index('--state-dir')+1])
+                # The cold-installed candidate records independent lifeline cleanup.
+                for _ in range(40):
+                    if (runtime / "watchdog-cleanup.json").is_file():break
+                    time.sleep(0.25)
+                if a.require_watchdog_cleanup:assert (runtime / "watchdog-cleanup.json").is_file(), 'missing trusted lifeline cleanup'
+                if (runtime / "watchdog-cleanup.json").is_file():
+                    watchdog = json.loads((runtime / "watchdog-cleanup.json").read_text())
+                    save(evidence / "watchdog-cleanup.json", watchdog)
+                    assert watchdog['status'] == 'cleaned'
                 for target in [launch['agentName'], launch['relayName']]:
                     inspect = subprocess.run(["docker", "container", "inspect", target], capture_output=True, text=True)
+                    if a.require_watchdog_cleanup:assert inspect.returncode != 0, 'watchdog left a run container'
                     if inspect.returncode == 0:
                         details = json.loads(inspect.stdout)[0]
                         assert details['Image'] == launch['image'] and launch['network'] in details['NetworkSettings']['Networks']

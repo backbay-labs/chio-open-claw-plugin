@@ -1,0 +1,21 @@
+{
+  "command": [
+    "node",
+    "/Users/connor/.local/share/chio-required-candidates/20260909/install/openclaw-supervised/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/delivery-install-20260909/container-boundary-24ab3fb20bdf4eae9bba8932b1893041/gateway.json",
+    "--image",
+    "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+    "--state-dir",
+    "/tmp/chio-openclaw-boundary-runtime-5cbed79189ca46598acaf6654290e5ec",
+    "--prompt",
+    "Use chio_call with read_text_file for /workspace/openclaw-qualified-042438bb1fc6.txt exactly eight times, sequentially, one per model turn. These reads keep the actual agent active for independent container boundary probes. Stop on any unsuccessful result. Do not write anything."
+  ],
+  "exitCode": 0,
+  "terminal": {
+    "hostExitCode": 0,
+    "exitCode": 0,
+    "outcome": "completed",
+    "confirmedDeliveries": 13
+  }
+}

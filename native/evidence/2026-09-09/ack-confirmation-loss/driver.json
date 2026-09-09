@@ -1,0 +1,16 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-received-result-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/ack-confirmation-loss-152c42c772074d34a85684c06299ad80/gateway.json",
+    "--image",
+    "sha256:38ab384535544261d851394a9d6ef59d9c6de5b7367652464f977f7a8bc890a6",
+    "--state-dir",
+    "/tmp/chio-openclaw-ack-confirmation-loss-20260909/initial",
+    "--prompt",
+    "Use chio_call with tool write_file exactly once for /workspace/openclaw-ack-confirmation-loss.txt with content \"original effect\". Stop on any unsuccessful or uncertain result."
+  ],
+  "initialExit": 2,
+  "restartExit": 0
+}

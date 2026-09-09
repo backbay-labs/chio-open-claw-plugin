@@ -1,5 +1,10 @@
 # OpenClaw acceptance record
 
+Current candidate: see [HTTP host delivery](evidence/2026-09-09/http-host-delivery/README.md)
+for the isolated native launcher, cold-installed artifact and actual host cases.
+Status remains unaccepted. The older profiles, bootstrap authority and transport
+records below are historical and do not establish the current boundary.
+
 Program status: **unaccepted**. Confidence in the bounded observations below is
 high. Completion of all document 19 gates remains unresolved.
 

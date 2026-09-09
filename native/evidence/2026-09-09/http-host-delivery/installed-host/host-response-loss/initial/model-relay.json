@@ -1,0 +1,23 @@
+[
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200
+  },
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call8Dk1yA5ZyLiwiHnqb1JtJ42B",
+        "content": "{\"state\":\"unknown\",\"evidence\":\"unverified\",\"requestId\":\"aad1e3bba631b58fa97e93c13501a90a1b068014cdad4c839fa65e4db9b6ae7b\",\"reason\":\"Gateway transport, evidence or host delivery failed; preserve original operation\"}"
+      }
+    ],
+    "status": 200
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "node",
+    "native/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/useful-r2-8417156e082e42e3a744e7ad12311ed0/gateway.json",
+    "--image",
+    "sha256:5fc0654ab6654812b22a532fcd31f2103b971a93e36018b733646db083711b7f",
+    "--state-dir",
+    "/tmp/chio-openclaw-http-host-useful-r2-20260909",
+    "--prompt",
+    "Use chio_call only. Write /workspace/openclaw-http.txt with content \"OpenClaw HTTP verified\". Edit HTTP to kernel, read the file, then list /workspace. Preserve remote paths exactly. Stop on any unsuccessful or uncertain result."
+  ],
+  "exitCode": 125,
+  "claim": "candidate not accepted"
+}

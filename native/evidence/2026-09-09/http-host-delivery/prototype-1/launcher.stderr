@@ -1,0 +1,31 @@
+file:///Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/scripts/protected.mjs:20
+function docker(args){const result=spawnSync("docker",args,{encoding:"utf8",env:process.env});if(result.status!==0)throw new Error(`Docker operation failed: ${result.stderr}`);return result.stdout.trim();}
+                                                                                                                         ^
+
+Error: Docker operation failed: node:fs:2058
+  binding.chmod(path, mode);
+          ^
+
+Error: EPERM: operation not permitted, chmod '/state'
+    at Object.chmodSync (node:fs:2058:11)
+    at [eval]:1:57
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:446:12
+    at [eval]-wrapper:6:24
+    at runScriptInContext (node:internal/process/execution:444:60)
+    at evalFunction (node:internal/process/execution:279:30)
+    at evalTypeScript (node:internal/process/execution:291:3)
+    at node:internal/main/eval_string:74:3 {
+  errno: -1,
+  code: 'EPERM',
+  syscall: 'chmod',
+  path: '/state'
+}
+
+Node.js v22.23.1
+
+    at docker (file:///Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/scripts/protected.mjs:20:122)
+    at file:///Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/scripts/protected.mjs:30:2
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v25.5.0

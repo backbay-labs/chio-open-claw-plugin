@@ -1,0 +1,15 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-received-result-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-host-response-loss-b95f121456464e229d96a167807ff142/gateway.json",
+    "--state-dir",
+    "/tmp/chio-openclaw-qualified-af00e314946d4270ad85ef4ef7702c9c",
+    "--image",
+    "sha256:38ab384535544261d851394a9d6ef59d9c6de5b7367652464f977f7a8bc890a6",
+    "--prompt",
+    "Use chio_call with tool write_file once to write /workspace/openclaw-qualified-a167807ff142.txt with content \"original retained effect\". Stop on any unsuccessful or uncertain result. Never infer success from a transport error."
+  ],
+  "exitCode": 2
+}

@@ -1,0 +1,3 @@
+docker: Error response from daemon: invalid mount config for type "bind": bind source path does not exist: /tmp/chio-openclaw-http-host-useful-r2-20260909/openclaw.json
+
+Run 'docker run --help' for more information

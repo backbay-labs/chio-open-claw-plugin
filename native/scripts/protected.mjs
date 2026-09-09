@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+// The trusted launcher owns model credentials and the Chio HTTP gateway.
+import {readFile,writeFile,mkdir,lstat,readdir} from "node:fs/promises";
+import {resolve,join} from "node:path";
+import {randomUUID,createHash} from "node:crypto";
+import {spawn,spawnSync} from "node:child_process";
+import {parseArgs} from "node:util";
+import {startGatewayHttp} from "@chio/bridge";
+import {startModelRelay} from "../src/model-relay.mjs";
+import {restrictedTools,assertRestrictedProfile} from "../src/profile.mjs";
+const {values} = parseArgs({options:Object.fromEntries(["gateway-config","image","state-dir","prompt"].map(name=>[name,{type:"string"}]))});
+for(const name of ["gateway-config","image","state-dir","prompt"])if(!values[name])throw new Error(`Required --${name}`);
+if(!/^sha256:[a-f0-9]{64}$/.test(values.image))throw new Error("Explicit immutable host image SHA256 required");
+if(!process.env.OPENAI_API_KEY)throw new Error("Operator OPENAI_API_KEY required");
+const configPath=resolve(values["gateway-config"]),state=resolve(values["state-dir"]);
+const info=await lstat(configPath);
+if(!info.isFile()||info.isSymbolicLink()||info.mode&0o077||info.size>1024*1024)throw new Error("Private prepared gateway configuration required");
+const config=JSON.parse(await readFile(configPath,"utf8"));
+await mkdir(state,{mode:0o700});
+function docker(args,input){const result=spawnSync("docker",args,{encoding:"utf8",env:process.env,input});if(result.status!==0)throw new Error(`Docker operation failed: ${result.stderr}`);return result.stdout.trim();}
+const image=JSON.parse(docker(["image","inspect",values.image]))[0];
+if(image.Id!==values.image)throw new Error("Host image identity changed");
+const id=randomUUID(),network=`chio-required-openclaw-${id}`,relayName=`chio-openclaw-relay-${id}`,agentName=`chio-openclaw-agent-${id}`,volume=`chio-required-openclaw-state-${id}`,controlVolume=`chio-required-openclaw-control-${id}`;
+const transport=await startGatewayHttp(config);
+let model,networkCreated=false,relayCreated=false;
+try{
+ model=await startModelRelay(process.env.OPENAI_API_KEY);
+ docker(["network","create","--internal","--label","chio.task=required-agent-integrations",network]);networkCreated=true;
+ docker(["volume","create","--label","chio.task=required-agent-integrations",volume]);
+ docker(["run","--rm","--network","none","--read-only","--cap-drop","ALL","--cap-add","CHOWN","--user","0","--mount",`type=volume,src=${volume},dst=/state`,"--entrypoint","node",values.image,"-e","const f=require('fs');f.chmodSync('/state',0o700);f.chownSync('/state',1000,1000)"]);
+ docker(["run","-d","--name",relayName,"--network",network,"--network-alias","chio-transport","--read-only","--cap-drop","ALL","--security-opt","no-new-privileges","--user","1000:1000","--pids-limit","32","--memory","256m","--env","CHIO_RELAY_CONTAINER=1","--env",`CHIO_UPSTREAM_KERNEL_PORT=${transport.port}`,"--env",`CHIO_UPSTREAM_MODEL_PORT=${model.port}`,"--entrypoint","node",values.image,"/opt/chio/proxy.mjs"]);relayCreated=true;
+ docker(["network","connect","bridge",relayName]);
+ const cfg={agents:{defaults:{workspace:"/state/workspace",skipBootstrap:true,skills:[],model:"chio-model/gpt-4.1-mini",heartbeat:{every:"0m"},timeoutSeconds:150}},
+  models:{mode:"replace",providers:{"chio-model":{baseUrl:"http://chio-transport:8787/v1",apiKey:model.token,api:"openai-completions",agentRuntime:{id:"pi"},models:[{id:"gpt-4.1-mini",name:"gpt-4.1-mini",input:["text"],reasoning:false,contextWindow:128000,maxTokens:4096}]}}},
+  tools:restrictedTools(),plugins:{enabled:true,allow:["chio-kernel"],slots:{memory:"none"},load:{paths:["/opt/chio/node_modules/@chio/openclaw-kernel"]},entries:{"chio-kernel":{enabled:true,config:{transport:"launcher-http-v1",endpoint:"http://chio-transport:8787/mcp",tokenEnv:"CHIO_GATEWAY_TOKEN",gatewaySessionId:config.sessionId,
+   toolInventory:config.tools,allowedTools:[...config.tools.map(tool=>tool.name),...(config.approval?["chio_resume"]:[])],subjectKey:config.execution.subjectKey,capabilityId:config.execution.capabilityId,serverId:config.execution.serverId,sessionId:config.execution.sessionId,trustedSigners:config.execution.trustedSigners}}}},
+  commands:Object.fromEntries(["native","nativeSkills","text","bash","config","restart","mcp","plugins","debug"].map(name=>[name,false])),browser:{enabled:false},cron:{enabled:false},channels:{},hooks:{enabled:false},acp:{enabled:false},gateway:{mode:"local",bind:"loopback"}};
+ assertRestrictedProfile(cfg);
+ const guestConfig=join(state,"openclaw.json");await writeFile(guestConfig,JSON.stringify(cfg,null,2)+"\n",{mode:0o644,flag:"wx"});
+ docker(["volume","create","--label","chio.task=required-agent-integrations",controlVolume]);
+ // Stream only guest configuration into an immutable Docker volume. This works
+ // without any host filesystem share or unpublished sibling checkout.
+ docker(["run","--rm","-i","--network","none","--read-only","--cap-drop","ALL","--user","0","--mount",`type=volume,src=${controlVolume},dst=/config`,"--entrypoint","node",values.image,"-e","const f=require('fs');const b=f.readFileSync(0);JSON.parse(b);f.writeFileSync('/config/openclaw.json',b,{mode:0o444,flag:'wx'});const fd=f.openSync('/config/openclaw.json','r');f.fsyncSync(fd);f.closeSync(fd)"],JSON.stringify(cfg));
+ const manifest={schema:"chio.openclaw.protected-run.v1",image:values.image,network,relayName,agentName,volume,controlVolume,sessionId:id,gatewayConfigSha256:createHash("sha256").update(await readFile(configPath)).digest("hex"),kernelAuthority:{sessionId:config.execution.sessionId,capabilityId:config.execution.capabilityId,serverId:config.execution.serverId},acceptance:"unresolved"};
+ await writeFile(join(state,"launch.json"),JSON.stringify(manifest,null,2)+"\n",{mode:0o600});
+ const args=["run","--rm","--name",agentName,"--network",network,"--dns","127.0.0.1","--read-only","--cap-drop","ALL","--security-opt","no-new-privileges","--user","1000:1000","--pids-limit","128","--memory","2g","--tmpfs","/tmp:rw,nosuid,nodev,size=256m","--mount",`type=volume,src=${volume},dst=/state`,"--mount",`type=volume,src=${controlVolume},dst=/config,readonly`,"--env","CHIO_GATEWAY_TOKEN",values.image,"agent","--local","--session-id",id,"--message",values.prompt,"--json"];
+ const host=spawn("docker",args,{env:{...process.env,CHIO_GATEWAY_TOKEN:transport.token},stdio:["ignore","pipe","pipe"]});
+ const stdout=[],stderr=[];host.stdout.on("data",bytes=>{stdout.push(bytes);process.stdout.write(bytes);});host.stderr.on("data",bytes=>{stderr.push(bytes);process.stderr.write(bytes);});
+ const interrupt=()=>{try{docker(["kill",agentName]);}catch{}};process.once("SIGINT",interrupt);process.once("SIGTERM",interrupt);
+ const deadline=setTimeout(interrupt,180000);
+ const hostCode=await new Promise((resolve,reject)=>{host.once("error",reject);host.once("close",code=>resolve(code??1));});
+ clearTimeout(deadline);process.off("SIGINT",interrupt);process.off("SIGTERM",interrupt);
+ await writeFile(join(state,"host.stdout.json"),Buffer.concat(stdout));await writeFile(join(state,"host.stderr.txt"),Buffer.concat(stderr));
+ const records=await Promise.all((await readdir(config.journalDir)).filter(name=>name.endsWith(".json")).map(async name=>JSON.parse(await readFile(join(config.journalDir,name),"utf8"))));
+ let unresolved=records.some(record=>["pending","unknown"].includes(record.state)||record.state==="completed"&&(!record.acknowledged||!record.hostDeliveryConfirmed));
+ let failed=records.some(record=>["denied","not_dispatched"].includes(record.state)||record.outcome?.result?.isError===true);
+ for(const event of model.events)for(const result of event.results??[]){
+  try{const outcome=JSON.parse(result.content);if(outcome.state==="unknown")unresolved=true;else if(["denied","not_dispatched"].includes(outcome.state)||outcome.result?.isError===true)failed=true;else if(!["completed","awaiting_approval"].includes(outcome.state))unresolved=true;}catch{unresolved=true;}
+ }
+ const pending=records.some(record=>record.state==="awaiting_approval");
+ const exitCode=unresolved?2:pending?4:failed?3:hostCode;
+ await writeFile(join(state,"terminal.json"),JSON.stringify({hostExitCode:hostCode,exitCode,outcome:unresolved?"unresolved":pending?"awaiting_approval":failed?"protected_work_incomplete":hostCode===0?"completed":"host_failed",confirmedDeliveries:records.filter(record=>record.hostDeliveryConfirmed).length})+"\n");
+ process.exitCode=exitCode;
+}finally{
+ await transport.close();await model?.close();
+ if(model)await writeFile(join(state,"model-relay.json"),JSON.stringify(model.events,null,2)+"\n",{mode:0o600});
+ if(relayCreated){try{docker(["rm","-f",relayName]);}catch{}}
+ if(networkCreated){try{docker(["network","rm",network]);}catch{}}
+ // Keep the host state volume and private records for operator recovery.
+}

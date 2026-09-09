@@ -15,4 +15,4 @@ http.createServer((request, response) => {
   upstream.on("error", () => { response.writeHead(502); response.end("upstream unavailable"); });
   request.on("aborted", () => upstream.destroy());
   request.pipe(upstream);
-}).listen(8787, "127.0.0.1");
+}).listen(8787, process.env.CHIO_RELAY_CONTAINER === "1" ? "0.0.0.0" : "127.0.0.1");

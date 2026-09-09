@@ -1,0 +1,18 @@
+{
+  "pluginSha256": "96f67ee343d14f7ba40d2ff6986fc3b79887ee53179a6399156249cee8ac5c79",
+  "hostImage": "sha256:38ab384535544261d851394a9d6ef59d9c6de5b7367652464f977f7a8bc890a6",
+  "bridgeSha256": "eb4392bf298595d52d92610ea82c6e64d6f534718fe575bc5ea9a583c5810a4b",
+  "bridgeSource": "b8cef33",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "hostVersion": "2026.5.20",
+  "acceptance": "unresolved",
+  "sourceFiles": {
+    "native/src/http-executor.mjs": "7878f39c41e6451c7773451bbeba48b77b3f6a26481c86a343d74da67c7f1b97",
+    "native/src/plugin.mjs": "b7d3347676a32ce1d1373efb622bc2646b51593ff0fd67eb1e6ad369a2f3d061",
+    "native/src/index.mjs": "070556b6ea8cc38a3a17bc61b56acc1f3fbda105c9675effdae2dcf6b820e84b",
+    "native/src/model-relay.mjs": "5bd69e01e8b150e152155f6c203a5f8e24a4eeb8c5f8d4b28a715bd8287a9425",
+    "native/scripts/protected.mjs": "587ca9e6a7ebb3195575c00ec1a54c945c1c15978852ba77eb3f957fbf210333",
+    "native/scripts/build-container.mjs": "d7e5affd4d4f4a904e9be289e1db3147e84f873e83d120ec1d08f4b5037cc34c",
+    "native/README.md": "22ed1656b2b7f2ef9aafec280f2199d7dd4beb0b2c90926a91f23f8c5844a54f"
+  }
+}

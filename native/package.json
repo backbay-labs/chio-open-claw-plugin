@@ -15,7 +15,8 @@
     "docker"
   ],
   "bin": {
-    "chio-openclaw-profile": "scripts/create-profile.mjs"
+    "chio-openclaw-profile": "scripts/create-profile.mjs",
+    "chio-openclaw-protected": "scripts/protected.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
@@ -33,6 +34,6 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@chio/bridge": "file:vendor/chio-bridge-0.3.0-68b5c466.tgz"
+    "@chio/bridge": "file:vendor/chio-bridge-0.3.0-eb4392bf2985.tgz"
   }
 }

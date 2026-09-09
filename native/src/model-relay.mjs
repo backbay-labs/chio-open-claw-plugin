@@ -14,7 +14,7 @@ export function validateModelRequest(body, model) {
     for (const call of message.tool_calls ?? []) if (!only(call,["id","type","function"]) || typeof call.id !== "string" || call.type !== "function" || !only(call.function,["name","arguments"]) || call.function.name !== "chio_call" || typeof call.function.arguments !== "string") throw new Error("Alternate function history refused");
   }
 }
-export async function startModelRelay(apiKey, model = "gpt-4.1-mini") {
+export async function startModelRelay(apiKey, model = "gpt-4.1-mini", onToolResults) {
   if (!apiKey || model !== "gpt-4.1-mini") throw new Error("Operator key and pinned model required");
   const token = randomBytes(32).toString("base64url"), events = []; let port, remaining = 100;
   const server = createServer(async (request, response) => {
@@ -30,6 +30,7 @@ export async function startModelRelay(apiKey, model = "gpt-4.1-mini") {
       if (body.max_tokens === undefined && body.max_completion_tokens === undefined) body.max_tokens = 4096;
       event.tools = (body.tools ?? []).map(tool => tool.function.name);
       event.results = body.messages.filter(message => message.role === "tool").map(message => ({toolCallId: message.tool_call_id, content: message.content}));
+      await onToolResults?.(event.results);
       const upstream = await fetch("https://api.openai.com/v1/chat/completions", {method: "POST", redirect: "error", signal: AbortSignal.any([controller.signal,AbortSignal.timeout(60000)]), headers: {"Content-Type":"application/json",Authorization:`Bearer ${apiKey}`}, body: JSON.stringify(body)});
       event.forwarded = true; event.status = upstream.status;
       response.writeHead(upstream.status, {"Content-Type":upstream.headers.get("content-type") ?? "application/json"});

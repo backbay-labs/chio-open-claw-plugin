@@ -24,7 +24,18 @@ const id=randomUUID(),network=`chio-required-openclaw-${id}`,relayName=`chio-ope
 const transport=await startGatewayHttp(config);
 let model,networkCreated=false,relayCreated=false;
 try{
- model=await startModelRelay(process.env.OPENAI_API_KEY);
+ const confirmed=new Set();let confirmations=Promise.resolve();
+ model=await startModelRelay(process.env.OPENAI_API_KEY,"gpt-4.1-mini",async results=>{
+  confirmations=confirmations.then(async()=>{
+   for(const result of results){
+    let outcome;try{outcome=JSON.parse(result.content);}catch{continue;}
+    if(outcome?.state!=="completed"||outcome.evidence!=="verified"||typeof outcome.requestId!=="string"||confirmed.has(outcome.requestId))continue;
+    const acknowledgement=await transport.acknowledgeReceivedOutcome(outcome);
+    if(!acknowledgement.acknowledged)throw new Error("Native host delivery unconfirmed; no next model turn");
+    confirmed.add(outcome.requestId);
+   }
+  });await confirmations;
+ });
  docker(["network","create","--internal","--label","chio.task=required-agent-integrations",network]);networkCreated=true;
  docker(["volume","create","--label","chio.task=required-agent-integrations",volume]);
  docker(["run","--rm","--network","none","--read-only","--cap-drop","ALL","--cap-add","CHOWN","--user","0","--mount",`type=volume,src=${volume},dst=/state`,"--entrypoint","node",values.image,"-e","const f=require('fs');f.chmodSync('/state',0o700);f.chownSync('/state',1000,1000)"]);

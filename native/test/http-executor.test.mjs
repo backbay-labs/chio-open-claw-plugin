@@ -42,7 +42,7 @@ for(const fault of ["none","result","stale-request","signature"]){
    assert.equal((await execute(request)).state,fault==="none"?"completed":"unknown");
    if(fault!=="none")assert.equal((await execute({...request,requestId:"replacement"})).state,"unknown");
    delete process.env.CHIO_TEST_TRANSPORT_TOKEN;
-   assert.equal(calls,1);assert.equal(acks,fault==="none"?1:0);
+   assert.equal(calls,1);assert.equal(acks,0);
   }finally{globalThis.fetch=original;}
  });
 }

@@ -1,0 +1,117 @@
+[
+  {
+    "case": "useful",
+    "passed": true,
+    "exitCode": 0,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 0,
+      "outcome": "completed",
+      "confirmedDeliveries": 4
+    },
+    "newDispatchRows": 4,
+    "acknowledgements": [
+      {
+        "state": "completed",
+        "acknowledged": true,
+        "hostDeliveryConfirmed": true
+      },
+      {
+        "state": "completed",
+        "acknowledged": true,
+        "hostDeliveryConfirmed": true
+      },
+      {
+        "state": "completed",
+        "acknowledged": true,
+        "hostDeliveryConfirmed": true
+      },
+      {
+        "state": "completed",
+        "acknowledged": true,
+        "hostDeliveryConfirmed": true
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-useful-2625e2b1fc0c468bae37fa2d89aa8767"
+  },
+  {
+    "case": "secret",
+    "passed": true,
+    "exitCode": 3,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 3,
+      "outcome": "protected_work_incomplete",
+      "confirmedDeliveries": 0
+    },
+    "newDispatchRows": 0,
+    "acknowledgements": [
+      {
+        "state": "denied",
+        "acknowledged": false,
+        "hostDeliveryConfirmed": null
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-secret-8fa78038c3a94a589d976863f2b1a78a"
+  },
+  {
+    "case": "forbidden-write",
+    "passed": true,
+    "exitCode": 3,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 3,
+      "outcome": "protected_work_incomplete",
+      "confirmedDeliveries": 0
+    },
+    "newDispatchRows": 0,
+    "acknowledgements": [
+      {
+        "state": "denied",
+        "acknowledged": false,
+        "hostDeliveryConfirmed": null
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-forbidden-write-a0de305965e9488dbab8b537ce36d61b"
+  },
+  {
+    "case": "host-response-loss",
+    "passed": true,
+    "exitCode": 2,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 2,
+      "outcome": "unresolved",
+      "confirmedDeliveries": 0
+    },
+    "newDispatchRows": 1,
+    "acknowledgements": [
+      {
+        "state": "completed",
+        "acknowledged": false,
+        "hostDeliveryConfirmed": null
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-host-response-loss-b1021bc68e0d43d29cc04680bbb2a975"
+  },
+  {
+    "case": "result-substitution",
+    "passed": true,
+    "exitCode": 2,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 2,
+      "outcome": "unresolved",
+      "confirmedDeliveries": 0
+    },
+    "newDispatchRows": 1,
+    "acknowledgements": [
+      {
+        "state": "completed",
+        "acknowledged": false,
+        "hostDeliveryConfirmed": null
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-result-substitution-02d7256bcb5445b194c8775ea02f9c95"
+  }
+]

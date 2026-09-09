@@ -48,8 +48,8 @@ export function createHttpExecutor(options) {
         serverId: options.serverId, trustedSigners: options.trustedSigners, tool: original.tool, parameters: original.arguments, requestId: expected})) throw new Error("Receipt differs from the intended caller, request or resource owner");
       if (outcome.state === "completed") {
         if (!verifyReceivedOutcome(outcome, {...options, tool: original.tool, parameters: original.arguments, requestId: expected})) throw new Error("Received output differs from signed terminal result");
-        const ack = await rpc(`ack:${expected}`, "chio/acknowledge", outcome.delivery, signal);
-        if (ack.schema !== "chio.mcp.delivery-ack.v1" || ack.acknowledged !== true || ack.requestId !== expected || ack.receiptId !== outcome.receipt.id) throw new Error("Host delivery acknowledgement unresolved");
+        // Acknowledge in the trusted model relay after OpenClaw records and
+        // echoes this verified tool result, never inside the guest tool call.
       }
       return outcome;
     } catch {

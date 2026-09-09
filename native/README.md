@@ -25,7 +25,10 @@ functions, and rejects hosted tools, references and background requests.
 Host agent, session and tool-call identities bind each RPC. The gateway and
 kernel bind the operator principal, capability, resource and exact request.
 The guest verifies signed decisions and received result bytes before returning
-the delivery proof. Unknown outcomes are never automatically retried. Profile
+the full result to OpenClaw. The trusted model relay acknowledges only after
+OpenClaw includes that result in native tool history, before the next model
+turn. There is no guest acknowledgement RPC. Unknown outcomes are never
+automatically retried. Profile
 deletion cannot erase the operator journal or kernel fence.
 
 | Tool | Arguments |

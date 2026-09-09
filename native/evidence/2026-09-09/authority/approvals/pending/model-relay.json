@@ -1,0 +1,23 @@
+[
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200
+  },
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "callCaGxyPDx2O6nn9yzb4HUQ3QQ",
+        "content": "{\"state\":\"awaiting_approval\",\"evidence\":\"unverified\",\"requestId\":\"743fe899-0df0-48a8-a675-9050a81d1ee7:48df222f28deac0f36d4d41600c82cb6fa901fd4a622f60cd6c52eec0cb8dd89\",\"proposal\":{\"session_id\":\"73966dd21cdde684d9feb6846f00544c5cdf892f2327fef7eddee6ab3d44393e\",\"capability_id\":\"cap-01a08824-d280-7800-89ea-27ab0634a549\",\"request_id\":\"743fe899-0df0-48a8-a675-9050a81d1ee7:48df222f28deac0f36d4d41600c82cb6fa901fd4a622f60cd6c52eec0cb8dd89\",\"tool_name\":\"write_file\",\"arguments\":{\"content\":\"exact operator-approved effect\",\"path\":\"/workspace/openclaw-approved-9a5abbd30b5c.txt\"},\"purpose\":\"Qualify explicit exact local test approval\",\"ttl_seconds\":300},\"reason\":\"proposal retained without dispatch; operator decision and explicit chio_resume are required\"}"
+      }
+    ],
+    "status": 200
+  }
+]

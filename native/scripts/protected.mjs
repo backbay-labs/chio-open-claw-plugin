@@ -29,10 +29,12 @@ try{
   confirmations=confirmations.then(async()=>{
    for(const result of results){
     let outcome;try{outcome=JSON.parse(result.content);}catch{continue;}
-    if(outcome?.state!=="completed"||outcome.evidence!=="verified"||typeof outcome.requestId!=="string"||confirmed.has(outcome.requestId))continue;
+    if(outcome?.state!=="completed"||outcome.evidence!=="verified"||typeof outcome.requestId!=="string")continue;
+    const identity=createHash("sha256").update(JSON.stringify(outcome)).digest("hex");
+    if(confirmed.has(identity))continue;
     const acknowledgement=await transport.acknowledgeReceivedOutcome(outcome);
     if(!acknowledgement.acknowledged)throw new Error("Native host delivery unconfirmed; no next model turn");
-    confirmed.add(outcome.requestId);
+    confirmed.add(identity);
    }
   });await confirmations;
  });

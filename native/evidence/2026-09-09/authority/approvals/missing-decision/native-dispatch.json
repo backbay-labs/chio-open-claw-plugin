@@ -1,0 +1,24 @@
+{
+  "calls": [
+    {
+      "id": "call_PKf03rERICNNl5BC1guaUkTd",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "chio_resume",
+        "arguments": {
+          "requestId": "743fe899-0df0-48a8-a675-9050a81d1ee7:48df222f28deac0f36d4d41600c82cb6fa901fd4a622f60cd6c52eec0cb8dd89",
+          "tool": "write_file",
+          "arguments": {
+            "path": "/workspace/openclaw-approved-9a5abbd30b5c.txt",
+            "content": "exact operator-approved effect"
+          }
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_PKf03rERICNNl5BC1guaUkTd"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

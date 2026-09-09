@@ -1,0 +1,121 @@
+[
+  {
+    "case": "pending",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-native-history-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/openclaw-approvals-e749e78c1f774bd8bcd69a5abbd30b5c/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-9cf159b758ac40c3a78f3deb09c5188c",
+      "--image",
+      "sha256:98404ca86440e10066733abc421e8af82a40571f46d244c0dec14ea99d5a6d08",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-9a5abbd30b5c.txt\", \"content\": \"exact operator-approved effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "missing-decision",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-native-history-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/openclaw-approvals-e749e78c1f774bd8bcd69a5abbd30b5c/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-6e67373fc2064b1382c488de618ab5f2",
+      "--image",
+      "sha256:98404ca86440e10066733abc421e8af82a40571f46d244c0dec14ea99d5a6d08",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"743fe899-0df0-48a8-a675-9050a81d1ee7:48df222f28deac0f36d4d41600c82cb6fa901fd4a622f60cd6c52eec0cb8dd89\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-9a5abbd30b5c.txt\", \"content\": \"exact operator-approved effect\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "substituted-arguments",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-native-history-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/openclaw-approvals-e749e78c1f774bd8bcd69a5abbd30b5c/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-d19891347c2c4ff7a69947c3dbb2731a",
+      "--image",
+      "sha256:98404ca86440e10066733abc421e8af82a40571f46d244c0dec14ea99d5a6d08",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"743fe899-0df0-48a8-a675-9050a81d1ee7:48df222f28deac0f36d4d41600c82cb6fa901fd4a622f60cd6c52eec0cb8dd89\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-9a5abbd30b5c.txt\", \"content\": \"substituted forbidden effect\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "approved-resume",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-native-history-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/openclaw-approvals-e749e78c1f774bd8bcd69a5abbd30b5c/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-dc791487f60b46b0a693268e79bc1d86",
+      "--image",
+      "sha256:98404ca86440e10066733abc421e8af82a40571f46d244c0dec14ea99d5a6d08",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"743fe899-0df0-48a8-a675-9050a81d1ee7:48df222f28deac0f36d4d41600c82cb6fa901fd4a622f60cd6c52eec0cb8dd89\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-9a5abbd30b5c.txt\", \"content\": \"exact operator-approved effect\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "completed-replay",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-native-history-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/openclaw-approvals-e749e78c1f774bd8bcd69a5abbd30b5c/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-6c2f6355664f4232940d1341be9e9465",
+      "--image",
+      "sha256:98404ca86440e10066733abc421e8af82a40571f46d244c0dec14ea99d5a6d08",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"743fe899-0df0-48a8-a675-9050a81d1ee7:48df222f28deac0f36d4d41600c82cb6fa901fd4a622f60cd6c52eec0cb8dd89\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-9a5abbd30b5c.txt\", \"content\": \"exact operator-approved effect\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "pending-rejection",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-native-history-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/openclaw-approvals-e749e78c1f774bd8bcd69a5abbd30b5c/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-73dd360750fa4a27a1984606ceec65ee",
+      "--image",
+      "sha256:98404ca86440e10066733abc421e8af82a40571f46d244c0dec14ea99d5a6d08",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-rejected-9a5abbd30b5c.txt\", \"content\": \"must never appear\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "rejected-resume",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-native-history-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/openclaw-approvals-e749e78c1f774bd8bcd69a5abbd30b5c/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-0874f7329dae4a87a74002210e4083b7",
+      "--image",
+      "sha256:98404ca86440e10066733abc421e8af82a40571f46d244c0dec14ea99d5a6d08",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"743fe899-0df0-48a8-a675-9050a81d1ee7:c0437375fa7b420dfc2b06c685a462f7aa96782d28f71fbbd841c60303b884d7\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-rejected-9a5abbd30b5c.txt\", \"content\": \"must never appear\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  }
+]

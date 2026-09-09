@@ -1,0 +1,23 @@
+[
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200
+  },
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "callIx5MOE8dnEerBybJuIJv73db",
+        "content": "{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"743fe899-0df0-48a8-a675-9050a81d1ee7:48df222f28deac0f36d4d41600c82cb6fa901fd4a622f60cd6c52eec0cb8dd89\",\"reason\":\"operation identity conflicts with retained request\"}"
+      }
+    ],
+    "status": 200
+  }
+]

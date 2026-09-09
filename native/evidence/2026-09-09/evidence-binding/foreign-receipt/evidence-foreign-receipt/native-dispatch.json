@@ -1,0 +1,33 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_trkalY0dxlaUv0yePFoScVBK",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-inflight-ca09255396eb.txt",
+          "content": "authorized before in-flight revocation"
+        }
+      }
+    },
+    {
+      "id": "call_KxoXSuYffqYyxj6gxZYF8o2z",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-inflight-ca09255396eb.txt",
+          "content": "second legitimate effect requiring its own evidence"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_trkalY0dxlaUv0yePFoScVBK",
+    "call_KxoXSuYffqYyxj6gxZYF8o2z"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 2
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200
+  },
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call9Pr1ryZ80Ckd56WLx3R97G1K",
+        "content": "{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"c0bb4bf9-bcdc-42f7-8706-b39165868421:989e9ad2dd801138b432ea677846c640a9d50e5e1cfe58bdc5599ecf7883a087\",\"reason\":\"an unresolved operation fences this gateway; operator reconciliation required\"}"
+      }
+    ],
+    "status": 200
+  }
+]

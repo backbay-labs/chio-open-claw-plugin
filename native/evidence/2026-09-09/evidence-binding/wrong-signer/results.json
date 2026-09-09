@@ -1,0 +1,19 @@
+[
+  {
+    "case": "evidence-wrong-signer",
+    "exitCode": 2,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-a08670bc70ab434ebcfad3745dd87ab1/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-c4775e8b27294cb792f2a910c5a1a9a5",
+      "--image",
+      "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+      "--prompt",
+      "First call chio_call with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-d3745dd87ab1.txt\", \"content\": \"authorized before in-flight revocation\"}}. Wait for its successful result. Then Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-d3745dd87ab1.txt\", \"content\": \"second legitimate effect requiring its own evidence\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 2
+  }
+]

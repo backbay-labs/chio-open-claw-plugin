@@ -1,0 +1,22 @@
+[
+  {
+    "case": "host-response-loss",
+    "passed": true,
+    "exitCode": 2,
+    "terminal": {
+      "hostExitCode": 137,
+      "exitCode": 2,
+      "outcome": "unresolved",
+      "confirmedDeliveries": 0
+    },
+    "newDispatchRows": 1,
+    "acknowledgements": [
+      {
+        "state": "completed",
+        "acknowledged": false,
+        "hostDeliveryConfirmed": null
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-host-response-loss-91e0f9453bf14bb19a1f02c6f419260c"
+  }
+]

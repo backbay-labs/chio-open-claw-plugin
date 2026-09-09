@@ -1,0 +1,15 @@
+{
+  "name": "plugin-uninstall",
+  "binary": "openclaw",
+  "args": [
+    "plugins",
+    "uninstall",
+    "chio-kernel",
+    "--force"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "Plugin: Chio Kernel (chio-kernel)\nWill remove: config entry, install record, allowlist entry, load path\nUninstalled plugin \"chio-kernel\". Removed: config entry, install record, allowlist entry, load path.\nRestart the gateway to apply changes.\n",
+  "stderr": "Config write anomaly: /var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-runbook-7xR9rb/profile/openclaw.json (missing-meta-before-write)\n",
+  "elapsedMs": 2600
+}

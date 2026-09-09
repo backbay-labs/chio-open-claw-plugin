@@ -3,6 +3,12 @@
 Program status: **unaccepted**. Confidence in the bounded observations below is
 high. Completion of all document 19 gates remains unresolved.
 
+Concrete shared boundary blocker: the recorded runtime configuration contains a
+bootstrap bearer capable of initializing another kernel session and obtaining
+fresh authority. A host process must instead receive a credential restricted to
+its retained session. The shared kernel and bridge owners are implementing that
+change; the package and tests below do not inherit acceptance from it.
+
 ## Baseline
 
 - Owning repository: `chio-open-claw-plugin`, clean `main` at
@@ -84,17 +90,24 @@ Those paths remain disabled, not silently omitted from acceptance.
 
 | Gate | Current evidence | Open requirements |
 | --- | --- | --- |
-| I01 | Native tarball installed with empty npm cache and unreachable registry into disposable profile; actual OpenClaw discovery and activation; final kernel/image provenance retained | Final published combination and full install/removal matrix |
+| I01 | Native tarball installed with empty npm cache and unreachable registry into disposable profile; actual OpenClaw discovery and activation; final kernel/image provenance retained; generated profile refuses existing directory | Final published compatible combination and full installation matrix |
 | I02 | Actual containerized OpenClaw turns write/read/edit/list via real kernel; signed completed results; independent read-only Docker observer confirms file contents | Complete acceptance scope and non-deterministic model workflow qualification |
 | I03 | Forbidden kernel read/write produce signed denies and unchanged resource fixtures; native alternate tools suppressed; host uid 1000, no protected mount/socket, read-only root and config | Broader path tricks/resource fencing, complete configuration-tamper and network matrix |
 | I04 | Missing plugin refuses host startup; native tools stay unavailable; bridge/kernel unreachable before call yields not_dispatched with no file change | Live kernel termination/interruption/timeout between calls and dispatch/commit cuts, malformed responses, hook crash/timeout complete matrix |
 | I05 | Wrong configured capability rejected before dispatch; kernel-issued valid authority enables useful calls | Expiry, revocation, wrong principal/resource/session, escalation, aggregate budgets, pending/rejected approval, restoration |
 | I06 | Bridge verifies pinned signer, authority, request and completed output; raw signed evidence retained | Real host substitution/forgery/malformed evidence tests; separate OpenClaw session authority proof |
 | I07 | Restart/resume reads work; a fresh host session cannot bypass a pending authority fence; explicit operator reconciliation recorded after independently observed denial; 11 journal/caller/result tests pass | Real-host cancellation, unknown-outcome reconciliation/restart and resource handoff fencing |
-| I08 | Offline candidate package and new-profile generator implemented; installation procedure exercised | Published artifacts, qualified upgrade/recovery/removal and measured overhead across required workflows |
+| I08 | Offline candidate package and new-profile generator implemented; actual CLI removal preserves restricted tool policy and refuses a new session | Published artifacts, qualified upgrade/recovery and measured overhead across required workflows |
 
 Required missing cases are unresolved. Unit fixtures and the deterministic local
 model are explicitly identified. No evidence from other hosts closes a gate here.
+
+`candidate-lifecycle` records nine actual CLI steps including clean offline
+installation, profile overwrite refusal, discovery, validation and removal.
+It uses no valid authority or model provider. `authority-bootstrap-blocker.json`
+records a failed fresh-session preparation, before any protected host tool call.
+The revocation and 64-invocation budget scenarios are implemented in the host
+runner but have not executed successfully and remain required unresolved cases.
 
 ## Evidence interpretation
 

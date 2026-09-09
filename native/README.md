@@ -4,6 +4,11 @@ Status: implementation candidate, not an accepted or published integration.
 The parent repository's `@chio/openclaw` chat gateway remains a separate product.
 This package registers `chio_call` inside the actual OpenClaw agent runtime.
 
+The recorded bridge candidate still places a bootstrap bearer in the runtime.
+That bearer can create another kernel session and fresh capability. Qualification
+is blocked until runtime credentials are restricted to the issued session; do
+not promote this candidate as a complete mediation boundary.
+
 The pinned host under test is OpenClaw `2026.5.20` (`e510042`), using its PI
 runtime. Native tools, other plugins, direct MCP servers, channels, automation,
 delegation, browser access, skill loading and administrative chat commands are
@@ -178,6 +183,7 @@ in place; the host must refuse new tool sessions.
 
 ```sh
 npm test
+node test/runbook.mjs ./artifacts/chio-openclaw-kernel-0.1.0.tgz
 node test/real-host.mjs
 CHIO_KERNEL_CONFIG=/operator/private/openclaw-gateway.json \
   CHIO_LIVE_ONLY=1 node test/real-host.mjs
@@ -193,3 +199,12 @@ does not claim model quality, independent adoption, or completion of I01-I08.
 The private live configuration contains `execution` (bridge options) and `tools`
 (resource descriptors). Its bearer is passed only through an environment
 variable, never copied into the retained evidence.
+
+Dedicated authority cases use `CHIO_AUTHORITY_CASE=revoke` or `budget` with
+`CHIO_OPERATOR_HELPER` and `CHIO_OPERATOR_FILE` identifying the operator's
+per-capability control tool. Revocation also requires
+`CHIO_RESTORE_KERNEL_CONFIG` for an independently issued fresh grant. Use a new
+capability for each case. The budget case assumes exactly 64 aggregate allowed
+invocations and attempts 65 sequential writes through one actual host turn.
+These cases are implemented but remain unresolved while fresh authority
+preparation fails; their code alone is not passing evidence.

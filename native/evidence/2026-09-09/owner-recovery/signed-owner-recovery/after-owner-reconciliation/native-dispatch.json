@@ -1,0 +1,20 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_BMjzg5ywxKed0QiqGREp5An2",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "read_text_file",
+        "arguments": {
+          "path": "/workspace/openclaw-inflight-8895df92b4f4.txt"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_BMjzg5ywxKed0QiqGREp5An2"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

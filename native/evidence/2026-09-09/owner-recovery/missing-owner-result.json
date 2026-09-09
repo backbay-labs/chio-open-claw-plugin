@@ -1,0 +1,11 @@
+{
+  "host": "openclaw",
+  "priorNativeEvidence": "/tmp/chio-openclaw-kernel-malformed-20260909",
+  "requestId": "8f954acc-2749-438b-bad2-3a29cee53ab0:47145998af1f7475025e13ef0d18b6f243d558f8a4f53462dff26e372a43699c",
+  "exitCode": 1,
+  "reason": "no retained signed completion for this original unknown operation",
+  "originalJournalSha256": "a36f1f23e1d69487ef881d18913f834c6ccd42a7ba70be7bcb22963da1a747bc",
+  "journalUnchanged": true,
+  "outputCreated": false,
+  "protectedDispatch": false
+}

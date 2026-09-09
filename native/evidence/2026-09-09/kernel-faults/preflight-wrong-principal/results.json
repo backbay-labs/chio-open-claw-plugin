@@ -1,0 +1,19 @@
+[
+  {
+    "case": "wrong-principal",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-cfc4b052592f418f9ccbd1a5b999b4cb/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-08502b36451c4539a318a3482ab38ac3",
+      "--image",
+      "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-preflight-forbidden.txt\", \"content\": \"must never dispatch with invalid authority\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "schema": "chio.openclaw.protected-run.v1",
+  "image": "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+  "network": "chio-required-openclaw-5f16f42d-f4e6-42d5-92e3-a4d350359f90",
+  "relayName": "chio-openclaw-relay-5f16f42d-f4e6-42d5-92e3-a4d350359f90",
+  "agentName": "chio-openclaw-agent-5f16f42d-f4e6-42d5-92e3-a4d350359f90",
+  "volume": "chio-required-openclaw-state-5f16f42d-f4e6-42d5-92e3-a4d350359f90",
+  "controlVolume": "chio-required-openclaw-control-5f16f42d-f4e6-42d5-92e3-a4d350359f90",
+  "sessionId": "5f16f42d-f4e6-42d5-92e3-a4d350359f90",
+  "gatewayConfigSha256": "44cac264427a3b0500ab374816096018fa7551eb629b8c40decac1c6a61f3ff5",
+  "kernelAuthority": {
+    "sessionId": "4094cb870babc74554c0399948b5fd241bcdf879b642d821d8558cf6d97c3486",
+    "capabilityId": "cap-01a08856-09ff-7703-b73f-8d4d14e1c3f7",
+    "serverId": "fs"
+  },
+  "acceptance": "unresolved"
+}

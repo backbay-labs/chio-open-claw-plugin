@@ -1,0 +1,158 @@
+{
+  "payloads": [
+    {
+      "text": "I attempted to read the file /workspace/approved.txt, but the result is unverified due to a gateway transport or evidence delivery failure. I cannot report its exact content safely. Would you like me to try reading another file or assist you with something else?",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 4738,
+    "agentMeta": {
+      "sessionId": "9f428b02-5d05-4466-9dff-797a8d78d425",
+      "sessionFile": "/state/openclaw/agents/main/sessions/9f428b02-5d05-4466-9dff-797a8d78d425.jsonl",
+      "provider": "chio-model",
+      "model": "gpt-4.1-mini",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "lastCallUsage": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0
+      }
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1788993782396,
+      "sessionId": "9f428b02-5d05-4466-9dff-797a8d78d425",
+      "sessionKey": "agent:main:explicit:9f428b02-5d05-4466-9dff-797a8d78d425",
+      "provider": "chio-model",
+      "model": "gpt-4.1-mini",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 5952,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 5407
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 160,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "Use chio_call with tool read_text_file exactly once for /workspace/approved.txt. Report its exact content. Stop on any unverified result. Do not write anything.",
+    "finalAssistantVisibleText": "I attempted to read the file /workspace/approved.txt, but the result is unverified due to a gateway transport or evidence delivery failure. I cannot report its exact content safely. Would you like me to try reading another file or assist you with something else?",
+    "finalAssistantRawText": "I attempted to read the file /workspace/approved.txt, but the result is unverified due to a gateway transport or evidence delivery failure. I cannot report its exact content safely. Would you like me to try reading another file or assist you with something else?",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "chio-model",
+      "winnerModel": "gpt-4.1-mini",
+      "attempts": [
+        {
+          "provider": "chio-model",
+          "model": "gpt-4.1-mini",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 1,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

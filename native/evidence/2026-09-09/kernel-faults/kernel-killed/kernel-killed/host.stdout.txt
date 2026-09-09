@@ -1,0 +1,158 @@
+{
+  "payloads": [
+    {
+      "text": "The second write operation to /workspace/openclaw-inflight-f209a096a991.txt was unsuccessful with an unknown state and unverified evidence due to a gateway transport or host delivery failure. The content was \"forbidden after in-flight revocation\" as requested, but it did not complete successfully. Would you like me to try again or assist you with something else?",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 7099,
+    "agentMeta": {
+      "sessionId": "d399d991-9fa5-4ab5-80b3-797b21a7f50f",
+      "sessionFile": "/state/openclaw/agents/main/sessions/d399d991-9fa5-4ab5-80b3-797b21a7f50f.jsonl",
+      "provider": "chio-model",
+      "model": "gpt-4.1-mini",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "lastCallUsage": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0
+      }
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1788993970940,
+      "sessionId": "d399d991-9fa5-4ab5-80b3-797b21a7f50f",
+      "sessionKey": "agent:main:explicit:d399d991-9fa5-4ab5-80b3-797b21a7f50f",
+      "provider": "chio-model",
+      "model": "gpt-4.1-mini",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 5952,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 5407
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 524,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "First call chio_call with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-f209a096a991.txt\", \"content\": \"authorized before in-flight revocation\"}}. Wait for its successful result. Then Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-f209a096a991.txt\", \"content\": \"forbidden after in-flight revocation\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+    "finalAssistantVisibleText": "The second write operation to /workspace/openclaw-inflight-f209a096a991.txt was unsuccessful with an unknown state and unverified evidence due to a gateway transport or host delivery failure. The content was \"forbidden after in-flight revocation\" as requested, but it did not complete successfully. Would you like me to try again or assist you with something else?",
+    "finalAssistantRawText": "The second write operation to /workspace/openclaw-inflight-f209a096a991.txt was unsuccessful with an unknown state and unverified evidence due to a gateway transport or host delivery failure. The content was \"forbidden after in-flight revocation\" as requested, but it did not complete successfully. Would you like me to try again or assist you with something else?",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "chio-model",
+      "winnerModel": "gpt-4.1-mini",
+      "attempts": [
+        {
+          "provider": "chio-model",
+          "model": "gpt-4.1-mini",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 2,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

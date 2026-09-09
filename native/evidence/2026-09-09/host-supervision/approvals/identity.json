@@ -1,0 +1,13 @@
+{
+  "host": "openclaw",
+  "suite": "approvals",
+  "cases": 7,
+  "skips": 0,
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "resourceImage": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "hostImage": "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+  "packageDirectory": "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/bridge-host-delivery-approval-20260909/openclaw-approvals-74eca7be57b24d4c9c1ba91bf4866b40/gateway.json",
+  "configurationSha256": "5121511b3547d08ad81a64f75976b2456f98f1fdf8d89f0c27d52e608b111c50",
+  "claim": "bounded real-host authority and explicit launcher refusal cases; full acceptance remains open"
+}

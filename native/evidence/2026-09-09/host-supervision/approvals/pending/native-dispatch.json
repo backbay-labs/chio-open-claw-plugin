@@ -1,0 +1,21 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_1NPMCo2xwLb05TSbZRo9i3IW",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-approved-a91bf4866b40.txt",
+          "content": "exact operator-approved effect"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_1NPMCo2xwLb05TSbZRo9i3IW"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

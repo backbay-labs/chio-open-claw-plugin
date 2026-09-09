@@ -1,0 +1,23 @@
+[
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200
+  },
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call4mXaNSbmeScaXKvkp2w7ZJ1r",
+        "content": "{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"04572153-ca13-4750-8e99-c8e76ef50ab7:73e269a9aeb04736a40210c9597d56cbc7da4b4bbf2e7cbe390aab0136d9824f\",\"reason\":\"operator denied the proposal before dispatch\"}"
+      }
+    ],
+    "status": 200
+  }
+]

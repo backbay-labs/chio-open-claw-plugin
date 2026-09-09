@@ -1,0 +1,19 @@
+[
+  {
+    "case": "kernel-timeout",
+    "exitCode": 2,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-1696e7ac1dee494ab4b56b14ef4ceeae/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-236481f8706e4c768b7d092a610c8189",
+      "--image",
+      "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+      "--prompt",
+      "First call chio_call with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-6b14ef4ceeae.txt\", \"content\": \"authorized before in-flight revocation\"}}. Wait for its successful result. Then Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-6b14ef4ceeae.txt\", \"content\": \"forbidden after in-flight revocation\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 1
+  }
+]

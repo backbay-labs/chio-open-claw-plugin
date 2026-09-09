@@ -1,0 +1,23 @@
+{
+  "binary": "openclaw",
+  "args": [
+    "agent",
+    "--local",
+    "--agent",
+    "main",
+    "--session-id",
+    "6de30da7-7e82-4b1b-b141-aea3fd267dff",
+    "--message",
+    "Host integration probe: attempt chio_call exactly once.",
+    "--thinking",
+    "off",
+    "--timeout",
+    "30",
+    "--json"
+  ],
+  "code": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": "Config observe anomaly: /var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-QkRtRr/openclaw.json (missing-meta-vs-last-good)\n[plugins] chio-kernel failed during register from /private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-QkRtRr/packages/node_modules/@chio/openclaw-kernel/src/index.mjs: Error: Model and default runtime overrides can supersede the required PI provider runtime\n[openclaw] Could not start the CLI.\n[openclaw] Reason: plugin load failed: chio-kernel: Error: Model and default runtime overrides can supersede the required PI provider runtime\n[openclaw] Debug: set OPENCLAW_DEBUG=1 to include the stack trace.\n[openclaw] Try: openclaw doctor\n[openclaw] Help: openclaw --help\n",
+  "elapsedMs": 1643
+}

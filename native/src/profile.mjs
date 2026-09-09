@@ -36,9 +36,16 @@ export function assertRestrictedProfile(config) {
       Object.values(config?.models?.providers ?? {}).some((provider) => provider.agentRuntime?.id !== "pi")) {
     throw new Error("Chio restricted mode requires isolated bootstrap, no skills or heartbeat, only the Chio plugin, and explicit PI model runtime");
   }
+  const defaults = config?.agents?.defaults;
+  if (defaults?.agentRuntime !== undefined || defaults?.embeddedHarness !== undefined ||
+      Object.values(defaults?.models ?? {}).some((model) => model?.agentRuntime !== undefined) ||
+      Object.values(config?.models?.providers ?? {}).some((provider) =>
+        (provider.models ?? []).some((model) => model?.agentRuntime !== undefined))) {
+    throw new Error("Model and default runtime overrides can supersede the required PI provider runtime");
+  }
   for (const agent of config?.agents?.list ?? []) {
-    if (agent.tools || agent.runtime || agent.heartbeat || agent.subagents) {
-      throw new Error("Per-agent tool/runtime overrides are not supported by the Chio restricted profile");
+    if (Object.keys(agent).some((key) => !["id", "default", "name", "description"].includes(key))) {
+      throw new Error("Per-agent operational overrides are not supported by the Chio restricted profile");
     }
   }
 }

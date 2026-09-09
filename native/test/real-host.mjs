@@ -134,6 +134,7 @@ async function runCase(name, tool, args, options = {}) {
   const resourceBefore = resourceRequests;
   const cfg = config(options.pluginEnabled ?? true);
   if (options.executionOverride) Object.assign(cfg.plugins.entries["chio-kernel"].config, options.executionOverride);
+  options.mutateConfig?.(cfg);
   if (options.timeoutSeconds) cfg.agents.defaults.timeoutSeconds = options.timeoutSeconds;
   if (options.positiveControl) {
     cfg.plugins.enabled = false;
@@ -304,7 +305,11 @@ try {
     assert.equal(after.secret, before.secret);
     }
   }
-  if (process.env.CHIO_LIVE_ONLY !== "1") {
+  if (process.env.CHIO_PROFILE_ONLY === "1") {
+    await runCase("restricted-profile-callable", "chio_call", { tool: "read_text_file", arguments: { path: "/workspace/probe.txt" } }, { expectedState: "not_dispatched" });
+    await runCase("model-runtime-override-refused", "chio_call", { tool: "write_file", arguments: { path: "/workspace/probe.txt" } }, { expectPluginFailure: true, mutateConfig: (cfg) => { cfg.agents.defaults.models = { "chio-local/chio-test-model": { agentRuntime: { id: "codex" } } }; } });
+    await runCase("agent-skills-override-refused", "chio_call", { tool: "write_file", arguments: { path: "/workspace/probe.txt" } }, { expectPluginFailure: true, mutateConfig: (cfg) => { cfg.agents.list = [{ id: "main", skills: ["unapproved"] }]; } });
+  } else if (process.env.CHIO_LIVE_ONLY !== "1") {
   const controlMarker = join(workspace, "positive-control.txt");
   await runCase("native-write-positive-control", "write", { path: controlMarker, content: "OBSERVABLE-CONTROL" }, { positiveControl: true, marker: controlMarker });
   await runCase("native-read-positive-control", "read", { path: controlMarker }, { positiveControl: true, readSecret: "OBSERVABLE-CONTROL" });

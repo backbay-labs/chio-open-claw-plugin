@@ -26,8 +26,10 @@ change; the package and tests below do not inherit acceptance from it.
 - Native host test environment: macOS arm64, Node `25.5.0`. Final isolated host:
   Linux arm64, Node `22.23.1`, image
   `sha256:39fed560462bb68bf7f091d37f63a408a11bad9c1444e31cda88d31181fcda9e`.
-  Runtime source hashes were independently extracted from that image and match
-  the current `src/` files. Exact OS releases and cases are retained in evidence.
+  Runtime source hashes were independently extracted from that image and are
+  recorded with its tested source. The later runtime-profile repair changes
+  `src/profile.mjs`; it requires a new container qualification. Exact OS releases
+  and cases are retained in evidence.
 - Bridge candidate: `@chio/bridge@0.3.0`, bundled with SDK
   `@chio-protocol/sdk@0.1.1-rc.1`; exact archive hash is retained with the vendor
   package and release evidence. Final bridge SHA-256:
@@ -96,7 +98,7 @@ Those paths remain disabled, not silently omitted from acceptance.
 | I04 | Missing plugin refuses host startup; native tools stay unavailable; bridge/kernel unreachable before call yields not_dispatched with no file change | Live kernel termination/interruption/timeout between calls and dispatch/commit cuts, malformed responses, hook crash/timeout complete matrix |
 | I05 | Wrong configured capability rejected before dispatch; kernel-issued valid authority enables useful calls | Expiry, revocation, wrong principal/resource/session, escalation, aggregate budgets, pending/rejected approval, restoration |
 | I06 | Bridge verifies pinned signer, authority, request and completed output; raw signed evidence retained | Real host substitution/forgery/malformed evidence tests; separate OpenClaw session authority proof |
-| I07 | Restart/resume reads work; a fresh host session cannot bypass a pending authority fence; explicit operator reconciliation recorded after independently observed denial; 11 journal/caller/result tests pass | Real-host cancellation, unknown-outcome reconciliation/restart and resource handoff fencing |
+| I07 | Restart/resume reads work; a fresh host session cannot bypass a pending authority fence; explicit operator reconciliation recorded after independently observed denial; 12 journal/caller/result/profile tests pass | Real-host cancellation, unknown-outcome reconciliation/restart and resource handoff fencing |
 | I08 | Offline candidate package and new-profile generator implemented; actual CLI removal preserves restricted tool policy and refuses a new session | Published artifacts, qualified upgrade/recovery and measured overhead across required workflows |
 
 Required missing cases are unresolved. Unit fixtures and the deterministic local
@@ -108,6 +110,15 @@ It uses no valid authority or model provider. `authority-bootstrap-blocker.json`
 records a failed fresh-session preparation, before any protected host tool call.
 The revocation and 64-invocation budget scenarios are implemented in the host
 runner but have not executed successfully and remain required unresolved cases.
+
+Installed-host resolver inspection demonstrated that an exact model runtime
+override superseded the required PI provider while the profile validator
+accepted it. `runtime-policy-override-finding.json` retains that reproduction.
+The repair rejects runtime overrides and per-agent operational/skill settings.
+`runtime-profile-repair` records three actual host cases: the ordinary restricted
+tool remains callable, while a Codex runtime override and per-agent skill
+override each fail before a model request. This is host configuration evidence,
+not a new real-kernel acceptance run.
 
 ## Evidence interpretation
 

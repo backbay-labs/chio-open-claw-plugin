@@ -1,0 +1,57 @@
+{
+  "status": "partial-host-contract-evidence-only",
+  "accepted": false,
+  "hostVersion": "OpenClaw 2026.5.20 (e510042)",
+  "orchestrator": {
+    "platform": "darwin",
+    "release": "25.4.0",
+    "arch": "arm64",
+    "node": "v25.5.0"
+  },
+  "containerMode": false,
+  "package": {
+    "name": "@chio/openclaw-kernel",
+    "version": "0.1.0",
+    "artifact": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-QkRtRr/chio-openclaw-kernel-0.1.0.tgz",
+    "sha256": "17231461be416019f9eb10742795e02f2b8c533b68f5bd609aa812563f701dab",
+    "bundled": [
+      "@chio/bridge"
+    ]
+  },
+  "artifactSha256": "17231461be416019f9eb10742795e02f2b8c533b68f5bd609aa812563f701dab",
+  "runDir": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-QkRtRr",
+  "cases": [
+    {
+      "name": "restricted-profile-callable",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "model-runtime-override-refused",
+      "exitCode": 1,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": []
+    },
+    {
+      "name": "agent-skills-override-refused",
+      "exitCode": 1,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": []
+    }
+  ],
+  "unresolved": [
+    "Complete I01-I08 authority, failure, isolation and lifecycle matrix",
+    "Published compatible versions"
+  ]
+}

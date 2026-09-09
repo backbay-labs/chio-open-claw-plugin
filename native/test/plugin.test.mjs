@@ -4,7 +4,7 @@ import { mkdtemp, readFile, readdir, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { createNativePlugin } from "../src/plugin.mjs";
-import { restrictedTools } from "../src/profile.mjs";
+import { restrictedTools, assertRestrictedProfile } from "../src/profile.mjs";
 
 export function profile() {
   return {
@@ -102,6 +102,27 @@ test("configuration changes and non-Chio hooks block before dispatch", async (t)
   assert.equal(f.hooks[0][1]({ toolName: "chio_call" }), undefined);
   f.config.tools.elevated.enabled = true;
   await assert.rejects(f.tool.execute("call", { tool: "read_file", arguments: {} }), /restricted native/);
+});
+
+test("runtime precedence and per-agent skills cannot bypass the pinned provider profile", () => {
+  const base = profile();
+  base.models = { providers: { local: { agentRuntime: { id: "pi" }, models: [{ id: "test" }] } } };
+  assert.doesNotThrow(() => assertRestrictedProfile(base));
+  const mutations = [
+    (config) => { config.agents.defaults.models = { "local/test": { agentRuntime: { id: "codex" } } }; },
+    (config) => { config.agents.defaults.models = { "local/*": { agentRuntime: { id: "codex" } } }; },
+    (config) => { config.models.providers.local.models[0].agentRuntime = { id: "codex" }; },
+    (config) => { config.agents.defaults.agentRuntime = { id: "codex" }; },
+    (config) => { config.agents.defaults.embeddedHarness = { runtime: "codex" }; },
+    (config) => { config.agents.list = [{ id: "main", agentRuntime: { id: "codex" } }]; },
+    (config) => { config.agents.list = [{ id: "main", skills: ["unapproved"] }]; },
+    (config) => { config.agents.list = [{ id: "main", models: { "local/test": { agentRuntime: { id: "codex" } } } }]; },
+  ];
+  for (const mutate of mutations) {
+    const config = structuredClone(base);
+    mutate(config);
+    assert.throws(() => assertRestrictedProfile(config), /overrides/);
+  }
 });
 
 test("signed post-effect denial and unverified success cannot release the session fence", async (t) => {

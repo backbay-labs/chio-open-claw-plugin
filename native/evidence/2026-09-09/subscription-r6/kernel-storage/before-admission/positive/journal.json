@@ -1,0 +1,118 @@
+[
+  {
+    "requestId": "storage-fault-openclaw-r6-before-admission:c99d41949ca9bc97406e634b59ee962c626fc9faf3a94569f632ece3230a4768",
+    "digest": "8472265e7b1d388fdc85c6bc3da625530c29f16801c9ad3ba798dc181920e24f",
+    "state": "completed",
+    "outcome": {
+      "state": "completed",
+      "evidence": "verified",
+      "requestId": "storage-fault-openclaw-r6-before-admission:c99d41949ca9bc97406e634b59ee962c626fc9faf3a94569f632ece3230a4768",
+      "receipt": {
+        "action": {
+          "parameter_hash": "8e3ce5c349f0a67eb6bc9db987ff1fa278d7be6d4ef3ad398d712a8ec857c4cd",
+          "parameters": {
+            "content": "OpenClaw storage positive before-admission",
+            "path": "/workspace/positive.txt"
+          }
+        },
+        "boundary_class": "prevent",
+        "capability_id": "cap-01a0894f-6f2f-78e2-987d-2491f3e06961",
+        "content_hash": "d6a9173c3894c4cdfedaffa6b86705e9f7b5405fa76dd50e12475f99bebcfcca",
+        "decision": {
+          "verdict": "allow"
+        },
+        "id": "97803ee4cce5e2e0e45018fe04e77130d352875e7841e30ba840b809dfc3f884",
+        "kernel_key": "3e51f4e0413360d555cb4e6cf4b9d9366f1d8285546bf1d00cfb957be006a81c",
+        "metadata": {
+          "admission_operation": {
+            "compensation_status": "not_compensated",
+            "coordinator_lease_epoch": 2,
+            "coordinator_lease_id": "01a0894f-68bc-78c2-84e0-a2bf9e78fb0c",
+            "operation_id": "23e0f1936fb31da14902da13e6871b01e9338dbadb72461f362ffd3561a28741",
+            "projected_dispatch_state": "terminal",
+            "projected_operation_version": 8,
+            "projected_state": "completed",
+            "request_binding_hash": "9c7f97b9f77ad2d1fdd9fd09f98812942ea16010d9994e1919de82d65f8b3a2a",
+            "request_id": "storage-fault-openclaw-r6-before-admission:c99d41949ca9bc97406e634b59ee962c626fc9faf3a94569f632ece3230a4768",
+            "request_namespace_digest": "b6324bbb66f114bc7cb466c21567793a12bf67358babd51403dff80574f2b836",
+            "retained_dispatch_commit": {
+              "committed_version": 6,
+              "coordinator_lease_epoch": 2,
+              "coordinator_lease_id": "01a0894f-68bc-78c2-84e0-a2bf9e78fb0c",
+              "provider_attempt": {
+                "attempt_id": "attempt:23e0f1936fb31da14902da13e6871b01e9338dbadb72461f362ffd3561a28741",
+                "operation_id": "23e0f1936fb31da14902da13e6871b01e9338dbadb72461f362ffd3561a28741",
+                "transport_id": "kernel-tool-server:fs",
+                "transport_key_epoch": 2
+              },
+              "store_fence": {
+                "lease_id": "01a0894f-68bc-78c2-84e0-a2bf9e78fb0c",
+                "owner_epoch": 2,
+                "store_uuid": "01a0894f-613a-7672-88ef-e733f4cac71b"
+              }
+            },
+            "schema": "chio.admission-receipt.v1",
+            "store_fence": {
+              "lease_id": "01a0894f-68bc-78c2-84e0-a2bf9e78fb0c",
+              "owner_epoch": 2,
+              "store_uuid": "01a0894f-613a-7672-88ef-e733f4cac71b"
+            },
+            "tool_outcome_id": "ed3d87d9a5436d522fc4f6aefec1de3f2be18605ff7aa825ffbe8fc3af0eb12d",
+            "tool_outcome_version": 2,
+            "trusted_time_unix_ms": 1789010107100
+          },
+          "attribution": {
+            "delegation_depth": 0,
+            "grant_index": 0,
+            "issuer_key": "7ef60f6113c6ecf322c15cc4220687d254b0a45f9dd4b0884c3ff5fccc198e26",
+            "subject_key": "4facfd6749b8a4ed676dfcb88918b2e75436e584785fa9402665bad469eabc43"
+          },
+          "chio_receipt_signing_nonce": "rcpt-01a0894f-dba1-71d0-993e-cae4302d369e",
+          "receipt_context": {
+            "request_id": "storage-fault-openclaw-r6-before-admission:c99d41949ca9bc97406e634b59ee962c626fc9faf3a94569f632ece3230a4768"
+          }
+        },
+        "policy_hash": "057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e",
+        "receipt_kind": "mediated_decision",
+        "redaction_mode": "none",
+        "signature": "f778d6df08864d1d20ca004a7c95f854004f8663f477fcef0daebcfd2e1a6aab1538e4895f45613d703ff8393efa2e1a04d836dae3eb943bd62d0ffd7c41b00e",
+        "timestamp": 1789010107,
+        "tool_name": "write_file",
+        "tool_origin": "caller_executed",
+        "tool_server": "fs",
+        "trust_level": "mediated"
+      },
+      "result": {
+        "content": [
+          {
+            "text": "Successfully wrote to /workspace/positive.txt",
+            "type": "text"
+          }
+        ],
+        "isError": false,
+        "structuredContent": {
+          "content": "Successfully wrote to /workspace/positive.txt"
+        }
+      },
+      "delivery": {
+        "acknowledgement": "gppUTCPLf1Ya22OL-fwEiqKAXZcQx58Ng3vyN81eaZ4",
+        "receiptId": "97803ee4cce5e2e0e45018fe04e77130d352875e7841e30ba840b809dfc3f884",
+        "requestHash": "a0355067ef01e2e444f12eb375e7595f1307c2b7ab5df4ff824071a88b60663b",
+        "requestId": "storage-fault-openclaw-r6-before-admission:c99d41949ca9bc97406e634b59ee962c626fc9faf3a94569f632ece3230a4768",
+        "resultHash": "d6a9173c3894c4cdfedaffa6b86705e9f7b5405fa76dd50e12475f99bebcfcca",
+        "schema": "chio.mcp.delivery-ack.v1"
+      }
+    },
+    "acknowledged": true,
+    "hostDeliveryRequired": true,
+    "request": {
+      "tool": "write_file",
+      "arguments": {
+        "path": "/workspace/positive.txt",
+        "content": "OpenClaw storage positive before-admission"
+      },
+      "requestId": "storage-fault-openclaw-r6-before-admission:c99d41949ca9bc97406e634b59ee962c626fc9faf3a94569f632ece3230a4768"
+    },
+    "hostDeliveryConfirmed": true
+  }
+]

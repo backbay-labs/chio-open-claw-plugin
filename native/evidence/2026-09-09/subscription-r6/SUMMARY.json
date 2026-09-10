@@ -71,11 +71,18 @@
       "liveModel": false,
       "record": "parallel-native-fixture/disabled-tools-r2/summary.json",
       "priorFixtureFailurePreserved": true
+    },
+    "actualKernelStorageFaults": {
+      "passed": 3,
+      "realNativeInvocations": 12,
+      "storedEd25519SignaturesVerified": 51,
+      "record": "kernel-storage/state-verification.json",
+      "originalAuthorityRetained": true,
+      "newNativeIdRetriesNotExactKernelIdReplay": true
     }
   },
   "remainingProgramGates": [
     "gated publication of compatible artifacts",
-    "distinct kernel receipt storage and signing fault qualification",
     "final six-host program acceptance"
   ],
   "unmeasured": [
@@ -85,7 +92,10 @@
   "automaticRetriesOfUnknownEffects": 0,
   "ownerDisposition": {
     "58498": "running, released",
-    "58618": "running, released"
+    "58618": "running, released",
+    "58523": "running, released",
+    "58524": "running, released",
+    "58525": "running, released"
   },
   "preserved": [
     "normal host profiles",

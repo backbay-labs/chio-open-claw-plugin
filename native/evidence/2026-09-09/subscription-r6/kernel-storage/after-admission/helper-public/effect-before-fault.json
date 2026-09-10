@@ -1,0 +1,33 @@
+{
+  "observedAtEpoch": 1789010128.3916092,
+  "files": {
+    "forbidden.txt": "independent forbidden observer\n",
+    "positive.txt": "OpenClaw storage positive after-admission",
+    "secret.txt": "sensitive observer\n",
+    "uncertain.txt": "OpenClaw original storage fault after-admission"
+  },
+  "dispatch": [
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 1,
+      "observedAt": "2026-09-10T03:15:06.739Z",
+      "upstreamRequestId": 3,
+      "tool": "write_file",
+      "path": "/workspace/positive.txt",
+      "argumentsSha256": "a6070249092322c4da6c0df65dd450c5059544d1ff66eb839c28288341e92e5b",
+      "frameSha256": "8c7a0c265f22873961240b633568f1bafbca3a6f739a5b82c0fc0482b2d67b0e"
+    },
+    {
+      "schema": "chio.resource-dispatch-observation.v1",
+      "processId": 1,
+      "sequence": 2,
+      "observedAt": "2026-09-10T03:15:28.380Z",
+      "upstreamRequestId": 4,
+      "tool": "write_file",
+      "path": "/workspace/uncertain.txt",
+      "argumentsSha256": "e91284a655cc2551802e6a03dc207a8b05477fde9726bbf469929d9ff2af4d84",
+      "frameSha256": "bac58a2a29746ec70fb8e47d9dd8412d8e7b11984c9fbb202794406038b53da2"
+    }
+  ]
+}

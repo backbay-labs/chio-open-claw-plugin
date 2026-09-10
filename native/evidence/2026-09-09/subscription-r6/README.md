@@ -41,6 +41,7 @@ API billing is a separate existing mode and was not newly qualified here.
 | [Main matrix](matrix/runs.json) | 26 suite invocations pass, including approvals, before/during-call revocation, kernel absence/kill/malformed/timeout, credential expiry, caller/session/resource mismatches, escalation, evidence substitution, explicit recovery and concurrent owner refusal |
 | [Aggregate budget](budget/results.json) | Same authority writes, edits and reads with three dispatches; fourth list request denied with zero additional dispatch; session rollover does not refill budget |
 | [Actual capability expiry](expired-capability) | Short-lived kernel capability verified against owner database, then expired before native dispatch; distinct from expired bearer credential |
+| [Actual kernel storage faults](kernel-storage/README.md) | Three actual SQLite lock cases pass: before admission: zero effects; post-effect admission/receipt: one effect each; original-authority retries and same-owner restart remain fenced; 51 persisted signatures verified |
 | [Native plugin timeout](native-plugin-timeout/timeout-proof.json) | Actual 40-second native HTTP timeout, one retained original effect, no delivery ACK, same-authority fence and explicit original-result recovery |
 | [Failure cutpoints](final-cutpoints/results.json) | All four pass: cancel held native call before dispatch, selected route refused while original kernel remains live, journal reservation EIO before effect, journal completion EIO after exactly one effect |
 | [Alternate resource tools](alternate-resource-tools/runs.json) | Forbidden edit, sensitive dry-run edit, sensitive list, sensitive parent-segment path and forbidden-write dot alias all denied with exact native arguments, zero resource dispatch and unchanged observer |
@@ -58,8 +59,9 @@ EIO after effect leaves the owner `completed_unacknowledged`, no acknowledgement
 and no repeated write. The selected network fault targets only the second call;
 the real kernel retains the same PID and remains reachable. Before-dispatch
 cancellation and reservation failure produce no owner dispatch or file effect.
-These are client/transport fault observations, not kernel receipt-store/signing
-fault claims.
+These are client/transport fault observations. The distinct actual kernel
+SQLite cases are recorded in `kernel-storage/`; neither set invents an unavailable
+external signer for the selected software Ed25519 path.
 
 For original-result recovery, the operator first rejects a forged owner export
 with `owner record lacks a trusted valid signature`. The exact signed original
@@ -156,5 +158,6 @@ to terminal for that workflow, including 5.483 seconds outside the native report
 duration. This excludes post-terminal cleanup. No matched unprotected baseline
 is available, so full incremental Chio overhead is not inferred.
 The public/native publisher and its security/release gates are a separate open
-I08 requirement. Kernel receipt-store/signing faults require distinct program
-records. Local qualification does not establish publication, adoption or novelty.
+I08 requirement. Actual kernel receipt/admission storage faults are separately qualified in
+`kernel-storage/`; selected signing-route applicability is documented by the
+shared kernel review. Local qualification does not establish publication, adoption or novelty.

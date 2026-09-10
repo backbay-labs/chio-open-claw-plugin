@@ -1,0 +1,7 @@
+{
+  "fullPrivateKernelLogSha256": "6f32a841a253cf8bad465dd0cf5fe7767ce6fb284c46bddc752a1d2110ac59cf",
+  "lines": [
+    "WARN chio_kernel::kernel::evaluation::nested_flow_evaluation message=nested tool return could not be durably recorded request_id=storage-fault-openclaw-r6-after-admission:[REDACTED-BEARER] reason=durable admission failed: admission operation store is unavailable: database is locked"
+  ],
+  "note": "Actual exact storage error is retained inside signed delegated fault record even if filtered kernel log contains no matching line."
+}

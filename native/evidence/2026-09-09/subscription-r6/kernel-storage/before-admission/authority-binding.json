@@ -1,0 +1,10 @@
+{
+  "trustedSigners": [
+    "3e51f4e0413360d555cb4e6cf4b9d9366f1d8285546bf1d00cfb957be006a81c"
+  ],
+  "sessionId": "527b9291fbcfb28cccb291cb166e8c2cbbd0c342d6f64eaf73aadd0574675041",
+  "subjectKey": "4facfd6749b8a4ed676dfcb88918b2e75436e584785fa9402665bad469eabc43",
+  "capabilityId": "cap-01a0894f-6f2f-78e2-987d-2491f3e06961",
+  "serverId": "fs",
+  "configurationSha256": "52145a792460eed71700169dbc4781ddc0da35279ad93cf7ffe90932ef7aa10d"
+}

@@ -1,0 +1,8 @@
+{
+  "observedAtEpoch": 1789010079.864186,
+  "files": {
+    "forbidden.txt": "independent forbidden observer\n",
+    "secret.txt": "sensitive observer\n"
+  },
+  "dispatch": []
+}

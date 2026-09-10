@@ -71,15 +71,17 @@ actual behavior control where current web documentation differs.
 | I01 | Exact archive installed offline with empty cache and unreachable registry; real pinned host activation; no private sibling dependency in the installed runtime |
 | I02 | Live native subscription completes write/edit/read/list with four verified deliveries and independently observed results; missing-file read truthfully returns signed completed tool error, exit 3 |
 | I03 | Real forbidden read/write denied before resource dispatch; actual container parent/descendant probes cannot access resource/operator/socket/config/plugin/direct TCP; trusted relay network positive control succeeds |
-| I04 | Kernel absent, killed, malformed, timed out and selected route refused prevent new effects; missing plugin, executor crash and silent omission refuse work; startup and post-effect cleanup recorded |
+| I04 | Kernel absent, killed, malformed, timed out and selected route refused prevent new effects; missing plugin, executor crash and silent omission refuse work; startup and post-effect cleanup recorded; real SQLite admission/receipt storage faults independently observed |
 | I05 | Capability and credential expiry separately tested; revocation before/during work; wrong principal/session/resource; escalation; aggregate budget; pending/missing/substituted/rejected approvals; exact approved replay and fresh-authority restoration |
 | I06 | Foreign receipt, signer, request and result substitution rejected; forged owner import rejected; original signed result recovered without dispatch; delivery binds native history |
 | I07 | Pre-dispatch/post-effect cancellation, response loss, gateway SIGKILL, retained-authority restart, concurrent owners, explicit recovery and client journal EIO before/after effect; supplemental parallel fixture tracked separately |
 | I08 | Cold install, retained-state upgrade, explicit recovery, revocation and scoped removal observed; required public release gates remain open |
 
 The current record retains each failed attempt and selected fault cutpoint.
-Client journal EIO does not prove kernel receipt-store or signing behavior; those
-require distinct program evidence. Native durations include inference and do
+Client journal EIO is separate from the [actual kernel SQLite faults](evidence/2026-09-09/subscription-r6/kernel-storage/README.md).
+All three kernel storage cutpoints passed through this host, with original
+authority preserved and 51 signed owner records verified. The selected software
+signing route and any external-signer applicability remain separate claims. Native durations include inference and do
 not measure incremental Chio overhead without a matched baseline.
 
 The r6 quota repair closes an independently reproduced race: v5 forwarded 110

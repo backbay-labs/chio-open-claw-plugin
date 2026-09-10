@@ -1,0 +1,158 @@
+[
+  {
+    "type": "session",
+    "version": 3,
+    "id": "0bd2f6ff-24dd-4e43-a44e-be0eae053d70",
+    "timestamp": "2026-09-10T03:15:24.660Z",
+    "cwd": "/state/workspace"
+  },
+  {
+    "type": "model_change",
+    "id": "d706904c",
+    "parentId": null,
+    "timestamp": "2026-09-10T03:15:24.756Z",
+    "provider": "openai-codex",
+    "modelId": "gpt-5.5"
+  },
+  {
+    "type": "thinking_level_change",
+    "id": "2cc0725e",
+    "parentId": "d706904c",
+    "timestamp": "2026-09-10T03:15:24.756Z",
+    "thinkingLevel": "off"
+  },
+  {
+    "type": "custom",
+    "customType": "model-snapshot",
+    "data": {
+      "timestamp": 1789010124786,
+      "provider": "openai-codex",
+      "modelApi": "openai-codex-responses",
+      "modelId": "gpt-5.5"
+    },
+    "id": "315bebd3",
+    "parentId": "2cc0725e",
+    "timestamp": "2026-09-10T03:15:24.786Z"
+  },
+  {
+    "type": "message",
+    "id": "db62ebd4",
+    "parentId": "315bebd3",
+    "timestamp": "2026-09-10T03:15:24.814Z",
+    "message": {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Use chio_call with tool write_file exactly once to write /workspace/uncertain.txt with content \"OpenClaw original storage fault after-admission\". Preserve those exact arguments. Stop after the actual result. Do not retry an uncertain or unsuccessful operation or substitute another tool."
+        }
+      ],
+      "timestamp": 1789010124808
+    }
+  },
+  {
+    "type": "message",
+    "id": "e31bdc8e",
+    "parentId": "db62ebd4",
+    "timestamp": "2026-09-10T03:15:28.097Z",
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "toolCall",
+          "id": "call_i3VyMCoXlh985v6OaK9zwYG3|fc_0617eae20d257bad016aa220cf392087d1b6beed65fa89dc8b",
+          "name": "chio_call",
+          "arguments": {
+            "tool": "write_file",
+            "arguments": {
+              "path": "/workspace/uncertain.txt",
+              "content": "OpenClaw original storage fault after-admission"
+            }
+          },
+          "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/uncertain.txt\",\"content\":\"OpenClaw original storage fault after-admission\"}}"
+        }
+      ],
+      "api": "openai-codex-responses",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "usage": {
+        "input": 989,
+        "output": 43,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "totalTokens": 2824,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0
+        }
+      },
+      "stopReason": "toolUse",
+      "timestamp": 1789010124978,
+      "responseId": "resp_0617eae20d257bad016aa220ce88d887d199271c71f4bf9806"
+    }
+  },
+  {
+    "type": "message",
+    "id": "2fd59143",
+    "parentId": "e31bdc8e",
+    "timestamp": "2026-09-10T03:15:33.934Z",
+    "message": {
+      "role": "toolResult",
+      "toolCallId": "call_i3VyMCoXlh985v6OaK9zwYG3|fc_0617eae20d257bad016aa220cf392087d1b6beed65fa89dc8b",
+      "toolName": "chio_call",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"state\":\"unknown\",\"evidence\":\"unverified\",\"requestId\":\"3577bd94ade2ff25b8beaea18dfa1b3c98da9b4b7d5d8981c0562cd796ecf948\",\"reason\":\"Gateway transport, evidence or host delivery failed; preserve original operation\"}"
+        }
+      ],
+      "details": {
+        "state": "unknown",
+        "evidence": "unverified",
+        "requestId": "3577bd94ade2ff25b8beaea18dfa1b3c98da9b4b7d5d8981c0562cd796ecf948",
+        "reason": "Gateway transport, evidence or host delivery failed; preserve original operation"
+      },
+      "isError": false,
+      "timestamp": 1789010133929
+    }
+  },
+  {
+    "type": "message",
+    "id": "008ca2a2",
+    "parentId": "2fd59143",
+    "timestamp": "2026-09-10T03:15:37.917Z",
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"state\":\"unknown\",\"evidence\":\"unverified\",\"requestId\":\"3577bd94ade2ff25b8beaea18dfa1b3c98da9b4b7d5d8981c0562cd796ecf948\",\"reason\":\"Gateway transport, evidence or host delivery failed; preserve original operation\"}",
+          "textSignature": "{\"v\":1,\"id\":\"msg_0b6888084e8e3241016aa220d87d4087d18a21331987ea0cd3\",\"phase\":\"final_answer\"}"
+        }
+      ],
+      "api": "openai-codex-responses",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "usage": {
+        "input": 1112,
+        "output": 72,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "totalTokens": 2976,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0
+        }
+      },
+      "stopReason": "stop",
+      "timestamp": 1789010134096,
+      "responseId": "resp_0b6888084e8e3241016aa220d7d50487d1a55e11c8efe4358b"
+    }
+  }
+]

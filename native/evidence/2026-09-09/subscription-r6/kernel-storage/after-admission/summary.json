@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cutpoint": "after-admission",
+  "positiveFullyDeliveredAcknowledged": true,
+  "faultNativeOutcome": {
+    "hostExitCode": 0,
+    "exitCode": 2,
+    "outcome": "unresolved",
+    "confirmedDeliveries": 1
+  },
+  "faultDispatches": 1,
+  "sameActionNewNativeCallIdFenced": true,
+  "newActionAfterSameOwnerRestartFenced": true,
+  "originalConfigurationAndAuthorityPreserved": true,
+  "exactOriginalNativeIdForced": false,
+  "exactReplayClaim": "Native retries are new one-shot host calls with their actual IDs; no unsupported forced-ID entrypoint used.",
+  "journalAcknowledgementsAfterFault": 1,
+  "newAuthorityIssuedAfterFault": false,
+  "automaticAcknowledgementOfUnknown": false,
+  "resourceAndDatabasesRetained": true,
+  "ownerLeftRunning": true,
+  "operatorPort": 58525,
+  "archiveSha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25"
+}

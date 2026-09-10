@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "{\"state\":\"unknown\",\"evidence\":\"unverified\",\"requestId\":\"404763d33a7095aafb607da4396451b1b21696bf28a13c264f9a7e20ceea12c8\",\"reason\":\"Gateway transport, evidence or host delivery failed; preserve original operation\"}",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 16205,
+    "agentMeta": {
+      "sessionId": "e8f9eceb-715e-4b7d-b552-ef3828d55e62",
+      "sessionFile": "/state/openclaw/agents/main/sessions/e8f9eceb-715e-4b7d-b552-ef3828d55e62.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 2100,
+        "output": 114,
+        "cacheRead": 3584,
+        "total": 2973
+      },
+      "lastCallUsage": {
+        "input": 1111,
+        "output": 70,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "total": 2973
+      },
+      "promptTokens": 2903
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789010124814,
+      "sessionId": "e8f9eceb-715e-4b7d-b552-ef3828d55e62",
+      "sessionKey": "agent:main:explicit:e8f9eceb-715e-4b7d-b552-ef3828d55e62",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 291,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "Use chio_call with tool write_file exactly once to write /workspace/before-fault.txt with content \"OpenClaw original storage fault before-admission\". Preserve those exact arguments. Stop after the actual result. Do not retry an uncertain or unsuccessful operation or substitute another tool.",
+    "finalAssistantVisibleText": "{\"state\":\"unknown\",\"evidence\":\"unverified\",\"requestId\":\"404763d33a7095aafb607da4396451b1b21696bf28a13c264f9a7e20ceea12c8\",\"reason\":\"Gateway transport, evidence or host delivery failed; preserve original operation\"}",
+    "finalAssistantRawText": "{\"state\":\"unknown\",\"evidence\":\"unverified\",\"requestId\":\"404763d33a7095aafb607da4396451b1b21696bf28a13c264f9a7e20ceea12c8\",\"reason\":\"Gateway transport, evidence or host delivery failed; preserve original operation\"}",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 1,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "fullPrivateKernelLogSha256": "94e4467f55f63f822b44766ceba2a5764f8062fe56029c27b109bdc9675618ce",
+  "lines": [],
+  "note": "Actual exact storage error is retained inside signed delegated fault record even if filtered kernel log contains no matching line."
+}

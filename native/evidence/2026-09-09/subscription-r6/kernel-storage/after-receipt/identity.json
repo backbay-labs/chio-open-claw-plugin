@@ -1,0 +1,16 @@
+{
+  "claim": "actual native host and live provider with real kernel SQLite contention; no direct synthetic tools/call",
+  "archiveSha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "resourceImage": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "driverSha256": "5f4d61e86371b5fa16dd6bfaa0ddc1f3349be574e102dd8d4cfc5d02c7167b83",
+  "helperSha256": "5da5e9d5743a3da8f045b4fd35f7597ac9890691f8f17dd6815ebaa6e8e6dcd7",
+  "launcherSha256": "a812a250a990d21311dec47feb53f428b2fbeaeca1443b8eed2cb63ff8746752",
+  "cutpoint": "after-receipt",
+  "port": 58523,
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/kernel-storage-fault-20260909/openclaw-r6-after-receipt/gateway.json",
+  "configurationSha256": "0e7bfb48a70008d14417edce253711667da33d00f52815e77b41316d6a9dca30",
+  "sessionId": "352b94ba803f46d69282fe555fbcd585921b6ae03ca7d172a251b347a88d744b",
+  "capabilityId": "cap-01a0894f-6edf-7b00-84a9-728a5df60630"
+}

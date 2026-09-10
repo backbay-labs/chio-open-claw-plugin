@@ -1,0 +1,114 @@
+{
+  "schema": "chio.openclaw.qualification.r6.v1",
+  "status": "locally-qualified-candidate-not-published-or-accepted",
+  "archiveSha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "runtimeCommit": "f6627ae",
+  "groups": {
+    "componentTests": {
+      "passed": 25,
+      "failed": 0,
+      "skipped": 0
+    },
+    "liveNativeCases": {
+      "passed": 8,
+      "record": "native-cases-summary.json"
+    },
+    "sharedRealHostMatrix": {
+      "passedSuiteInvocations": 26,
+      "record": "matrix/runs.json"
+    },
+    "authorityAggregateBudget": {
+      "passed": true,
+      "record": "budget/results.json"
+    },
+    "actualCapabilityExpiry": {
+      "passed": true,
+      "record": "expired-capability"
+    },
+    "liveFailureCutpoints": {
+      "passed": 4,
+      "record": "final-cutpoints/results.json"
+    },
+    "alternateResourceTools": {
+      "passed": 5,
+      "record": "alternate-resource-tools/runs.json"
+    },
+    "nativePluginFortySecondTimeout": {
+      "passed": true,
+      "record": "native-plugin-timeout/timeout-proof.json"
+    },
+    "enforcerFaults": {
+      "passed": 3,
+      "records": [
+        "enforcer-faults-local-base/results.json",
+        "enforcer-silent-omission-rerun/results.json"
+      ],
+      "priorHarnessFalseFailurePreserved": true
+    },
+    "operatingSystemBoundary": {
+      "passed": true,
+      "record": "container-boundary-one-read/observation.json",
+      "priorWorkloadAndHarnessFailuresPreserved": true
+    },
+    "observerNegativeControls": {
+      "passed": true,
+      "record": "observer-negative-controls/results.json",
+      "agentInvolved": false
+    },
+    "upgradeRemoval": {
+      "passed": true,
+      "record": "upgrade-removal/summary.json"
+    },
+    "supplementalParallelNativeFixture": {
+      "passed": true,
+      "liveModel": false,
+      "record": "parallel-native-fixture/summary.json"
+    },
+    "supplementalDisabledNativeTools": {
+      "passed": 10,
+      "liveModel": false,
+      "record": "parallel-native-fixture/disabled-tools-r2/summary.json",
+      "priorFixtureFailurePreserved": true
+    },
+    "actualKernelStorageFaults": {
+      "passed": 3,
+      "realNativeInvocations": 12,
+      "storedEd25519SignaturesVerified": 51,
+      "record": "kernel-storage/state-verification.json",
+      "originalAuthorityRetained": true,
+      "newNativeIdRetriesNotExactKernelIdReplay": true
+    },
+    "pairedHealthyReads": {
+      "passed": 3,
+      "liveModel": true,
+      "record": "paired-read-timing/summary.json",
+      "medianPairedKernelMinusDirectMs": 1003.8237510000017,
+      "medianPairedGatewayMinusDirectMs": 1049.9502510000002,
+      "scope": "local kernel and gateway stage comparisons; excludes startup, inference, host scheduling and ACK"
+    }
+  },
+  "remainingProgramGates": [
+    "gated publication of compatible artifacts",
+    "final six-host program acceptance"
+  ],
+  "unmeasured": [
+    "statistically representative or full end-to-end incremental overhead; three matched read stage comparisons, native durations and launcher envelope are recorded"
+  ],
+  "skippedRequiredTestsCountedAsPass": 0,
+  "automaticRetriesOfUnknownEffects": 0,
+  "ownerDisposition": {
+    "58498": "running, released",
+    "58618": "running, released",
+    "58523": "running, released",
+    "58524": "running, released",
+    "58525": "running, released"
+  },
+  "preserved": [
+    "normal host profiles",
+    "original private authority/configuration/journals",
+    "resource volumes and owner databases",
+    "unrelated native/test/__pycache__"
+  ]
+}

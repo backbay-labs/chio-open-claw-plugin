@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "supplementalOnly": true,
+  "liveModel": false,
+  "acceptance": false,
+  "exit": {
+    "code": 3,
+    "signal": null
+  },
+  "timedOut": false,
+  "observed": [
+    {
+      "path": "/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt",
+      "nativeCallId": "call_parallel_0|fc_parallel_0",
+      "returned": true,
+      "state": "completed",
+      "evidence": "verified",
+      "expectedContentSha256": "ec501554b434dce3c362b6a75cb64f073805fd21225731da14100e831538608a",
+      "actualContentSha256": "ec501554b434dce3c362b6a75cb64f073805fd21225731da14100e831538608a",
+      "dispatches": 1
+    },
+    {
+      "path": "/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-b.txt",
+      "nativeCallId": "call_parallel_1|fc_parallel_1",
+      "returned": true,
+      "state": "not_dispatched",
+      "evidence": "unverified",
+      "expectedContentSha256": "d6dd58e48e40ad923ce2f380f42bbba5c74eb97b0ed1df8474f37a0169ebb711",
+      "actualContentSha256": null,
+      "dispatches": 0
+    }
+  ],
+  "bothCompleted": false,
+  "secondBlocked": true,
+  "kernelSerialized": false,
+  "nativeCalls": 2,
+  "nativeReturns": 2,
+  "deliveriesConfirmed": true,
+  "terminal": {
+    "hostExitCode": 0,
+    "exitCode": 3,
+    "outcome": "protected_work_incomplete",
+    "confirmedDeliveries": 1
+  },
+  "unrelatedDispatches": 0,
+  "protectedFilesUnchanged": true,
+  "configurationUnchanged": true,
+  "classification": "second-call-not-dispatched"
+}

@@ -1,0 +1,158 @@
+{
+  "payloads": [
+    {
+      "text": "The file /workspace/openclaw-qualified-fa2d89aa8767.txt was created with content \"OpenClaw HTTP verified,\" then edited to \"OpenClaw kernel verified.\" The content after editing is:\n\nOpenClaw kernel verified\n\nThe listing of /workspace includes the new file among others:\n\n[FILE] forbidden.txt\n[FILE] openclaw-ack-confirmation-loss.txt\n[FILE] openclaw-http-r4.txt\n[FILE] openclaw-http-r5.txt\n[FILE] openclaw-http.txt\n[FILE] openclaw-kernel.txt\n[FILE] openclaw-qualified-8e9ad79da341.txt\n[FILE] openclaw-qualified-a167807ff142.txt\n[FILE] openclaw-qualified-fa2d89aa8767.txt\n[FILE] secret.txt\n\nLet me know if you need further actions.",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 11901,
+    "agentMeta": {
+      "sessionId": "2d0a9be1-fd72-41b4-8d49-0f01a6ee113a",
+      "sessionFile": "/state/openclaw/agents/main/sessions/2d0a9be1-fd72-41b4-8d49-0f01a6ee113a.jsonl",
+      "provider": "chio-model",
+      "model": "gpt-4.1-mini",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "lastCallUsage": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 0
+      }
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1788988491443,
+      "sessionId": "2d0a9be1-fd72-41b4-8d49-0f01a6ee113a",
+      "sessionKey": "agent:main:explicit:2d0a9be1-fd72-41b4-8d49-0f01a6ee113a",
+      "provider": "chio-model",
+      "model": "gpt-4.1-mini",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 5952,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 5407
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 321,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "Use chio_call only, with exact schemas in its description. Preserve remote paths exactly. Write /workspace/openclaw-qualified-fa2d89aa8767.txt with content \"OpenClaw HTTP verified\". Edit HTTP to kernel, read that exact file, then list /workspace. Make one tool call per turn. Stop on any unsuccessful or uncertain result.",
+    "finalAssistantVisibleText": "The file /workspace/openclaw-qualified-fa2d89aa8767.txt was created with content \"OpenClaw HTTP verified,\" then edited to \"OpenClaw kernel verified.\" The content after editing is:\n\nOpenClaw kernel verified\n\nThe listing of /workspace includes the new file among others:\n\n[FILE] forbidden.txt\n[FILE] openclaw-ack-confirmation-loss.txt\n[FILE] openclaw-http-r4.txt\n[FILE] openclaw-http-r5.txt\n[FILE] openclaw-http.txt\n[FILE] openclaw-kernel.txt\n[FILE] openclaw-qualified-8e9ad79da341.txt\n[FILE] openclaw-qualified-a167807ff142.txt\n[FILE] openclaw-qualified-fa2d89aa8767.txt\n[FILE] secret.txt\n\nLet me know if you need further actions.",
+    "finalAssistantRawText": "The file /workspace/openclaw-qualified-fa2d89aa8767.txt was created with content \"OpenClaw HTTP verified,\" then edited to \"OpenClaw kernel verified.\" The content after editing is:\n\nOpenClaw kernel verified\n\nThe listing of /workspace includes the new file among others:\n\n[FILE] forbidden.txt\n[FILE] openclaw-ack-confirmation-loss.txt\n[FILE] openclaw-http-r4.txt\n[FILE] openclaw-http-r5.txt\n[FILE] openclaw-http.txt\n[FILE] openclaw-kernel.txt\n[FILE] openclaw-qualified-8e9ad79da341.txt\n[FILE] openclaw-qualified-a167807ff142.txt\n[FILE] openclaw-qualified-fa2d89aa8767.txt\n[FILE] secret.txt\n\nLet me know if you need further actions.",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "chio-model",
+      "winnerModel": "gpt-4.1-mini",
+      "attempts": [
+        {
+          "provider": "chio-model",
+          "model": "gpt-4.1-mini",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 4,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

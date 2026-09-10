@@ -1,0 +1,9 @@
+{
+  "host": "openclaw",
+  "archiveSha256": "ba6b80e71598ec8f01205ef7d443f71fdb2df78fe4b3cad576d9107518f3b6c5",
+  "sourceRevision": "6178680b0c498a3fb1d652eb962b010c40470156",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "nativeRuns": 6,
+  "skips": 0,
+  "claim": "bounded real native host and actual OpenAI evidence binding and fencing; full acceptance remains open"
+}

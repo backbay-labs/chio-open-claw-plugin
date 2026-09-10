@@ -1,0 +1,21 @@
+[
+  {
+    "case": "wrong-session",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-2ea96aa1824c4748984b769352b8921a/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-a0790ac6ce7e4e9f867fef9d361104a9",
+      "--image",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-preflight-forbidden.txt\", \"content\": \"must never dispatch with invalid authority\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

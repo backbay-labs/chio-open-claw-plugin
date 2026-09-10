@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-tool-error-3d12329e841e4dadb2aaa556d2d6ad4e/gateway.json",
+    "--state-dir",
+    "/tmp/chio-openclaw-qualified-5cd63d0c48534979bd1900b160607e04",
+    "--image",
+    "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+    "--prompt",
+    "Use chio_call with tool read_text_file exactly once for /workspace/missing-openclaw-qualified-a556d2d6ad4e.txt. Report the actual tool error. Stop after that result.",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+  ],
+  "exitCode": 3
+}

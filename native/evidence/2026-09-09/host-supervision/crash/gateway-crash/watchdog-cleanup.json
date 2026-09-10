@@ -1,0 +1,22 @@
+{
+  "status": "cleaned",
+  "events": [
+    {
+      "name": "chio-openclaw-agent-bd419fb7-1df5-4f71-98fa-c76bf8b20712",
+      "attempt": 0,
+      "wasRunning": true,
+      "removed": true
+    },
+    {
+      "name": "chio-openclaw-relay-bd419fb7-1df5-4f71-98fa-c76bf8b20712",
+      "attempt": 0,
+      "wasRunning": true,
+      "removed": true
+    }
+  ],
+  "networkRemoved": true,
+  "volumesPreserved": [
+    "chio-required-openclaw-state-bd419fb7-1df5-4f71-98fa-c76bf8b20712",
+    "chio-required-openclaw-control-bd419fb7-1df5-4f71-98fa-c76bf8b20712"
+  ]
+}

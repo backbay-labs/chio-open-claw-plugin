@@ -1,0 +1,259 @@
+{
+  "sessionId": "d485f039-d9d7-4816-bec1-025d23a1f88c",
+  "volume": "chio-required-openclaw-state-d485f039-d9d7-4816-bec1-025d23a1f88c",
+  "events": [
+    {
+      "type": "message",
+      "id": "a57f1879",
+      "parentId": "ffef1697",
+      "timestamp": "2026-09-10T02:55:16.062Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the fixed fixture Chio tool calls. Stop after both returned outcomes. Never retry an uncertain effect."
+          }
+        ],
+        "timestamp": 1789008916060
+      }
+    },
+    {
+      "type": "message",
+      "id": "cb88b2d0",
+      "parentId": "a57f1879",
+      "timestamp": "2026-09-10T02:55:17.241Z",
+      "message": {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "toolCall",
+            "id": "call_parallel_0|fc_parallel_0",
+            "name": "chio_call",
+            "arguments": {
+              "tool": "write_file",
+              "arguments": {
+                "path": "/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt",
+                "content": "fixed native parallel fixture 158c21d5-6f48-4100-a764-318ddc116ee9 a"
+              }
+            },
+            "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt\",\"content\":\"fixed native parallel fixture 158c21d5-6f48-4100-a764-318ddc116ee9 a\"}}"
+          },
+          {
+            "type": "toolCall",
+            "id": "call_parallel_1|fc_parallel_1",
+            "name": "chio_call",
+            "arguments": {
+              "tool": "write_file",
+              "arguments": {
+                "path": "/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-b.txt",
+                "content": "fixed native parallel fixture 158c21d5-6f48-4100-a764-318ddc116ee9 b"
+              }
+            },
+            "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-b.txt\",\"content\":\"fixed native parallel fixture 158c21d5-6f48-4100-a764-318ddc116ee9 b\"}}"
+          }
+        ],
+        "api": "openai-codex-responses",
+        "provider": "openai-codex",
+        "model": "gpt-5.5",
+        "usage": {
+          "input": 1,
+          "output": 1,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "totalTokens": 2,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0
+          }
+        },
+        "stopReason": "toolUse",
+        "timestamp": 1789008916192,
+        "responseId": "resp_fixture_1"
+      }
+    },
+    {
+      "type": "message",
+      "id": "02c264fe",
+      "parentId": "cb88b2d0",
+      "timestamp": "2026-09-10T02:55:18.124Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_0|fc_parallel_0",
+        "toolName": "chio_call",
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"state\":\"completed\",\"evidence\":\"verified\",\"requestId\":\"b3c34206-2dac-4fb2-acff-666f23f74347:8f16fe94c7302bc9047c6ddfe667aaf09e5dace61e9e575609ce85394a6f6fd9\",\"receipt\":{\"action\":{\"parameter_hash\":\"8bfc8610a61fa74b9e21a629cb85baa15e19bbe35e4beed97933ccf6d268b2d7\",\"parameters\":{\"content\":\"fixed native parallel fixture 158c21d5-6f48-4100-a764-318ddc116ee9 a\",\"path\":\"/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a0893d-879e-7281-8d93-2bb976080b13\",\"content_hash\":\"fd98cf1664fe40940f5ccbd7ef661cb8151be20f93e2edac1ce5237290d81123\",\"decision\":{\"verdict\":\"allow\"},\"id\":\"ae4015bd33266060e14603c0353f3278642677a058050a65f1b3c8c7c28a1505\",\"kernel_key\":\"580cdf640c31f652ad3115569c77310c920c67aa3482c919b9faf52817524498\",\"metadata\":{\"admission_operation\":{\"compensation_status\":\"not_compensated\",\"coordinator_lease_epoch\":5,\"coordinator_lease_id\":\"01a08925-ba25-7472-82ff-4ef4acf69d0e\",\"operation_id\":\"8f82b3257edff50213a1270f1a5537a95217761dd6a836343e6b3732a016e8fd\",\"projected_dispatch_state\":\"terminal\",\"projected_operation_version\":8,\"projected_state\":\"completed\",\"request_binding_hash\":\"7299c5733c861a1394b023dc5d074e64ebc26f99bf3fea0ee918e956a69ab828\",\"request_id\":\"b3c34206-2dac-4fb2-acff-666f23f74347:8f16fe94c7302bc9047c6ddfe667aaf09e5dace61e9e575609ce85394a6f6fd9\",\"request_namespace_digest\":\"edf272068a9927c2ba55738ac8b1190309fba7b9f1f65df05ae5ffc4e2dad860\",\"retained_dispatch_commit\":{\"committed_version\":6,\"coordinator_lease_epoch\":5,\"coordinator_lease_id\":\"01a08925-ba25-7472-82ff-4ef4acf69d0e\",\"provider_attempt\":{\"attempt_id\":\"attempt:8f82b3257edff50213a1270f1a5537a95217761dd6a836343e6b3732a016e8fd\",\"operation_id\":\"8f82b3257edff50213a1270f1a5537a95217761dd6a836343e6b3732a016e8fd\",\"transport_id\":\"kernel-tool-server:fs\",\"transport_key_epoch\":5},\"store_fence\":{\"lease_id\":\"01a08925-ba25-7472-82ff-4ef4acf69d0e\",\"owner_epoch\":5,\"store_uuid\":\"01a087d9-b634-7e61-ae80-a0c62ab7d36b\"}},\"schema\":\"chio.admission-receipt.v1\",\"store_fence\":{\"lease_id\":\"01a08925-ba25-7472-82ff-4ef4acf69d0e\",\"owner_epoch\":5,\"store_uuid\":\"01a087d9-b634-7e61-ae80-a0c62ab7d36b\"},\"tool_outcome_id\":\"bc5f90e3adba8ada6d7739bf9e11a86c53a0784df346f0212cde811d998a5481\",\"tool_outcome_version\":2,\"trusted_time_unix_ms\":1789008917549},\"attribution\":{\"delegation_depth\":0,\"grant_index\":0,\"issuer_key\":\"b6311d41a1a65feff88d18d1cbe02cc38fd28d478426ba00cdd0bb34221e768b\",\"subject_key\":\"b0aba08f5fadd093133a9fd17a6cdddee4dd73778f32b527275d3ff03bdcfc11\"},\"chio_receipt_signing_nonce\":\"rcpt-01a0893d-b4c4-7513-a344-aa16db663a08\",\"receipt_context\":{\"request_id\":\"b3c34206-2dac-4fb2-acff-666f23f74347:8f16fe94c7302bc9047c6ddfe667aaf09e5dace61e9e575609ce85394a6f6fd9\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"fa23703b006061ac6435641d22dc102814f005f243e74c7c012977ebfb8b2e7d4b154848c7d7adc73dd56d5dd4fe5b40e07325992454d0c04758c2922167db0f\",\"timestamp\":1789008917,\"tool_name\":\"write_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"result\":{\"content\":[{\"text\":\"Successfully wrote to /workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt\",\"type\":\"text\"}],\"isError\":false,\"structuredContent\":{\"content\":\"Successfully wrote to /workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt\"}},\"delivery\":{\"acknowledgement\":\"mjEzrK_tagcTGUuH_Yc7gS5UHVsyt0luLHtsDY6v1SU\",\"receiptId\":\"ae4015bd33266060e14603c0353f3278642677a058050a65f1b3c8c7c28a1505\",\"requestHash\":\"425074179e3a2fcbd6a6f1d58dbd3b91d4500878810045dfabe9a7e9fa3a3b3d\",\"requestId\":\"b3c34206-2dac-4fb2-acff-666f23f74347:8f16fe94c7302bc9047c6ddfe667aaf09e5dace61e9e575609ce85394a6f6fd9\",\"resultHash\":\"fd98cf1664fe40940f5ccbd7ef661cb8151be20f93e2edac1ce5237290d81123\",\"schema\":\"chio.mcp.delivery-ack.v1\"}}"
+          }
+        ],
+        "details": {
+          "state": "completed",
+          "evidence": "verified",
+          "requestId": "b3c34206-2dac-4fb2-acff-666f23f74347:8f16fe94c7302bc9047c6ddfe667aaf09e5dace61e9e575609ce85394a6f6fd9",
+          "receipt": {
+            "action": {
+              "parameter_hash": "8bfc8610a61fa74b9e21a629cb85baa15e19bbe35e4beed97933ccf6d268b2d7",
+              "parameters": {
+                "content": "fixed native parallel fixture 158c21d5-6f48-4100-a764-318ddc116ee9 a",
+                "path": "/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt"
+              }
+            },
+            "boundary_class": "prevent",
+            "capability_id": "cap-01a0893d-879e-7281-8d93-2bb976080b13",
+            "content_hash": "fd98cf1664fe40940f5ccbd7ef661cb8151be20f93e2edac1ce5237290d81123",
+            "decision": {
+              "verdict": "allow"
+            },
+            "id": "ae4015bd33266060e14603c0353f3278642677a058050a65f1b3c8c7c28a1505",
+            "kernel_key": "***",
+            "metadata": {
+              "admission_operation": {
+                "compensation_status": "not_compensated",
+                "coordinator_lease_epoch": 5,
+                "coordinator_lease_id": "01a08925-ba25-7472-82ff-4ef4acf69d0e",
+                "operation_id": "8f82b3257edff50213a1270f1a5537a95217761dd6a836343e6b3732a016e8fd",
+                "projected_dispatch_state": "terminal",
+                "projected_operation_version": 8,
+                "projected_state": "completed",
+                "request_binding_hash": "7299c5733c861a1394b023dc5d074e64ebc26f99bf3fea0ee918e956a69ab828",
+                "request_id": "b3c34206-2dac-4fb2-acff-666f23f74347:8f16fe94c7302bc9047c6ddfe667aaf09e5dace61e9e575609ce85394a6f6fd9",
+                "request_namespace_digest": "edf272068a9927c2ba55738ac8b1190309fba7b9f1f65df05ae5ffc4e2dad860",
+                "retained_dispatch_commit": {
+                  "committed_version": 6,
+                  "coordinator_lease_epoch": 5,
+                  "coordinator_lease_id": "01a08925-ba25-7472-82ff-4ef4acf69d0e",
+                  "provider_attempt": {
+                    "attempt_id": "attempt:8f82b3257edff50213a1270f1a5537a95217761dd6a836343e6b3732a016e8fd",
+                    "operation_id": "8f82b3257edff50213a1270f1a5537a95217761dd6a836343e6b3732a016e8fd",
+                    "transport_id": "kernel-tool-server:fs",
+                    "transport_key_epoch": 5
+                  },
+                  "store_fence": {
+                    "lease_id": "01a08925-ba25-7472-82ff-4ef4acf69d0e",
+                    "owner_epoch": 5,
+                    "store_uuid": "01a087d9-b634-7e61-ae80-a0c62ab7d36b"
+                  }
+                },
+                "schema": "chio.admission-receipt.v1",
+                "store_fence": {
+                  "lease_id": "01a08925-ba25-7472-82ff-4ef4acf69d0e",
+                  "owner_epoch": 5,
+                  "store_uuid": "01a087d9-b634-7e61-ae80-a0c62ab7d36b"
+                },
+                "tool_outcome_id": "bc5f90e3adba8ada6d7739bf9e11a86c53a0784df346f0212cde811d998a5481",
+                "tool_outcome_version": 2,
+                "trusted_time_unix_ms": 1789008917549
+              },
+              "attribution": {
+                "delegation_depth": 0,
+                "grant_index": 0,
+                "issuer_key": "***",
+                "subject_key": "***"
+              },
+              "chio_receipt_signing_nonce": "rcpt-01a0893d-b4c4-7513-a344-aa16db663a08",
+              "receipt_context": {
+                "request_id": "b3c34206-2dac-4fb2-acff-666f23f74347:8f16fe94c7302bc9047c6ddfe667aaf09e5dace61e9e575609ce85394a6f6fd9"
+              }
+            },
+            "policy_hash": "057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e",
+            "receipt_kind": "mediated_decision",
+            "redaction_mode": "none",
+            "signature": "fa23703b006061ac6435641d22dc102814f005f243e74c7c012977ebfb8b2e7d4b154848c7d7adc73dd56d5dd4fe5b40e07325992454d0c04758c2922167db0f",
+            "timestamp": 1789008917,
+            "tool_name": "write_file",
+            "tool_origin": "caller_executed",
+            "tool_server": "fs",
+            "trust_level": "mediated"
+          },
+          "result": {
+            "content": [
+              {
+                "text": "Successfully wrote to /workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt",
+                "type": "text"
+              }
+            ],
+            "isError": false,
+            "structuredContent": {
+              "content": "Successfully wrote to /workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt"
+            }
+          },
+          "delivery": {
+            "acknowledgement": "mjEzrK_tagcTGUuH_Yc7gS5UHVsyt0luLHtsDY6v1SU",
+            "receiptId": "ae4015bd33266060e14603c0353f3278642677a058050a65f1b3c8c7c28a1505",
+            "requestHash": "425074179e3a2fcbd6a6f1d58dbd3b91d4500878810045dfabe9a7e9fa3a3b3d",
+            "requestId": "b3c34206-2dac-4fb2-acff-666f23f74347:8f16fe94c7302bc9047c6ddfe667aaf09e5dace61e9e575609ce85394a6f6fd9",
+            "resultHash": "fd98cf1664fe40940f5ccbd7ef661cb8151be20f93e2edac1ce5237290d81123",
+            "schema": "chio.mcp.delivery-ack.v1"
+          }
+        },
+        "isError": false,
+        "timestamp": 1789008918112
+      }
+    },
+    {
+      "type": "message",
+      "id": "9017ecb7",
+      "parentId": "02c264fe",
+      "timestamp": "2026-09-10T02:55:18.129Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_1|fc_parallel_1",
+        "toolName": "chio_call",
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"b3c34206-2dac-4fb2-acff-666f23f74347:c0e3e1a7db0a43cabaf282c8d78f73fcbd9b40b74d8d124c854c69d55d246f4d\",\"reason\":\"an unresolved operation fences this gateway; operator reconciliation required\"}"
+          }
+        ],
+        "details": {
+          "state": "not_dispatched",
+          "evidence": "unverified",
+          "requestId": "b3c34206-2dac-4fb2-acff-666f23f74347:c0e3e1a7db0a43cabaf282c8d78f73fcbd9b40b74d8d124c854c69d55d246f4d",
+          "reason": "an unresolved operation fences this gateway; operator reconciliation required"
+        },
+        "isError": false,
+        "timestamp": 1789008918125
+      }
+    },
+    {
+      "type": "message",
+      "id": "45edf756",
+      "parentId": "9017ecb7",
+      "timestamp": "2026-09-10T02:55:18.927Z",
+      "message": {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Fixed provider fixture finished. Recorded tool outcomes establish the result.",
+            "textSignature": "{\"v\":1,\"id\":\"msg_fixture_done\"}"
+          }
+        ],
+        "api": "openai-codex-responses",
+        "provider": "openai-codex",
+        "model": "gpt-5.5",
+        "usage": {
+          "input": 1,
+          "output": 1,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "totalTokens": 2,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0
+          }
+        },
+        "stopReason": "stop",
+        "timestamp": 1789008918167,
+        "responseId": "resp_fixture_2"
+      }
+    }
+  ]
+}

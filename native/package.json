@@ -1,0 +1,44 @@
+{
+  "name": "@chio/openclaw-kernel",
+  "version": "0.1.0",
+  "description": "Native OpenClaw tools for Chio kernel-owned execution",
+  "type": "module",
+  "main": "src/index.mjs",
+  "files": [
+    "src",
+    "scripts",
+    "openclaw.plugin.json",
+    "README.md",
+    "templates",
+    "vendor",
+    "ACCEPTANCE.md",
+    "docker"
+  ],
+  "bin": {
+    "chio-openclaw-profile": "scripts/create-profile.mjs",
+    "chio-openclaw-protected": "scripts/protected.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:host": "node test/real-host.mjs",
+    "build": "node --check src/index.mjs && node --check src/plugin.mjs && node --check src/journal.mjs",
+    "pack:release": "node scripts/pack-release.mjs"
+  },
+  "openclaw": {
+    "extensions": [
+      "./src/index.mjs"
+    ]
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@chio/bridge": "file:vendor/chio-bridge-0.3.0-7d9e34f7408a.tgz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/backbay-labs/chio-open-claw-plugin.git",
+    "directory": "native"
+  }
+}

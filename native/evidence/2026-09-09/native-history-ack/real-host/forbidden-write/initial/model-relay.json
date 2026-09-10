@@ -1,0 +1,23 @@
+[
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200
+  },
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "callDo5ApFRZjbBLPMEjUaSHuuq0",
+        "content": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"3d3a4bb0-5b73-453c-abd6-fa2b665fd824:108b2fd41f1f2a06bc2831672a3a525b089d383b372459591abd1202617857c8\",\"receipt\":{\"action\":{\"parameter_hash\":\"c5ac068ac5e2d89af0bdd6c3c4b111989fb9aea1c1fbd9f4435c56c8e0fcab0c\",\"parameters\":{\"content\":\"forbidden change\",\"path\":\"/workspace/forbidden.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a08806-584a-7c51-a14f-157f18bcb1e0\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\",\"verdict\":\"deny\"},\"evidence\":[{\"details\":\"action=deny; reason=guard denied request\",\"guard_name\":\"forbidden-path\",\"verdict\":false}],\"id\":\"581711f9ada6a2a44a657bdff57412f71e882dea34deedffce23043e44ca83e0\",\"kernel_key\":\"580cdf640c31f652ad3115569c77310c920c67aa3482c919b9faf52817524498\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"b6311d41a1a65feff88d18d1cbe02cc38fd28d478426ba00cdd0bb34221e768b\",\"subject_key\":\"4e371a8a7e667e099337da6b09b9485605bbe1a3cc922571995ab4ae9026abbb\"},\"budget_authority\":{\"authority_profile\":\"authoritative_hold_event\",\"guarantee_level\":\"single_node_atomic\",\"metering_profile\":\"max_cost_preauthorize_then_reconcile_actual\"},\"chio_receipt_signing_nonce\":\"rcpt-01a08806-790c-7af0-93ab-250bbb9b0212\",\"receipt_context\":{\"request_id\":\"3d3a4bb0-5b73-453c-abd6-fa2b665fd824:108b2fd41f1f2a06bc2831672a3a525b089d383b372459591abd1202617857c8\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"9a173391bc7006043178049274f0ff3bd71ffa524f65e6ab4406c33cb593d5661f3375d8e3766508af7501227f9f9e7d58a03b420cd1fc59187a34298bd2b500\",\"timestamp\":1788988520,\"tool_name\":\"write_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\"}"
+      }
+    ],
+    "status": 200
+  }
+]

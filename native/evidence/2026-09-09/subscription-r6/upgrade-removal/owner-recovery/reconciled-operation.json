@@ -1,0 +1,127 @@
+{
+  "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:96a145bb3583fa04b8edc0c1fbeea4155b3dacb9c0e683266272f006dc9e4466",
+  "digest": "aea47a03ce9a6059ab59c2b71f005626bd64fe2343e07e79973b9e74159ab8e6",
+  "state": "completed",
+  "outcome": {
+    "state": "completed",
+    "evidence": "verified",
+    "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:96a145bb3583fa04b8edc0c1fbeea4155b3dacb9c0e683266272f006dc9e4466",
+    "receipt": {
+      "action": {
+        "parameter_hash": "051c203b229080321084e861c2dc455b8d863614a2bd554e98e01d779b6f2c75",
+        "parameters": {
+          "content": "second legitimate effect requiring its own evidence",
+          "path": "/workspace/openclaw-inflight-ac0aac39b18a.txt"
+        }
+      },
+      "boundary_class": "prevent",
+      "capability_id": "cap-01a08931-a196-7420-8e58-77b1d095e459",
+      "content_hash": "e04748e1753e371ca62858cf935e74ef3776338520983355c9055cee38c7068c",
+      "decision": {
+        "verdict": "allow"
+      },
+      "id": "45717c5e4d676f6ffa2adf8c376d2c29a5ef1bb0f32deab026190ec18e7cdec7",
+      "kernel_key": "580cdf640c31f652ad3115569c77310c920c67aa3482c919b9faf52817524498",
+      "metadata": {
+        "admission_operation": {
+          "compensation_status": "not_compensated",
+          "coordinator_lease_epoch": 5,
+          "coordinator_lease_id": "01a08925-ba25-7472-82ff-4ef4acf69d0e",
+          "operation_id": "d7a47b42fc9d0f84511c7c89870a84030335f8fa255ccbd7673e900355cfcd16",
+          "projected_dispatch_state": "terminal",
+          "projected_operation_version": 8,
+          "projected_state": "completed",
+          "request_binding_hash": "e58b23e1d5bf0ce62187771bf8522d7b8e5f49e7d030152aa6211709395de5db",
+          "request_id": "659d784d-e281-4c02-a6d7-7f5df10343a7:96a145bb3583fa04b8edc0c1fbeea4155b3dacb9c0e683266272f006dc9e4466",
+          "request_namespace_digest": "edf272068a9927c2ba55738ac8b1190309fba7b9f1f65df05ae5ffc4e2dad860",
+          "retained_dispatch_commit": {
+            "committed_version": 6,
+            "coordinator_lease_epoch": 5,
+            "coordinator_lease_id": "01a08925-ba25-7472-82ff-4ef4acf69d0e",
+            "provider_attempt": {
+              "attempt_id": "attempt:d7a47b42fc9d0f84511c7c89870a84030335f8fa255ccbd7673e900355cfcd16",
+              "operation_id": "d7a47b42fc9d0f84511c7c89870a84030335f8fa255ccbd7673e900355cfcd16",
+              "transport_id": "kernel-tool-server:fs",
+              "transport_key_epoch": 5
+            },
+            "store_fence": {
+              "lease_id": "01a08925-ba25-7472-82ff-4ef4acf69d0e",
+              "owner_epoch": 5,
+              "store_uuid": "01a087d9-b634-7e61-ae80-a0c62ab7d36b"
+            }
+          },
+          "schema": "chio.admission-receipt.v1",
+          "store_fence": {
+            "lease_id": "01a08925-ba25-7472-82ff-4ef4acf69d0e",
+            "owner_epoch": 5,
+            "store_uuid": "01a087d9-b634-7e61-ae80-a0c62ab7d36b"
+          },
+          "tool_outcome_id": "4308a6097dc6268dfe08650132d3551fd2c690dbce98e1fa5a65684ba1870675",
+          "tool_outcome_version": 2,
+          "trusted_time_unix_ms": 1789008144659
+        },
+        "attribution": {
+          "delegation_depth": 0,
+          "grant_index": 0,
+          "issuer_key": "b6311d41a1a65feff88d18d1cbe02cc38fd28d478426ba00cdd0bb34221e768b",
+          "subject_key": "344ae386641abf3a174deb13e02322384a22fc2fbedfe2a1cf90694fd73974c5"
+        },
+        "chio_receipt_signing_nonce": "rcpt-01a08931-e998-7513-867a-b178ccf38ad5",
+        "receipt_context": {
+          "request_id": "659d784d-e281-4c02-a6d7-7f5df10343a7:96a145bb3583fa04b8edc0c1fbeea4155b3dacb9c0e683266272f006dc9e4466"
+        }
+      },
+      "policy_hash": "057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e",
+      "receipt_kind": "mediated_decision",
+      "redaction_mode": "none",
+      "signature": "bd93ee8ced128ee3cac373875a6544bad3135b208608dbc0ba1a199f0d22b68730b7f42f663bceabf5793336c3c9162f6c6740e54cfe6ce90d36b58bb07b4f08",
+      "timestamp": 1789008144,
+      "tool_name": "write_file",
+      "tool_origin": "caller_executed",
+      "tool_server": "fs",
+      "trust_level": "mediated"
+    },
+    "result": {
+      "content": [
+        {
+          "text": "Successfully wrote to /workspace/openclaw-inflight-ac0aac39b18a.txt",
+          "type": "text"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "content": "Successfully wrote to /workspace/openclaw-inflight-ac0aac39b18a.txt"
+      }
+    },
+    "delivery": {
+      "acknowledgement": "bNjudGzzookcnz1VsRviZ8YwyYNt483FcWP9slosDw4",
+      "receiptId": "45717c5e4d676f6ffa2adf8c376d2c29a5ef1bb0f32deab026190ec18e7cdec7",
+      "requestHash": "85bd2ef41af46d5d231876b385d06dca246949f6ba7b493ffc2edaa15f399da0",
+      "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:96a145bb3583fa04b8edc0c1fbeea4155b3dacb9c0e683266272f006dc9e4466",
+      "resultHash": "e04748e1753e371ca62858cf935e74ef3776338520983355c9055cee38c7068c",
+      "schema": "chio.mcp.delivery-ack.v1"
+    }
+  },
+  "acknowledged": true,
+  "hostDeliveryRequired": true,
+  "request": {
+    "tool": "write_file",
+    "arguments": {
+      "path": "/workspace/openclaw-inflight-ac0aac39b18a.txt",
+      "content": "second legitimate effect requiring its own evidence"
+    },
+    "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:96a145bb3583fa04b8edc0c1fbeea4155b3dacb9c0e683266272f006dc9e4466"
+  },
+  "hostDeliveryConfirmed": true,
+  "operatorReconciliation": {
+    "previousState": "unknown",
+    "previousOutcome": {
+      "state": "unknown",
+      "evidence": "unverified",
+      "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:96a145bb3583fa04b8edc0c1fbeea4155b3dacb9c0e683266272f006dc9e4466",
+      "reason": "execution receipt failed trusted request verification"
+    },
+    "ownerRecordSha256": "aa2d9b6ef8810769a65f63800bd561d1cb550a8eee85697e7a314cf5385220ba",
+    "ownerSignature": "15a0d1913af32e3b926737606b709200ab725a345fe79a8b00ab845a082c9fd633c9b767535fac4aed225a98a2cfa2622edce91ffed5e302e444889c57187a05"
+  }
+}

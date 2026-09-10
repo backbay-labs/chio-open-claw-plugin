@@ -1,0 +1,11 @@
+{
+  "binary": "openclaw",
+  "args": [
+    "--version"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "OpenClaw 2026.5.20 (e510042)\n",
+  "stderr": "",
+  "elapsedMs": 145
+}

@@ -1,0 +1,47 @@
+{
+  "noUnresolvedJournalRecords": true,
+  "nativeHistoryExported": true,
+  "removedVolumes": [
+    {
+      "name": "chio-required-openclaw-state-1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+      "sourceLaunch": "new-candidate-fenced/resume-fence/launch.json",
+      "removed": true,
+      "absenceVerified": true
+    },
+    {
+      "name": "chio-required-openclaw-control-1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+      "sourceLaunch": "new-candidate-fenced/resume-fence/launch.json",
+      "removed": true,
+      "absenceVerified": true
+    },
+    {
+      "name": "chio-required-openclaw-state-49c2adeb-4499-4327-8b9c-c92b878c98d8",
+      "sourceLaunch": "old-candidate-unknown/evidence-wrong-signer/launch.json",
+      "removed": true,
+      "absenceVerified": true
+    },
+    {
+      "name": "chio-required-openclaw-control-49c2adeb-4499-4327-8b9c-c92b878c98d8",
+      "sourceLaunch": "old-candidate-unknown/evidence-wrong-signer/launch.json",
+      "removed": true,
+      "absenceVerified": true
+    },
+    {
+      "name": "chio-required-openclaw-state-d355b377-429d-4759-9cfc-8e3f0e27f864",
+      "sourceLaunch": "owner-recovery/after-owner-reconciliation/launch.json",
+      "removed": true,
+      "absenceVerified": true
+    },
+    {
+      "name": "chio-required-openclaw-control-d355b377-429d-4759-9cfc-8e3f0e27f864",
+      "sourceLaunch": "owner-recovery/after-owner-reconciliation/launch.json",
+      "removed": true,
+      "absenceVerified": true
+    }
+  ],
+  "consumerRemoved": true,
+  "consumer": "/tmp/chio-openclaw-upgrade-r6-kng62kju/consumer",
+  "protectedResourceAndAuditUnchanged": true,
+  "privateConfigurationAndJournalPreserved": true,
+  "sharedColdPackagesAndImagesPreserved": true
+}

@@ -1,0 +1,15 @@
+{
+  "case": "watchdog-loading-failure-before-native-host",
+  "exitCode": 1,
+  "nativeHostStarted": false,
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "packageDirectory": "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel",
+  "faultedPackageDirectory": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-missing-watchdog-isurc4mp/package",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-early-crash-4040d62b57394e8c81ab6694f812f589/gateway.json",
+  "remainingContainers": [],
+  "networkPresent": false,
+  "watchdog": null,
+  "resourceUnchanged": true,
+  "automaticCleanup": true
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "type": "toolCall",
+    "id": "call_igriCpCbQRbo220SdjH14sEI|fc_044c0f78f76e85f7016aa21ab6a0f087d1ac71801850e1936a",
+    "name": "chio_call",
+    "arguments": {
+      "tool": "write_file",
+      "arguments": {
+        "path": "/workspace/openclaw-cutpoint-0d0b1e1124204300931f5e3d7f109174.txt",
+        "content": "one original observed cutpoint effect"
+      }
+    },
+    "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/openclaw-cutpoint-0d0b1e1124204300931f5e3d7f109174.txt\",\"content\":\"one original observed cutpoint effect\"}}"
+  }
+]

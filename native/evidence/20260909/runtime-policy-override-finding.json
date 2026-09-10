@@ -1,0 +1,12 @@
+{
+  "hostVersion": "2026.5.20",
+  "case": "provider-pi-overridden-by-default-model-policy",
+  "validatorAccepted": true,
+  "resolvedRuntime": {
+    "policy": {
+      "id": "codex"
+    },
+    "source": "model"
+  },
+  "mutatedPath": "agents.defaults.models.chio-model/disabled-local-probe.agentRuntime"
+}

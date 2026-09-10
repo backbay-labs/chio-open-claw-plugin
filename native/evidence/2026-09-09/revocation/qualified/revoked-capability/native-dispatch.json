@@ -1,0 +1,21 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_SmkwaPonn9ucAHQY1Tpui1fl",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-revoke-c1afef471ab5.txt",
+          "content": "forbidden after capability revocation"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_SmkwaPonn9ucAHQY1Tpui1fl"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

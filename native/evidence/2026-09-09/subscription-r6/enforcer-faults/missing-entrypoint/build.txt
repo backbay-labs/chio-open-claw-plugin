@@ -1,0 +1,20 @@
+#0 building with "colima" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 202B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f
+#2 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+------
+ > [internal] load metadata for docker.io/library/sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f
+   2 |     USER root
+   3 |     RUN rm /opt/chio/node_modules/@chio/openclaw-kernel/src/index.mjs
+--------------------
+ERROR: failed to build: failed to solve: sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f: failed to resolve source metadata for docker.io/library/sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+
+View build details: docker-desktop://dashboard/build/colima/colima/47ty0rh6ul6si91hrnf6isqu9

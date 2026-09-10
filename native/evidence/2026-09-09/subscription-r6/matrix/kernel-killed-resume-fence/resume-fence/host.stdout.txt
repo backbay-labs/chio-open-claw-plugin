@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"951a592f-73c4-4e46-9adb-9cde3cf2b4bb:c09b59b62668e2b101294263d11ef041aa7ba120bef12deada0e1bbcc2ef0145\",\"reason\":\"an unresolved operation fences this gateway; operator reconciliation required\"}",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 14182,
+    "agentMeta": {
+      "sessionId": "c42204b7-4742-407b-84f3-3130aa80579c",
+      "sessionFile": "/state/openclaw/agents/main/sessions/c42204b7-4742-407b-84f3-3130aa80579c.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 2189,
+        "output": 139,
+        "cacheRead": 3584,
+        "total": 3053
+      },
+      "lastCallUsage": {
+        "input": 1168,
+        "output": 93,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "total": 3053
+      },
+      "promptTokens": 2960
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789007375976,
+      "sessionId": "c42204b7-4742-407b-84f3-3130aa80579c",
+      "sessionKey": "agent:main:explicit:c42204b7-4742-407b-84f3-3130aa80579c",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 413,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-must-stay-fenced.txt\", \"content\": \"must never dispatch after unknown outcome\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+    "finalAssistantVisibleText": "{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"951a592f-73c4-4e46-9adb-9cde3cf2b4bb:c09b59b62668e2b101294263d11ef041aa7ba120bef12deada0e1bbcc2ef0145\",\"reason\":\"an unresolved operation fences this gateway; operator reconciliation required\"}",
+    "finalAssistantRawText": "{\"state\":\"not_dispatched\",\"evidence\":\"unverified\",\"requestId\":\"951a592f-73c4-4e46-9adb-9cde3cf2b4bb:c09b59b62668e2b101294263d11ef041aa7ba120bef12deada0e1bbcc2ef0145\",\"reason\":\"an unresolved operation fences this gateway; operator reconciliation required\"}",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 1,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

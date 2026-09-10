@@ -1,0 +1,7 @@
+{
+  "fullPrivateKernelLogSha256": "d5d0005d54b013891da25866f456d61833bb800f78e40a44dabd7e01268111f0",
+  "lines": [
+    "WARN chio_kernel::kernel::evaluation::nested_flow_evaluation message=durable admission denied (nested flow) request_id=storage-fault-openclaw-r6-before-admission:[REDACTED-BEARER] reason=durable admission failed: admission operation store is unavailable: database is locked"
+  ],
+  "note": "Actual exact storage error is retained inside signed delegated fault record even if filtered kernel log contains no matching line."
+}

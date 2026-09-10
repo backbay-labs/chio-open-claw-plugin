@@ -1,0 +1,23 @@
+[
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200
+  },
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "callSmkwaPonn9ucAHQY1Tpui1fl",
+        "content": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"35f1ded8-795a-4784-9578-8c6c606588ba:74f33d800b03e129dbb5ee97e0b1a633a76a59ff0eaed6d2d477a62f76e0f567\",\"receipt\":{\"action\":{\"parameter_hash\":\"def600747e8d554e54c6dba21d51c334e0d7d95c9cea6d7677f12a92267573e3\",\"parameters\":{\"content\":\"forbidden after capability revocation\",\"path\":\"/workspace/openclaw-revoke-c1afef471ab5.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a08831-83e4-7a22-8416-9c761bffa64f\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"capability has been revoked: cap-01a08831-83e4-7a22-8416-9c761bffa64f\",\"verdict\":\"deny\"},\"id\":\"d2767a703087a2c44c278d9b7ac9f2c66d9e92078190839a17bcfe65f373033c\",\"kernel_key\":\"580cdf640c31f652ad3115569c77310c920c67aa3482c919b9faf52817524498\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"b6311d41a1a65feff88d18d1cbe02cc38fd28d478426ba00cdd0bb34221e768b\",\"subject_key\":\"73fdc8e8d62fdacd34d49ee54cdb6f9cbf61e8ca36d2b47fcd4b07dec7c7d57c\"},\"chio_receipt_signing_nonce\":\"rcpt-01a08831-d613-7083-9b8e-577d7d06acb2\",\"receipt_context\":{\"request_id\":\"35f1ded8-795a-4784-9578-8c6c606588ba:74f33d800b03e129dbb5ee97e0b1a633a76a59ff0eaed6d2d477a62f76e0f567\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"2d549f7bf4f6c05a597f3abd572cacb41d2900985807071102f818fab4e76c0948be317cfa344c756b248793438a57cea3d90e3959c3e7d14cd672f055d3f503\",\"timestamp\":1788991362,\"tool_name\":\"write_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"capability has been revoked: cap-01a08831-83e4-7a22-8416-9c761bffa64f\"}"
+      }
+    ],
+    "status": 200
+  }
+]

@@ -1,0 +1,9 @@
+Supplemental corrected disabled-tool fixed-provider fixture: bounded native-path observation PASSED. This is not live-model or useful-work acceptance.
+
+The fixed Responses batch supplied ten names that are absent from the restricted tool inventory: read, write, edit, exec, process, web_fetch, sessions_spawn, cron, gateway and config. The actual native OpenClaw session retained ten matching toolResult IDs/names, each with isError=true and exact text Tool <name> not found. The provider exposed only chio_call. The native transport omitted unsupported assistant calls and their outputs from the next model request; this corrected fixture accepts that observed contract and returns a final no-tools statement that no protected operation completed. That exact statement is retained in native-history.json.
+
+Independent resource and audit snapshots were identical. There were zero resource dispatches, zero journal records and zero confirmed deliveries. The original private authority configuration was unchanged. The guest control-volume configuration hash matches the intended launcher configuration. Raw history, injected stream items, observer snapshots and exact source/artifact/configuration hashes are retained alongside summary.json. No real provider credentials or provider network were used.
+
+Observed final status: host exit 0, wrapper exit 0, terminal outcome completed, confirmedDeliveries 0. This records completion of the fixed conversation, not success of any protected operation. The disabled-path result does not qualify a useful workflow.
+
+The earlier disabled-tools directory remains unchanged with its failed original harness assertions and diagnostic. This separately authorized corrected execution does not overwrite or retroactively pass that attempt. No uncertain protected operation was retried.

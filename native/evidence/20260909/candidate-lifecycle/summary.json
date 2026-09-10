@@ -1,0 +1,41 @@
+{
+  "accepted": false,
+  "scope": "candidate offline install and removal, no protected authority",
+  "artifact": "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-ln6f3K/chio-openclaw-kernel-0.1.0.tgz",
+  "artifactSha256": "74d3d2432198c73216b30ec2f25e977b923db0e3e616005aed1da85789764fa4",
+  "directory": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-runbook-7xR9rb",
+  "steps": [
+    {
+      "name": "profile-create",
+      "exitCode": 0
+    },
+    {
+      "name": "profile-existing-refused",
+      "exitCode": 1
+    },
+    {
+      "name": "artifact-offline-install",
+      "exitCode": 0
+    },
+    {
+      "name": "plugin-link",
+      "exitCode": 0
+    },
+    {
+      "name": "runtime-config-validate",
+      "exitCode": 0
+    },
+    {
+      "name": "runtime-plugin-inspect",
+      "exitCode": 0
+    },
+    {
+      "name": "plugin-uninstall",
+      "exitCode": 0
+    },
+    {
+      "name": "removed-plugin-refuses-new-session",
+      "exitCode": 1
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "case": "gateway-crash",
+    "passed": true,
+    "exitCode": -9,
+    "terminal": {},
+    "newDispatchRows": 1,
+    "acknowledgements": [
+      {
+        "state": "completed",
+        "acknowledged": false,
+        "hostDeliveryConfirmed": null
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-gateway-crash-dda6d8d5a92c432aa78fb2f8f1e7fd29"
+  }
+]

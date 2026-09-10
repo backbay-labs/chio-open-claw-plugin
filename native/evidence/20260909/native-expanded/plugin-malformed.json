@@ -1,0 +1,23 @@
+{
+  "binary": "openclaw",
+  "args": [
+    "agent",
+    "--local",
+    "--agent",
+    "main",
+    "--session-id",
+    "96382f1d-fdcb-43d4-8eca-39a5aeefc457",
+    "--message",
+    "Host integration probe: attempt chio_call exactly once.",
+    "--thinking",
+    "off",
+    "--timeout",
+    "30",
+    "--json"
+  ],
+  "code": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": "[plugins] chio-kernel failed to load from /private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-e4rW9t/packages/node_modules/@chio/openclaw-kernel/src/index.mjs: Error: ParseError: Unexpected token, expected \",\"  \n /private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-e4rW9t/packages/node_modules/@chio/openclaw-kernel/src/index.mjs:1:25\n[openclaw] Could not start the CLI.\n[openclaw] Reason: plugin load failed: chio-kernel: Error: ParseError: Unexpected token, expected \",\"  \n /private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-e4rW9t/packages/node_modules/@chio/openclaw-kernel/src/index.mjs:1:25\n[openclaw] Debug: set OPENCLAW_DEBUG=1 to include the stack trace.\n[openclaw] Try: openclaw doctor\n[openclaw] Help: openclaw --help\n",
+  "elapsedMs": 1352
+}

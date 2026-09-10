@@ -1,0 +1,23 @@
+{
+  "binary": "openclaw",
+  "args": [
+    "agent",
+    "--local",
+    "--agent",
+    "main",
+    "--session-id",
+    "d9507373-f30e-48c5-b101-60d53319bcaf",
+    "--message",
+    "Host integration probe: attempt write exactly once.",
+    "--thinking",
+    "off",
+    "--timeout",
+    "30",
+    "--json"
+  ],
+  "code": 1,
+  "signal": null,
+  "stdout": "",
+  "stderr": "Config observe anomaly: /var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-bWwdxr/openclaw.json (missing-meta-vs-last-good)\ntools policy: profile \"minimal\" (agent \"main\") has configured tool sections (tools.exec) that no longer implicitly widen the profile. Add alsoAllow: [\"exec\", \"process\"] explicitly if these tools should be available. See #47487.\n[tools] tools.profile (minimal) allowlist contains unknown entries (chio_call). These entries won't match any tool unless the plugin is enabled.\n[tools] tools.allow allowlist contains unknown entries (chio_call). These entries won't match any tool unless the plugin is enabled.\ntools policy: profile \"minimal\" (agent \"main\") has configured tool sections (tools.exec) that no longer implicitly widen the profile. Add alsoAllow: [\"exec\", \"process\"] explicitly if these tools should be available. See #47487.\n[agent/embedded] [tools] No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\n[agent/embedded] embedded run failover decision: runId=d9507373-f30e-48c5-b101-60d53319bcaf stage=prompt decision=surface_error reason=none from=chio-local/chio-test-model profile=- rawError=No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\n[diagnostic] lane task error: lane=main durationMs=1915 error=\"Error: No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\"\n[diagnostic] lane task error: lane=session:agent:main:explicit:d9507373-f30e-48c5-b101-60d53319bcaf durationMs=1918 error=\"Error: No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\"\nError: No callable tools remain after resolving explicit tool allowlist (tools.allow: *, chio_call); no registered tools matched. Fix the allowlist or enable the plugin that registers the requested tool.\n",
+  "elapsedMs": 4837
+}

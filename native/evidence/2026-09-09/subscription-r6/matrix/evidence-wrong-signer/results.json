@@ -1,0 +1,21 @@
+[
+  {
+    "case": "evidence-wrong-signer",
+    "exitCode": 2,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-0b92432027ec4057885332522348b7e6/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-9841bf3bbd09421bbe77497a0b02f8da",
+      "--image",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. First call chio_call with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-32522348b7e6.txt\", \"content\": \"authorized before in-flight revocation\"}}. Wait for its successful result. Then Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-32522348b7e6.txt\", \"content\": \"second legitimate effect requiring its own evidence\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 2
+  }
+]

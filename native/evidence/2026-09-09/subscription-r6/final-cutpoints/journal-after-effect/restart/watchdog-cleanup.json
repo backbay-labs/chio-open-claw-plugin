@@ -1,0 +1,1 @@
+{"status":"cleaned","events":[{"name":"chio-openclaw-relay-6b81a600-015e-4816-98b3-c3071725cef8","attempt":0,"wasRunning":true,"removed":true}],"networkRemoved":true,"volumesPreserved":["chio-required-openclaw-state-6b81a600-015e-4816-98b3-c3071725cef8","chio-required-openclaw-control-6b81a600-015e-4816-98b3-c3071725cef8"]}

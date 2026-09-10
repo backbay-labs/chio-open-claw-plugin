@@ -1,0 +1,15 @@
+[
+  {
+    "type": "toolCall",
+    "id": "call_FuoBRWS0WjOkheJAHjAcyY7r|fc_0286358f2483b856016aa21663dfd887d1ba5ccddff25c210f",
+    "name": "chio_call",
+    "arguments": {
+      "tool": "write_file",
+      "arguments": {
+        "path": "/workspace/openclaw-qualified-496a75f78997.txt",
+        "content": "original retained effect"
+      }
+    },
+    "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/openclaw-qualified-496a75f78997.txt\",\"content\":\"original retained effect\"}}"
+  }
+]

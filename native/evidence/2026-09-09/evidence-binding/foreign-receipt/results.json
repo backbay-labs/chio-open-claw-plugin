@@ -1,0 +1,19 @@
+[
+  {
+    "case": "evidence-foreign-receipt",
+    "exitCode": 2,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-7a322288bc1a47bea14bca09255396eb/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-cd07b5c1ed0f4d5daa2f8b91f79d315d",
+      "--image",
+      "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+      "--prompt",
+      "First call chio_call with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-ca09255396eb.txt\", \"content\": \"authorized before in-flight revocation\"}}. Wait for its successful result. Then Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-ca09255396eb.txt\", \"content\": \"second legitimate effect requiring its own evidence\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 2
+  }
+]

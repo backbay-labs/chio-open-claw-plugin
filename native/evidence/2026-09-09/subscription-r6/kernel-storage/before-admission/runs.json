@@ -1,0 +1,54 @@
+[
+  {
+    "label": "positive",
+    "exitCode": 0,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 0,
+      "outcome": "completed",
+      "confirmedDeliveries": 1
+    },
+    "nativeToolCallId": "call_jUhUCbRSZvF66c0M2ftWC641|fc_04501b5761c983c6016aa220b9a26487d19c933df5d4c62521",
+    "nativeSessionId": "4238e0f9-ef8d-4cae-97b7-917f0b82cb24",
+    "elapsedSeconds": 30.403645124999457
+  },
+  {
+    "label": "faulted-native",
+    "exitCode": 2,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 2,
+      "outcome": "unresolved",
+      "confirmedDeliveries": 1
+    },
+    "nativeToolCallId": "call_L8hQZdBKubv5BMd6TQig7vUk|fc_0c706626574a37cb016aa220cfe0e487d1b44834ea28d417fd",
+    "nativeSessionId": "e8f9eceb-715e-4b7d-b552-ef3828d55e62",
+    "elapsedSeconds": 26.57679945800919
+  },
+  {
+    "label": "same-action-after-unlock",
+    "exitCode": 2,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 2,
+      "outcome": "unresolved",
+      "confirmedDeliveries": 1
+    },
+    "nativeToolCallId": "call_6pC0LtDWyEDKXgCitPSC3NpE|fc_0d0face6136c66a2016aa220eadc9887d19d50ac303dc28e10",
+    "nativeSessionId": "c30c0286-1f0d-4d4d-bff2-92c76ac2ba1c",
+    "elapsedSeconds": 20.75215066599776
+  },
+  {
+    "label": "new-action-after-restart",
+    "exitCode": 2,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 2,
+      "outcome": "unresolved",
+      "confirmedDeliveries": 1
+    },
+    "nativeToolCallId": "call_uCNdsJhzWaZNVNZnYWRX1u0X|fc_0e7077ffeb50c25a016aa221031e6087d192364f9b94552adb",
+    "nativeSessionId": "a19abdec-1a94-4e35-8d2e-6c96195b995a",
+    "elapsedSeconds": 22.140055957992445
+  }
+]

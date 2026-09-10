@@ -1,0 +1,17 @@
+{
+  "binary": "npm",
+  "args": [
+    "install",
+    "--prefix",
+    "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-ln6f3K/packages",
+    "--ignore-scripts",
+    "--no-audit",
+    "--no-fund",
+    "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-ln6f3K/chio-openclaw-kernel-0.1.0.tgz"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "\nadded 1 package in 1s\n",
+  "stderr": "",
+  "elapsedMs": 1362
+}

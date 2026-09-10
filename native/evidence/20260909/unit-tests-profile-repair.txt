@@ -1,0 +1,24 @@
+
+> @chio/openclaw-kernel@0.1.0 test
+> node --test test/*.test.mjs
+
+✔ a stale missing-completion read cannot redispatch after acquiring the lock (110.32525ms)
+✔ a stale missing-completion read with changed arguments cleans its new lock (113.862917ms)
+✔ same host operation is dispatched once, bound to host caller and canonical arguments (41.427708ms)
+✔ unknown outcome fences subsequent calls and survives recreated plugin (17.340958ms)
+✔ completed cache is bound to the operator authority configuration (33.773083ms)
+✔ missing trusted identity, injected authority, and cancelled calls never dispatch (2.692416ms)
+✔ parallel dispatch is fenced before a second effect starts (26.819708ms)
+✔ configuration changes and non-Chio hooks block before dispatch (1.782625ms)
+✔ runtime precedence and per-agent skills cannot bypass the pinned provider profile (0.961041ms)
+✔ signed post-effect denial and unverified success cannot release the session fence (29.660208ms)
+✔ known pre-dispatch failure releases the fence for a later fresh operation (58.068792ms)
+✔ a verified completed tool error remains an error to the host (35.201625ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 402.37475

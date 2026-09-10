@@ -1,0 +1,53 @@
+[
+  {
+    "case": "concurrent-owner-refused",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-1cb1788a2afa4457b9aee734c6d6335d/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-a51c59584e4d40f1a0a1835f77cb59ea",
+      "--image",
+      "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-parallel-e734c6d6335d.txt\", \"content\": \"second owner must never write\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "first-owner",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-1cb1788a2afa4457b9aee734c6d6335d/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-4c7f230d60db4503947664c636af4007",
+      "--image",
+      "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-parallel-e734c6d6335d.txt\", \"content\": \"only the live owner may write\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "read-after-exclusive-owner",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-1cb1788a2afa4457b9aee734c6d6335d/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-b8dc87946ab14d21a02acb59abc3c7de",
+      "--image",
+      "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"read_text_file\", \"arguments\": {\"path\": \"/workspace/openclaw-parallel-e734c6d6335d.txt\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 1
+  }
+]

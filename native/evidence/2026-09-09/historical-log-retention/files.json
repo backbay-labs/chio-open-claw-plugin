@@ -1,0 +1,113 @@
+{
+  "schema": "chio.historical-log-retention.v1",
+  "retainedOn": "2026-09-10",
+  "collectionBaseCommit": "ec4267779ff180b2a58cfc5d2f86c36197a99fb9",
+  "scope": "Historical logs only; collectionBaseCommit identifies archival context, not executed runtime source. No host rerun, source rebinding or current acceptance claim.",
+  "originalFilesPreserved": true,
+  "files": [
+    {
+      "sourcePath": "native/evidence/2026-09-09/container-boundary/attempt-1/driver.log",
+      "originalBytes": 1886,
+      "originalSha256": "2618922ba7fce9c43ae965afe5cd868978a76a3f92b79cac8bf9a666e16246d2",
+      "archivePath": "raw/container-boundary/attempt-1/driver.log.gz",
+      "archiveBytes": 738,
+      "archiveSha256": "6d924595b1c9fb061029926df2e0b4377290ecbf81e2a23e6ba51ce12f811beb"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/container-boundary/attempt-2/driver.log",
+      "originalBytes": 515,
+      "originalSha256": "424b1b625ec6c3c83251d9dce59cd652f247b6eff76dee8f65584e490cb81acc",
+      "archivePath": "raw/container-boundary/attempt-2/driver.log.gz",
+      "archiveBytes": 303,
+      "archiveSha256": "489abbf9ae9aa42666d462b572bb376fb2aa8c45f6e72b5a2dcfec64d0c05a73"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/container-boundary/attempt-3/driver.log",
+      "originalBytes": 36,
+      "originalSha256": "500efc367db3c6313b872ddb98c5f7ab1bb0ec7fa5e8cfbbef96301737d009bf",
+      "archivePath": "raw/container-boundary/attempt-3/driver.log.gz",
+      "archiveBytes": 55,
+      "archiveSha256": "71828ff43c402451ebdb26aa14a3e6807d25a28b389b5be7627670d16b99de00"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/http-host-delivery/chio-openclaw-received-result-cold-image-build-r2-20260909.log",
+      "originalBytes": 2187,
+      "originalSha256": "78ea62eb2724376288994059c6168ea9f79ec888c2a3587064e35692e2a8420b",
+      "archivePath": "raw/http-host-delivery/chio-openclaw-received-result-cold-image-build-r2-20260909.log.gz",
+      "archiveBytes": 949,
+      "archiveSha256": "b40c3da4320b3a2237aac83f55fd2882fabe086efbe523db95641c2deb108e09"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/http-host-delivery/chio-openclaw-received-result-final-tests-r2-20260909.log",
+      "originalBytes": 1635,
+      "originalSha256": "e890f91c122ebf9a7936d110ef627d9365110df81c0f03561ab1f33b29b11a76",
+      "archivePath": "raw/http-host-delivery/chio-openclaw-received-result-final-tests-r2-20260909.log.gz",
+      "archiveBytes": 804,
+      "archiveSha256": "ea422e513d67f4574979142b0d20c367ebcab72f50a34f34684dbe25feee3f55"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/native-history-ack/chio-openclaw-native-history-tests-20260909.log",
+      "originalBytes": 1630,
+      "originalSha256": "0cb5ce6a01cf1f79c0388602e33360f2bccfcc94ba7c8594059726c5f78b4134",
+      "archivePath": "raw/native-history-ack/chio-openclaw-native-history-tests-20260909.log.gz",
+      "archiveBytes": 809,
+      "archiveSha256": "7912cb4cac267b55c4649508268cf14c1eaf2aa44bb1bdbabf2b7455ab466e08"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/native-history-ack/cold-image-build.log",
+      "originalBytes": 2280,
+      "originalSha256": "56e79c798ec935986575d69598c031f22b6e2dff11f952d90ddc0b51d45fab03",
+      "archivePath": "raw/native-history-ack/cold-image-build.log.gz",
+      "archiveBytes": 955,
+      "archiveSha256": "4909a1ccee06cafac431666254d110f64b3c3c87f5d1c5796e780911de059de7"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/subscription-r6/kernel-storage/after-admission/helper-public/restart.log",
+      "originalBytes": 80,
+      "originalSha256": "0f2ac48954a1813cb8db080e1d02d1f3c260539fc0177167e8fdf386c0671060",
+      "archivePath": "raw/subscription-r6/kernel-storage/after-admission/helper-public/restart.log.gz",
+      "archiveBytes": 95,
+      "archiveSha256": "411c827a6cde5cb211997a2f2bca4542c38740ec563628ab85079b84a9a9ef40"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/subscription-r6/kernel-storage/after-admission/helper-public/start.log",
+      "originalBytes": 80,
+      "originalSha256": "31a1cffe53ce6ecb544f5015e1d211afe1f5562260cd3642c624f054c9c21a7a",
+      "archivePath": "raw/subscription-r6/kernel-storage/after-admission/helper-public/start.log.gz",
+      "archiveBytes": 95,
+      "archiveSha256": "edf1ea0d388faf41a0a2086ca4ebaf1325d2be154ee8862b053e99910e8f0c89"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/subscription-r6/kernel-storage/after-receipt/helper-public/restart.log",
+      "originalBytes": 80,
+      "originalSha256": "2164dd99d6c61e653df4fc8b7b76bea2791ec4c55df5ded254d1d05922014ea5",
+      "archivePath": "raw/subscription-r6/kernel-storage/after-receipt/helper-public/restart.log.gz",
+      "archiveBytes": 95,
+      "archiveSha256": "75c998b31f9da1fe70d35dcbb4047a7e7e8dacacbec3b741670f54ecd07cd03e"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/subscription-r6/kernel-storage/after-receipt/helper-public/start.log",
+      "originalBytes": 80,
+      "originalSha256": "18fe82c671f2342f5b3b0f323988709d2e1f2698a85e6422f8debcae5dbd2b2e",
+      "archivePath": "raw/subscription-r6/kernel-storage/after-receipt/helper-public/start.log.gz",
+      "archiveBytes": 94,
+      "archiveSha256": "cbeb5cbbba5c3c52eb021402fa3b1f10f047a55610779c903e70371075bbc998"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/subscription-r6/kernel-storage/before-admission/helper-public/restart.log",
+      "originalBytes": 80,
+      "originalSha256": "dfb7c868929c200e2cff4bdd4b5891e1764251784de338c0b3730f4f2a0ab9f3",
+      "archivePath": "raw/subscription-r6/kernel-storage/before-admission/helper-public/restart.log.gz",
+      "archiveBytes": 95,
+      "archiveSha256": "80aca5fe5f475ff2eb7b21e55aebb32c0ee24134220b01137753d4983ba1254e"
+    },
+    {
+      "sourcePath": "native/evidence/2026-09-09/subscription-r6/kernel-storage/before-admission/helper-public/start.log",
+      "originalBytes": 80,
+      "originalSha256": "0d8025cf0d8fc33c4efe0d52c5cfa6b972d356b1724c5788d95a59b5c702b6db",
+      "archivePath": "raw/subscription-r6/kernel-storage/before-admission/helper-public/start.log.gz",
+      "archiveBytes": 95,
+      "archiveSha256": "8f87e6a3cf8965753cb3fc1dbb20e985b5ea89e8908bb94becaa67bfa51b45e6"
+    }
+  ]
+}

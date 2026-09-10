@@ -1,0 +1,10 @@
+{
+  "removedContainers": [
+    "chio-openclaw-relay-b67dc276-a3f4-4927-938d-fb16e5831261"
+  ],
+  "removedNetwork": true,
+  "volumesPreserved": [
+    "chio-required-openclaw-state-b67dc276-a3f4-4927-938d-fb16e5831261",
+    "chio-required-openclaw-control-b67dc276-a3f4-4927-938d-fb16e5831261"
+  ]
+}

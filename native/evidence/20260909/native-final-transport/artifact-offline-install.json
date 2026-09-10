@@ -1,0 +1,17 @@
+{
+  "binary": "npm",
+  "args": [
+    "install",
+    "--prefix",
+    "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-bWwdxr/packages",
+    "--ignore-scripts",
+    "--no-audit",
+    "--no-fund",
+    "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-bWwdxr/chio-openclaw-kernel-0.1.0.tgz"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "\nadded 1 package in 2s\n",
+  "stderr": "",
+  "elapsedMs": 2291
+}

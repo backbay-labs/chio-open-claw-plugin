@@ -1,0 +1,71 @@
+{
+  "status": "under-qualification-not-accepted",
+  "sourceBase": "bfabb63efe1267658cc6ef566a3e2dd4a3e42183",
+  "package": "/tmp/chio-openclaw-subscription-r6-package-20260909/chio-openclaw-kernel-0.1.0.tgz",
+  "sha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "supersededArchive": "10429af214dfd12f4383749e1c106babd876a1377d53d55125630a2054dcec2c",
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "runtimeFileComparisons": [
+    {
+      "path": "scripts/build-container.mjs",
+      "sha256": "d7e5affd4d4f4a904e9be289e1db3147e84f873e83d120ec1d08f4b5037cc34c",
+      "matchesSource": true
+    },
+    {
+      "path": "scripts/cleanup-watchdog.mjs",
+      "sha256": "565b49f06e2a0739e7f19053272309f3ed6a2bd4ac9f3f1301cc50d3909afb88",
+      "matchesSource": true
+    },
+    {
+      "path": "scripts/container-config.mjs",
+      "sha256": "1a7407f39aa8ef15a38b6b563368062c4d95b14359f222e1669a7065ae667d9c",
+      "matchesSource": true
+    },
+    {
+      "path": "scripts/create-profile.mjs",
+      "sha256": "26bce7a481d6b4330341075a4f04f3aab1ab968bea56e066eaf9e6162bd653ba",
+      "matchesSource": true
+    },
+    {
+      "path": "scripts/pack-release.mjs",
+      "sha256": "1a9ac5f7bebf8f2847909b63da6d9695132c1e9ead79af876583c6543824f2c4",
+      "matchesSource": true
+    },
+    {
+      "path": "scripts/protected.mjs",
+      "sha256": "a812a250a990d21311dec47feb53f428b2fbeaeca1443b8eed2cb63ff8746752",
+      "matchesSource": true
+    },
+    {
+      "path": "src/http-executor.mjs",
+      "sha256": "850c5d03076379e81ae6aa8e3d751405e3a5066fc7cd49cbe405a7677e9f0af8",
+      "matchesSource": true
+    },
+    {
+      "path": "src/index.mjs",
+      "sha256": "070556b6ea8cc38a3a17bc61b56acc1f3fbda105c9675effdae2dcf6b820e84b",
+      "matchesSource": true
+    },
+    {
+      "path": "src/journal.mjs",
+      "sha256": "bd032d2718ba340a174b5502303b528d05502436f41786431790c808a3e890b0",
+      "matchesSource": true
+    },
+    {
+      "path": "src/model-relay.mjs",
+      "sha256": "2ae2c174dd5fea0b50f3f8d611498d112bb678520ec0da2289785d8f820dfdc9",
+      "matchesSource": true
+    },
+    {
+      "path": "src/plugin.mjs",
+      "sha256": "b7d3347676a32ce1d1373efb622bc2646b51593ff0fd67eb1e6ad369a2f3d061",
+      "matchesSource": true
+    },
+    {
+      "path": "src/profile.mjs",
+      "sha256": "2031ad3cfd2cb16541717deb123a86f2f4c594023f34ec2d4cbd65860583cfee",
+      "matchesSource": true
+    }
+  ],
+  "runtimeCommit": "f6627ae"
+}

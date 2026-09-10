@@ -1,0 +1,211 @@
+{
+  "passed": true,
+  "verifierSha256": "6ad84c6292e3eaf5bda271f7ee46c41c8146d0c606eee1bbb9f51b71a02b79f3",
+  "sdkEntrySha256": "f2f6c368d71b2fc44fba0bf37c3ec20631ff8ff4fdf2643ceb8606bfc08a3947",
+  "canonicalizer": "pinned SDK RFC8785 canonicalizeJsonString",
+  "storedSignaturesVerified": 51,
+  "cases": [
+    {
+      "case": "after-receipt",
+      "passed": true,
+      "trustedKernelSigner": "404ad2f1dcc0aef17a67e3ce6c6ed06b68704c09cc1c9246670102f27073a401",
+      "storedSignaturesVerified": 17,
+      "faultRequestId": "storage-fault-openclaw-r6-after-receipt:3207e8c2cd3354eef69208961a424a1a2472586fe963f0cba17b497b3ebea567",
+      "states": [
+        {
+          "snapshot": "while-locked",
+          "delegatedCallState": "fenced",
+          "admissionState": "completed",
+          "durableFaultOutcomeCount": 1,
+          "kernelError": "receipt persistence failed: sqlite receipt commit append timed out after 5000ms"
+        },
+        {
+          "snapshot": "after-unlock",
+          "delegatedCallState": "fenced",
+          "admissionState": "completed",
+          "durableFaultOutcomeCount": 1,
+          "kernelError": "receipt persistence failed: sqlite receipt commit append timed out after 5000ms"
+        },
+        {
+          "snapshot": "after-same-action",
+          "delegatedCallState": "fenced",
+          "admissionState": "completed",
+          "durableFaultOutcomeCount": 1,
+          "kernelError": "receipt persistence failed: sqlite receipt commit append timed out after 5000ms"
+        },
+        {
+          "snapshot": "after-owner-restart",
+          "delegatedCallState": "fenced",
+          "admissionState": "completed",
+          "durableFaultOutcomeCount": 1,
+          "kernelError": "receipt persistence failed: sqlite receipt commit append timed out after 5000ms"
+        },
+        {
+          "snapshot": "final",
+          "delegatedCallState": "fenced",
+          "admissionState": "completed",
+          "durableFaultOutcomeCount": 1,
+          "kernelError": "receipt persistence failed: sqlite receipt commit append timed out after 5000ms"
+        }
+      ],
+      "native": [
+        {
+          "label": "positive",
+          "callId": "call_hCtkMyZDIvts8oqCERxnir1a|fc_09dae4a51adceaba016aa220bb39c887d186a19f69458d264f",
+          "outcome": "completed"
+        },
+        {
+          "label": "faulted-native",
+          "callId": "call_Ilq0lEK7vO3PE4vIXeyuJABy|fc_098dcc47ba03fd57016aa220d587f087d1bee6187566765da3",
+          "outcome": "unknown"
+        },
+        {
+          "label": "same-action-after-unlock",
+          "callId": "call_GfLLy61oPtDlJ6w19uLnH8Rb|fc_03e47648316e610d016aa220f2ffb487d1a1b746af8e5d0457",
+          "outcome": "not_dispatched"
+        },
+        {
+          "label": "new-action-after-restart",
+          "callId": "call_0DlkwdOpj75B0tFllEPmg8wb|fc_0f5f379ea9739480016aa2210bb46487d188b314d96ca4cf8b",
+          "outcome": "not_dispatched"
+        }
+      ],
+      "exactOriginalNativeIdReplayClaim": false
+    },
+    {
+      "case": "before-admission",
+      "passed": true,
+      "trustedKernelSigner": "3e51f4e0413360d555cb4e6cf4b9d9366f1d8285546bf1d00cfb957be006a81c",
+      "storedSignaturesVerified": 17,
+      "faultRequestId": "storage-fault-openclaw-r6-before-admission:2ee31cddb37415a40cca1121192efabcfa0c35513a7a89dab1e53b168e7ecf10",
+      "states": [
+        {
+          "snapshot": "while-locked",
+          "delegatedCallState": "fenced",
+          "admissionState": null,
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        },
+        {
+          "snapshot": "after-unlock",
+          "delegatedCallState": "fenced",
+          "admissionState": null,
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        },
+        {
+          "snapshot": "after-same-action",
+          "delegatedCallState": "fenced",
+          "admissionState": null,
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        },
+        {
+          "snapshot": "after-owner-restart",
+          "delegatedCallState": "fenced",
+          "admissionState": null,
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        },
+        {
+          "snapshot": "final",
+          "delegatedCallState": "fenced",
+          "admissionState": null,
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        }
+      ],
+      "native": [
+        {
+          "label": "positive",
+          "callId": "call_jUhUCbRSZvF66c0M2ftWC641|fc_04501b5761c983c6016aa220b9a26487d19c933df5d4c62521",
+          "outcome": "completed"
+        },
+        {
+          "label": "faulted-native",
+          "callId": "call_L8hQZdBKubv5BMd6TQig7vUk|fc_0c706626574a37cb016aa220cfe0e487d1b44834ea28d417fd",
+          "outcome": "unknown"
+        },
+        {
+          "label": "same-action-after-unlock",
+          "callId": "call_6pC0LtDWyEDKXgCitPSC3NpE|fc_0d0face6136c66a2016aa220eadc9887d19d50ac303dc28e10",
+          "outcome": "not_dispatched"
+        },
+        {
+          "label": "new-action-after-restart",
+          "callId": "call_uCNdsJhzWaZNVNZnYWRX1u0X|fc_0e7077ffeb50c25a016aa221031e6087d192364f9b94552adb",
+          "outcome": "not_dispatched"
+        }
+      ],
+      "exactOriginalNativeIdReplayClaim": false
+    },
+    {
+      "case": "after-admission",
+      "passed": true,
+      "trustedKernelSigner": "311de4ae45050136ab3875dbc6697831909334d5caacc0db8fc565bea85b07d3",
+      "storedSignaturesVerified": 17,
+      "faultRequestId": "storage-fault-openclaw-r6-after-admission:0937bebb64cc641589cb6d2032110076a8aed924ef22aadec18361bb1ea3d48a",
+      "states": [
+        {
+          "snapshot": "while-locked",
+          "delegatedCallState": "fenced",
+          "admissionState": "dispatch_committed",
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        },
+        {
+          "snapshot": "after-unlock",
+          "delegatedCallState": "fenced",
+          "admissionState": "dispatch_committed",
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        },
+        {
+          "snapshot": "after-same-action",
+          "delegatedCallState": "fenced",
+          "admissionState": "dispatch_committed",
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        },
+        {
+          "snapshot": "after-owner-restart",
+          "delegatedCallState": "fenced",
+          "admissionState": "outcome_unknown_after_dispatch",
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        },
+        {
+          "snapshot": "final",
+          "delegatedCallState": "fenced",
+          "admissionState": "outcome_unknown_after_dispatch",
+          "durableFaultOutcomeCount": 0,
+          "kernelError": "durable admission failed: admission operation store is unavailable: database is locked"
+        }
+      ],
+      "native": [
+        {
+          "label": "positive",
+          "callId": "call_mvxbWvXrRk5Geougjo11EQ6B|fc_061f0719dff3e0e8016aa220b9877c87d18d1bd564b2815c6d",
+          "outcome": "completed"
+        },
+        {
+          "label": "faulted-native",
+          "callId": "call_i3VyMCoXlh985v6OaK9zwYG3|fc_0617eae20d257bad016aa220cf392087d1b6beed65fa89dc8b",
+          "outcome": "unknown"
+        },
+        {
+          "label": "same-action-after-unlock",
+          "callId": "call_S6NwkGiDduTqxXAdM6CtmM88|fc_0add2d4ec93a6aa3016aa220ea60dc87d1bb96d18b5a20d72e",
+          "outcome": "not_dispatched"
+        },
+        {
+          "label": "new-action-after-restart",
+          "callId": "call_JsBvJtk4XAXJR0I1z5MPQIIz|fc_063a0e92f1e2a4e2016aa22101914c87d18dda3703ee0d19d8",
+          "outcome": "not_dispatched"
+        }
+      ],
+      "exactOriginalNativeIdReplayClaim": false
+    }
+  ],
+  "scope": "read-only native outcomes, real SQLite error/state transitions and signed owner fences; no dispatch or authority issuance"
+}

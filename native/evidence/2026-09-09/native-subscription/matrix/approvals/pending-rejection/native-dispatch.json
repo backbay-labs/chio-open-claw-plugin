@@ -1,0 +1,21 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_G6x94uvfo9q4Jz9vl6o3Esnx|fc_0bfd953a6f45aa8c016aa2125355ac87d2b6b12f88838ada56",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-rejected-7c8e380a00e6.txt",
+          "content": "must never appear"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_G6x94uvfo9q4Jz9vl6o3Esnx|fc_0bfd953a6f45aa8c016aa2125355ac87d2b6b12f88838ada56"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

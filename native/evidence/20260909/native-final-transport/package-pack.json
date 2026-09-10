@@ -1,0 +1,12 @@
+{
+  "binary": "node",
+  "args": [
+    "scripts/pack-release.mjs",
+    "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-bWwdxr"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "\n> @chio/openclaw-kernel@0.1.0 build\n> node --check src/index.mjs && node --check src/plugin.mjs && node --check src/journal.mjs\n\n{\"name\":\"@chio/openclaw-kernel\",\"version\":\"0.1.0\",\"artifact\":\"/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-bWwdxr/chio-openclaw-kernel-0.1.0.tgz\",\"sha256\":\"975ffdf106cc66fd0579f38d732d111429a85150721ec0a51326310ff700878f\",\"bundled\":[\"@chio/bridge\"]}\n",
+  "stderr": "",
+  "elapsedMs": 4230
+}

@@ -1,0 +1,252 @@
+[
+  {
+    "type": "session",
+    "version": 3,
+    "id": "1a6cdfb9-f275-4f4b-86fb-3c3259746ba2",
+    "timestamp": "2026-09-10T03:15:01.600Z",
+    "cwd": "/state/workspace"
+  },
+  {
+    "type": "model_change",
+    "id": "cb0fc1a0",
+    "parentId": null,
+    "timestamp": "2026-09-10T03:15:01.726Z",
+    "provider": "openai-codex",
+    "modelId": "gpt-5.5"
+  },
+  {
+    "type": "thinking_level_change",
+    "id": "7e919dd0",
+    "parentId": "cb0fc1a0",
+    "timestamp": "2026-09-10T03:15:01.726Z",
+    "thinkingLevel": "off"
+  },
+  {
+    "type": "custom",
+    "customType": "model-snapshot",
+    "data": {
+      "timestamp": 1789010101756,
+      "provider": "openai-codex",
+      "modelApi": "openai-codex-responses",
+      "modelId": "gpt-5.5"
+    },
+    "id": "93644331",
+    "parentId": "7e919dd0",
+    "timestamp": "2026-09-10T03:15:01.756Z"
+  },
+  {
+    "type": "message",
+    "id": "8f0b0553",
+    "parentId": "93644331",
+    "timestamp": "2026-09-10T03:15:01.802Z",
+    "message": {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Use chio_call with tool write_file exactly once to write /workspace/positive.txt with content \"OpenClaw storage positive after-receipt\". Preserve those exact arguments. Stop after the actual result. Do not retry an uncertain or unsuccessful operation or substitute another tool."
+        }
+      ],
+      "timestamp": 1789010101797
+    }
+  },
+  {
+    "type": "message",
+    "id": "ff70ab72",
+    "parentId": "8f0b0553",
+    "timestamp": "2026-09-10T03:15:09.851Z",
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "toolCall",
+          "id": "call_hCtkMyZDIvts8oqCERxnir1a|fc_09dae4a51adceaba016aa220bb39c887d186a19f69458d264f",
+          "name": "chio_call",
+          "arguments": {
+            "tool": "write_file",
+            "arguments": {
+              "path": "/workspace/positive.txt",
+              "content": "OpenClaw storage positive after-receipt"
+            }
+          },
+          "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/positive.txt\",\"content\":\"OpenClaw storage positive after-receipt\"}}"
+        }
+      ],
+      "api": "openai-codex-responses",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "usage": {
+        "input": 986,
+        "output": 42,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "totalTokens": 2820,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0
+        }
+      },
+      "stopReason": "toolUse",
+      "timestamp": 1789010101998,
+      "responseId": "resp_09dae4a51adceaba016aa220b952ac87d1a9bb597d5aecb939"
+    }
+  },
+  {
+    "type": "message",
+    "id": "6760790e",
+    "parentId": "ff70ab72",
+    "timestamp": "2026-09-10T03:15:10.704Z",
+    "message": {
+      "role": "toolResult",
+      "toolCallId": "call_hCtkMyZDIvts8oqCERxnir1a|fc_09dae4a51adceaba016aa220bb39c887d186a19f69458d264f",
+      "toolName": "chio_call",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"state\":\"completed\",\"evidence\":\"verified\",\"requestId\":\"storage-fault-openclaw-r6-after-receipt:134d104d7ad8ce9f3fd7c42c7fb81965e42bc94419eab2bf8f6df1d803f3cc21\",\"receipt\":{\"action\":{\"parameter_hash\":\"291588e395d2c4286c8c0ffbcfd56dae7e9e8b4a6bcb705c24df9b51dad539e8\",\"parameters\":{\"content\":\"OpenClaw storage positive after-receipt\",\"path\":\"/workspace/positive.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a0894f-6edf-7b00-84a9-728a5df60630\",\"content_hash\":\"d6a9173c3894c4cdfedaffa6b86705e9f7b5405fa76dd50e12475f99bebcfcca\",\"decision\":{\"verdict\":\"allow\"},\"id\":\"d9ebcd4e2d2843158bf037571047f1bc1fc6469b78ca0b31b96add16cbb45c71\",\"kernel_key\":\"404ad2f1dcc0aef17a67e3ce6c6ed06b68704c09cc1c9246670102f27073a401\",\"metadata\":{\"admission_operation\":{\"compensation_status\":\"not_compensated\",\"coordinator_lease_epoch\":2,\"coordinator_lease_id\":\"01a0894f-6834-7a13-9147-512e6156d01c\",\"operation_id\":\"b47530f9f27f78036b8c8f0b992bdeea1386136dcd8553ec72fa68fcf8729e3d\",\"projected_dispatch_state\":\"terminal\",\"projected_operation_version\":8,\"projected_state\":\"completed\",\"request_binding_hash\":\"ca0253d1cb148b53ce9b3366d7c28202feab542da598c2a0d84ef72aca9f90f6\",\"request_id\":\"storage-fault-openclaw-r6-after-receipt:134d104d7ad8ce9f3fd7c42c7fb81965e42bc94419eab2bf8f6df1d803f3cc21\",\"request_namespace_digest\":\"57af8c795a9b6b4cb11c75c49f30ccb5a7ce8b5f1f6813cb05db8587188ab3d3\",\"retained_dispatch_commit\":{\"committed_version\":6,\"coordinator_lease_epoch\":2,\"coordinator_lease_id\":\"01a0894f-6834-7a13-9147-512e6156d01c\",\"provider_attempt\":{\"attempt_id\":\"attempt:b47530f9f27f78036b8c8f0b992bdeea1386136dcd8553ec72fa68fcf8729e3d\",\"operation_id\":\"b47530f9f27f78036b8c8f0b992bdeea1386136dcd8553ec72fa68fcf8729e3d\",\"transport_id\":\"kernel-tool-server:fs\",\"transport_key_epoch\":2},\"store_fence\":{\"lease_id\":\"01a0894f-6834-7a13-9147-512e6156d01c\",\"owner_epoch\":2,\"store_uuid\":\"01a0894f-6014-7200-9884-c151415ea66a\"}},\"schema\":\"chio.admission-receipt.v1\",\"store_fence\":{\"lease_id\":\"01a0894f-6834-7a13-9147-512e6156d01c\",\"owner_epoch\":2,\"store_uuid\":\"01a0894f-6014-7200-9884-c151415ea66a\"},\"tool_outcome_id\":\"c8052b94f81d2e315e28bcf3cf289209d9327427b6bce3e36ed695c699ee8d3e\",\"tool_outcome_version\":2,\"trusted_time_unix_ms\":1789010110331},\"attribution\":{\"delegation_depth\":0,\"grant_index\":0,\"issuer_key\":\"104bb2b6b34c0e750966abb839781207210d3775a1da5505b48d320db69f55dd\",\"subject_key\":\"a2e2f76432c42ae62f4803ab1ebbba3a19ca42660af99a07b12924834300ae54\"},\"chio_receipt_signing_nonce\":\"rcpt-01a0894f-e839-72f3-b4db-0795aa48144d\",\"receipt_context\":{\"request_id\":\"storage-fault-openclaw-r6-after-receipt:134d104d7ad8ce9f3fd7c42c7fb81965e42bc94419eab2bf8f6df1d803f3cc21\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"8ecb5202103cdcc99d175c21b57eade73c8ac4032ef560a54de027514ea09f48ac2a87871609e688ad1c6cc2d09ac58d73912c61531543c72b063cb9b631d90b\",\"timestamp\":1789010110,\"tool_name\":\"write_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"result\":{\"content\":[{\"text\":\"Successfully wrote to /workspace/positive.txt\",\"type\":\"text\"}],\"isError\":false,\"structuredContent\":{\"content\":\"Successfully wrote to /workspace/positive.txt\"}},\"delivery\":{\"acknowledgement\":\"-PBVRhr3GBtESGk0_Y6sPxDjtuWZ805MhauHHLvOBNw\",\"receiptId\":\"d9ebcd4e2d2843158bf037571047f1bc1fc6469b78ca0b31b96add16cbb45c71\",\"requestHash\":\"a22b3b0b9e1831a985eed6734a4fc248b0da4d365a914f87368f07cc8a599d13\",\"requestId\":\"storage-fault-openclaw-r6-after-receipt:134d104d7ad8ce9f3fd7c42c7fb81965e42bc94419eab2bf8f6df1d803f3cc21\",\"resultHash\":\"d6a9173c3894c4cdfedaffa6b86705e9f7b5405fa76dd50e12475f99bebcfcca\",\"schema\":\"chio.mcp.delivery-ack.v1\"}}"
+        }
+      ],
+      "details": {
+        "state": "completed",
+        "evidence": "verified",
+        "requestId": "storage-fault-openclaw-r6-after-receipt:134d104d7ad8ce9f3fd7c42c7fb81965e42bc94419eab2bf8f6df1d803f3cc21",
+        "receipt": {
+          "action": {
+            "parameter_hash": "291588e395d2c4286c8c0ffbcfd56dae7e9e8b4a6bcb705c24df9b51dad539e8",
+            "parameters": {
+              "content": "OpenClaw storage positive after-receipt",
+              "path": "/workspace/positive.txt"
+            }
+          },
+          "boundary_class": "prevent",
+          "capability_id": "cap-01a0894f-6edf-7b00-84a9-728a5df60630",
+          "content_hash": "d6a9173c3894c4cdfedaffa6b86705e9f7b5405fa76dd50e12475f99bebcfcca",
+          "decision": {
+            "verdict": "allow"
+          },
+          "id": "d9ebcd4e2d2843158bf037571047f1bc1fc6469b78ca0b31b96add16cbb45c71",
+          "kernel_key": "***",
+          "metadata": {
+            "admission_operation": {
+              "compensation_status": "not_compensated",
+              "coordinator_lease_epoch": 2,
+              "coordinator_lease_id": "01a0894f-6834-7a13-9147-512e6156d01c",
+              "operation_id": "b47530f9f27f78036b8c8f0b992bdeea1386136dcd8553ec72fa68fcf8729e3d",
+              "projected_dispatch_state": "terminal",
+              "projected_operation_version": 8,
+              "projected_state": "completed",
+              "request_binding_hash": "ca0253d1cb148b53ce9b3366d7c28202feab542da598c2a0d84ef72aca9f90f6",
+              "request_id": "storage-fault-openclaw-r6-after-receipt:134d104d7ad8ce9f3fd7c42c7fb81965e42bc94419eab2bf8f6df1d803f3cc21",
+              "request_namespace_digest": "57af8c795a9b6b4cb11c75c49f30ccb5a7ce8b5f1f6813cb05db8587188ab3d3",
+              "retained_dispatch_commit": {
+                "committed_version": 6,
+                "coordinator_lease_epoch": 2,
+                "coordinator_lease_id": "01a0894f-6834-7a13-9147-512e6156d01c",
+                "provider_attempt": {
+                  "attempt_id": "attempt:b47530f9f27f78036b8c8f0b992bdeea1386136dcd8553ec72fa68fcf8729e3d",
+                  "operation_id": "b47530f9f27f78036b8c8f0b992bdeea1386136dcd8553ec72fa68fcf8729e3d",
+                  "transport_id": "kernel-tool-server:fs",
+                  "transport_key_epoch": 2
+                },
+                "store_fence": {
+                  "lease_id": "01a0894f-6834-7a13-9147-512e6156d01c",
+                  "owner_epoch": 2,
+                  "store_uuid": "01a0894f-6014-7200-9884-c151415ea66a"
+                }
+              },
+              "schema": "chio.admission-receipt.v1",
+              "store_fence": {
+                "lease_id": "01a0894f-6834-7a13-9147-512e6156d01c",
+                "owner_epoch": 2,
+                "store_uuid": "01a0894f-6014-7200-9884-c151415ea66a"
+              },
+              "tool_outcome_id": "c8052b94f81d2e315e28bcf3cf289209d9327427b6bce3e36ed695c699ee8d3e",
+              "tool_outcome_version": 2,
+              "trusted_time_unix_ms": 1789010110331
+            },
+            "attribution": {
+              "delegation_depth": 0,
+              "grant_index": 0,
+              "issuer_key": "***",
+              "subject_key": "***"
+            },
+            "chio_receipt_signing_nonce": "rcpt-01a0894f-e839-72f3-b4db-0795aa48144d",
+            "receipt_context": {
+              "request_id": "storage-fault-openclaw-r6-after-receipt:134d104d7ad8ce9f3fd7c42c7fb81965e42bc94419eab2bf8f6df1d803f3cc21"
+            }
+          },
+          "policy_hash": "057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e",
+          "receipt_kind": "mediated_decision",
+          "redaction_mode": "none",
+          "signature": "8ecb5202103cdcc99d175c21b57eade73c8ac4032ef560a54de027514ea09f48ac2a87871609e688ad1c6cc2d09ac58d73912c61531543c72b063cb9b631d90b",
+          "timestamp": 1789010110,
+          "tool_name": "write_file",
+          "tool_origin": "caller_executed",
+          "tool_server": "fs",
+          "trust_level": "mediated"
+        },
+        "result": {
+          "content": [
+            {
+              "text": "Successfully wrote to /workspace/positive.txt",
+              "type": "text"
+            }
+          ],
+          "isError": false,
+          "structuredContent": {
+            "content": "Successfully wrote to /workspace/positive.txt"
+          }
+        },
+        "delivery": {
+          "acknowledgement": "-PBVRhr3GBtESGk0_Y6sPxDjtuWZ805MhauHHLvOBNw",
+          "receiptId": "d9ebcd4e2d2843158bf037571047f1bc1fc6469b78ca0b31b96add16cbb45c71",
+          "requestHash": "a22b3b0b9e1831a985eed6734a4fc248b0da4d365a914f87368f07cc8a599d13",
+          "requestId": "storage-fault-openclaw-r6-after-receipt:134d104d7ad8ce9f3fd7c42c7fb81965e42bc94419eab2bf8f6df1d803f3cc21",
+          "resultHash": "d6a9173c3894c4cdfedaffa6b86705e9f7b5405fa76dd50e12475f99bebcfcca",
+          "schema": "chio.mcp.delivery-ack.v1"
+        }
+      },
+      "isError": false,
+      "timestamp": 1789010110685
+    }
+  },
+  {
+    "type": "message",
+    "id": "4066b4ed",
+    "parentId": "6760790e",
+    "timestamp": "2026-09-10T03:15:18.861Z",
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Successfully wrote to /workspace/positive.txt",
+          "textSignature": "{\"v\":1,\"id\":\"msg_022f6bfe16cebdd0016aa220c6200087d1aef7af0c2c80bfb3\",\"phase\":\"final_answer\"}"
+        }
+      ],
+      "api": "openai-codex-responses",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "usage": {
+        "input": 2568,
+        "output": 12,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "totalTokens": 4372,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0
+        }
+      },
+      "stopReason": "stop",
+      "timestamp": 1789010110984,
+      "responseId": "resp_022f6bfe16cebdd0016aa220c23ca887d193caad75311f5958"
+    }
+  }
+]

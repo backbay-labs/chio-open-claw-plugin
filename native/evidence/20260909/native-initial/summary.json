@@ -1,0 +1,149 @@
+{
+  "status": "partial-host-contract-evidence-only",
+  "accepted": false,
+  "hostVersion": "OpenClaw 2026.5.20 (e510042)",
+  "os": {
+    "platform": "darwin",
+    "release": "25.4.0",
+    "arch": "arm64"
+  },
+  "node": "v25.5.0",
+  "package": {
+    "id": "@chio/openclaw-kernel@0.1.0",
+    "name": "@chio/openclaw-kernel",
+    "version": "0.1.0",
+    "size": 3723,
+    "unpackedSize": 9738,
+    "shasum": "3ec690941c63bd828c58597d8e1220e8e18b5047",
+    "integrity": "sha512-Qa8CSZ9lnlywL8Jxbkb3uE7jA8EOP1lZ6vujQBSVzk0r8H5ugIuaY6IZiut4cTc4u/GZoDE0S3XVjYRyK1Z9rQ==",
+    "filename": "chio-openclaw-kernel-0.1.0.tgz",
+    "files": [
+      {
+        "path": "openclaw.plugin.json",
+        "size": 911,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 470,
+        "mode": 420
+      },
+      {
+        "path": "src/index.mjs",
+        "size": 951,
+        "mode": 420
+      },
+      {
+        "path": "src/journal.mjs",
+        "size": 2914,
+        "mode": 420
+      },
+      {
+        "path": "src/plugin.mjs",
+        "size": 2733,
+        "mode": 420
+      },
+      {
+        "path": "src/profile.mjs",
+        "size": 1759,
+        "mode": 420
+      }
+    ],
+    "entryCount": 6,
+    "bundled": []
+  },
+  "artifactSha256": "5067a955039369260ba58079dc12d3860def2ff0bd34fa0df1bc2340c8e648d9",
+  "runDir": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-31psJ1",
+  "cases": [
+    {
+      "name": "native-write-positive-control",
+      "exitCode": 0,
+      "markerPresent": true,
+      "exposedTools": [
+        [
+          "write"
+        ],
+        [
+          "write"
+        ]
+      ]
+    },
+    {
+      "name": "deny-write-loaded",
+      "exitCode": 0,
+      "markerPresent": false,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-exec-loaded",
+      "exitCode": 0,
+      "markerPresent": false,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-shell-descendant-loaded",
+      "exitCode": 0,
+      "markerPresent": false,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "deny-write-omitted",
+      "exitCode": 1,
+      "markerPresent": false,
+      "exposedTools": []
+    },
+    {
+      "name": "deny-exec-omitted",
+      "exitCode": 1,
+      "markerPresent": false,
+      "exposedTools": []
+    },
+    {
+      "name": "deny-shell-descendant-omitted",
+      "exitCode": 1,
+      "markerPresent": false,
+      "exposedTools": []
+    },
+    {
+      "name": "kernel-absent",
+      "exitCode": 0,
+      "markerPresent": null,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    }
+  ],
+  "unresolved": [
+    "Real kernel-owned useful execution",
+    "Protected resource isolation",
+    "Authority and signed request/result verification",
+    "Complete I01-I08",
+    "Published compatible versions"
+  ]
+}

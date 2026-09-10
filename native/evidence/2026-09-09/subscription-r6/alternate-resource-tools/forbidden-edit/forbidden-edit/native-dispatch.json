@@ -1,0 +1,26 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_NIXlyzHCzrwGHPXIllXI92aS|fc_0991b796dfd8696e016aa21bf0e87c87d192c03e7aba71fab8",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "edit_file",
+        "arguments": {
+          "path": "/workspace/forbidden.txt",
+          "edits": [
+            {
+              "oldText": "independent forbidden observer",
+              "newText": "qualification-probe"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_NIXlyzHCzrwGHPXIllXI92aS|fc_0991b796dfd8696e016aa21bf0e87c87d192c03e7aba71fab8"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

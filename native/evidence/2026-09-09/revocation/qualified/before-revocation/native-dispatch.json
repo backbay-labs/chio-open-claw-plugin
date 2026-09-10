@@ -1,0 +1,21 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_3Crxb2hihC2tY2MkQv0J7UkN",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-revoke-c1afef471ab5.txt",
+          "content": "authorized before revocation"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_3Crxb2hihC2tY2MkQv0J7UkN"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

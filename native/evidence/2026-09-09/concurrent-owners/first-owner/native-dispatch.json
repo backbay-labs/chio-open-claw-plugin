@@ -1,0 +1,21 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_Ov9dmfqUmgzGsizHrOe3pRLL",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-parallel-e734c6d6335d.txt",
+          "content": "only the live owner may write"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_Ov9dmfqUmgzGsizHrOe3pRLL"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

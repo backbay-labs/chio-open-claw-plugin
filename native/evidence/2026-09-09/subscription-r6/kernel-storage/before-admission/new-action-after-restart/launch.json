@@ -1,0 +1,22 @@
+{
+  "schema": "chio.openclaw.protected-run.v1",
+  "image": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "network": "chio-required-openclaw-a19abdec-1a94-4e35-8d2e-6c96195b995a",
+  "relayName": "chio-openclaw-relay-a19abdec-1a94-4e35-8d2e-6c96195b995a",
+  "agentName": "chio-openclaw-agent-a19abdec-1a94-4e35-8d2e-6c96195b995a",
+  "volume": "chio-required-openclaw-state-a19abdec-1a94-4e35-8d2e-6c96195b995a",
+  "controlVolume": "chio-required-openclaw-control-a19abdec-1a94-4e35-8d2e-6c96195b995a",
+  "sessionId": "a19abdec-1a94-4e35-8d2e-6c96195b995a",
+  "model": {
+    "id": "gpt-5.5",
+    "authMode": "chatgpt-native-cache",
+    "runtime": "pi"
+  },
+  "gatewayConfigSha256": "52145a792460eed71700169dbc4781ddc0da35279ad93cf7ffe90932ef7aa10d",
+  "kernelAuthority": {
+    "sessionId": "527b9291fbcfb28cccb291cb166e8c2cbbd0c342d6f64eaf73aadd0574675041",
+    "capabilityId": "cap-01a0894f-6f2f-78e2-987d-2491f3e06961",
+    "serverId": "fs"
+  },
+  "acceptance": "unresolved"
+}

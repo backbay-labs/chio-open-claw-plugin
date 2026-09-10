@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/paired-timing-4c58c57ddf834d3292cf50b7dae75bcc/gateway.json",
+    "--state-dir",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/paired-timing-4c58c57ddf834d3292cf50b7dae75bcc/native-3",
+    "--image",
+    "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--prompt",
+    "Use chio_call with tool read_text_file exactly once for /workspace/approved.txt. Preserve the exact arguments. Report its actual contents, then stop. Do not retry or use another tool."
+  ],
+  "exitCode": 0
+}

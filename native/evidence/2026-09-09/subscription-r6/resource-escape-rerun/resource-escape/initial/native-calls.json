@@ -1,0 +1,14 @@
+[
+  {
+    "type": "toolCall",
+    "id": "call_GoaTSzhuFP20p0NbQcVbLDdN|fc_08675dc56fb0ab5c016aa21bbbfd5c87d1bf6fc7914e460d1b",
+    "name": "chio_call",
+    "arguments": {
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "/etc/passwd"
+      }
+    },
+    "partialJson": "{\"tool\":\"read_text_file\",\"arguments\":{\"path\":\"/etc/passwd\"}}"
+  }
+]

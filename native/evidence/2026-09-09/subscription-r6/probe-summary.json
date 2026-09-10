@@ -1,0 +1,82 @@
+{
+  "schema": "chio.openclaw.subscription.probes.review.v1",
+  "result": "bounded-controls-pass-workload-incomplete",
+  "operatorPort": 58618,
+  "artifactSha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "helperSha256Before": {
+    "probe-container-boundary.py": "9ed60e3a844940cb09eae14ae3746ced3dbbdfa4faffdaec7bdb4fb9d282cf48",
+    "early-launcher-crash.py": "bfc1a5aef5feccc296c0ac5500bdd05320551e7f0f928bc304bcd3722d68372d",
+    "kill-after-relay.mjs": "cc545baa897551bcbd5d91043d9478beacfb054fadd81343e15ff857e0bf2fd4"
+  },
+  "helperSha256After": {
+    "probe-container-boundary.py": "9ed60e3a844940cb09eae14ae3746ced3dbbdfa4faffdaec7bdb4fb9d282cf48",
+    "early-launcher-crash.py": "bfc1a5aef5feccc296c0ac5500bdd05320551e7f0f928bc304bcd3722d68372d",
+    "kill-after-relay.mjs": "cc545baa897551bcbd5d91043d9478beacfb054fadd81343e15ff857e0bf2fd4"
+  },
+  "containerBoundary": {
+    "osChecksPassed": true,
+    "requestedNativeReadCalls": 2,
+    "observedNativeReadCalls": 1,
+    "nativeVerifiedResults": 1,
+    "confirmedDeliveries": 1,
+    "probeProcesses": 2,
+    "parentAndDescendantChecks": [
+      {
+        "descendant": false,
+        "exitCode": 0,
+        "checks": {
+          "operator_config": "denied",
+          "protected_resource": "denied",
+          "docker_socket": "denied",
+          "configuration_write": "denied",
+          "plugin_write": "denied",
+          "root_write": "denied",
+          "isolated_state": "allowed",
+          "operator_credentials": "absent",
+          "no_privilege": "enforced",
+          "direct_host_tcp": "denied"
+        },
+        "stdout": "{\"operator_config\":\"denied\",\"protected_resource\":\"denied\",\"docker_socket\":\"denied\",\"configuration_write\":\"denied\",\"plugin_write\":\"denied\",\"root_write\":\"denied\",\"isolated_state\":\"allowed\",\"operator_credentials\":\"absent\",\"no_privilege\":\"enforced\",\"direct_host_tcp\":\"denied\"}\n"
+      },
+      {
+        "descendant": true,
+        "exitCode": 0,
+        "checks": {
+          "operator_config": "denied",
+          "protected_resource": "denied",
+          "docker_socket": "denied",
+          "configuration_write": "denied",
+          "plugin_write": "denied",
+          "root_write": "denied",
+          "isolated_state": "allowed",
+          "operator_credentials": "absent",
+          "no_privilege": "enforced",
+          "direct_host_tcp": "denied"
+        },
+        "stdout": "{\"operator_config\":\"denied\",\"protected_resource\":\"denied\",\"docker_socket\":\"denied\",\"configuration_write\":\"denied\",\"plugin_write\":\"denied\",\"root_write\":\"denied\",\"isolated_state\":\"allowed\",\"operator_credentials\":\"absent\",\"no_privilege\":\"enforced\",\"direct_host_tcp\":\"denied\"}\n"
+      }
+    ],
+    "forbiddenHostConnections": 0,
+    "positiveRelayConnection": true,
+    "hostExitCode": 0,
+    "workloadComplete": false
+  },
+  "startupCrash": {
+    "cutpoint": "relay-created",
+    "launcherExitCode": -9,
+    "nativeHostStarted": false,
+    "automaticCleanup": true,
+    "resourceAndAuditUnchanged": true
+  },
+  "missingWatchdog": {
+    "launcherExitCode": 1,
+    "nativeHostStarted": false,
+    "automaticCleanup": true,
+    "resourceAndAuditUnchanged": true
+  },
+  "implicitRetries": 0,
+  "claim": "Actual-container OS controls passed while native host was live. Requested two-read workload performed only one read and remains incomplete. Startup faults establish pre-host cleanup only, not native-host acceptance. Full integration acceptance remains unresolved.",
+  "ownerDisposition": "Owner 58618 left running and released to parent; evidence/state volumes preserved."
+}

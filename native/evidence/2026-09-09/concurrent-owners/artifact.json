@@ -1,0 +1,8 @@
+{
+  "host": "openclaw",
+  "candidateSha256": "ba6b80e71598ec8f01205ef7d443f71fdb2df78fe4b3cad576d9107518f3b6c5",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "evidence": "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/evidence/2026-09-09/concurrent-owners",
+  "accepted": false,
+  "suite": "concurrent-owners"
+}

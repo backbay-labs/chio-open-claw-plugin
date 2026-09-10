@@ -1,0 +1,10 @@
+WARNING: Localhost DNS (127.0.0.1) may fail in containers.
+tools policy: profile "minimal" (agent "main") has configured tool sections (tools.exec) that no longer implicitly widen the profile. Add alsoAllow: ["exec", "process"] explicitly if these tools should be available. See #47487.
+tools policy: profile "minimal" (agent "main") has configured tool sections (tools.exec) that no longer implicitly widen the profile. Add alsoAllow: ["exec", "process"] explicitly if these tools should be available. See #47487.
+[openai-transport] [responses] error provider=openai-codex api=openai-codex-responses model=gpt-5.5 name=Error status=403 code=undefined type=undefined causeName=undefined causeCode=undefined message=403 Operator model relay refused or failed
+[agent/embedded] embedded run agent end: runId=762c52aa-1833-4811-9869-4f4a6d71b8ad isError=true model=gpt-5.5 provider=openai-codex error=403 Operator model relay refused or failed rawError=403 Operator model relay refused or failed
+[agent/embedded] embedded run failover decision: runId=762c52aa-1833-4811-9869-4f4a6d71b8ad stage=assistant decision=surface_error reason=auth from=openai-codex/gpt-5.5 profile=- rawError=403 Operator model relay refused or failed
+[diagnostic] lane task error: lane=main durationMs=7440 error="FailoverError: 403 Operator model relay refused or failed"
+[diagnostic] lane task error: lane=session:agent:main:explicit:762c52aa-1833-4811-9869-4f4a6d71b8ad durationMs=7442 error="FailoverError: 403 Operator model relay refused or failed"
+[model-fallback/decision] model fallback decision: decision=candidate_failed requested=openai-codex/gpt-5.5 candidate=openai-codex/gpt-5.5 reason=auth next=none detail=403 Operator model relay refused or failed
+FailoverError: 403 Operator model relay refused or failed

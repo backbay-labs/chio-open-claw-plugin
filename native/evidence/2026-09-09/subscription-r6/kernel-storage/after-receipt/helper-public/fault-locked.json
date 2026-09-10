@@ -1,0 +1,8 @@
+{
+  "database": "/Users/connor/.local/share/chio-required-operators/kernel-storage-fault-20260909/openclaw-r6-after-receipt/receipts.sqlite",
+  "cutpoint": "after-receipt",
+  "lockedAtEpoch": 1789010134.827978,
+  "mutation": "none; BEGIN IMMEDIATE held, then ROLLBACK",
+  "holdSeconds": 600,
+  "pid": 10300
+}

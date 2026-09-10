@@ -1,0 +1,17 @@
+[
+  {
+    "case": "gateway-crash",
+    "passed": true,
+    "exitCode": -9,
+    "terminal": {},
+    "newDispatchRows": 1,
+    "acknowledgements": [
+      {
+        "state": "completed",
+        "acknowledged": false,
+        "hostDeliveryConfirmed": null
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-gateway-crash-2d98f2db822c4bffb2bf496a75f78997"
+  }
+]

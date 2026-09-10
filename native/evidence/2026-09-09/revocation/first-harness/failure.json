@@ -1,0 +1,6 @@
+{
+  "error": "[Errno 2] No such file or directory: '/tmp/chio-openclaw-approval-runtime-ec36f39fbe2e46c09895c64229c3aeb6/launch.json'",
+  "type": "FileNotFoundError",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-a786dca9630c4c3d82666bc976708f23/gateway.json",
+  "claim": "unresolved; never counted as acceptance"
+}

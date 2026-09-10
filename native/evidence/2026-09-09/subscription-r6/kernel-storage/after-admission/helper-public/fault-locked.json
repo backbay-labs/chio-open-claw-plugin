@@ -1,0 +1,8 @@
+{
+  "database": "/Users/connor/.local/share/chio-required-operators/kernel-storage-fault-20260909/openclaw-r6-after-admission/sessions.sqlite.admission",
+  "cutpoint": "after-admission",
+  "lockedAtEpoch": 1789010128.619093,
+  "mutation": "none; BEGIN IMMEDIATE held, then ROLLBACK",
+  "holdSeconds": 600,
+  "pid": 9281
+}

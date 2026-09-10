@@ -1,0 +1,69 @@
+{
+  "accepted": false,
+  "scope": "bounded native OpenClaw integration evidence",
+  "kernel": {
+    "sourceCommit": "04b7d366d62c886c39bc202f58ef0d44e8f5aee7",
+    "kernelSha256": "e7539855906bd5eb7b4eb2e5a12ca0533889cf61ced3bf4adf5850b792aa6447",
+    "kernelArtifact": "/private/tmp/chio-required-agent-artifacts-20260909/chio-macos-arm64-e7539855906b",
+    "policySha256": "8c2c732d9115799b13150f7924da0e68fc1f9b2d42a2618912511d407035cc66",
+    "image": "sha256:0106edcb15a1c0d12d914ea0504f0e63ec85f5e6fdd3825b4d7a0d1367af3991",
+    "volume": "chio-required-agents-final-20260909",
+    "port": 58483,
+    "kernelSigner": "3667760322694075a5e31f585dc7f7a3b7656151a338bce1869ec37003f6b0ae"
+  },
+  "hostRuntime": {
+    "imageId": "sha256:39fed560462bb68bf7f091d37f63a408a11bad9c1444e31cda88d31181fcda9e",
+    "node": "v22.23.1",
+    "platform": "linux",
+    "release": "6.8.0-64-generic",
+    "arch": "arm64",
+    "sourceHashes": {
+      "index.mjs": "06302396fda47c52f06690ad2e4bf6976517412051c0b3b91036f9cbb3315754",
+      "plugin.mjs": "02a63ada63acfd4bae592209a26f269cd72376ebeab249379f85805b34529857",
+      "journal.mjs": "bd032d2718ba340a174b5502303b528d05502436f41786431790c808a3e890b0",
+      "profile.mjs": "8b33b28f43b24de39fda1f6543ed32919af778df4beecd0a4100b4975e90f453"
+    }
+  },
+  "harnessInstalledArtifact": {
+    "sha256": "74d3d2432198c73216b30ec2f25e977b923db0e3e616005aed1da85789764fa4",
+    "package": {
+      "name": "@chio/openclaw-kernel",
+      "version": "0.1.0",
+      "artifact": "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-ln6f3K/chio-openclaw-kernel-0.1.0.tgz",
+      "sha256": "74d3d2432198c73216b30ec2f25e977b923db0e3e616005aed1da85789764fa4",
+      "bundled": [
+        "@chio/bridge"
+      ]
+    }
+  },
+  "imageBakedArtifact": {
+    "name": "@chio/openclaw-kernel",
+    "version": "0.1.0",
+    "artifact": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-image-mjAMnv/chio-openclaw-kernel-0.1.0.tgz",
+    "sha256": "74d3d2432198c73216b30ec2f25e977b923db0e3e616005aed1da85789764fa4",
+    "bundled": [
+      "@chio/bridge"
+    ]
+  },
+  "bridgeSha256": "68b5c46638449710e3251f41aa1317f364c24138ae6cba3f45aeea51960ef3ff",
+  "realContainerCases": 10,
+  "timing": {
+    "measurement": "wall time per isolated host invocation including container and host startup, local deterministic model",
+    "sampleCount": 10,
+    "minMs": 5741,
+    "medianMs": 6561.0,
+    "maxMs": 202182,
+    "notAnIncrementalOverheadEstimate": true
+  },
+  "operatorInterventions": [
+    "Offline npm install then OpenClaw link; archive installer fetched unpublished bridge",
+    "Two explicit pending-record reconciliations after independent denial observations"
+  ],
+  "unresolvedGates": [
+    "Complete I01-I08 matrix",
+    "Publication and upgrade/removal qualification",
+    "Authority expiry/revocation/budgets/approvals",
+    "Real-host cancellation, unknown-outcome recovery and handoff fencing",
+    "Full fault and evidence substitution matrix"
+  ]
+}

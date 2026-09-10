@@ -1,0 +1,13 @@
+{
+  "binary": "openclaw",
+  "args": [
+    "plugins",
+    "install",
+    "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-Gyer4Q/chio-openclaw-kernel-0.1.0.tgz"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "Extracting /var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-Gyer4Q/chio-openclaw-kernel-0.1.0.tgz…\nPlugin manifest id \"chio-kernel\" differs from npm package name \"@chio/openclaw-kernel\"; using manifest id as the config key.\nInstalling to /var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-Gyer4Q/state/extensions/chio-kernel…\nInstalled plugin: chio-kernel\nRestart the gateway to load plugins.\n",
+  "stderr": "[plugins] chio-kernel failed during register from /private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-Gyer4Q/state/extensions/chio-kernel/src/index.mjs: Error: Chio requires the restricted native OpenClaw tools profile\nConfig write anomaly: /var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-Gyer4Q/openclaw.json (missing-meta-before-write)\n",
+  "elapsedMs": 1866
+}

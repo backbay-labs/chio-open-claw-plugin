@@ -1,0 +1,25 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_O3YndX9mMb3wAHW9lybmT2Br|fc_024dd6fa7f97484a016aa21205f95c87d2b6fd968b5645233b",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "chio_resume",
+        "arguments": {
+          "requestId": "2e8dadec-30aa-4d64-915b-10bbe332f8a8:41716dd1094238389980463262fc2d40ae76574456ceed151c1a54b161e2b774",
+          "tool": "write_file",
+          "arguments": {
+            "path": "/workspace/openclaw-approved-7c8e380a00e6.txt",
+            "content": "exact operator-approved effect"
+          }
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_O3YndX9mMb3wAHW9lybmT2Br|fc_024dd6fa7f97484a016aa21205f95c87d2b6fd968b5645233b"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

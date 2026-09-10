@@ -1,0 +1,19 @@
+[
+  {
+    "case": "expired-credential",
+    "exitCode": 1,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-46fe41187be24e899964b9d63c65633d/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-48edfcd321e3473097c6f963d7286639",
+      "--image",
+      "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+      "--prompt",
+      "Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-preflight-forbidden.txt\", \"content\": \"must never dispatch with invalid authority\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments."
+    ],
+    "newDispatchRows": 0
+  }
+]

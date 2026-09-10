@@ -1,0 +1,21 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_S7bD0ywzyIY4eYeG0bAvfacz|fc_045e441149661624016aa214c8ccc487d18f38e5ee7c681984",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-must-stay-fenced.txt",
+          "content": "must never dispatch after unknown outcome"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_S7bD0ywzyIY4eYeG0bAvfacz|fc_045e441149661624016aa214c8ccc487d18f38e5ee7c681984"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

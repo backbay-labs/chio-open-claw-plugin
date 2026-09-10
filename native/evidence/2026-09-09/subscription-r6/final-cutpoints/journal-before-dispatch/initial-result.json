@@ -1,0 +1,15 @@
+{
+  "case": "journal-before-dispatch",
+  "passed": true,
+  "exitCode": 2,
+  "nativeCalls": 1,
+  "newDispatchRows": 0,
+  "terminal": {
+    "hostExitCode": 0,
+    "exitCode": 2,
+    "outcome": "unresolved",
+    "confirmedDeliveries": 0
+  },
+  "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-cutpoint-journal-before-dispatch-4754de840c9042319a1f486833401a19",
+  "sameAuthorityConfig": true
+}

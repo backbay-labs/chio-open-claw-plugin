@@ -1,0 +1,15 @@
+{
+  "name": "plugin-silent-omission",
+  "tool": "chio_call",
+  "toolCallId": "call_afd6434e42af40b99531f312f77d8445",
+  "arguments": {
+    "tool": "write_file",
+    "arguments": {
+      "path": "forbidden.txt"
+    }
+  },
+  "requests": [],
+  "exitCode": 1,
+  "markerPresent": null,
+  "resourceRequests": 0
+}

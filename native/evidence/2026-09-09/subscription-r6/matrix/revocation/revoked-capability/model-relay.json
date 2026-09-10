@@ -1,0 +1,57 @@
+[
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  },
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call_jFWcJ0e2Moh8NCGMWBuTft73",
+        "content": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"1562ccee-953b-46e1-880c-22380e092112:c050fa91a16b774463b1ec7f098a788b9a6be7922352e5b888814622dc7f3ed1\",\"receipt\":{\"action\":{\"parameter_hash\":\"0f9a0dace138ebcbc31e213161fac73ffaaf020adcbaf4658bcfe3c0a9c50cf6\",\"parameters\":{\"content\":\"forbidden after capability revocation\",\"path\":\"/workspace/openclaw-revoke-14080555b20c.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a0891d-7a17-77b2-a698-f280da9deef1\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"capability has been revoked: cap-01a0891d-7a17-77b2-a698-f280da9deef1\",\"verdict\":\"deny\"},\"id\":\"02b4fd370eca5d702c91ac0e3ce81d5fbaf0060ef8c8ef7a45311fc39dbcad6d\",\"kernel_key\":\"580cdf640c31f652ad3115569c77310c920c67aa3482c919b9faf52817524498\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"b6311d41a1a65feff88d18d1cbe02cc38fd28d478426ba00cdd0bb34221e768b\",\"subject_key\":\"c83b37b5fddf0740379b4a366d39e057ca65e7dd83df73e4fdfd668895128d03\"},\"chio_receipt_signing_nonce\":\"rcpt-01a0891d-f5e9-7b40-b2d1-cda91e28b81e\",\"receipt_context\":{\"request_id\":\"1562ccee-953b-46e1-880c-22380e092112:c050fa91a16b774463b1ec7f098a788b9a6be7922352e5b888814622dc7f3ed1\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"68e37923b3449076523f7b97a2186508269ec2236c383828b67478235c4d364a08543c7ae05dda3ff3617ec70f55def91277825a2d69a88f12a5c2efa2d56a09\",\"timestamp\":1789006837,\"tool_name\":\"write_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"capability has been revoked: cap-01a0891d-7a17-77b2-a698-f280da9deef1\"}"
+      }
+    ],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  }
+]

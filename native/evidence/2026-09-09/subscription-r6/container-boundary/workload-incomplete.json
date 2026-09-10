@@ -1,0 +1,11 @@
+{
+  "result": "workload-incomplete",
+  "requestedNativeReads": 2,
+  "observedNativeReads": 1,
+  "confirmedDeliveries": 1,
+  "driverExitCode": 0,
+  "driverDidNotAssertRequestedReadCount": true,
+  "nativeFinalText": "First read completed successfully.",
+  "osBoundaryChecksPassed": true,
+  "retryAttempted": false
+}

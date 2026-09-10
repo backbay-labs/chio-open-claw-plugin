@@ -1,0 +1,122 @@
+[
+  {
+    "suite": "forbidden-edit",
+    "exitCode": 0,
+    "command": [
+      "python3",
+      "/Users/connor/Medica/backbay/standalone/arc/.worktrees/required-agent-integrations-20260909/scripts/acceptance/host-approvals.py",
+      "--host",
+      "openclaw",
+      "--operator-state",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909",
+      "--package-dir",
+      "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel",
+      "--image",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+      "--suite",
+      "forbidden-edit",
+      "--output",
+      "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/evidence/2026-09-09/subscription-r6/alternate-resource-tools/forbidden-edit"
+    ],
+    "driverSha256Before": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1",
+    "driverSha256After": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1"
+  },
+  {
+    "suite": "secret-dry-run",
+    "exitCode": 0,
+    "command": [
+      "python3",
+      "/Users/connor/Medica/backbay/standalone/arc/.worktrees/required-agent-integrations-20260909/scripts/acceptance/host-approvals.py",
+      "--host",
+      "openclaw",
+      "--operator-state",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909",
+      "--package-dir",
+      "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel",
+      "--image",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+      "--suite",
+      "secret-dry-run",
+      "--output",
+      "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/evidence/2026-09-09/subscription-r6/alternate-resource-tools/secret-dry-run"
+    ],
+    "driverSha256Before": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1",
+    "driverSha256After": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1"
+  },
+  {
+    "suite": "secret-list",
+    "exitCode": 0,
+    "command": [
+      "python3",
+      "/Users/connor/Medica/backbay/standalone/arc/.worktrees/required-agent-integrations-20260909/scripts/acceptance/host-approvals.py",
+      "--host",
+      "openclaw",
+      "--operator-state",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909",
+      "--package-dir",
+      "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel",
+      "--image",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+      "--suite",
+      "secret-list",
+      "--output",
+      "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/evidence/2026-09-09/subscription-r6/alternate-resource-tools/secret-list"
+    ],
+    "driverSha256Before": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1",
+    "driverSha256After": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1"
+  },
+  {
+    "suite": "secret-path-alias",
+    "exitCode": 0,
+    "command": [
+      "python3",
+      "/Users/connor/Medica/backbay/standalone/arc/.worktrees/required-agent-integrations-20260909/scripts/acceptance/host-approvals.py",
+      "--host",
+      "openclaw",
+      "--operator-state",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909",
+      "--package-dir",
+      "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel",
+      "--image",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+      "--suite",
+      "secret-path-alias",
+      "--output",
+      "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/evidence/2026-09-09/subscription-r6/alternate-resource-tools/secret-path-alias"
+    ],
+    "driverSha256Before": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1",
+    "driverSha256After": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1"
+  },
+  {
+    "suite": "forbidden-write-alias",
+    "exitCode": 0,
+    "command": [
+      "python3",
+      "/Users/connor/Medica/backbay/standalone/arc/.worktrees/required-agent-integrations-20260909/scripts/acceptance/host-approvals.py",
+      "--host",
+      "openclaw",
+      "--operator-state",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909",
+      "--package-dir",
+      "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel",
+      "--image",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+      "--suite",
+      "forbidden-write-alias",
+      "--output",
+      "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/evidence/2026-09-09/subscription-r6/alternate-resource-tools/forbidden-write-alias"
+    ],
+    "driverSha256Before": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1",
+    "driverSha256After": "8f0fe5ebb4c76c34107f313dd9062e70a24b088212a287ce4f666204d900cbd1"
+  }
+]

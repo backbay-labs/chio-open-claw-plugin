@@ -1,0 +1,17 @@
+{
+  "archiveSha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "resourceImage": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "resourceVolume": "chio-required-openclaw-subscription-probes-20260909",
+  "auditVolume": "chio-required-openclaw-subscription-probes-20260909-audit",
+  "policySha256": "8c2c732d9115799b13150f7924da0e68fc1f9b2d42a2618912511d407035cc66",
+  "target": "/workspace/approved.txt",
+  "targetSha256": "f26ae1416dc8534ef464bef8437ffeaf19012c409f55d9e414a01d71c3a1939d",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/paired-timing-4c58c57ddf834d3292cf50b7dae75bcc/gateway.json",
+  "configurationSha256": "9e370c31c115408098c71c046afcd515afcd626b9345f3d0e1833390a0c6866d",
+  "driverSha256": "7e2d8857d8b74edbfb68c7fbab01c7d6dccb22d2574d0c9cec4b9fbf4f852326",
+  "instrumentSha256": "18a5eeddaf412d6d6ac516a697895ea4facf5597f98222b8dcc9c3046470f8a4",
+  "instrumentScope": "trusted parent only; unchanged installed host and guest",
+  "pairs": 3
+}

@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "Done. The file now reads:\n\nOpenClaw kernel verified\n\n/workspace was listed successfully.",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 23664,
+    "agentMeta": {
+      "sessionId": "ff6bd44a-9a09-42e2-95a6-cf66a8921889",
+      "sessionFile": "/state/openclaw/agents/main/sessions/ff6bd44a-9a09-42e2-95a6-cf66a8921889.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 20442,
+        "output": 203,
+        "cacheRead": 11008,
+        "total": 9734
+      },
+      "lastCallUsage": {
+        "input": 7919,
+        "output": 23,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "total": 9734
+      },
+      "promptTokens": 9711
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789007276534,
+      "sessionId": "ff6bd44a-9a09-42e2-95a6-cf66a8921889",
+      "sessionKey": "agent:main:explicit:ff6bd44a-9a09-42e2-95a6-cf66a8921889",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 562,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "Use chio_call only, with exact schemas in its description. Preserve remote paths exactly. Write /workspace/openclaw-qualified-bf38eaf096a1.txt with content \"OpenClaw HTTP verified\". Edit HTTP to kernel, read that exact file, then list /workspace. Complete all four actions in this request before your final reply: write_file, edit_file, read_text_file, list_directory. Call tools sequentially, never in parallel. After each successful result continue immediately to the next action. Stop only after all four succeed or after any unsuccessful or uncertain result.",
+    "finalAssistantVisibleText": "Done. The file now reads:\n\nOpenClaw kernel verified\n\n/workspace was listed successfully.",
+    "finalAssistantRawText": "Done. The file now reads:\n\nOpenClaw kernel verified\n\n/workspace was listed successfully.",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 4,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

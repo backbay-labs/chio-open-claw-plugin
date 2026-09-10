@@ -1,0 +1,15 @@
+[
+  {
+    "type": "toolCall",
+    "id": "call_wJlMAFoqB2dKnuhacIaM2rsa|fc_07461b42d2b8520d016aa2189403d487d1923b2a1ebee862f9",
+    "name": "chio_call",
+    "arguments": {
+      "tool": "write_file",
+      "arguments": {
+        "path": "/workspace/openclaw-plugin-failure-marker.txt",
+        "content": "must not appear"
+      }
+    },
+    "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/openclaw-plugin-failure-marker.txt\",\"content\":\"must not appear\"}}"
+  }
+]

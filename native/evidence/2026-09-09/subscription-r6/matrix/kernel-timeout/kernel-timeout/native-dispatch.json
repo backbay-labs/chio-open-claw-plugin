@@ -1,0 +1,33 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_xGYeQOmjII1qpSW08Ksy5uFo|fc_04edf6c72dcf3bbd016aa215922d1887d190d1b0b30b897269",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-inflight-5fcda66bee82.txt",
+          "content": "authorized before in-flight revocation"
+        }
+      }
+    },
+    {
+      "id": "call_rL5VRYhpEbeQHd3uatkJhCmm|fc_02e76895ce59ba48016aa2159644c087d1b5a2d2f980bd9463",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-inflight-5fcda66bee82.txt",
+          "content": "forbidden after in-flight revocation"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_xGYeQOmjII1qpSW08Ksy5uFo|fc_04edf6c72dcf3bbd016aa215922d1887d190d1b0b30b897269",
+    "call_rL5VRYhpEbeQHd3uatkJhCmm|fc_02e76895ce59ba48016aa2159644c087d1b5a2d2f980bd9463"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 2
+}

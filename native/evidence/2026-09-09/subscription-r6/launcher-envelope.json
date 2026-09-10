@@ -1,0 +1,29 @@
+{
+  "claim": "Observed launcher manifest-to-terminal envelope with source mtimes preserved by evidence copy; includes setup/startup/transport time excluded by native duration but not post-terminal cleanup. This is not a matched direct baseline or full incremental Chio overhead.",
+  "cases": [
+    {
+      "case": "native-cases/useful/initial",
+      "nativeReportedMs": 23664,
+      "manifestWrittenAtUnixNs": 1789007269072523365,
+      "terminalWrittenAtUnixNs": 1789007298219535381,
+      "manifestToTerminalMs": 29147.012016,
+      "envelopeOutsideNativeReportedMs": 5483.012016000001
+    },
+    {
+      "case": "native-cases/secret/initial",
+      "nativeReportedMs": 8015,
+      "manifestWrittenAtUnixNs": 1789007302527921428,
+      "terminalWrittenAtUnixNs": 1789007316465557498,
+      "manifestToTerminalMs": 13937.63607,
+      "envelopeOutsideNativeReportedMs": 5922.6360700000005
+    },
+    {
+      "case": "native-cases/forbidden-write/initial",
+      "nativeReportedMs": 8965,
+      "manifestWrittenAtUnixNs": 1789007320233155773,
+      "terminalWrittenAtUnixNs": 1789007335493224503,
+      "manifestToTerminalMs": 15260.06873,
+      "envelopeOutsideNativeReportedMs": 6295.068730000001
+    }
+  ]
+}

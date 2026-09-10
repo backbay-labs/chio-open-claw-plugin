@@ -1,0 +1,14 @@
+{
+  "accepted": false,
+  "case": "dedicated-capability-bootstrap",
+  "command": [
+    "node",
+    "node_modules/@chio/bridge/dist/prepare-gateway.js",
+    "/tmp/chio-final-resource-20260909/openclaw-revocation-prepare.json",
+    "/tmp/chio-final-resource-20260909/openclaw-revocation-gateway.json"
+  ],
+  "exitCode": 1,
+  "output": "Gateway preparation failed; config must not be used and no protected tool was dispatched.\n",
+  "outputConfigExists": false,
+  "interpretation": "Preparation failed before any host tool call. Shared endpoint responsiveness is being investigated by the kernel owner; cause is not inferred from this generic error."
+}

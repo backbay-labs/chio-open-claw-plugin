@@ -1,0 +1,19 @@
+{
+  "name": "artifact-offline-install",
+  "binary": "npm",
+  "args": [
+    "install",
+    "--prefix",
+    "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-runbook-7xR9rb/profile/packages",
+    "--ignore-scripts",
+    "--offline",
+    "--no-audit",
+    "--no-fund",
+    "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-ln6f3K/chio-openclaw-kernel-0.1.0.tgz"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "\nadded 1 package in 5s\n",
+  "stderr": "",
+  "elapsedMs": 4719
+}

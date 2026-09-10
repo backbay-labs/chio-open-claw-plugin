@@ -1,0 +1,10 @@
+{
+  "claim": "bounded real host cases, not I01-I08 acceptance",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "image": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "cases": 5,
+  "skips": 0,
+  "packageDirectory": "/tmp/chio-openclaw-received-result-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel",
+  "hostImage": "sha256:38ab384535544261d851394a9d6ef59d9c6de5b7367652464f977f7a8bc890a6",
+  "bridge": "/tmp/chio-openclaw-received-result-cold-consumer-r2-20260909/node_modules/@chio/openclaw-kernel/node_modules/@chio/bridge"
+}

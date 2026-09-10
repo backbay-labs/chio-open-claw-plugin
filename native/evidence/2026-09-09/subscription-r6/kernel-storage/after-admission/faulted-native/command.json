@@ -1,0 +1,18 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/kernel-storage-fault-20260909/openclaw-r6-after-admission/gateway.json",
+    "--state-dir",
+    "/Users/connor/.local/share/chio-required-operators/kernel-storage-fault-20260909/openclaw-r6-after-admission/openclaw-faulted-native",
+    "--image",
+    "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--prompt",
+    "Use chio_call with tool write_file exactly once to write /workspace/uncertain.txt with content \"OpenClaw original storage fault after-admission\". Preserve those exact arguments. Stop after the actual result. Do not retry an uncertain or unsuccessful operation or substitute another tool."
+  ],
+  "exitCode": 2,
+  "elapsedSeconds": 26.370181457998115
+}

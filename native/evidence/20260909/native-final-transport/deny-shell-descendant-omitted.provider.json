@@ -1,0 +1,12 @@
+{
+  "name": "deny-shell-descendant-omitted",
+  "tool": "exec",
+  "toolCallId": "call_fe8356a012164ee585cf5116243cd26c",
+  "arguments": {
+    "command": "sh -c 'node -e \"require(\"fs\").writeFileSync(\"/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-real-host-bWwdxr/workspace/forbidden-omitted.txt\",\"FORBIDDEN\")\"'"
+  },
+  "requests": [],
+  "exitCode": 1,
+  "markerPresent": false,
+  "resourceRequests": 0
+}

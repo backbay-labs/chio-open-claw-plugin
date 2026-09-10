@@ -1,0 +1,10 @@
+file:///private/tmp/chio-openclaw-upgrade-r6-kng62kju/consumer/node_modules/@chio/openclaw-kernel/node_modules/@chio/bridge/dist/gateway-http.js:14
+        throw new Error(validation.reason);
+              ^
+
+Error: delegated session validation failed before dispatch
+    at startGatewayHttp (file:///private/tmp/chio-openclaw-upgrade-r6-kng62kju/consumer/node_modules/@chio/openclaw-kernel/node_modules/@chio/bridge/dist/gateway-http.js:14:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///private/tmp/chio-openclaw-upgrade-r6-kng62kju/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs:35:17
+
+Node.js v25.5.0

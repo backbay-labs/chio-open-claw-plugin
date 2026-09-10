@@ -1,0 +1,15 @@
+{
+  "name": "model-runtime-override-refused",
+  "tool": "chio_call",
+  "toolCallId": "call_9d1543c96019441e883ff377c505f829",
+  "arguments": {
+    "tool": "write_file",
+    "arguments": {
+      "path": "/workspace/probe.txt"
+    }
+  },
+  "requests": [],
+  "exitCode": 1,
+  "markerPresent": null,
+  "resourceRequests": 0
+}

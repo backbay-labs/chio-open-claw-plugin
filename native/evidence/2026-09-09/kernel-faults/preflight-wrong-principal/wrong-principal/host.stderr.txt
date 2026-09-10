@@ -1,0 +1,10 @@
+file:///private/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/node_modules/@chio/bridge/dist/gateway-http.js:14
+        throw new Error(validation.reason);
+              ^
+
+Error: authenticated session credential does not match the retained caller, capability, resource owner, tool scope or lifetime
+    at startGatewayHttp (file:///private/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/node_modules/@chio/bridge/dist/gateway-http.js:14:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///private/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs:25:17
+
+Node.js v25.5.0

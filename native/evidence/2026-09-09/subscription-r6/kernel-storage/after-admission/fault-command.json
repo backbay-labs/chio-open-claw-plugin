@@ -1,0 +1,13 @@
+[
+  "/Users/connor/.pyenv/versions/3.11.4/bin/python3",
+  "/Users/connor/Medica/backbay/standalone/arc/.worktrees/mcp-execution-evidence-20260909/integrations/required-agents/qualification/storage_fault.py",
+  "fault",
+  "--name",
+  "openclaw-r6-after-admission",
+  "--cutpoint",
+  "after-admission",
+  "--wait-seconds",
+  "600",
+  "--hold-seconds",
+  "600"
+]

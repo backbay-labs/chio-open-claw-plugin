@@ -1,0 +1,26 @@
+{
+  "binary": "docker",
+  "args": [
+    "run",
+    "--rm",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--user",
+    "1000:1000",
+    "--mount",
+    "type=volume,src=chio-openclaw-state-5a7d60a5-73cc-49d4-abee-2825032dc515,dst=/state",
+    "--entrypoint",
+    "node",
+    "chio-openclaw-host:20260909",
+    "-e",
+    "const fs=require('node:fs');console.log(JSON.stringify({uid:process.getuid(),dockerSocket:fs.existsSync('/var/run/docker.sock'),protectedWorkspace:fs.existsSync('/workspace'),mounts:fs.readFileSync('/proc/mounts','utf8')}));"
+  ],
+  "code": 0,
+  "signal": null,
+  "stdout": "{\"uid\":1000,\"dockerSocket\":false,\"protectedWorkspace\":false,\"mounts\":\"overlay / overlay ro,relatime,lowerdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2841/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2834/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2833/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2832/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2831/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2295/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2094/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2093/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2092/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2091/fs:/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/1152/fs,upperdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2842/fs,workdir=/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/2842/work,nouserxattr 0 0\\nproc /proc proc rw,nosuid,nodev,noexec,relatime 0 0\\ntmpfs /dev tmpfs rw,nosuid,size=65536k,mode=755,inode64 0 0\\ndevpts /dev/pts devpts rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=666 0 0\\nsysfs /sys sysfs ro,nosuid,nodev,noexec,relatime 0 0\\ncgroup /sys/fs/cgroup cgroup2 ro,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot 0 0\\nmqueue /dev/mqueue mqueue rw,nosuid,nodev,noexec,relatime 0 0\\nshm /dev/shm tmpfs rw,nosuid,nodev,noexec,relatime,size=65536k,inode64 0 0\\n/dev/root /state ext4 rw,relatime,discard,errors=remount-ro,commit=30 0 0\\n/dev/root /etc/resolv.conf ext4 ro,relatime,discard,errors=remount-ro,commit=30 0 0\\n/dev/root /etc/hostname ext4 ro,relatime,discard,errors=remount-ro,commit=30 0 0\\n/dev/root /etc/hosts ext4 ro,relatime,discard,errors=remount-ro,commit=30 0 0\\nproc /proc/bus proc ro,nosuid,nodev,noexec,relatime 0 0\\nproc /proc/fs proc ro,nosuid,nodev,noexec,relatime 0 0\\nproc /proc/irq proc ro,nosuid,nodev,noexec,relatime 0 0\\nproc /proc/sys proc ro,nosuid,nodev,noexec,relatime 0 0\\nproc /proc/sysrq-trigger proc ro,nosuid,nodev,noexec,relatime 0 0\\ntmpfs /proc/acpi tmpfs ro,relatime,inode64 0 0\\ntmpfs /proc/interrupts tmpfs rw,nosuid,size=65536k,mode=755,inode64 0 0\\ntmpfs /proc/kcore tmpfs rw,nosuid,size=65536k,mode=755,inode64 0 0\\ntmpfs /proc/keys tmpfs rw,nosuid,size=65536k,mode=755,inode64 0 0\\ntmpfs /proc/latency_stats tmpfs rw,nosuid,size=65536k,mode=755,inode64 0 0\\ntmpfs /proc/timer_list tmpfs rw,nosuid,size=65536k,mode=755,inode64 0 0\\ntmpfs /proc/scsi tmpfs ro,relatime,inode64 0 0\\ntmpfs /sys/firmware tmpfs ro,relatime,inode64 0 0\\n\"}\n",
+  "stderr": "",
+  "elapsedMs": 225
+}

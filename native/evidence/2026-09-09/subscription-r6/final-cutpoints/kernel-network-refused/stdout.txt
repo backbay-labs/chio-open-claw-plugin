@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "Blocked: the first write succeeded, but the second write returned an uncertain/unknown result, so I stopped as instructed.",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 21099,
+    "agentMeta": {
+      "sessionId": "4b4beedc-e1fc-43f2-9d81-7e2398b0a60a",
+      "sessionFile": "/state/openclaw/agents/main/sessions/4b4beedc-e1fc-43f2-9d81-7e2398b0a60a.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 6582,
+        "output": 151,
+        "cacheRead": 5376,
+        "total": 4669
+      },
+      "lastCallUsage": {
+        "input": 2849,
+        "output": 28,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "total": 4669
+      },
+      "promptTokens": 4641
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789008497620,
+      "sessionId": "4b4beedc-e1fc-43f2-9d81-7e2398b0a60a",
+      "sessionKey": "agent:main:explicit:4b4beedc-e1fc-43f2-9d81-7e2398b0a60a",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 386,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "Use chio_call with write_file to write /workspace/openclaw-cutpoint-24b3471e2f8244deb0925a0aeac245e6.txt with content \"one original observed cutpoint effect\". After its successful result, use write_file once to replace the same file with \"must never replace the original\". Complete both sequential operations before your final reply. Stop on any uncertain or failed result. Never retry.",
+    "finalAssistantVisibleText": "Blocked: the first write succeeded, but the second write returned an uncertain/unknown result, so I stopped as instructed.",
+    "finalAssistantRawText": "Blocked: the first write succeeded, but the second write returned an uncertain/unknown result, so I stopped as instructed.",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 2,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

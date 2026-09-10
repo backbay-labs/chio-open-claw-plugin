@@ -1,0 +1,207 @@
+{
+  "claim": "Observed durations include native startup and model inference where host reports them; no matched unprotected baseline, no incremental Chio-overhead claim",
+  "count": 22,
+  "minimumMs": 5738,
+  "medianMs": 9895.5,
+  "maximumMs": 23664,
+  "records": [
+    {
+      "record": "gateway-crash/gateway-crash/after-operator-recovery/host.stdout.json",
+      "nativeDurationMs": 12565,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "native-cases/forbidden-write/initial/host.stdout.json",
+      "nativeDurationMs": 8965,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "native-cases/result-substitution/initial/host.stdout.json",
+      "nativeDurationMs": 9907,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "native-cases/useful/initial/host.stdout.json",
+      "nativeDurationMs": 23664,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 4,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "native-cases/host-response-loss/initial/host.stdout.json",
+      "nativeDurationMs": 9382,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "native-cases/host-response-loss/after-operator-recovery/host.stdout.json",
+      "nativeDurationMs": 8558,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "native-cases/secret/initial/host.stdout.json",
+      "nativeDurationMs": 8015,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "native-cases/tool-error/initial/host.stdout.json",
+      "nativeDurationMs": 10630,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "container-boundary-verified-resource/host.stdout.json",
+      "nativeDurationMs": 16216,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": null,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "resource-paths/path-normalization/initial/host.stdout.json",
+      "nativeDurationMs": 15893,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": null,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "resource-paths/resource-escape/initial/host.stdout.json",
+      "nativeDurationMs": 7729,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "container-boundary/host.stdout.json",
+      "nativeDurationMs": 9884,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "container-boundary-complete/host.stdout.json",
+      "nativeDurationMs": 12339,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "parallel-native-fixture/host.stdout.json",
+      "nativeDurationMs": 5738,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 2,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "resource-escape-rerun/resource-escape/initial/host.stdout.json",
+      "nativeDurationMs": 9013,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "operator-cancellation/host-response-loss/after-operator-recovery/host.stdout.json",
+      "nativeDurationMs": 10967,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "final-cutpoints/kernel-network-refused/initial/host.stdout.json",
+      "nativeDurationMs": 21099,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 2,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "final-cutpoints/journal-before-dispatch/initial/host.stdout.json",
+      "nativeDurationMs": 9128,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "final-cutpoints/cancel-before-dispatch/restart/host.stdout.json",
+      "nativeDurationMs": 8712,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "final-cutpoints/journal-after-effect/initial/host.stdout.json",
+      "nativeDurationMs": 10160,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "final-cutpoints/journal-after-effect/restart/host.stdout.json",
+      "nativeDurationMs": 8089,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    },
+    {
+      "record": "container-boundary-one-read/host.stdout.json",
+      "nativeDurationMs": 13013,
+      "advertisedTools": [
+        "chio_call"
+      ],
+      "toolCallsReported": 1,
+      "source": "native host metadata; toolSummary optional, exact native history controls call assertions"
+    }
+  ]
+}

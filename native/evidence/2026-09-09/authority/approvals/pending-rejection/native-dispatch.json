@@ -1,0 +1,20 @@
+{
+  "calls": [
+    {
+      "id": "call_mpRttx2G4N7EF0qkrXDlZwWd",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-rejected-9a5abbd30b5c.txt",
+          "content": "must never appear"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_mpRttx2G4N7EF0qkrXDlZwWd"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

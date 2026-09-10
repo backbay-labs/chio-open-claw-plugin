@@ -1,0 +1,40 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-native-history-cold-consumer-20260909/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/native-history-ack-cutpoint-96f7325619144f6a9722bd4a8581f115/gateway.json",
+    "--image",
+    "sha256:6ba30a81b844308aff46796d88fc21aad61b15947ee9ba4159736c5f23c66028",
+    "--state-dir",
+    "/tmp/chio-openclaw-native-history-ack-cutpoint-20260909/runtime",
+    "--prompt",
+    "Use chio_call with tool write_file exactly once to write /workspace/openclaw-native-history-ack-cutpoint.txt with content \"verified original effect\". Stop on any unsuccessful or uncertain result."
+  ],
+  "exitCode": 0,
+  "passed": true,
+  "guestAcknowledgementResponses": 0,
+  "journal": [
+    {
+      "state": "completed",
+      "acknowledged": true,
+      "hostDeliveryConfirmed": true
+    }
+  ],
+  "resource": {
+    "content": "verified original effect",
+    "dispatch": [
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 28,
+        "observedAt": "2026-09-09T21:17:34.661Z",
+        "upstreamRequestId": 30,
+        "tool": "write_file",
+        "path": "/workspace/openclaw-native-history-ack-cutpoint.txt",
+        "argumentsSha256": "3f07ef77121a3a94c507a50942d3e783ef65bf9a24ead2aafd509e2d9f37f2f6",
+        "frameSha256": "979cdace6ccf0cc956465500eb5087aa6685f967c773bfb3f17e44d9a7afc92d"
+      }
+    ]
+  }
+}

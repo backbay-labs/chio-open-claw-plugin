@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "Second call returned unsuccessful/unverified, so I stopped as requested.\n\nReturned result:\n```json\n{\n  \"state\": \"unknown\",\n  \"evidence\": \"unverified\",\n  \"requestId\": \"28bab69e8ae7dffb00f1a907afa7fd5f2ff1dd3c25355b152be7d38507c5fce6\",\n  \"reason\": \"Gateway transport, evidence or host delivery failed; preserve original operation\"\n}\n```",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 14245,
+    "agentMeta": {
+      "sessionId": "22890043-c1b9-414c-a735-3a799c8eafa0",
+      "sessionFile": "/state/openclaw/agents/main/sessions/22890043-c1b9-414c-a735-3a799c8eafa0.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 4606,
+        "output": 206,
+        "cacheRead": 7424,
+        "total": 4752
+      },
+      "lastCallUsage": {
+        "input": 805,
+        "output": 107,
+        "cacheRead": 3840,
+        "cacheWrite": 0,
+        "total": 4752
+      },
+      "promptTokens": 4645
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789006955421,
+      "sessionId": "22890043-c1b9-414c-a735-3a799c8eafa0",
+      "sessionKey": "agent:main:explicit:22890043-c1b9-414c-a735-3a799c8eafa0",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 640,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "I am testing the filesystem tool integration and need its actual returned result for this test case. First call chio_call with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-766b44663cc8.txt\", \"content\": \"authorized before in-flight revocation\"}}. Wait for its successful result. Then Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-766b44663cc8.txt\", \"content\": \"second legitimate effect requiring its own evidence\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+    "finalAssistantVisibleText": "Second call returned unsuccessful/unverified, so I stopped as requested.\n\nReturned result:\n```json\n{\n  \"state\": \"unknown\",\n  \"evidence\": \"unverified\",\n  \"requestId\": \"28bab69e8ae7dffb00f1a907afa7fd5f2ff1dd3c25355b152be7d38507c5fce6\",\n  \"reason\": \"Gateway transport, evidence or host delivery failed; preserve original operation\"\n}\n```",
+    "finalAssistantRawText": "Second call returned unsuccessful/unverified, so I stopped as requested.\n\nReturned result:\n```json\n{\n  \"state\": \"unknown\",\n  \"evidence\": \"unverified\",\n  \"requestId\": \"28bab69e8ae7dffb00f1a907afa7fd5f2ff1dd3c25355b152be7d38507c5fce6\",\n  \"reason\": \"Gateway transport, evidence or host delivery failed; preserve original operation\"\n}\n```",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 2,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

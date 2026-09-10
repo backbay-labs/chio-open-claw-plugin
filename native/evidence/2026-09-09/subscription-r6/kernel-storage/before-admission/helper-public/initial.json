@@ -1,0 +1,22 @@
+{
+  "observation": {
+    "observedAtEpoch": 1789010081.716806,
+    "files": {
+      "forbidden.txt": "independent forbidden observer\n",
+      "secret.txt": "sensitive observer\n"
+    },
+    "dispatch": []
+  },
+  "databases": {
+    "sessions.sqlite": {
+      "remote_session_credential_calls": [],
+      "remote_session_credential_latches": []
+    },
+    "sessions.sqlite.admission": {
+      "admission_operations": [],
+      "admission_operation_terminal_projections": [],
+      "tool_outcomes": []
+    },
+    "receipts.sqlite": {}
+  }
+}

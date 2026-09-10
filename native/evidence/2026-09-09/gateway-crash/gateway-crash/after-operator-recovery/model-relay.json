@@ -1,0 +1,23 @@
+[
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200
+  },
+  {
+    "forwarded": true,
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "callAsYLS08ebGHaESsGpZIed299",
+        "content": "{\"state\":\"completed\",\"evidence\":\"verified\",\"requestId\":\"b66cc8d1-b074-4ec6-9d79-7d3689037691:4611d3ca84bcf34073452581b494ae7f85e1cd9e39b806222a73625baa71072e\",\"receipt\":{\"action\":{\"parameter_hash\":\"46e4801d70174fd500d39eae1cba076b4c7e1da5940aea1704df9a0853a281a2\",\"parameters\":{\"path\":\"/workspace/openclaw-qualified-7ad507c7fa68.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a08842-dae9-7720-aa3b-f40a20950412\",\"content_hash\":\"4517684d213be495a06b18c03880b7b15fbcaf08bd3b99761af2f3fa5c756952\",\"decision\":{\"verdict\":\"allow\"},\"id\":\"fc388d19c8de06b0f5084c383c4f47b61ec919d092971f36b7ea07cc259ac7a6\",\"kernel_key\":\"580cdf640c31f652ad3115569c77310c920c67aa3482c919b9faf52817524498\",\"metadata\":{\"admission_operation\":{\"compensation_status\":\"not_compensated\",\"coordinator_lease_epoch\":1,\"coordinator_lease_id\":\"01a087d9-b711-7f80-8474-940e5898887f\",\"operation_id\":\"313db85798ef3d03be92fa6e08b017c7d5f4456b7a36817da6b0acdfb9bbf9f9\",\"projected_dispatch_state\":\"terminal\",\"projected_operation_version\":8,\"projected_state\":\"completed\",\"request_binding_hash\":\"e4a3cbebcd41999af3c5a75acd7d1d8b65459ebe613f7d96af44fc85f964dfac\",\"request_id\":\"b66cc8d1-b074-4ec6-9d79-7d3689037691:4611d3ca84bcf34073452581b494ae7f85e1cd9e39b806222a73625baa71072e\",\"request_namespace_digest\":\"edf272068a9927c2ba55738ac8b1190309fba7b9f1f65df05ae5ffc4e2dad860\",\"retained_dispatch_commit\":{\"committed_version\":6,\"coordinator_lease_epoch\":1,\"coordinator_lease_id\":\"01a087d9-b711-7f80-8474-940e5898887f\",\"provider_attempt\":{\"attempt_id\":\"attempt:313db85798ef3d03be92fa6e08b017c7d5f4456b7a36817da6b0acdfb9bbf9f9\",\"operation_id\":\"313db85798ef3d03be92fa6e08b017c7d5f4456b7a36817da6b0acdfb9bbf9f9\",\"transport_id\":\"kernel-tool-server:fs\",\"transport_key_epoch\":1},\"store_fence\":{\"lease_id\":\"01a087d9-b711-7f80-8474-940e5898887f\",\"owner_epoch\":1,\"store_uuid\":\"01a087d9-b634-7e61-ae80-a0c62ab7d36b\"}},\"schema\":\"chio.admission-receipt.v1\",\"store_fence\":{\"lease_id\":\"01a087d9-b711-7f80-8474-940e5898887f\",\"owner_epoch\":1,\"store_uuid\":\"01a087d9-b634-7e61-ae80-a0c62ab7d36b\"},\"tool_outcome_id\":\"332a1293baaeb045be3e1f3fcda786df77d72d25332cd75994d9b31f70f53110\",\"tool_outcome_version\":2,\"trusted_time_unix_ms\":1788992506688},\"attribution\":{\"delegation_depth\":0,\"grant_index\":0,\"issuer_key\":\"b6311d41a1a65feff88d18d1cbe02cc38fd28d478426ba00cdd0bb34221e768b\",\"subject_key\":\"d817bb3cd800f07602b9fe5547112acfb2b1ed9e70c375ba7a23c2ba86bf6a16\"},\"chio_receipt_signing_nonce\":\"rcpt-01a08843-4bc9-7cb0-a891-d2ad0de4b9de\",\"receipt_context\":{\"request_id\":\"b66cc8d1-b074-4ec6-9d79-7d3689037691:4611d3ca84bcf34073452581b494ae7f85e1cd9e39b806222a73625baa71072e\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"7ddd511a5e2795e26bea27f5e3e90aa0f44423711215db8fcdd29cc90c29594a9c38d8553f3ee16c7eb6a3209991f763ca1f8d07f456407c192b9848fd383203\",\"timestamp\":1788992506,\"tool_name\":\"read_text_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"result\":{\"content\":[{\"text\":\"original retained effect\",\"type\":\"text\"}],\"isError\":false,\"structuredContent\":{\"content\":\"original retained effect\"}},\"delivery\":{\"acknowledgement\":\"WFV7PHxqG4G-gnXTJqxmVK3FH9e6yDl_Xmhj1qVWnK0\",\"receiptId\":\"fc388d19c8de06b0f5084c383c4f47b61ec919d092971f36b7ea07cc259ac7a6\",\"requestHash\":\"9cb7c88f2ccd6414df2cbbe9c399f5a6194a19ecd37da96dc1915b11cf41fc99\",\"requestId\":\"b66cc8d1-b074-4ec6-9d79-7d3689037691:4611d3ca84bcf34073452581b494ae7f85e1cd9e39b806222a73625baa71072e\",\"resultHash\":\"4517684d213be495a06b18c03880b7b15fbcaf08bd3b99761af2f3fa5c756952\",\"schema\":\"chio.mcp.delivery-ack.v1\"}}"
+      }
+    ],
+    "status": 200
+  }
+]

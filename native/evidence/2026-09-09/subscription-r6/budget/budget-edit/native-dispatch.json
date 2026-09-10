@@ -1,0 +1,26 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_ha2OmKRGt68qZ0gn98ZyQBtV|fc_005ecad752174b94016aa2137994b887d0a26c2a151accc313",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "edit_file",
+        "arguments": {
+          "path": "/workspace/openclaw-budget-7e521befe1ec.txt",
+          "edits": [
+            {
+              "oldText": "original",
+              "newText": "edited"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_ha2OmKRGt68qZ0gn98ZyQBtV|fc_005ecad752174b94016aa2137994b887d0a26c2a151accc313"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

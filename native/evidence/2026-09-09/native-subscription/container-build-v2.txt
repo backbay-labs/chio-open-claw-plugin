@@ -1,0 +1,53 @@
+#0 building with "colima" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 635B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22-bookworm-slim@sha256:6c74791e557ce11fc957704f6d4fe134a7bc8d6f5ca4403205b2966bd488f6b3
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/library/node:22-bookworm-slim@sha256:6c74791e557ce11fc957704f6d4fe134a7bc8d6f5ca4403205b2966bd488f6b3
+#4 resolve docker.io/library/node:22-bookworm-slim@sha256:6c74791e557ce11fc957704f6d4fe134a7bc8d6f5ca4403205b2966bd488f6b3 done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 4.67MB 0.0s done
+#5 DONE 0.0s
+
+#6 [2/6] RUN npm install --global --ignore-scripts openclaw@2026.5.20
+#6 CACHED
+
+#7 [3/6] COPY chio-openclaw-kernel-0.1.0.tgz /opt/chio-package.tgz
+#7 DONE 0.0s
+
+#8 [4/6] RUN npm install --prefix /opt/chio --ignore-scripts --offline --no-audit --no-fund /opt/chio-package.tgz     && rm /opt/chio-package.tgz
+#8 3.213 
+#8 3.213 added 1 package in 3s
+#8 DONE 3.2s
+
+#9 [5/6] COPY proxy.mjs /opt/chio/proxy.mjs
+#9 DONE 0.0s
+
+#10 [6/6] WORKDIR /tmp
+#10 DONE 0.0s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.6s done
+#11 exporting manifest sha256:e851c589778a9947626470ff9eabc69b5d873d7107edd54f09c48a35cd20b279
+#11 exporting manifest sha256:e851c589778a9947626470ff9eabc69b5d873d7107edd54f09c48a35cd20b279 done
+#11 exporting config sha256:cf44f62f495a67a0125c77bd8e820b6b51abcf1eb781a160511a16b03c92631c done
+#11 exporting attestation manifest sha256:d634ef18d9c15d2bfc6ce0db51bdd64d9ed1e6acc85c107a95cdbcfee6195ba7 0.0s done
+#11 exporting manifest list sha256:1b623ee6046ec919a10c19919228778f70a22a696c72d7d4dd1522d44c138d89 done
+#11 naming to docker.io/library/chio-openclaw-host:subscription-r4-v2-20260909 done
+#11 unpacking to docker.io/library/chio-openclaw-host:subscription-r4-v2-20260909
+#11 unpacking to docker.io/library/chio-openclaw-host:subscription-r4-v2-20260909 0.2s done
+#11 DONE 0.8s
+
+View build details: docker-desktop://dashboard/build/colima/colima/jlz54p8etzk5zz1kvtegmt4e9
+Container build context retained at /var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-image-BBEZOD

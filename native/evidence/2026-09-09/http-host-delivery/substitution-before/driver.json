@@ -1,0 +1,15 @@
+{
+  "command": [
+    "node",
+    "native/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/result-substitution-493518edead442f39deea15cf1280a77/gateway.json",
+    "--image",
+    "sha256:a39201eed07dd1c322fe181387e4305826cef32e8ca7814c45bf1e435a880d61",
+    "--state-dir",
+    "/tmp/chio-openclaw-http-host-substitution-before-20260909",
+    "--prompt",
+    "Use chio_call read_text_file exactly once for /workspace/openclaw-http-r5.txt. Report its exact content. Stop on any unverified result. Do not write anything."
+  ],
+  "exitCode": 0
+}

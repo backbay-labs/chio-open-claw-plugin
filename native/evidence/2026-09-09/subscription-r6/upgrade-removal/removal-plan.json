@@ -1,0 +1,165 @@
+{
+  "configurationSha256": "fa61fc0d27cd3f71f7ea244e5c15268aa760ba2e98f7938508c2a8b4584a76c9",
+  "originalAuthority": {
+    "sessionId": "dbc9f8b4b5597c4271ded55701e6cfcd98e09c17a0a48cc5907cc3dff5a28a43",
+    "capabilityId": "cap-01a08931-a196-7420-8e58-77b1d095e459",
+    "serverId": "fs",
+    "subjectKey": "344ae386641abf3a174deb13e02322384a22fc2fbedfe2a1cf90694fd73974c5"
+  },
+  "noUnresolvedJournalRecords": true,
+  "journalStates": [
+    {
+      "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:96a145bb3583fa04b8edc0c1fbeea4155b3dacb9c0e683266272f006dc9e4466",
+      "state": "completed",
+      "acknowledged": true,
+      "hostDeliveryConfirmed": true
+    },
+    {
+      "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:f0d0ca9c0adeac82615cf066165c146da669ce492c1279307c6a5b9cfc455dea",
+      "state": "completed",
+      "acknowledged": true,
+      "hostDeliveryConfirmed": true
+    },
+    {
+      "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:1ad9d80244c061c2ef61952ae2a0be5a3cf4ef6e162edda5a72dc5a31a5a2b35",
+      "state": "completed",
+      "acknowledged": true,
+      "hostDeliveryConfirmed": true
+    }
+  ],
+  "removeConsumer": "/tmp/chio-openclaw-upgrade-r6-kng62kju/consumer",
+  "temporaryRoot": "/tmp/chio-openclaw-upgrade-r6-kng62kju",
+  "volumes": [
+    {
+      "name": "chio-required-openclaw-state-1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+      "sourceLaunch": "new-candidate-fenced/resume-fence/launch.json",
+      "metadata": {
+        "CreatedAt": "2026-09-09T22:43:58-04:00",
+        "Driver": "local",
+        "Labels": {
+          "chio.task": "required-agent-integrations"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/chio-required-openclaw-state-1b1cf427-eb47-4d72-b3b3-7619464bdbd2/_data",
+        "Name": "chio-required-openclaw-state-1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+        "Options": null,
+        "Scope": "local"
+      },
+      "attachedContainers": []
+    },
+    {
+      "name": "chio-required-openclaw-control-1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+      "sourceLaunch": "new-candidate-fenced/resume-fence/launch.json",
+      "metadata": {
+        "CreatedAt": "2026-09-09T22:43:59-04:00",
+        "Driver": "local",
+        "Labels": {
+          "chio.task": "required-agent-integrations"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/chio-required-openclaw-control-1b1cf427-eb47-4d72-b3b3-7619464bdbd2/_data",
+        "Name": "chio-required-openclaw-control-1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+        "Options": null,
+        "Scope": "local"
+      },
+      "attachedContainers": []
+    },
+    {
+      "name": "chio-required-openclaw-state-49c2adeb-4499-4327-8b9c-c92b878c98d8",
+      "sourceLaunch": "old-candidate-unknown/evidence-wrong-signer/launch.json",
+      "metadata": {
+        "CreatedAt": "2026-09-09T22:42:07-04:00",
+        "Driver": "local",
+        "Labels": {
+          "chio.task": "required-agent-integrations"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/chio-required-openclaw-state-49c2adeb-4499-4327-8b9c-c92b878c98d8/_data",
+        "Name": "chio-required-openclaw-state-49c2adeb-4499-4327-8b9c-c92b878c98d8",
+        "Options": null,
+        "Scope": "local"
+      },
+      "attachedContainers": []
+    },
+    {
+      "name": "chio-required-openclaw-control-49c2adeb-4499-4327-8b9c-c92b878c98d8",
+      "sourceLaunch": "old-candidate-unknown/evidence-wrong-signer/launch.json",
+      "metadata": {
+        "CreatedAt": "2026-09-09T22:42:07-04:00",
+        "Driver": "local",
+        "Labels": {
+          "chio.task": "required-agent-integrations"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/chio-required-openclaw-control-49c2adeb-4499-4327-8b9c-c92b878c98d8/_data",
+        "Name": "chio-required-openclaw-control-49c2adeb-4499-4327-8b9c-c92b878c98d8",
+        "Options": null,
+        "Scope": "local"
+      },
+      "attachedContainers": []
+    },
+    {
+      "name": "chio-required-openclaw-state-d355b377-429d-4759-9cfc-8e3f0e27f864",
+      "sourceLaunch": "owner-recovery/after-owner-reconciliation/launch.json",
+      "metadata": {
+        "CreatedAt": "2026-09-09T22:44:45-04:00",
+        "Driver": "local",
+        "Labels": {
+          "chio.task": "required-agent-integrations"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/chio-required-openclaw-state-d355b377-429d-4759-9cfc-8e3f0e27f864/_data",
+        "Name": "chio-required-openclaw-state-d355b377-429d-4759-9cfc-8e3f0e27f864",
+        "Options": null,
+        "Scope": "local"
+      },
+      "attachedContainers": []
+    },
+    {
+      "name": "chio-required-openclaw-control-d355b377-429d-4759-9cfc-8e3f0e27f864",
+      "sourceLaunch": "owner-recovery/after-owner-reconciliation/launch.json",
+      "metadata": {
+        "CreatedAt": "2026-09-09T22:44:45-04:00",
+        "Driver": "local",
+        "Labels": {
+          "chio.task": "required-agent-integrations"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/chio-required-openclaw-control-d355b377-429d-4759-9cfc-8e3f0e27f864/_data",
+        "Name": "chio-required-openclaw-control-d355b377-429d-4759-9cfc-8e3f0e27f864",
+        "Options": null,
+        "Scope": "local"
+      },
+      "attachedContainers": []
+    }
+  ],
+  "launches": [
+    {
+      "sourceLaunch": "new-candidate-fenced/resume-fence/launch.json",
+      "sessionId": "1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+      "agentName": "chio-openclaw-agent-1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+      "relayName": "chio-openclaw-relay-1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+      "network": "chio-required-openclaw-1b1cf427-eb47-4d72-b3b3-7619464bdbd2",
+      "image": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f"
+    },
+    {
+      "sourceLaunch": "old-candidate-unknown/evidence-wrong-signer/launch.json",
+      "sessionId": "49c2adeb-4499-4327-8b9c-c92b878c98d8",
+      "agentName": "chio-openclaw-agent-49c2adeb-4499-4327-8b9c-c92b878c98d8",
+      "relayName": "chio-openclaw-relay-49c2adeb-4499-4327-8b9c-c92b878c98d8",
+      "network": "chio-required-openclaw-49c2adeb-4499-4327-8b9c-c92b878c98d8",
+      "image": "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618"
+    },
+    {
+      "sourceLaunch": "owner-recovery/after-owner-reconciliation/launch.json",
+      "sessionId": "d355b377-429d-4759-9cfc-8e3f0e27f864",
+      "agentName": "chio-openclaw-agent-d355b377-429d-4759-9cfc-8e3f0e27f864",
+      "relayName": "chio-openclaw-relay-d355b377-429d-4759-9cfc-8e3f0e27f864",
+      "network": "chio-required-openclaw-d355b377-429d-4759-9cfc-8e3f0e27f864",
+      "image": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f"
+    }
+  ],
+  "preserve": [
+    "all shared images",
+    "old v5 cold install",
+    "shared r6 cold install",
+    "operator private config and all journal snapshots",
+    "owner kernel database",
+    "owner resource and audit volumes",
+    "all unrelated case state"
+  ]
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "label": "positive",
+    "exitCode": 0,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 0,
+      "outcome": "completed",
+      "confirmedDeliveries": 1
+    },
+    "nativeToolCallId": "call_hCtkMyZDIvts8oqCERxnir1a|fc_09dae4a51adceaba016aa220bb39c887d186a19f69458d264f",
+    "nativeSessionId": "1a6cdfb9-f275-4f4b-86fb-3c3259746ba2",
+    "elapsedSeconds": 39.009263957996154
+  },
+  {
+    "label": "faulted-native",
+    "exitCode": 2,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 2,
+      "outcome": "unresolved",
+      "confirmedDeliveries": 1
+    },
+    "nativeToolCallId": "call_Ilq0lEK7vO3PE4vIXeyuJABy|fc_098dcc47ba03fd57016aa220d587f087d1bee6187566765da3",
+    "nativeSessionId": "18b8a302-3789-4a5b-bc39-65ec57a9a55c",
+    "elapsedSeconds": 28.927726916008396
+  },
+  {
+    "label": "same-action-after-unlock",
+    "exitCode": 2,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 2,
+      "outcome": "unresolved",
+      "confirmedDeliveries": 1
+    },
+    "nativeToolCallId": "call_GfLLy61oPtDlJ6w19uLnH8Rb|fc_03e47648316e610d016aa220f2ffb487d1a1b746af8e5d0457",
+    "nativeSessionId": "8aab06cc-07a1-4987-91f4-a31e2d2ac0e2",
+    "elapsedSeconds": 20.035530291002942
+  },
+  {
+    "label": "new-action-after-restart",
+    "exitCode": 2,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 2,
+      "outcome": "unresolved",
+      "confirmedDeliveries": 1
+    },
+    "nativeToolCallId": "call_0DlkwdOpj75B0tFllEPmg8wb|fc_0f5f379ea9739480016aa2210bb46487d188b314d96ca4cf8b",
+    "nativeSessionId": "7c1251af-13a8-4869-a053-ae4825c115ee",
+    "elapsedSeconds": 20.541845207990264
+  }
+]

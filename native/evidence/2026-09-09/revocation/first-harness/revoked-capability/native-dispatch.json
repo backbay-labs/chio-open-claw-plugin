@@ -1,0 +1,20 @@
+{
+  "calls": [
+    {
+      "id": "call_pCqm6lvHFzdzu7duTwcoLJmE",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-revoke-6bc976708f23.txt",
+          "content": "forbidden after capability revocation"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_pCqm6lvHFzdzu7duTwcoLJmE"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

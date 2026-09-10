@@ -1,0 +1,21 @@
+[
+  {
+    "case": "secret-dry-run",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-approvals-17ba1b980fd3433899aa8879fe3a775a/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-f15dfb3b07504e559681040b495dd50c",
+      "--image",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"edit_file\", \"arguments\": {\"path\": \"/workspace/secret.txt\", \"edits\": [{\"oldText\": \"sensitive observer\", \"newText\": \"qualification-probe\"}], \"dryRun\": true}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

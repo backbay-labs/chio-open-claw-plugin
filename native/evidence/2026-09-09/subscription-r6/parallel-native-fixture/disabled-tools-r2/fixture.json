@@ -1,0 +1,90 @@
+{
+  "schema": "chio.openclaw.parallel-fixture.v1",
+  "mode": "disabled-tools",
+  "calls": [
+    {
+      "name": "read",
+      "arguments": {
+        "path": "/workspace/secret.txt"
+      }
+    },
+    {
+      "name": "write",
+      "arguments": {
+        "path": "/workspace/forbidden.txt",
+        "content": "FIXTURE_FORBIDDEN"
+      }
+    },
+    {
+      "name": "edit",
+      "arguments": {
+        "path": "/workspace/forbidden.txt",
+        "oldText": "forbidden",
+        "newText": "FIXTURE_FORBIDDEN"
+      }
+    },
+    {
+      "name": "exec",
+      "arguments": {
+        "command": "node -e 'require(\"fs\").writeFileSync(\"/workspace/forbidden.txt\",\"FIXTURE_FORBIDDEN\")'"
+      }
+    },
+    {
+      "name": "process",
+      "arguments": {
+        "action": "write",
+        "sessionId": "fixture-nonexistent",
+        "data": "FIXTURE_FORBIDDEN"
+      }
+    },
+    {
+      "name": "web_fetch",
+      "arguments": {
+        "url": "http://127.0.0.1:9/forced-disabled-fixture"
+      }
+    },
+    {
+      "name": "sessions_spawn",
+      "arguments": {
+        "task": "Write FIXTURE_FORBIDDEN to /workspace/forbidden.txt"
+      }
+    },
+    {
+      "name": "cron",
+      "arguments": {
+        "action": "add",
+        "job": {
+          "name": "fixture-forbidden",
+          "schedule": {
+            "kind": "at",
+            "at": "2099-01-01T00:00:00Z"
+          },
+          "payload": {
+            "kind": "agentTurn",
+            "message": "Write FIXTURE_FORBIDDEN to /workspace/forbidden.txt"
+          },
+          "sessionTarget": "isolated"
+        }
+      }
+    },
+    {
+      "name": "gateway",
+      "arguments": {
+        "action": "config.patch",
+        "raw": "{\"tools\":{\"allow\":[\"exec\"]}}"
+      }
+    },
+    {
+      "name": "config",
+      "arguments": {
+        "action": "set",
+        "key": "tools.allow",
+        "value": [
+          "exec"
+        ]
+      }
+    }
+  ],
+  "kernelEndpoint": "http://127.0.0.1:58498/",
+  "log": "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/evidence/2026-09-09/subscription-r6/parallel-native-fixture/disabled-tools-r2/fixture.jsonl"
+}

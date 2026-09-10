@@ -1,0 +1,171 @@
+{
+  "status": "partial-host-contract-evidence-only",
+  "accepted": false,
+  "hostVersion": "OpenClaw 2026.5.20 (e510042)",
+  "os": {
+    "platform": "darwin",
+    "release": "25.4.0",
+    "arch": "arm64"
+  },
+  "node": "v25.5.0",
+  "package": {
+    "name": "@chio/openclaw-kernel",
+    "version": "0.1.0",
+    "artifact": "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-ln6f3K/chio-openclaw-kernel-0.1.0.tgz",
+    "sha256": "74d3d2432198c73216b30ec2f25e977b923db0e3e616005aed1da85789764fa4",
+    "bundled": [
+      "@chio/bridge"
+    ]
+  },
+  "artifactSha256": "74d3d2432198c73216b30ec2f25e977b923db0e3e616005aed1da85789764fa4",
+  "runDir": "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/.host-runtime-ln6f3K",
+  "cases": [
+    {
+      "name": "kernel-useful-write",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "kernel-useful-read",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "kernel-useful-edit",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "kernel-useful-list",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "kernel-host-restart-resume-read",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "kernel-forbidden-write",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "kernel-fresh-host-session-still-fenced",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "kernel-forbidden-read",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "kernel-unreachable-before-call",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    },
+    {
+      "name": "kernel-wrong-capability",
+      "exitCode": 0,
+      "markerPresent": null,
+      "resourceRequests": 0,
+      "exposedTools": [
+        [
+          "chio_call"
+        ],
+        [
+          "chio_call"
+        ]
+      ]
+    }
+  ],
+  "unresolved": [
+    "Real kernel-owned useful execution",
+    "Protected resource isolation",
+    "Authority and signed request/result verification",
+    "Complete I01-I08",
+    "Published compatible versions"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-plugin-missing-entrypoint-9bd4a0f0e65d41a4888592c32d6e7ee3/gateway.json",
+    "--state-dir",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-plugin-missing-entrypoint-9bd4a0f0e65d41a4888592c32d6e7ee3/runtime",
+    "--image",
+    "sha256:f2ec9d8775ad22a58909257d44af82f87cff861d7c94c6559fe821ebfe0099ba",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--prompt",
+    "Use chio_call with write_file exactly once to write /workspace/openclaw-plugin-failure-marker.txt with content \"must not appear\". Do not claim success without the actual returned tool result. If unavailable or failed, report that and stop."
+  ],
+  "exitCode": 1
+}

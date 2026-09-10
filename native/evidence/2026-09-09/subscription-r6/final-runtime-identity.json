@@ -1,0 +1,9 @@
+{
+  "archiveUnchanged": true,
+  "sourceRuntimeUnchanged": true,
+  "runtimeCommit": "f6627ae",
+  "bridgeSha256": "7d9e34f7408a316e35125982a23faaecfd2f31f4da6b50ca8eab287c2c918f67",
+  "bridgeVersion": "0.3.0",
+  "sdkVersion": "0.1.1-rc.1",
+  "docsAndTestChangesOnlySinceRuntimeCommit": true
+}

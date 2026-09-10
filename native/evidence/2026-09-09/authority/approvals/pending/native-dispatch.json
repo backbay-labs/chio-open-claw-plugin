@@ -1,0 +1,20 @@
+{
+  "calls": [
+    {
+      "id": "call_CaGxyPDx2O6nn9yzb4HUQ3QQ",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-approved-9a5abbd30b5c.txt",
+          "content": "exact operator-approved effect"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_CaGxyPDx2O6nn9yzb4HUQ3QQ"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

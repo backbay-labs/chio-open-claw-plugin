@@ -17,7 +17,9 @@ p=argparse.ArgumentParser(description=__doc__)
 for name in ['package-dir','operator-state','output']:
  p.add_argument('--'+name,type=Path,required=True)
 p.add_argument('--image',required=True)
+p.add_argument('--model-auth-file',type=Path)
 p.add_argument('--resource-path',required=True)
+p.add_argument('--read-count',type=int,choices=range(1,9),default=8)
 a=p.parse_args();a.output.mkdir(mode=0o700)
 op=json.loads((a.operator_state/'operator.json').read_text())
 private=a.operator_state/('container-boundary-'+uuid.uuid4().hex);private.mkdir(mode=0o700)
@@ -26,7 +28,8 @@ request=private/'prepare.json';request.write_text(json.dumps(prepare));request.c
 config=private/'gateway.json'
 subprocess.run(['node',str(a.package_dir/'node_modules/@chio/bridge/dist/prepare-gateway.js'),str(request),str(config)],capture_output=True,check=True)
 runtime=Path('/tmp')/('chio-openclaw-boundary-runtime-'+uuid.uuid4().hex)
-cmd=['node',str(a.package_dir/'scripts/protected.mjs'),'--gateway-config',str(config),'--image',a.image,'--state-dir',str(runtime),'--prompt','Use chio_call with read_text_file for '+a.resource_path+' exactly eight times, sequentially, one per model turn. These reads keep the actual agent active for independent container boundary probes. Stop on any unsuccessful result. Do not write anything.']
+cmd=['node',str(a.package_dir/'scripts/protected.mjs'),'--gateway-config',str(config),'--image',a.image,'--state-dir',str(runtime),'--prompt','Use chio_call with read_text_file for '+a.resource_path+' exactly '+str(a.read_count)+' times, sequentially, one per model turn. These reads keep the actual agent active for independent container boundary probes. Stop on any unsuccessful result. Do not write anything.']
+if a.model_auth_file:cmd+=['--model-auth-file',str(a.model_auth_file.resolve())]
 stdout=(a.output/'host.stdout.json').open('w');stderr=(a.output/'host.stderr.txt').open('w')
 proc=subprocess.Popen(cmd,stdout=stdout,stderr=stderr)
 listener=socket.socket();listener.bind(('0.0.0.0',0));listener.listen(8);port=listener.getsockname()[1]

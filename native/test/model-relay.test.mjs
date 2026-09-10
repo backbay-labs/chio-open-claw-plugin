@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import {request as httpRequest} from "node:http";
 import {validateModelRequest,validateCodexRequest,chatGptCredential,startModelRelay} from "../src/model-relay.mjs";
 const request=()=>({model:"gpt-4.1-mini",messages:[{role:"user",content:"Read an approved file"}],tools:[{type:"function",function:{name:"chio_call",parameters:{type:"object"}}}]});
 test("model transport permits only inline Chio tool history",()=>{
@@ -65,5 +66,26 @@ test("subscription relay never forwards rejected acknowledgement or exposes prov
   const provider=await send(codexRequest());assert.equal(provider.status,401);assert.equal(forwards,1);
   const errorBody=await provider.text();assert.ok(!errorBody.includes("parent-access-secret"));assert.ok(!errorBody.includes("private-account"));
   assert.ok(!JSON.stringify(relay.events).includes("parent-access-secret"));assert.equal(relay.events[0].reason,"Model delivery failed");
+ }finally{await relay?.close();globalThis.fetch=originalFetch;}
+});
+
+test("concurrent authorized HTTP requests cannot overrun the model request quota",async()=>{
+ const originalFetch=globalThis.fetch;let forwarded=0,relay;
+ globalThis.fetch=async(url,options)=>{
+  assert.equal(String(url),"https://api.openai.com/v1/chat/completions");
+  forwarded++;return new Response('{"choices":[]}',{headers:{"content-type":"application/json"}});
+ };
+ try{
+  relay=await startModelRelay("local-audit-secret");
+  const body=JSON.stringify(request());const pending=[];
+  const responses=Array.from({length:110},()=>new Promise((resolve,reject)=>{
+   const req=httpRequest({hostname:"127.0.0.1",port:relay.port,path:"/v1/chat/completions",method:"POST",headers:{authorization:`Bearer ${relay.token}`,"content-type":"application/json","content-length":Buffer.byteLength(body)}},response=>{response.resume();response.on("end",()=>resolve(response.statusCode));});
+   req.on("error",reject);req.flushHeaders();pending.push(req);
+  }));
+  // Hold every body until the competing requests have entered header admission.
+  await new Promise(resolve=>setTimeout(resolve,400));
+  for(const req of pending)req.end(body);
+  const statuses=await Promise.all(responses);
+  assert.equal(forwarded,100);assert.equal(statuses.filter(code=>code===200).length,100);assert.equal(statuses.filter(code=>code===403).length,10);
  }finally{await relay?.close();globalThis.fetch=originalFetch;}
 });

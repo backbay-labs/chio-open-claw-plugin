@@ -67,7 +67,11 @@ export async function startModelRelay(credential, model = "gpt-4.1-mini", onTool
       if (request.method !== "POST" || request.url !== route || request.headers.host !== `127.0.0.1:${port}` || request.headers.origin || request.headers.authorization !== `Bearer ${token}` || remaining <= 0) throw new Error("Model route refused");
       let raw = ""; for await (const chunk of request) {raw += chunk; if (Buffer.byteLength(raw) > 8*1024*1024) throw new Error("Model request too large");}
       const body = JSON.parse(raw); event.requestKeys = Object.keys(body);
-      (subscription ? validateCodexRequest : validateModelRequest)(body, model); remaining--;
+      (subscription ? validateCodexRequest : validateModelRequest)(body, model);
+      // Body parsing yields to other requests. Reserve the quota synchronously
+      // after validation, before any callback or provider request can yield.
+      if (remaining <= 0) throw new Error("Model request quota exhausted");
+      remaining--;
       // This supported mode admits one tool per model turn. The resource owner
       // fences any overlapping call until the guest confirms the first result.
       body.store = false; body.parallel_tool_calls = false;

@@ -1,6 +1,8 @@
 # OpenClaw acceptance record
 
-Current subscription candidate: see [native subscription qualification](evidence/2026-09-09/native-subscription/README.md)
+Current candidate includes the atomic model-request quota repair. Its full
+subscription matrix is recorded in [subscription r6](evidence/2026-09-09/subscription-r6/README.md).
+The earlier subscription candidate is superseded: see [native subscription qualification](evidence/2026-09-09/native-subscription/README.md)
 for the r4 launcher plus the officially supported ChatGPT/Codex provider route,
 its cold-installed artifact, and three passing actual host cases. The existing
 [HTTP host delivery](evidence/2026-09-09/http-host-delivery/README.md) records the

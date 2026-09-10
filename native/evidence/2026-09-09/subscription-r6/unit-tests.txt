@@ -1,0 +1,37 @@
+
+> @chio/openclaw-kernel@0.1.0 test
+> node --test test/*.test.mjs
+
+✔ Docker inventory failure cannot establish successful cleanup (457.094041ms)
+✔ guest delivery verification: none (6.21425ms)
+✔ guest delivery verification: result (1.633958ms)
+✔ guest delivery verification: stale-request (0.8575ms)
+✔ guest delivery verification: signature (1.052459ms)
+✔ a stale missing-completion read cannot redispatch after acquiring the lock (113.541584ms)
+✔ a stale missing-completion read with changed arguments cleans its new lock (101.576167ms)
+✔ model transport permits only inline Chio tool history (1.14775ms)
+✔ model output budget cannot grow beyond the supported mode (0.119583ms)
+✔ native subscription cache reader never retains refresh or identity tokens (1.476083ms)
+✔ native Codex Responses admits complete inline Chio history only (0.420167ms)
+✔ subscription relay substitutes credentials only at fixed parent route after delivery confirmation (35.087958ms)
+✔ subscription relay never forwards rejected acknowledgement or exposes provider failures (10.011375ms)
+✔ concurrent authorized HTTP requests cannot overrun the model request quota (433.868625ms)
+✔ same host operation is dispatched once, bound to host caller and canonical arguments (39.223708ms)
+✔ unknown outcome fences subsequent calls and survives recreated plugin (25.161542ms)
+✔ completed cache is bound to the operator authority configuration (25.140416ms)
+✔ missing trusted identity, injected authority, and cancelled calls never dispatch (0.83725ms)
+✔ parallel dispatch is fenced before a second effect starts (18.229958ms)
+✔ configuration changes and non-Chio hooks block before dispatch (1.066667ms)
+✔ runtime precedence and per-agent skills cannot bypass the pinned provider profile (0.763042ms)
+✔ signed post-effect denial and unverified success cannot release the session fence (21.413875ms)
+✔ known pre-dispatch failure releases the fence for a later fresh operation (42.427ms)
+✔ a verified completed tool error remains an error to the host (26.739583ms)
+✔ subscription profile admits exactly the bundled OpenAI provider beside Chio (0.555208ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 686.054167

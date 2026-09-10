@@ -140,13 +140,13 @@ async function main() {
     console.log("Fixed fixture shape self-test passed; no host or kernel called");return;
   }
   const required=["--operator-state","--package-dir","--archive","--output"],args={};
-  for(let i=2;i<process.argv.length;i+=2){const key=process.argv[i],value=process.argv[i+1];assert.ok(!args[key]&&(key === "--case" ? ["parallel","disabled-tools"].includes(value) : required.includes(key)&&isAbsolute(value??"")));args[key]=value;}
-  assert.ok(required.every(key=>args[key]));assert.equal(fileSha(args["--archive"]),archiveSha);
+  for(let i=2;i<process.argv.length;i+=2){const key=process.argv[i],value=process.argv[i+1];assert.ok(!args[key]&&(key === "--case" ? ["parallel","disabled-tools"].includes(value) : key === "--expected-port" ? /^\d+$/.test(value??"") && Number(value)>=1024 && Number(value)<=65535 : required.includes(key)&&isAbsolute(value??"")));args[key]=value;}
+  assert.ok(required.every(key=>args[key]) && args["--expected-port"]);assert.equal(fileSha(args["--archive"]),archiveSha);
   const mode=args["--case"]??"parallel";
   const output=args["--output"],pkg=args["--package-dir"];
   mkdirSync(dirname(output),{recursive:true,mode:0o700});mkdirSync(output,{mode:0o700});
   const operator=JSON.parse(readFileSync(join(args["--operator-state"],"operator.json"),"utf8"));
-  assert.equal(operator.port,58498,"Only the explicitly assigned owner is allowed");
+  assert.equal(operator.port,Number(args["--expected-port"]),"Only the explicitly selected owner port is allowed");
   const runId=randomUUID(),privateDir=join(args["--operator-state"],"openclaw-parallel-"+runId);
   mkdirSync(privateDir,{mode:0o700});
   const configPath=join(privateDir,"gateway.json"),preparePath=join(privateDir,"prepare.json");

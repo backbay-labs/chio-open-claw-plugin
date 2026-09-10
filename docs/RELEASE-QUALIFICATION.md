@@ -141,3 +141,16 @@ accepted the intended identity and rejected a different package, repository,
 tag, and invalid version. These are local package and workflow checks; hosted
 OIDC signing, SLSA verification, npm publication, and real-host acceptance are
 not claimed by these results.
+
+## Source CI
+
+`.github/workflows/ci.yml` uses pinned actions, this checkout's locked and
+vendored dependencies, mandatory source checks, and the same staged packaging
+and clean-consumer commands exercised locally. Existing workflow/job check names
+are retained. No typecheck failure is downgraded to a warning, no real-host test
+is reported successful because credentials are absent, and no legacy normal-home
+smoke cleanup is executed. CI does not publish.
+
+Job `test` now builds/tests/packs the required `native/` integration. The old
+chat-gateway smoke path is not counted as native host coverage. Keeping the
+legacy chat gateway itself maintained is outside this integration lane.

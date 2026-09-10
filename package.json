@@ -1,13 +1,14 @@
 {
   "name": "@chio/openclaw",
   "version": "0.2.0",
-  "description": "Ship signed Chio agents from Slack, Discord, and Telegram — real passkey countersigning, real ed25519 receipts, real trust-plane bonded capabilities.",
+  "description": "Ship signed Chio agents from Slack, Discord, and Telegram \u2014 real passkey countersigning, real ed25519 receipts, real trust-plane bonded capabilities.",
   "type": "module",
   "main": "dist/index.js",
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "docs/assets"
   ],
   "scripts": {
     "build": "tsc",

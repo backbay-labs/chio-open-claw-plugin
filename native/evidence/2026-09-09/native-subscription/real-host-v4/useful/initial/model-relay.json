@@ -1,0 +1,26 @@
+[
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200
+  }
+]

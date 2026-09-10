@@ -1,0 +1,18 @@
+{
+  "command": [
+    "npm",
+    "install",
+    "--prefix",
+    "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer",
+    "--ignore-scripts",
+    "--offline",
+    "--no-audit",
+    "--no-fund",
+    "/tmp/chio-openclaw-subscription-r4-package-v5-20260909/chio-openclaw-kernel-0.1.0.tgz"
+  ],
+  "freshCache": "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/empty-cache",
+  "registry": "http://127.0.0.1:9",
+  "exitCode": 0,
+  "stdout": "\nadded 1 package in 2s\n",
+  "stderr": ""
+}

@@ -1,18 +1,28 @@
 #!/usr/bin/env node
 // The trusted launcher owns model credentials and the Chio HTTP gateway.
 import {readFile,writeFile,mkdir,lstat,readdir} from "node:fs/promises";
-import {resolve,join} from "node:path";
+import {resolve,join,isAbsolute} from "node:path";
 import {randomUUID,createHash} from "node:crypto";
 import {spawn,spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {parseArgs} from "node:util";
 import {startGatewayHttp} from "@chio/bridge";
-import {startModelRelay} from "../src/model-relay.mjs";
+import {startModelRelay,chatGptCredential} from "../src/model-relay.mjs";
 import {restrictedTools,assertRestrictedProfile} from "../src/profile.mjs";
-const {values} = parseArgs({options:Object.fromEntries(["gateway-config","image","state-dir","prompt"].map(name=>[name,{type:"string"}]))});
+const {values} = parseArgs({options:Object.fromEntries(["gateway-config","image","state-dir","prompt","model-auth-file"].map(name=>[name,{type:"string"}]))});
 for(const name of ["gateway-config","image","state-dir","prompt"])if(!values[name])throw new Error(`Required --${name}`);
 if(!/^sha256:[a-f0-9]{64}$/.test(values.image))throw new Error("Explicit immutable host image SHA256 required");
-if(!process.env.OPENAI_API_KEY)throw new Error("Operator OPENAI_API_KEY required");
+let modelCredential=process.env.OPENAI_API_KEY;
+if(values["model-auth-file"]){
+ const authPath=values["model-auth-file"];
+ if(!isAbsolute(authPath))throw new Error("Explicit absolute native ChatGPT cache path required");
+ const authInfo=await lstat(authPath);
+ if(!authInfo.isFile()||authInfo.isSymbolicLink()||authInfo.mode&0o077||authInfo.uid!==process.getuid?.()||authInfo.size>1024*1024)throw new Error("Private owned native ChatGPT cache required");
+ try{modelCredential=chatGptCredential(JSON.parse(await readFile(authPath,"utf8")));}catch{throw new Error("Invalid native ChatGPT cache; authenticate or refresh with native Codex login");}
+}
+if(!modelCredential)throw new Error("Operator OPENAI_API_KEY or --model-auth-file native ChatGPT cache required");
+const subscription=typeof modelCredential!=="string";
+const modelId=subscription?"gpt-5.5":"gpt-4.1-mini",providerId=subscription?"openai-codex":"chio-model";
 const configPath=resolve(values["gateway-config"]),state=resolve(values["state-dir"]);
 const info=await lstat(configPath);
 if(!info.isFile()||info.isSymbolicLink()||info.mode&0o077||info.size>1024*1024)throw new Error("Private prepared gateway configuration required");
@@ -25,7 +35,7 @@ const id=randomUUID(),network=`chio-required-openclaw-${id}`,relayName=`chio-ope
 const transport=await startGatewayHttp(config);
 let model,watchdog,watchdogFinished,networkCreated=false,relayCreated=false;
 try{
- const manifest={schema:"chio.openclaw.protected-run.v1",image:values.image,network,relayName,agentName,volume,controlVolume,sessionId:id,gatewayConfigSha256:createHash("sha256").update(await readFile(configPath)).digest("hex"),kernelAuthority:{sessionId:config.execution.sessionId,capabilityId:config.execution.capabilityId,serverId:config.execution.serverId},acceptance:"unresolved"};
+ const manifest={schema:"chio.openclaw.protected-run.v1",image:values.image,network,relayName,agentName,volume,controlVolume,sessionId:id,model:{id:modelId,authMode:typeof modelCredential==="string"?"api-key":"chatgpt-native-cache",runtime:"pi"},gatewayConfigSha256:createHash("sha256").update(await readFile(configPath)).digest("hex"),kernelAuthority:{sessionId:config.execution.sessionId,capabilityId:config.execution.capabilityId,serverId:config.execution.serverId},acceptance:"unresolved"};
  await writeFile(join(state,"launch.json"),JSON.stringify(manifest,null,2)+"\n",{mode:0o600});
  const watchdogEnv=Object.fromEntries(Object.entries(process.env).filter(([key])=>["PATH","HOME","DOCKER_HOST","DOCKER_CONTEXT","DOCKER_CONFIG","LANG"].includes(key)));
  watchdog=spawn(process.execPath,[fileURLToPath(new URL("./cleanup-watchdog.mjs",import.meta.url)),state],{env:watchdogEnv,stdio:["pipe","pipe","inherit"]});
@@ -43,7 +53,7 @@ try{
   watchdog.once("close",()=>{clearTimeout(timer);reject(new Error("Cleanup watchdog stopped before readiness"));});
  });
  const confirmed=new Set();let confirmations=Promise.resolve();
- model=await startModelRelay(process.env.OPENAI_API_KEY,"gpt-4.1-mini",async results=>{
+ model=await startModelRelay(modelCredential,modelId,async results=>{
   confirmations=confirmations.then(async()=>{
    for(const result of results){
     let outcome;try{outcome=JSON.parse(result.content);}catch{continue;}
@@ -61,9 +71,9 @@ try{
  docker(["run","--rm","--network","none","--read-only","--cap-drop","ALL","--cap-add","CHOWN","--user","0","--mount",`type=volume,src=${volume},dst=/state`,"--entrypoint","node",values.image,"-e","const f=require('fs');f.chmodSync('/state',0o700);f.chownSync('/state',1000,1000)"]);
  docker(["run","-d","--name",relayName,"--network",network,"--network-alias","chio-transport","--read-only","--cap-drop","ALL","--security-opt","no-new-privileges","--user","1000:1000","--pids-limit","32","--memory","256m","--env","CHIO_RELAY_CONTAINER=1","--env",`CHIO_UPSTREAM_KERNEL_PORT=${transport.port}`,"--env",`CHIO_UPSTREAM_MODEL_PORT=${model.port}`,"--entrypoint","node",values.image,"/opt/chio/proxy.mjs"]);relayCreated=true;
  docker(["network","connect","bridge",relayName]);
- const cfg={agents:{defaults:{workspace:"/state/workspace",skipBootstrap:true,skills:[],model:"chio-model/gpt-4.1-mini",heartbeat:{every:"0m"},timeoutSeconds:150}},
-  models:{mode:"replace",providers:{"chio-model":{baseUrl:"http://chio-transport:8787/v1",apiKey:model.token,api:"openai-completions",agentRuntime:{id:"pi"},models:[{id:"gpt-4.1-mini",name:"gpt-4.1-mini",input:["text"],reasoning:false,contextWindow:128000,maxTokens:4096}]}}},
-  tools:restrictedTools(),plugins:{enabled:true,allow:["chio-kernel"],slots:{memory:"none"},load:{paths:["/opt/chio/node_modules/@chio/openclaw-kernel"]},entries:{"chio-kernel":{enabled:true,config:{transport:"launcher-http-v1",endpoint:"http://chio-transport:8787/mcp",tokenEnv:"CHIO_GATEWAY_TOKEN",gatewaySessionId:config.sessionId,
+ const cfg={agents:{defaults:{workspace:"/state/workspace",skipBootstrap:true,skills:[],model:`${providerId}/${modelId}`,models:{[`${providerId}/${modelId}`]:{params:{transport:"sse"}}},heartbeat:{every:"0m"},timeoutSeconds:150}},
+  models:{mode:"replace",providers:{[providerId]:{baseUrl:`http://chio-transport:8787/v1${subscription?"/codex":""}`,apiKey:model.token,api:model.api,agentRuntime:{id:"pi"},models:[{id:modelId,name:modelId,input:["text"],reasoning:false,contextWindow:128000,maxTokens:4096}]}}},
+  tools:restrictedTools(),plugins:{enabled:true,allow:subscription?["chio-kernel","openai"]:["chio-kernel"],slots:{memory:"none"},load:{paths:["/opt/chio/node_modules/@chio/openclaw-kernel"]},entries:{"chio-kernel":{enabled:true,config:{transport:"launcher-http-v1",endpoint:"http://chio-transport:8787/mcp",tokenEnv:"CHIO_GATEWAY_TOKEN",gatewaySessionId:config.sessionId,
    toolInventory:config.tools,allowedTools:[...config.tools.map(tool=>tool.name),...(config.approval?["chio_resume"]:[])],subjectKey:config.execution.subjectKey,capabilityId:config.execution.capabilityId,serverId:config.execution.serverId,sessionId:config.execution.sessionId,trustedSigners:config.execution.trustedSigners}}}},
   commands:Object.fromEntries(["native","nativeSkills","text","bash","config","restart","mcp","plugins","debug"].map(name=>[name,false])),browser:{enabled:false},cron:{enabled:false},channels:{},hooks:{enabled:false},acp:{enabled:false},gateway:{mode:"local",bind:"loopback"}};
  assertRestrictedProfile(cfg);

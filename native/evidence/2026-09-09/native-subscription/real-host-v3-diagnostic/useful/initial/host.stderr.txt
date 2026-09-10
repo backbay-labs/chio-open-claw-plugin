@@ -1,0 +1,7 @@
+WARNING: Localhost DNS (127.0.0.1) may fail in containers.
+[plugins] chio-kernel failed during register from /opt/chio/node_modules/@chio/openclaw-kernel/src/index.mjs: Error: Chio restricted mode requires isolated bootstrap, no skills or heartbeat, only the Chio plugin, and explicit PI model runtime: {"pluginAllowMatches":false,"skipBootstrap":true,"skillsEmpty":true,"heartbeatDisabled":true,"providerRuntimeMatches":{"openai-codex":true}}
+[openclaw] Could not start the CLI.
+[openclaw] Reason: plugin load failed: chio-kernel: Error: Chio restricted mode requires isolated bootstrap, no skills or heartbeat, only the Chio plugin, and explicit PI model runtime: {"pluginAllowMatches":false,"skipBootstrap":true,"skillsEmpty":true,"heartbeatDisabled":true,"providerRuntimeMatches":{"openai-codex":true}}
+[openclaw] Debug: set OPENCLAW_DEBUG=1 to include the stack trace.
+[openclaw] Try: openclaw doctor
+[openclaw] Help: openclaw --help

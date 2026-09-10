@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r4-cold-v2-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-useful-60dff681b6304aabbdb8b32e75050093/gateway.json",
+    "--state-dir",
+    "/tmp/chio-openclaw-qualified-421255e09914475cb159f9e80a79cd9d",
+    "--image",
+    "sha256:1b623ee6046ec919a10c19919228778f70a22a696c72d7d4dd1522d44c138d89",
+    "--prompt",
+    "Use chio_call only, with exact schemas in its description. Preserve remote paths exactly. Write /workspace/openclaw-qualified-b32e75050093.txt with content \"OpenClaw HTTP verified\". Edit HTTP to kernel, read that exact file, then list /workspace. Make one tool call per turn. Stop on any unsuccessful or uncertain result.",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+  ],
+  "exitCode": 1
+}

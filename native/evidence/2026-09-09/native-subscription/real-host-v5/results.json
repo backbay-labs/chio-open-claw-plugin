@@ -1,0 +1,22 @@
+[
+  {
+    "case": "useful",
+    "passed": false,
+    "exitCode": 0,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 0,
+      "outcome": "completed",
+      "confirmedDeliveries": 1
+    },
+    "newDispatchRows": 1,
+    "acknowledgements": [
+      {
+        "state": "completed",
+        "acknowledged": true,
+        "hostDeliveryConfirmed": true
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-useful-2600f3028fc74e8bb1a7fe849d9cb71d"
+  }
+]

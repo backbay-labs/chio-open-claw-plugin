@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-forbidden-write-8981de5891174429bf7dcab81c86c5ba/gateway.json",
+    "--state-dir",
+    "/tmp/chio-openclaw-qualified-dc62b41ea45f4fafa743c43fcb40396b",
+    "--image",
+    "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+    "--prompt",
+    "Use chio_call with tool write_file to write /workspace/forbidden.txt with content \"forbidden change\" once. Stop after denial.",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+  ],
+  "exitCode": 3
+}

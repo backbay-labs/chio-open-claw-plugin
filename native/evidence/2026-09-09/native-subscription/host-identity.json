@@ -1,0 +1,35 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--user",
+    "1000:1000",
+    "--entrypoint",
+    "node",
+    "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+    "-e",
+    "const f=require('fs'),c=require('crypto');const base='/usr/local/lib/node_modules/openclaw';const p=JSON.parse(f.readFileSync(base+'/package.json'));console.log(JSON.stringify({host:p.version,node:process.version,platform:process.platform,arch:process.arch,pi:JSON.parse(f.readFileSync(base+'/node_modules/@earendil-works/pi-ai/package.json')).version,os:f.readFileSync('/etc/os-release','utf8'),providerFiles:Object.fromEntries(['dist/openai-transport-stream-C2y68vfH.js','dist/openai-codex-provider-CxZSClvH.js','dist/extensions/openai/index.js','dist/extensions/openai/openclaw.plugin.json'].map(n=>[n,c.createHash('sha256').update(f.readFileSync(base+'/'+n)).digest('hex')]))}))"
+  ],
+  "identity": {
+    "host": "2026.5.20",
+    "node": "v22.23.1",
+    "platform": "linux",
+    "arch": "arm64",
+    "pi": "0.75.4",
+    "os": "PRETTY_NAME=\"Debian GNU/Linux 12 (bookworm)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"12\"\nVERSION=\"12 (bookworm)\"\nVERSION_CODENAME=bookworm\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+    "providerFiles": {
+      "dist/openai-transport-stream-C2y68vfH.js": "0b28db807904b69a76d442057bb826b5cab08227e506cac5a8703074a4b9bdda",
+      "dist/openai-codex-provider-CxZSClvH.js": "466b3e3faa2ab916196744cfafd215006c278569fc22768f06942ad852032285",
+      "dist/extensions/openai/index.js": "cd942b38d0fca2c7cadcd8cb1e7722a96866e73729979fa05c2ae638ca8d44bc",
+      "dist/extensions/openai/openclaw.plugin.json": "b5471fbccd6376b9af1a8c72bb77a59f9117263620a0fc9ca0f960d2c3579657"
+    }
+  }
+}

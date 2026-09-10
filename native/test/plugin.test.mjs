@@ -154,3 +154,17 @@ test("a verified completed tool error remains an error to the host", async (t) =
   assert.equal(result.isError, true);
   assert.equal(result.details.state, "completed");
 });
+
+test("subscription profile admits exactly the bundled OpenAI provider beside Chio",()=>{
+ const base=profile();
+ base.models={providers:{"openai-codex":{api:"openai-codex-responses",agentRuntime:{id:"pi"},models:[{id:"gpt-5.5"}]}}};
+ base.plugins.allow=["chio-kernel","openai"];
+ assert.doesNotThrow(()=>assertRestrictedProfile(base));
+ for(const mutate of [
+  c=>{c.plugins.allow.push("alternate");},
+  c=>{c.models.providers["openai-codex"].api="alternate";},
+  c=>{c.models.providers.other={agentRuntime:{id:"pi"}};},
+  c=>{c.models.providers["openai-codex"].agentRuntime.id="codex";},
+  c=>{c.tools.alsoAllow.push("exec");},
+ ]){const candidate=structuredClone(base);mutate(candidate);assert.throws(()=>assertRestrictedProfile(candidate));}
+});

@@ -1,0 +1,66 @@
+{
+  "accepted": false,
+  "host": "2026.5.20",
+  "pi": "0.75.4",
+  "officialReferences": [
+    "https://docs.openclaw.ai/providers/openai",
+    "https://docs.openclaw.ai/concepts/oauth"
+  ],
+  "sourceFiles": [
+    {
+      "path": "docs/providers/openai.md",
+      "sha256": "163095ebf8a166d3ec6f5a259f311c40abdba7b4ee4460b50f7d809a64452c1f"
+    },
+    {
+      "path": "docs/concepts/oauth.md",
+      "sha256": "0a500e4c87cf7440228259525bb0636f8d920cadc4d65e930c4b73b3b04af8cf"
+    },
+    {
+      "path": "dist/openai-codex-provider-CxZSClvH.js",
+      "sha256": "466b3e3faa2ab916196744cfafd215006c278569fc22768f06942ad852032285"
+    },
+    {
+      "path": "node_modules/@earendil-works/pi-ai/dist/providers/openai-codex-responses.js",
+      "sha256": "f794d07231e2a952263805f533e8cae95e654a0af865eac48b99a7bd8f481df5"
+    },
+    {
+      "path": "dist/openai-transport-stream-C2y68vfH.js",
+      "sha256": "0b28db807904b69a76d442057bb826b5cab08227e506cac5a8703074a4b9bdda"
+    },
+    {
+      "path": "dist/extensions/openai/index.js",
+      "sha256": "cd942b38d0fca2c7cadcd8cb1e7722a96866e73729979fa05c2ae638ca8d44bc"
+    },
+    {
+      "path": "dist/extensions/openai/openclaw.plugin.json",
+      "sha256": "b5471fbccd6376b9af1a8c72bb77a59f9117263620a0fc9ca0f960d2c3579657"
+    },
+    {
+      "path": "dist/plugin-auto-enable-DwTlayAw.js",
+      "sha256": "b13bd217b12f877d5190c021ae9dfdcfe1810d5409e253fa76e5e1f3c6d9423f"
+    },
+    {
+      "path": "dist/load-context-BOBgEupZ.js",
+      "sha256": "6a6776ce2a7b3f24b25fa95550a4cb9756a5d0a8769a49124a1e07b39bee653b"
+    }
+  ],
+  "supportedContract": {
+    "runtime": "explicit pi",
+    "api": "openai-codex-responses",
+    "model": "gpt-5.5",
+    "upstream": "https://chatgpt.com/backend-api/codex/responses",
+    "auth": "parent reads existing native Codex access_token and account_id, no refresh",
+    "guest": "generated local-only relay token and placeholder account",
+    "provider": "openai-codex",
+    "pluginAllow": [
+      "chio-kernel",
+      "openai"
+    ],
+    "localRoute": "http://chio-transport:8787/v1/codex/responses",
+    "transport": "OpenClaw native Responses shim, explicit PI agent runtime"
+  },
+  "review": {
+    "independent": "native_review",
+    "finding": "Bundled openai auto-enable adds required provider plugin; no native tools/commands/services/routes/runtime registered. Dormant media provider registries remain blocked by tool, input, channel and network restrictions."
+  }
+}

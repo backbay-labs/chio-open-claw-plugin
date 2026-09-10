@@ -15,6 +15,12 @@ export function restrictedTools() {
 
 export function assertRestrictedProfile(config) {
   const tools = config?.tools;
+  // The pinned host auto-enables its bundled provider plugin for this canonical
+  // subscription provider. It registers provider capabilities, not agent tools.
+  const providers = config?.models?.providers ?? {};
+  const nativeSubscription = JSON.stringify(Object.keys(providers)) === JSON.stringify(["openai-codex"]) &&
+    providers["openai-codex"].api === "openai-codex-responses";
+  const allowedPlugins = nativeSubscription ? [PLUGIN_ID, "openai"] : [PLUGIN_ID];
   if (tools?.profile !== "minimal" ||
       JSON.stringify(tools.alsoAllow) !== JSON.stringify([TOOL_NAME]) ||
       !tools.deny?.includes("group:openclaw") ||
@@ -29,12 +35,12 @@ export function assertRestrictedProfile(config) {
       ["native", "nativeSkills", "text", "bash", "config", "restart", "mcp", "plugins", "debug"].some((key) => config?.commands?.[key] !== false)) {
     throw new Error("Chio restricted mode requires channels, MCP, automation, browser, and administrative chat commands disabled");
   }
-  if (JSON.stringify(config?.plugins?.allow) !== JSON.stringify([PLUGIN_ID]) ||
+  if (JSON.stringify(config?.plugins?.allow) !== JSON.stringify(allowedPlugins) ||
       config?.agents?.defaults?.skipBootstrap !== true ||
       JSON.stringify(config?.agents?.defaults?.skills) !== "[]" ||
       config?.agents?.defaults?.heartbeat?.every !== "0m" ||
       Object.values(config?.models?.providers ?? {}).some((provider) => provider.agentRuntime?.id !== "pi")) {
-    throw new Error("Chio restricted mode requires isolated bootstrap, no skills or heartbeat, only the Chio plugin, and explicit PI model runtime");
+    throw new Error("Chio restricted mode requires isolated bootstrap, no skills or heartbeat, only required Chio/provider plugins, and explicit PI model runtime");
   }
   const defaults = config?.agents?.defaults;
   if (defaults?.agentRuntime !== undefined || defaults?.embeddedHarness !== undefined ||

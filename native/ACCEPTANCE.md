@@ -1,7 +1,10 @@
 # OpenClaw acceptance record
 
-Current candidate: see [HTTP host delivery](evidence/2026-09-09/http-host-delivery/README.md)
-for the isolated native launcher, cold-installed artifact and actual host cases.
+Current subscription candidate: see [native subscription qualification](evidence/2026-09-09/native-subscription/README.md)
+for the r4 launcher plus the officially supported ChatGPT/Codex provider route,
+its cold-installed artifact, and three passing actual host cases. The existing
+[HTTP host delivery](evidence/2026-09-09/http-host-delivery/README.md) records the
+underlying launcher boundary and earlier host cases.
 Status remains unaccepted. The older profiles, bootstrap authority and transport
 records below are historical and do not establish the current boundary.
 

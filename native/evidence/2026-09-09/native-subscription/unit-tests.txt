@@ -1,0 +1,36 @@
+
+> @chio/openclaw-kernel@0.1.0 test
+> node --test test/*.test.mjs
+
+✔ Docker inventory failure cannot establish successful cleanup (407.910333ms)
+✔ guest delivery verification: none (8.550625ms)
+✔ guest delivery verification: result (1.366875ms)
+✔ guest delivery verification: stale-request (0.794834ms)
+✔ guest delivery verification: signature (0.9735ms)
+✔ a stale missing-completion read cannot redispatch after acquiring the lock (110.628375ms)
+✔ a stale missing-completion read with changed arguments cleans its new lock (95.744708ms)
+✔ model transport permits only inline Chio tool history (2.508375ms)
+✔ model output budget cannot grow beyond the supported mode (0.175791ms)
+✔ native subscription cache reader never retains refresh or identity tokens (1.300458ms)
+✔ native Codex Responses admits complete inline Chio history only (0.413625ms)
+✔ subscription relay substitutes credentials only at fixed parent route after delivery confirmation (30.4095ms)
+✔ subscription relay never forwards rejected acknowledgement or exposes provider failures (10.375583ms)
+✔ same host operation is dispatched once, bound to host caller and canonical arguments (41.226833ms)
+✔ unknown outcome fences subsequent calls and survives recreated plugin (22.394334ms)
+✔ completed cache is bound to the operator authority configuration (24.832417ms)
+✔ missing trusted identity, injected authority, and cancelled calls never dispatch (0.8465ms)
+✔ parallel dispatch is fenced before a second effect starts (29.137875ms)
+✔ configuration changes and non-Chio hooks block before dispatch (1.018792ms)
+✔ runtime precedence and per-agent skills cannot bypass the pinned provider profile (0.83425ms)
+✔ signed post-effect denial and unverified success cannot release the session fence (31.024167ms)
+✔ known pre-dispatch failure releases the fence for a later fresh operation (55.356208ms)
+✔ a verified completed tool error remains an error to the host (33.599292ms)
+✔ subscription profile admits exactly the bundled OpenAI provider beside Chio (0.452291ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 550.175

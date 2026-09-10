@@ -8,13 +8,14 @@ The supported candidate runs OpenClaw `2026.5.20` (`e510042`) as a one-shot
 local agent in a pinned Docker image, through an operator-owned HTTP launcher.
 Remote write, edit, read and list execute at the Chio resource owner. Native
 tools, other plugins, direct MCP, channels, automation, delegation, browser,
-skill discovery and administrative commands are disabled. The fixed OpenAI
-Chat Completions relay requests one tool per turn. Overlapping calls remain
+skill discovery and administrative commands are disabled. The fixed model
+relay supports OpenAI API billing or explicitly selected ChatGPT/Codex
+subscription authentication and requests one tool per turn. Overlapping calls remain
 subject to the resource owner's delivery fence.
 
 ## Boundary
 
-The trusted launcher retains the kernel credential, journal and model API key.
+The trusted launcher retains the kernel credential, journal and model credential.
 The guest receives only ephemeral gateway and model tokens. Its root and
 configuration are read-only; it has an isolated state volume, no capabilities,
 Docker socket or protected resource mount. Its Docker network is internal and
@@ -62,7 +63,7 @@ Record artifact hashes. Prepare a private gateway config with the bundled
 bridge's `chio-prepare-gateway` procedure and a compatible kernel resource
 service. The original public Chio CLI `0.1.0` lacks this contract; use the exact
 candidate binary identity in the acceptance record. Issuance runs outside the
-agent. With `OPENAI_API_KEY` only in the operator environment:
+agent. For API billing, keep `OPENAI_API_KEY` only in the operator environment:
 
 ```sh
 node /absolute/new/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs \
@@ -71,6 +72,42 @@ node /absolute/new/consumer/node_modules/@chio/openclaw-kernel/scripts/protected
   --state-dir /absolute/new/run-records \
   --prompt 'Use chio_call to read /workspace/approved.txt.'
 ```
+
+For the supported ChatGPT/Codex subscription route, authenticate with native
+Codex first, then explicitly select its private auth cache:
+
+```sh
+node /absolute/new/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs \
+  --gateway-config /private/operator/gateway.json \
+  --model-auth-file /private/native-codex-profile/auth.json \
+  --image sha256:REPLACE_WITH_RECORDED_IMAGE_ID \
+  --state-dir /absolute/new/subscription-run-records \
+  --prompt 'Use chio_call to read /workspace/approved.txt.'
+```
+
+`--model-auth-file` selects `gpt-5.5` and OpenClaw's native
+`openai-codex-responses` transport with PI explicitly pinned. The protected
+profile enables only Chio and OpenClaw's bundled `openai` provider plugin; native
+agent tools remain disabled. API billing uses
+`gpt-4.1-mini`; the launcher never falls back between auth modes or providers.
+The parent reads only the existing access token and account routing identifier.
+It does not copy the cache into the guest or use a refresh token. Authenticate
+or refresh through native Codex if the provider rejects expired credentials.
+The cache must be an absolute, private, owned regular file. No normal OpenClaw
+profile is read or modified.
+
+The guest's native Codex transport receives a temporary local relay credential
+with a placeholder account. Only the parent substitutes the actual account
+credential, at the fixed ChatGPT Codex Responses endpoint. Hosted tools, account
+item references, background work and other provider routes remain unavailable.
+Tool results must appear in native Responses history before the trusted parent
+acknowledges delivery and permits the next model request.
+
+OpenClaw documents subscription authentication and the explicit PI route in its
+[OpenAI provider guide](https://docs.openclaw.ai/providers/openai) and
+[OAuth guide](https://docs.openclaw.ai/concepts/oauth). The installed `2026.5.20`
+provider and OpenClaw Responses transport sources control this pinned candidate; newer web
+documentation describes additional runtime and auth-store changes.
 
 The launcher refuses existing record directories. It streams configuration to
 a Docker volume; no host filesystem share or private sibling is needed. The

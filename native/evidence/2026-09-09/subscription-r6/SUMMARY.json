@@ -79,6 +79,14 @@
       "record": "kernel-storage/state-verification.json",
       "originalAuthorityRetained": true,
       "newNativeIdRetriesNotExactKernelIdReplay": true
+    },
+    "pairedHealthyReads": {
+      "passed": 3,
+      "liveModel": true,
+      "record": "paired-read-timing/summary.json",
+      "medianPairedKernelMinusDirectMs": 1003.8237510000017,
+      "medianPairedGatewayMinusDirectMs": 1049.9502510000002,
+      "scope": "local kernel and gateway stage comparisons; excludes startup, inference, host scheduling and ACK"
     }
   },
   "remainingProgramGates": [
@@ -86,7 +94,7 @@
     "final six-host program acceptance"
   ],
   "unmeasured": [
-    "matched direct-workflow incremental overhead; observed native durations and launcher envelope are recorded"
+    "statistically representative or full end-to-end incremental overhead; three matched read stage comparisons, native durations and launcher envelope are recorded"
   ],
   "skippedRequiredTestsCountedAsPass": 0,
   "automaticRetriesOfUnknownEffects": 0,

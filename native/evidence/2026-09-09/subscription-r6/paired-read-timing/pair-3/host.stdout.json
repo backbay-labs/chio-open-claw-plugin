@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "approved existing fixture",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 24330,
+    "agentMeta": {
+      "sessionId": "92ac8c94-20b0-4410-8090-3e8ae3698e23",
+      "sessionFile": "/state/openclaw/agents/main/sessions/92ac8c94-20b0-4410-8090-3e8ae3698e23.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 3543,
+        "output": 38,
+        "cacheRead": 3584,
+        "total": 4369
+      },
+      "lastCallUsage": {
+        "input": 2570,
+        "output": 7,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "total": 4369
+      },
+      "promptTokens": 4362
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789011315711,
+      "sessionId": "92ac8c94-20b0-4410-8090-3e8ae3698e23",
+      "sessionKey": "agent:main:explicit:92ac8c94-20b0-4410-8090-3e8ae3698e23",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 183,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "Use chio_call with tool read_text_file exactly once for /workspace/approved.txt. Preserve the exact arguments. Report its actual contents, then stop. Do not retry or use another tool.",
+    "finalAssistantVisibleText": "approved existing fixture",
+    "finalAssistantRawText": "approved existing fixture",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 1,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

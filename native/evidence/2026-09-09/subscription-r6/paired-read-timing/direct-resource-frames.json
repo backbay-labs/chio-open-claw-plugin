@@ -1,0 +1,63 @@
+[
+  {
+    "result": {
+      "protocolVersion": "2025-03-26",
+      "capabilities": {
+        "tools": {
+          "listChanged": true
+        }
+      },
+      "serverInfo": {
+        "name": "secure-filesystem-server",
+        "version": "0.2.0"
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 1
+  },
+  {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "approved existing fixture\n"
+        }
+      ],
+      "structuredContent": {
+        "content": "approved existing fixture\n"
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 2
+  },
+  {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "approved existing fixture\n"
+        }
+      ],
+      "structuredContent": {
+        "content": "approved existing fixture\n"
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 3
+  },
+  {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "approved existing fixture\n"
+        }
+      ],
+      "structuredContent": {
+        "content": "approved existing fixture\n"
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  }
+]

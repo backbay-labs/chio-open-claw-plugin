@@ -1,0 +1,31 @@
+{
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 4,
+    "method": "tools/call",
+    "params": {
+      "name": "read_text_file",
+      "arguments": {
+        "path": "/workspace/approved.txt"
+      }
+    }
+  },
+  "response": {
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "approved existing fixture\n"
+        }
+      ],
+      "structuredContent": {
+        "content": "approved existing fixture\n"
+      }
+    },
+    "jsonrpc": "2.0",
+    "id": 4
+  },
+  "startedMonotonicNs": "109327317146083",
+  "parsedMonotonicNs": "109328077800625",
+  "elapsedMs": 760.654542
+}

@@ -75,14 +75,20 @@ actual behavior control where current web documentation differs.
 | I05 | Capability and credential expiry separately tested; revocation before/during work; wrong principal/session/resource; escalation; aggregate budget; pending/missing/substituted/rejected approvals; exact approved replay and fresh-authority restoration |
 | I06 | Foreign receipt, signer, request and result substitution rejected; forged owner import rejected; original signed result recovered without dispatch; delivery binds native history |
 | I07 | Pre-dispatch/post-effect cancellation, response loss, gateway SIGKILL, retained-authority restart, concurrent owners, explicit recovery and client journal EIO before/after effect; supplemental parallel fixture tracked separately |
-| I08 | Cold install, retained-state upgrade, explicit recovery, revocation and scoped removal observed; required public release gates remain open |
+| I08 | Cold install, retained-state upgrade, explicit recovery, revocation and scoped removal observed; three paired healthy read stage measurements recorded; required public release gates remain open |
 
 The current record retains each failed attempt and selected fault cutpoint.
 Client journal EIO is separate from the [actual kernel SQLite faults](evidence/2026-09-09/subscription-r6/kernel-storage/README.md).
 All three kernel storage cutpoints passed through this host, with original
 authority preserved and 51 signed owner records verified. The selected software
-signing route and any external-signer applicability remain separate claims. Native durations include inference and do
-not measure incremental Chio overhead without a matched baseline.
+signing route and any external-signer applicability remain separate claims.
+[Three paired healthy reads](evidence/2026-09-09/subscription-r6/paired-read-timing/README.md)
+compare the kernel exchange and parent gateway with direct read-only access to
+the same resource image, file and arguments. Median paired increases were
+1,003.824 ms and 1,049.950 ms respectively. These are local stage comparisons;
+startup, inference, host scheduling and delivery ACK are excluded. Different
+HTTP/stdio transports and audit storage are included, so neither pure plugin
+cost nor representative end-to-end overhead is inferred.
 
 The r6 quota repair closes an independently reproduced race: v5 forwarded 110
 concurrent requests under a budget of 100; the unchanged reproducer observes

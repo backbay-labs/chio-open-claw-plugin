@@ -1,0 +1,53 @@
+[
+  {
+    "pair": 1,
+    "order": "native then direct",
+    "tool": "read_text_file",
+    "arguments": {
+      "path": "/workspace/approved.txt"
+    },
+    "nativeCallId": "call_L3bw4mX5LPIi9C4cCauuL6yy|fc_0fc5678cd00666cd016aa22537c41c87d19dcc5917a42d80a6",
+    "kernelRequestId": "3018c33a-02c5-4953-bb13-17c2566c6795:7070747b09d1c17315469578096598b9c82f7a20eb522226b05ee28c173fe30c",
+    "directMs": 195.328959,
+    "kernelMs": 1509.6111249999994,
+    "gatewayMs": 1561.7007919999996,
+    "kernelMinusDirectMs": 1314.2821659999995,
+    "gatewayMinusDirectMs": 1366.3718329999997,
+    "sameContent": true,
+    "nativeVerifiedAndAcknowledged": true
+  },
+  {
+    "pair": 2,
+    "order": "direct then native",
+    "tool": "read_text_file",
+    "arguments": {
+      "path": "/workspace/approved.txt"
+    },
+    "nativeCallId": "call_jyNZq2gEgIs1Np2gA9VQW9nL|fc_038084be69e04e54016aa22558d52887d1aa1e0b082d0addda",
+    "kernelRequestId": "3018c33a-02c5-4953-bb13-17c2566c6795:1e4c65b2872e6d9385aa1d1a7d08758ce32384de44b956461b0e247aeb487516",
+    "directMs": 39.152666,
+    "kernelMs": 1042.9764170000017,
+    "gatewayMs": 1089.1029170000002,
+    "kernelMinusDirectMs": 1003.8237510000017,
+    "gatewayMinusDirectMs": 1049.9502510000002,
+    "sameContent": true,
+    "nativeVerifiedAndAcknowledged": true
+  },
+  {
+    "pair": 3,
+    "order": "native then direct",
+    "tool": "read_text_file",
+    "arguments": {
+      "path": "/workspace/approved.txt"
+    },
+    "nativeCallId": "call_NzibgwgHsOcwdgk93bKC0Bzj|fc_00a0aa9aa00af636016aa2257e927087d1aa77ba5218200b3a",
+    "kernelRequestId": "3018c33a-02c5-4953-bb13-17c2566c6795:0d603e25deb4a3c19fdf20caa6090b3e34e74ff8f5ea97699c91df3bfbe8f92e",
+    "directMs": 760.654542,
+    "kernelMs": 1226.6449169999978,
+    "gatewayMs": 1279.8267500000002,
+    "kernelMinusDirectMs": 465.9903749999978,
+    "gatewayMinusDirectMs": 519.1722080000002,
+    "sameContent": true,
+    "nativeVerifiedAndAcknowledged": true
+  }
+]

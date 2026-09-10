@@ -1,0 +1,17 @@
+{
+  "reviewer": "/root/openclaw/native_review",
+  "readOnly": true,
+  "confidence": "high",
+  "concreteErrors": [],
+  "checks": [
+    "installed SDK cancels reader after parsing matching terminal RPC event",
+    "all three native completed verified results bind exact native IDs and arguments",
+    "direct MCP content identical",
+    "independent target hash unchanged",
+    "all native journal records acknowledged and host-delivered",
+    "recorded driver and instrumentation hashes match",
+    "gateway interval contains kernel interval in each pair",
+    "raw durations and paired differences recompute correctly"
+  ],
+  "limits": "three local transport/dispatch observations, not end-to-end agent latency or statistical overhead evidence"
+}

@@ -47,6 +47,7 @@ API billing is a separate existing mode and was not newly qualified here.
 | [Alternate resource tools](alternate-resource-tools/runs.json) | Forbidden edit, sensitive dry-run edit, sensitive list, sensitive parent-segment path and forbidden-write dot alias all denied with exact native arguments, zero resource dispatch and unchanged observer |
 | [Additional paths](resource-paths/results.json) and [outside-root repeat](resource-escape-rerun/results.json) | Parent-segment sensitive read and `/etc/passwd` denied before dispatch; first outside-root harness expected a later tool error and falsely failed on stronger kernel denial; corrected repeat passes |
 | [Upgrade and removal](upgrade-removal/summary.json) | Empty-cache offline r6 install preserves original v5 unknown/config/journal; same-authority host stays fenced; signed original recovery and read succeed; revoked authority prevents launch; scoped removal preserves owner/resource/journal/evidence |
+| [Paired healthy reads](paired-read-timing/README.md) | Three actual native reads compared with the same resource image/file/arguments through read-only direct MCP; identical results, verified deliveries, unchanged file hashes; timing excludes startup, model and ACK |
 
 Raw host invocation and native histories are retained separately from wrapper
 exit codes. A host exit 0 alone never means requested work completed. In the
@@ -155,8 +156,12 @@ same original authority and unknown journal until recovery completes.
 [Native durations](native-durations.json) record host-reported durations, including
 inference; the useful four-tool turn took 23.664 seconds. The [launcher envelope](launcher-envelope.json) was 29.147 seconds from manifest
 to terminal for that workflow, including 5.483 seconds outside the native reported
-duration. This excludes post-terminal cleanup. No matched unprotected baseline
-is available, so full incremental Chio overhead is not inferred.
+duration. This excludes post-terminal cleanup. Those envelope observations alone
+do not establish incremental overhead. The separate [paired read observations](paired-read-timing/README.md)
+measure a median paired increase of 1,003.824 ms for the kernel exchange and
+1,049.950 ms through the trusted parent gateway versus direct read-only resource
+MCP. Three observations, differing HTTP/stdio transports and differing audit
+storage do not establish pure plugin cost or representative end-to-end overhead.
 The public/native publisher and its security/release gates are a separate open
 I08 requirement. Actual kernel receipt/admission storage faults are separately qualified in
 `kernel-storage/`; selected signing-route applicability is documented by the

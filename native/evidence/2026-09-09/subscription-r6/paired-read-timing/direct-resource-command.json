@@ -1,0 +1,20 @@
+[
+  "docker",
+  "run",
+  "--rm",
+  "-i",
+  "--network",
+  "none",
+  "--read-only",
+  "--cap-drop",
+  "ALL",
+  "--security-opt",
+  "no-new-privileges",
+  "--mount",
+  "type=volume,src=chio-required-openclaw-subscription-probes-20260909,dst=/workspace,readonly",
+  "--tmpfs",
+  "/audit:rw,noexec,nosuid,size=16m,uid=1000,gid=1000",
+  "--tmpfs",
+  "/tmp:rw,noexec,nosuid,size=16m",
+  "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0"
+]

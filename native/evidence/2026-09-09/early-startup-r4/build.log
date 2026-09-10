@@ -1,0 +1,4 @@
+
+> @chio/openclaw-kernel@0.1.0 build
+> node --check src/index.mjs && node --check src/plugin.mjs && node --check src/journal.mjs
+

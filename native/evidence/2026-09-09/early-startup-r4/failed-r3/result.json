@@ -1,0 +1,16 @@
+{
+  "case": "startup-crash-before-native-host",
+  "exitCode": -9,
+  "nativeHostStarted": false,
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "hostImage": "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+  "packageDirectory": "/tmp/chio-openclaw-watchdog-cold-consumer-r3-20260909/node_modules/@chio/openclaw-kernel",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-early-crash-cbbac846235c4c4d8b901fa1e4185a5b/gateway.json",
+  "remainingContainers": [
+    "chio-openclaw-relay-b67dc276-a3f4-4927-938d-fb16e5831261"
+  ],
+  "networkPresent": true,
+  "watchdog": null,
+  "resourceUnchanged": true,
+  "automaticCleanup": false
+}

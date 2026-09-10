@@ -25,6 +25,23 @@ const id=randomUUID(),network=`chio-required-openclaw-${id}`,relayName=`chio-ope
 const transport=await startGatewayHttp(config);
 let model,watchdog,watchdogFinished,networkCreated=false,relayCreated=false;
 try{
+ const manifest={schema:"chio.openclaw.protected-run.v1",image:values.image,network,relayName,agentName,volume,controlVolume,sessionId:id,gatewayConfigSha256:createHash("sha256").update(await readFile(configPath)).digest("hex"),kernelAuthority:{sessionId:config.execution.sessionId,capabilityId:config.execution.capabilityId,serverId:config.execution.serverId},acceptance:"unresolved"};
+ await writeFile(join(state,"launch.json"),JSON.stringify(manifest,null,2)+"\n",{mode:0o600});
+ const watchdogEnv=Object.fromEntries(Object.entries(process.env).filter(([key])=>["PATH","HOME","DOCKER_HOST","DOCKER_CONTEXT","DOCKER_CONFIG","LANG"].includes(key)));
+ watchdog=spawn(process.execPath,[fileURLToPath(new URL("./cleanup-watchdog.mjs",import.meta.url)),state],{env:watchdogEnv,stdio:["pipe","pipe","inherit"]});
+ watchdogFinished=new Promise(resolve=>{watchdog.once("error",()=>resolve(1));watchdog.once("close",code=>resolve(code??1));});
+ // Establish cleanup ownership before creating any network, volume or relay.
+ await new Promise((resolve,reject)=>{
+  const timer=setTimeout(()=>reject(new Error("Cleanup watchdog did not become ready")),5000);
+  let ready="";
+  watchdog.stdout.on("data",bytes=>{
+   ready+=bytes.toString();
+   if(ready==="chio-watchdog-ready\n"){clearTimeout(timer);resolve();}
+   else if(ready.length>128){clearTimeout(timer);reject(new Error("Invalid cleanup watchdog readiness"));}
+  });
+  watchdog.once("error",error=>{clearTimeout(timer);reject(error);});
+  watchdog.once("close",()=>{clearTimeout(timer);reject(new Error("Cleanup watchdog stopped before readiness"));});
+ });
  const confirmed=new Set();let confirmations=Promise.resolve();
  model=await startModelRelay(process.env.OPENAI_API_KEY,"gpt-4.1-mini",async results=>{
   confirmations=confirmations.then(async()=>{
@@ -55,11 +72,6 @@ try{
  // Stream only guest configuration into an immutable Docker volume. This works
  // without any host filesystem share or unpublished sibling checkout.
  docker(["run","--rm","-i","--network","none","--read-only","--cap-drop","ALL","--user","0","--mount",`type=volume,src=${controlVolume},dst=/config`,"--entrypoint","node",values.image,"-e","const f=require('fs');const b=f.readFileSync(0);JSON.parse(b);f.writeFileSync('/config/openclaw.json',b,{mode:0o444,flag:'wx'});const fd=f.openSync('/config/openclaw.json','r');f.fsyncSync(fd);f.closeSync(fd)"],JSON.stringify(cfg));
- const manifest={schema:"chio.openclaw.protected-run.v1",image:values.image,network,relayName,agentName,volume,controlVolume,sessionId:id,gatewayConfigSha256:createHash("sha256").update(await readFile(configPath)).digest("hex"),kernelAuthority:{sessionId:config.execution.sessionId,capabilityId:config.execution.capabilityId,serverId:config.execution.serverId},acceptance:"unresolved"};
- await writeFile(join(state,"launch.json"),JSON.stringify(manifest,null,2)+"\n",{mode:0o600});
- const watchdogEnv=Object.fromEntries(Object.entries(process.env).filter(([key])=>["PATH","HOME","DOCKER_HOST","DOCKER_CONTEXT","DOCKER_CONFIG","LANG"].includes(key)));
- watchdog=spawn(process.execPath,[fileURLToPath(new URL("./cleanup-watchdog.mjs",import.meta.url)),state],{env:watchdogEnv,stdio:["pipe","ignore","inherit"]});
- watchdogFinished=new Promise(resolve=>{watchdog.once("error",()=>resolve(1));watchdog.once("close",code=>resolve(code??1));});
  const args=["run","--rm","--name",agentName,"--network",network,"--dns","127.0.0.1","--read-only","--cap-drop","ALL","--security-opt","no-new-privileges","--user","1000:1000","--pids-limit","128","--memory","2g","--tmpfs","/tmp:rw,nosuid,nodev,size=256m","--mount",`type=volume,src=${volume},dst=/state`,"--mount",`type=volume,src=${controlVolume},dst=/config,readonly`,"--env","CHIO_GATEWAY_TOKEN",values.image,"agent","--local","--session-id",id,"--message",values.prompt,"--json"];
  const host=spawn("docker",args,{env:{...process.env,CHIO_GATEWAY_TOKEN:transport.token},stdio:["ignore","pipe","pipe"]});
  const stdout=[],stderr=[];host.stdout.on("data",bytes=>{stdout.push(bytes);process.stdout.write(bytes);});host.stderr.on("data",bytes=>{stderr.push(bytes);process.stderr.write(bytes);});

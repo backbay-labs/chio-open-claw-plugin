@@ -1,0 +1,17 @@
+{
+  "archiveSha256": "72551df5c80ccde8b7b3433f92231b70ca558fd64e62b1aee0574f07e326b759",
+  "hostImage": "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "sourceFiles": {
+    "native/scripts/protected.mjs": "4e340b3e4ef9d5be4c4836441416e914e3e778988fc9069d9ad35c431ff1bfc6",
+    "native/scripts/cleanup-watchdog.mjs": "565b49f06e2a0739e7f19053272309f3ed6a2bd4ac9f3f1301cc50d3909afb88",
+    "native/README.md": "4fe4283857182505b4a02acb5ce04a3517dd8a7446395795a0bb28015708d70e"
+  },
+  "componentTests": {
+    "passed": 19,
+    "skipped": 0
+  },
+  "realDockerStartupChecks": 2,
+  "nativeProviderReruns": "blocked by exhausted OpenAI API credits",
+  "accepted": false
+}

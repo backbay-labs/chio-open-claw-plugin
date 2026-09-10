@@ -1,0 +1,29 @@
+{
+  "case": "startup-crash-before-native-host",
+  "exitCode": -9,
+  "nativeHostStarted": false,
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "hostImage": "sha256:1586b295831a811e4ba890fe466e9397bc44eeff9b77fa41ae740cc845eb4c2d",
+  "packageDirectory": "/tmp/chio-openclaw-early-watchdog-cold-consumer-r4-20260909/node_modules/@chio/openclaw-kernel",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-early-crash-a248f4fa4cc64c3da04a9f8bfe443dd6/gateway.json",
+  "remainingContainers": [],
+  "networkPresent": false,
+  "watchdog": {
+    "status": "cleaned",
+    "events": [
+      {
+        "name": "chio-openclaw-relay-d997b93b-5d28-4d2a-98c3-7856f7874195",
+        "attempt": 0,
+        "wasRunning": true,
+        "removed": true
+      }
+    ],
+    "networkRemoved": true,
+    "volumesPreserved": [
+      "chio-required-openclaw-state-d997b93b-5d28-4d2a-98c3-7856f7874195",
+      "chio-required-openclaw-control-d997b93b-5d28-4d2a-98c3-7856f7874195"
+    ]
+  },
+  "resourceUnchanged": true,
+  "automaticCleanup": true
+}

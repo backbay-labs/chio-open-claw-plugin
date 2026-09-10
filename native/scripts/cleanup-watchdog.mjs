@@ -49,3 +49,6 @@ async function cleanup() {
  process.stdin.destroy();
 }
 process.stdin.once('end',()=>{void cleanup();});process.stdin.once('error',()=>{void cleanup();});process.stdin.resume();
+
+// The parent waits for this handshake before it creates owned resources.
+process.stdout.write("chio-watchdog-ready\n");

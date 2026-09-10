@@ -110,3 +110,12 @@ State and control volumes remain for operator recovery. Cleanup has bounded
 retries and records failure explicitly; earlier creation-time crash cutpoints
 still require separate qualification. The watchdog does not acknowledge or
 redispatch protected operations.
+
+
+The trusted cleanup watchdog now starts and acknowledges readiness before the
+launcher creates its network, state volume or relay container. Startup crashes
+therefore retain an exact ownership manifest and a live cleanup process. Failed
+Docker inventory remains unresolved. In-flight Docker creation and watchdog
+failure schedules beyond the recorded cutpoints still require qualification;
+container absence after one observation is not a claim about an unknown delayed
+creation. State and control volumes remain available for operator inspection.

@@ -1,89 +1,126 @@
-# OpenClaw
+<p align="center">
+  <picture>
+    <source media="(max-width: 600px)" srcset="docs/assets/readme-hero-mobile.svg" />
+    <img src="docs/assets/readme-hero.svg" alt="Chio for OpenClaw" width="960" />
+  </picture>
+</p>
 
-Ship signed Chio agents straight from your group chat.
+<p align="center">
+  <strong>Give OpenClaw scoped file access through the Chio kernel.</strong>
+</p>
 
-OpenClaw is a hosted Chio edge that lives in Slack, Discord, and Telegram. Mention `@chio`, describe the job, and a `POLICY PROPOSAL` card lands in the channel. Team taps countersign with a passkey; the bonded agent runs and streams receipts back into the thread.
+<p align="center">
+  <a href="native/README.md">Native integration</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="#build-from-source">Build</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="native/README.md#run-a-file-workflow">Run</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="native/README.md#recovery-upgrade-and-removal">Recovery</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="#legacy-chat-gateway">Legacy gateway</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+  <a href="https://github.com/backbay-labs/chio">Chio</a>
+</p>
 
-One bot. Three platforms. Same kernel.
+---
 
-## What it does
+The native integration gives OpenClaw a `chio_call` tool for reading, writing,
+editing and listing files at a separately owned resource. Chio checks the
+caller's authority and executes the permitted request. OpenClaw receives a
+verified result while the operator retains credentials and recovery state.
 
-- Parses natural-language intent ("chio, run the nightly backfill, cap $40") into a draft policy.
-- Posts an approval card with `[ countersign ] [ attenuate ] [ deny ]` actions.
-- Requires M-of-N passkey signatures before issuing a capability.
-- Streams every receipt (allow / deny / cancel) back into the originating thread.
-- Rotates at shift change; revoke with `chio, stop` from any surface.
+**Status:** `@chio/openclaw-kernel@0.1.0` is a restricted integration candidate
+with [bounded real-host evidence](native/evidence/2026-09-10/static-kernel-native/README.md).
+Full I01-I08 acceptance and a compatible published kernel/plugin release remain
+separate gates. The instructions below build a local candidate from source.
 
-See the UX contract at `chio-world/src/app/plugins/openclaw/page.tsx`.
+## What you can do
 
-## Install
+Ask the agent to update a file in an approved remote workspace, read it back,
+and list the directory to check the result:
 
-### Managed edge (fastest)
+```text
+Use chio_call to write /workspace/approved.txt with "Draft",
+edit it to "Ready", read it back, and list /workspace.
+```
 
-1. Open https://openclaw.chio.co/install
-2. Pick Slack / Discord / Telegram.
-3. One-click OAuth (Slack, Discord) or drop a bot token (Telegram).
-4. Bind your trust plane: `@chio, bind trust to https://trust.chio.co`.
+The supported mode makes three responsibilities explicit:
 
-### Self-host
+- **OpenClaw plans the work.** Its only enabled agent tool is `chio_call`.
+- **Chio controls the resource.** Capability, scope and policy checks precede
+  dispatch at the kernel's resource owner.
+- **The operator owns recovery.** Signed results, the retained journal and
+  independent resource observations determine whether uncertain work completed.
 
-```bash
-cp .env.example .env
-# fill Slack / Discord / Telegram creds + CHIO_TRUST_URL
-npm install
+This mode runs a one-shot local agent in a pinned Docker image. Native shell,
+file tools, web access, delegation, channels and background services are
+disabled. See the [supported scope](native/README.md#supported-scope) before
+choosing it for a workflow.
+
+## How it fits together
+
+```mermaid
+flowchart LR
+  A["Isolated OpenClaw agent<br/>chio_call"] --> B["Trusted operator launcher<br/>gateway and private journal"]
+  B --> K["Chio kernel<br/>authority, policy and receipts"]
+  K --> R["Resource owner<br/>protected files"]
+  A --> M["Fixed model relay<br/>operator-held credential"]
+  M --> P["Selected model provider"]
+```
+
+The agent container has no protected filesystem mount or Docker socket. It
+reaches only the launcher's gateway and fixed model relay. The parent process
+keeps kernel and model credentials outside the container. The kernel's resource
+owner performs the file operations; the integration never authorizes an
+unrestricted native command after a policy precheck.
+
+## Build from source
+
+Use Node.js 22 or later. Start in a new checkout:
+
+```sh
+git clone https://github.com/backbay-labs/chio-open-claw-plugin.git
+cd chio-open-claw-plugin/native
+npm ci --ignore-scripts --no-audit --no-fund
 npm run build
-npm start
+npm test
 ```
 
-Docker:
+These commands check the native package without starting an agent. Its Chio
+dependencies are committed under `native/vendor`; an adjacent Chio or bridge
+checkout is unnecessary.
 
-```bash
-docker build -t openclaw .
-docker run --env-file .env -p 8787:8787 openclaw
-```
+Continue with the [native installation and file workflow](native/README.md#build-and-install).
+It covers packing a self-contained archive, building the OpenClaw image,
+preparing operator authority and launching with a fresh state directory.
+Protected execution also requires Docker, a compatible kernel resource service
+and provider authentication. A successful package build alone does not establish
+that boundary.
 
-## Minimum scopes
+## Development and qualification
 
-- **Slack**: `channels:history`, `chat:write`, `files:write`, `commands`
-- **Discord**: `bot`, `applications.commands`, `messages.read`
-- **Telegram**: bot token with group admin
+The native implementation is in [`native/src`](native/src), its launcher and
+packaging tools in [`native/scripts`](native/scripts), and its component tests
+in [`native/test`](native/test). Run the build and tests above from `native/`.
 
-## Architecture
+- [Native acceptance record](native/ACCEPTANCE.md): supported actions, exact
+  artifacts and the limits of recorded tests.
+- [Final static-kernel observations](native/evidence/2026-09-10/static-kernel-native/README.md):
+  later local runs, failures, recovery and independent resource evidence.
+- [Release qualification](docs/RELEASE-QUALIFICATION.md): source checks,
+  packaging, provenance and promotion prerequisites.
 
-```
-  Slack / Discord / Telegram
-          |
-          v
-    platform adapters  --+
-          |              |
-          v              |
-    intent parser        |
-          |              |
-          v              |
-    approval state ------+
-          |              |
-          v              |
-        Chio SDK  <->  trust plane
-          |
-          v
-   receipts webhook  ->  thread
-```
+Source/package CI checks the native package. Real-host acceptance and release
+qualification are tracked separately.
 
-All three adapters share `src/core/*`. The HTTP server handles OAuth callbacks and the `/receipts` webhook.
+## Legacy chat gateway
 
-## Development
+The root [`src/`](src) package, `@chio/openclaw@0.2.0`, contains the earlier
+Slack, Discord and Telegram chat gateway. Its channel adapters, approval flows
+and receipt webhook are separate from the native OpenClaw runtime integration.
 
-```bash
-npm run dev       # hot reload
-npm run typecheck
-```
+The native setup does not deploy a bot, configure channels or install that
+package. A chat approval or receipt webhook does not establish mediation of
+native agent actions. Managed installation and the legacy gateway's deployment
+and authentication flows require their own qualification; this README provides
+no managed-service installation path.
 
 ## License
 
-Apache-2.0.
-
-## CI
-
-[![ci](https://github.com/owner/chio-open-claw-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/owner/chio-open-claw-plugin/actions/workflows/ci.yml)
-
-Workflow: [`.github/workflows/ci.yml`](.github/workflows/ci.yml). Runs lint/typecheck (non-blocking in Wave 5.1), unit tests, and a chio-backed smoke pass. Swap `owner/...` once the GitHub org is live.
+[Apache-2.0](LICENSE).

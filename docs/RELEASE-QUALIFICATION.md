@@ -154,3 +154,30 @@ smoke cleanup is executed. CI does not publish.
 Job `test` now builds/tests/packs the required `native/` integration. The old
 chat-gateway smoke path is not counted as native host coverage. Keeping the
 legacy chat gateway itself maintained is outside this integration lane.
+
+### Enforced promotion prerequisites
+
+A tag build fails before publication unless the existing `npm` environment has
+at least one configured required reviewer and the latest `ci.yml` push run on
+`main` for the exact tag commit is completed successfully. The publication job
+checks both conditions again after environment review. Missing API access,
+missing environment protection, pending, skipped, cancelled or failed CI is a
+release failure. Configure the environment before creating a release tag; a
+workflow reference alone can otherwise create an unprotected environment.
+
+These checks enforce this repository's source/package CI and reviewer gate.
+They do not establish kernel security or any host acceptance gate. The reviewer
+must separately verify the selected kernel's exact-source CI and Release
+Qualification, immutable artifact identity, and all applicable I01-I08 evidence.
+The workflow does not publish on manual dispatch. No environment or repository
+setting was changed by this local workflow repair.
+
+The source build was also rerun from tracked files in an independent temporary
+checkout with an initially empty npm cache and no sibling repositories. Locked
+installation, build, and staged packaging passed. Vendored Chio archives are
+tracked Git inputs with lockfile integrity; they are not private local caches.
+Pi uses an independent Git clone because its packer records the source commit
+and correctly rejects a source tree with no Git identity. All six promotion
+workflow files pass `actionlint`; negative tests reject missing reviewers,
+missing CI, another source commit, pending CI, and failed CI. These local tests
+do not assert that hosted CI has run or that publisher settings exist.

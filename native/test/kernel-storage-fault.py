@@ -6,7 +6,7 @@ The only resource-response barrier is an explicit operator test fixture. Native
 retry requests retain original authority; new native tool-call IDs are recorded,
 not replaced with an unsupported forced-ID mechanism.
 """
-import argparse,hashlib,json,os,pathlib,shutil,subprocess,sys,time
+import argparse,hashlib,json,os,pathlib,shutil,subprocess,sys,time,uuid
 p=argparse.ArgumentParser(description=__doc__)
 for name in ['helper','owner-launcher','policy','operator-bridge','package-dir','archive','model-auth-file','output','kernel','owner-root','helper-output-root']:p.add_argument('--'+name,type=pathlib.Path,required=True)
 for name in ['name','cutpoint','host-image','resource-image','kernel-sha256']:p.add_argument('--'+name,required=True)
@@ -19,7 +19,13 @@ helper_prefix=[sys.executable,str(a.helper),'--owner-root',str(a.owner_root),'--
 def helper(action,*args):
  cmd=[*helper_prefix,action,'--name',a.name,*args]
  run=subprocess.run(cmd,capture_output=True,text=True,timeout=80)
- if run.returncode:raise RuntimeError('scoped helper failed; private diagnostics retained at owner')
+ if run.returncode:
+  diagnostics=a.owner_root/('helper-failure-'+uuid.uuid4().hex)
+  diagnostics.mkdir(mode=0o700,parents=True)
+  for filename,content in [('stdout.txt',run.stdout),('stderr.txt',run.stderr)]:
+   target=diagnostics/filename;target.write_text(content);target.chmod(0o600)
+  save(a.output/(diagnostics.name+'.json'),{'command':cmd,'exitCode':run.returncode,'privateDiagnostics':str(diagnostics),'stdoutSha256':hashlib.sha256(run.stdout.encode()).hexdigest(),'stderrSha256':hashlib.sha256(run.stderr.encode()).hexdigest()})
+  raise RuntimeError('scoped helper failed; private diagnostics retained at '+str(diagnostics))
  return run.stdout
 assert digest(a.archive)=='a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4'
 created=helper('create','--port',str(a.port),'--kernel',str(a.kernel),'--kernel-sha256',a.kernel_sha256,'--image',a.resource_image,'--policy',str(a.policy),'--owner-launcher',str(a.owner_launcher),'--bridge',str(a.operator_bridge))

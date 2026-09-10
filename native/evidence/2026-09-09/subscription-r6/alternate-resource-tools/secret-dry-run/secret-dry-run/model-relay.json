@@ -1,0 +1,57 @@
+[
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  },
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call_SYNle1bIaT3ptNFJPctmwtrT",
+        "content": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"e4955192-05e4-42ac-9484-e0db536a8b44:d9cca3cd5e96998b2853f3dff08430476ff9bebc3986bde8f97ca76af108d259\",\"receipt\":{\"action\":{\"parameter_hash\":\"d2c6693e27729ee418dcfe88d6e7f4c40b0a3bfef44f2b5068dc64420a0e5871\",\"parameters\":{\"dryRun\":true,\"edits\":[{\"newText\":\"qualification-probe\",\"oldText\":\"sensitive observer\"}],\"path\":\"/workspace/secret.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a0893d-4a27-7ef0-8374-1c0e6fd08e3d\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\",\"verdict\":\"deny\"},\"evidence\":[{\"details\":\"action=deny; reason=guard denied request\",\"guard_name\":\"forbidden-path\",\"verdict\":false}],\"id\":\"1a9b8461eb517b89642555a1725abe7c35a5351d51e5e5a0c9f6e7542d7077ec\",\"kernel_key\":\"864cf16c64f04c943381bd61e5aefcceb625cc5866d8091bc6bdc9ad29bca599\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"394a5f21d4f02b4aacdbee85f9aa9018c598b5ed62ba4b6e4f84773da673f811\",\"subject_key\":\"014948543b1981d5bd33052510f1e8a1e9f0e7d1fd42ecb464076bcc96dffe5e\"},\"budget_authority\":{\"authority_profile\":\"authoritative_hold_event\",\"guarantee_level\":\"single_node_atomic\",\"metering_profile\":\"max_cost_preauthorize_then_reconcile_actual\"},\"chio_receipt_signing_nonce\":\"rcpt-01a0893d-7881-7eb3-9756-bdad3a7aa01e\",\"receipt_context\":{\"request_id\":\"e4955192-05e4-42ac-9484-e0db536a8b44:d9cca3cd5e96998b2853f3dff08430476ff9bebc3986bde8f97ca76af108d259\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"6eb630fcc9ba6d768fe0a07bc4d3f65b0cd4cfe792bf602d1c254a4ecc20dcbc5ccc4efc645e2249f19c656863969b67700f64080c1e82530cff8e0183eff008\",\"timestamp\":1789008902,\"tool_name\":\"edit_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\"}"
+      }
+    ],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  }
+]

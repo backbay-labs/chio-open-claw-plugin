@@ -1,0 +1,158 @@
+[
+  {
+    "type": "session",
+    "version": 3,
+    "id": "1e4a9b7a-edf5-4b59-81ff-b6c06b480103",
+    "timestamp": "2026-09-10T03:03:04.663Z",
+    "cwd": "/state/workspace"
+  },
+  {
+    "type": "model_change",
+    "id": "58d8d88d",
+    "parentId": null,
+    "timestamp": "2026-09-10T03:03:04.736Z",
+    "provider": "openai-codex",
+    "modelId": "gpt-5.5"
+  },
+  {
+    "type": "thinking_level_change",
+    "id": "fc0f5e0e",
+    "parentId": "58d8d88d",
+    "timestamp": "2026-09-10T03:03:04.736Z",
+    "thinkingLevel": "off"
+  },
+  {
+    "type": "custom",
+    "customType": "model-snapshot",
+    "data": {
+      "timestamp": 1789009384752,
+      "provider": "openai-codex",
+      "modelApi": "openai-codex-responses",
+      "modelId": "gpt-5.5"
+    },
+    "id": "2961a66a",
+    "parentId": "fc0f5e0e",
+    "timestamp": "2026-09-10T03:03:04.752Z"
+  },
+  {
+    "type": "message",
+    "id": "09fa2cf9",
+    "parentId": "2961a66a",
+    "timestamp": "2026-09-10T03:03:04.783Z",
+    "message": {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Use chio_call with tool write_file once to write /workspace/openclaw-qualified-2f9adcaa7727.txt with content \"original retained effect\". Stop on any unsuccessful or uncertain result. Never infer success from a transport error."
+        }
+      ],
+      "timestamp": 1789009384780
+    }
+  },
+  {
+    "type": "message",
+    "id": "05126be8",
+    "parentId": "09fa2cf9",
+    "timestamp": "2026-09-10T03:03:07.955Z",
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "toolCall",
+          "id": "call_IyKL7FCCoMRm8ShDTbs4FUnB|fc_07164a94f4772cdd016aa21deb1c9087d189eab4deebd94306",
+          "name": "chio_call",
+          "arguments": {
+            "tool": "write_file",
+            "arguments": {
+              "path": "/workspace/openclaw-qualified-2f9adcaa7727.txt",
+              "content": "original retained effect"
+            }
+          },
+          "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/openclaw-qualified-2f9adcaa7727.txt\",\"content\":\"original retained effect\"}}"
+        }
+      ],
+      "api": "openai-codex-responses",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "usage": {
+        "input": 983,
+        "output": 46,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "totalTokens": 2821,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0
+        }
+      },
+      "stopReason": "toolUse",
+      "timestamp": 1789009384908,
+      "responseId": "resp_07164a94f4772cdd016aa21dea21ec87d18a0a5babaa574459"
+    }
+  },
+  {
+    "type": "message",
+    "id": "15df6456",
+    "parentId": "05126be8",
+    "timestamp": "2026-09-10T03:03:48.066Z",
+    "message": {
+      "role": "toolResult",
+      "toolCallId": "call_IyKL7FCCoMRm8ShDTbs4FUnB|fc_07164a94f4772cdd016aa21deb1c9087d189eab4deebd94306",
+      "toolName": "chio_call",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"state\":\"unknown\",\"evidence\":\"unverified\",\"requestId\":\"8229764191fc5fb45d4e11eb9dbeec0adc6bf877ae9d7dbda45d340cb647ceb5\",\"reason\":\"Gateway transport, evidence or host delivery failed; preserve original operation\"}"
+        }
+      ],
+      "details": {
+        "state": "unknown",
+        "evidence": "unverified",
+        "requestId": "8229764191fc5fb45d4e11eb9dbeec0adc6bf877ae9d7dbda45d340cb647ceb5",
+        "reason": "Gateway transport, evidence or host delivery failed; preserve original operation"
+      },
+      "isError": false,
+      "timestamp": 1789009428063
+    }
+  },
+  {
+    "type": "message",
+    "id": "bbb6700a",
+    "parentId": "15df6456",
+    "timestamp": "2026-09-10T03:03:50.744Z",
+    "message": {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Blocked: the write result is uncertain/unknown, so I stopped as instructed and did not infer success.",
+          "textSignature": "{\"v\":1,\"id\":\"msg_01d1753fd925acd2016aa21e162c7087d1913838768a4d2537\",\"phase\":\"final_answer\"}"
+        }
+      ],
+      "api": "openai-codex-responses",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "usage": {
+        "input": 1106,
+        "output": 25,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "totalTokens": 2923,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0
+        }
+      },
+      "stopReason": "stop",
+      "timestamp": 1789009428165,
+      "responseId": "resp_01d1753fd925acd2016aa21e1591cc87d18d26f33a00338323"
+    }
+  }
+]

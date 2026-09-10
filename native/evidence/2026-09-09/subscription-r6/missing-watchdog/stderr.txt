@@ -1,0 +1,30 @@
+node:internal/modules/cjs/loader:1450
+  throw err;
+  ^
+
+Error: Cannot find module '/private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-missing-watchdog-isurc4mp/package/scripts/cleanup-watchdog.mjs'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1447:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1233:25)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v25.5.0
+file:///private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-missing-watchdog-isurc4mp/package/scripts/protected.mjs:53
+  watchdog.once("close",()=>{clearTimeout(timer);reject(new Error("Cleanup watchdog stopped before readiness"));});
+                                                        ^
+
+Error: Cleanup watchdog stopped before readiness
+    at ChildProcess.<anonymous> (file:///private/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-missing-watchdog-isurc4mp/package/scripts/protected.mjs:53:57)
+    at Object.onceWrapper (node:events:623:12)
+    at ChildProcess.emit (node:events:520:22)
+    at maybeClose (node:internal/child_process:1084:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:304:5)
+
+Node.js v25.5.0

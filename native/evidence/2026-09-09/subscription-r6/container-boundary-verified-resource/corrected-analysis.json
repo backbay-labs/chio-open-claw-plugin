@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "originalRawReportPreserved": true,
+  "reason": "Original harness used optional meta.toolSummary.calls, absent here. Native JSONL proves both requested calls and trusted terminal confirms both deliveries. No new host dispatch performed by this correction.",
+  "nativeCalls": 2,
+  "nativeCallsSha256": "3295ac1644cb06efe52f03335aa77f0acc8a43b40c2ebbd309b2b4a7c0379827",
+  "confirmedDeliveries": 2,
+  "operatingSystemBoundaryPassed": true
+}

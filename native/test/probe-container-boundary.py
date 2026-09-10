@@ -28,7 +28,7 @@ request=private/'prepare.json';request.write_text(json.dumps(prepare));request.c
 config=private/'gateway.json'
 subprocess.run(['node',str(a.package_dir/'node_modules/@chio/bridge/dist/prepare-gateway.js'),str(request),str(config)],capture_output=True,check=True)
 runtime=Path('/tmp')/('chio-openclaw-boundary-runtime-'+uuid.uuid4().hex)
-cmd=['node',str(a.package_dir/'scripts/protected.mjs'),'--gateway-config',str(config),'--image',a.image,'--state-dir',str(runtime),'--prompt','Use chio_call with read_text_file for '+a.resource_path+' exactly '+str(a.read_count)+' times, sequentially, one per model turn. These reads keep the actual agent active for independent container boundary probes. Stop on any unsuccessful result. Do not write anything.']
+cmd=['node',str(a.package_dir/'scripts/protected.mjs'),'--gateway-config',str(config),'--image',a.image,'--state-dir',str(runtime),'--prompt','Use chio_call with read_text_file for '+a.resource_path+' exactly '+str(a.read_count)+' times. Complete all requested reads sequentially before your final reply. After each successful result continue immediately to the next read until all are done. These reads keep the actual agent active for independent container boundary probes. Stop only after all requested reads complete or on any unsuccessful result. Do not write anything.']
 if a.model_auth_file:cmd+=['--model-auth-file',str(a.model_auth_file.resolve())]
 stdout=(a.output/'host.stdout.json').open('w');stderr=(a.output/'host.stderr.txt').open('w')
 proc=subprocess.Popen(cmd,stdout=stdout,stderr=stderr)
@@ -83,9 +83,16 @@ s.on('connect',()=>done('BYPASS'));s.on('error',()=>done('denied'));setTimeout((
  observation={'passed':bool(passed),'image':a.image,'manifest':str(runtime/'launch.json'),'internalNetwork':network['Internal'],'readonlyRoot':info['HostConfig']['ReadonlyRootfs'],'capDrop':info['HostConfig']['CapDrop'],'securityOpt':info['HostConfig']['SecurityOpt'],'mounts':info['Mounts'],'positiveRelayConnection':True,'forbiddenHostConnections':extra,'runs':results,'claim':'independent OS processes inside the actual host container; full host gate remains open'}
  (a.output/'observation.json').write_text(json.dumps(observation,indent=2)+'\n')
  code=proc.wait(timeout=180)
- (a.output/'host-run.json').write_text(json.dumps({'command':cmd,'exitCode':code,'terminal':json.loads((runtime/'terminal.json').read_text())},indent=2)+'\n')
- print(json.dumps({'passed':bool(passed),'hostExitCode':code}),flush=True)
- if not passed or code!=0:raise RuntimeError('boundary qualification failed; preserve evidence')
+ terminal=json.loads((runtime/'terminal.json').read_text())
+ history_code="const f=require('fs');console.log(f.readFileSync('/state/openclaw/agents/main/sessions/"+manifest['sessionId']+".jsonl','utf8'))"
+ history=subprocess.check_output(['docker','run','--rm','--network','none','--read-only','--mount',f"type=volume,src={manifest['volume']},dst=/state,readonly",'--entrypoint','node',manifest['image'],'-e',history_code],text=True)
+ calls=[block for line in history.splitlines() if line.startswith('{') for block in json.loads(line).get('message',{}).get('content',[]) if isinstance(block,dict) and block.get('type')=='toolCall']
+ (a.output/'native-calls.json').write_text(json.dumps(calls,indent=2)+'\n')
+ actual=len(calls)
+ workload=code==0 and actual==a.read_count and terminal.get('confirmedDeliveries')==a.read_count and all(call.get('name')=='chio_call' and call.get('arguments')=={'tool':'read_text_file','arguments':{'path':a.resource_path}} for call in calls)
+ (a.output/'host-run.json').write_text(json.dumps({'command':cmd,'exitCode':code,'terminal':terminal,'requestedReads':a.read_count,'nativeCalls':actual,'workloadComplete':workload},indent=2)+'\n')
+ print(json.dumps({'osBoundaryPassed':bool(passed),'hostExitCode':code,'workloadComplete':workload}),flush=True)
+ if not passed or not workload:raise RuntimeError('boundary or requested host workload qualification failed; preserve evidence')
 finally:
  listener.close();stdout.close();stderr.close()
  if proc.poll() is None:

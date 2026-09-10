@@ -1,0 +1,75 @@
+{
+  "schema": "chio.openclaw.subscription.aggregate-budget.review.v1",
+  "result": "passed",
+  "acceptanceClaim": "Bounded real OpenClaw aggregate-budget test only; full host acceptance unresolved.",
+  "operatorPort": 58500,
+  "helperSha256Before": "72860da4988254ef1c95d31526081fd7c853459c96039dda14f564dff25d7629",
+  "helperSha256After": "72860da4988254ef1c95d31526081fd7c853459c96039dda14f564dff25d7629",
+  "artifactSha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "coldRootArtifactFilesCompared": 14,
+  "coldRootArtifactMismatches": [],
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "configurationSha256": "3de90ac84634a942b0beba91a8cc5ef4a5f24ce59316e1a5a04e231a3956879a",
+  "sameOriginalKernelAuthority": true,
+  "authority": {
+    "sessionId": "174158534a98363a3816ce1a3b3ad080c0a4328779775b9896c2695ae66f2005",
+    "capabilityId": "cap-01a0891b-0383-76a0-a63f-7930f9d787ed",
+    "serverId": "fs"
+  },
+  "model": {
+    "id": "gpt-5.5",
+    "authMode": "chatgpt-native-cache",
+    "runtime": "pi"
+  },
+  "resourcePath": "/workspace/openclaw-budget-7e521befe1ec.txt",
+  "resourceFinalContent": "native aggregate edited",
+  "stages": [
+    {
+      "stage": "budget-write",
+      "tool": "write_file",
+      "nativeAttempts": 1,
+      "nativeResultReturned": true,
+      "dispatchDelta": 1,
+      "resourceAndAuditUnchanged": false,
+      "exitCode": 0,
+      "terminalOutcome": "completed",
+      "confirmedDeliveries": 1
+    },
+    {
+      "stage": "budget-edit",
+      "tool": "edit_file",
+      "nativeAttempts": 1,
+      "nativeResultReturned": true,
+      "dispatchDelta": 1,
+      "resourceAndAuditUnchanged": false,
+      "exitCode": 0,
+      "terminalOutcome": "completed",
+      "confirmedDeliveries": 2
+    },
+    {
+      "stage": "budget-read",
+      "tool": "read_text_file",
+      "nativeAttempts": 1,
+      "nativeResultReturned": true,
+      "dispatchDelta": 1,
+      "resourceAndAuditUnchanged": false,
+      "exitCode": 0,
+      "terminalOutcome": "completed",
+      "confirmedDeliveries": 3
+    },
+    {
+      "stage": "budget-exhausted",
+      "tool": "list_directory",
+      "nativeAttempts": 1,
+      "nativeResultReturned": true,
+      "dispatchDelta": 0,
+      "resourceAndAuditUnchanged": true,
+      "exitCode": 3,
+      "terminalOutcome": "protected_work_incomplete",
+      "confirmedDeliveries": 3
+    }
+  ],
+  "implicitRetries": 0,
+  "skips": 0
+}

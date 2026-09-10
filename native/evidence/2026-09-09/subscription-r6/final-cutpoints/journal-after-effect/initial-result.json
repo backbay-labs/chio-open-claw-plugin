@@ -1,0 +1,15 @@
+{
+  "case": "journal-after-effect",
+  "passed": true,
+  "exitCode": 2,
+  "nativeCalls": 1,
+  "newDispatchRows": 1,
+  "terminal": {
+    "hostExitCode": 0,
+    "exitCode": 2,
+    "outcome": "unresolved",
+    "confirmedDeliveries": 0
+  },
+  "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-cutpoint-journal-after-effect-5e336b1b11554a14a19f4e8edc26f0dc",
+  "sameAuthorityConfig": true
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  },
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call_igriCpCbQRbo220SdjH14sEI",
+        "content": "{\"state\":\"unknown\",\"evidence\":\"unverified\",\"requestId\":\"add05bffb81477eacba27868f216e2ea109ffb2672aa7982df73ddaf1da045a3\",\"reason\":\"Gateway transport, evidence or host delivery failed; preserve original operation\"}"
+      }
+    ],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  }
+]

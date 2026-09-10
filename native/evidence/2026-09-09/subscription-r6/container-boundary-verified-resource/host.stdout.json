@@ -1,0 +1,158 @@
+{
+  "payloads": [
+    {
+      "text": "Completed both reads successfully.",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 16216,
+    "agentMeta": {
+      "sessionId": "092634f4-f1a5-4f11-abd6-29819650c4ee",
+      "sessionFile": "/state/openclaw/agents/main/sessions/092634f4-f1a5-4f11-abd6-29819650c4ee.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 12177,
+        "output": 148,
+        "cacheRead": 7168,
+        "total": 6178
+      },
+      "lastCallUsage": {
+        "input": 4328,
+        "output": 58,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "total": 6178
+      },
+      "promptTokens": 6120
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789007628203,
+      "sessionId": "092634f4-f1a5-4f11-abd6-29819650c4ee",
+      "sessionKey": "agent:main:explicit:092634f4-f1a5-4f11-abd6-29819650c4ee",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 595,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "Use chio_call with read_text_file for /workspace/openclaw-parallel-7d273e5bf5cf.txt exactly 2 times. Complete all requested reads sequentially before your final reply. After each successful result continue immediately to the next read until all are done. These reads keep the actual agent active for independent container boundary probes. Stop only after all requested reads complete or on any unsuccessful result. Do not write anything.\n\nThe previous attempt did not produce a user-visible answer. Continue from the current state and produce the visible answer now. Do not restart from scratch.",
+    "finalAssistantVisibleText": "Completed both reads successfully.",
+    "finalAssistantRawText": "Completed both reads successfully.",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/container-boundary-ceecb516fbad4b3fba9bb13fd9133063/gateway.json",
+    "--image",
+    "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "--state-dir",
+    "/tmp/chio-openclaw-boundary-runtime-96febe70b1b144d0b25b8e7efd4b77b4",
+    "--prompt",
+    "Use chio_call with read_text_file for /workspace/approved.txt exactly 2 times. Complete all requested reads sequentially before your final reply. After each successful result continue immediately to the next read until all are done. These reads keep the actual agent active for independent container boundary probes. Stop only after all requested reads complete or on any unsuccessful result. Do not write anything.",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+  ],
+  "exitCode": 3,
+  "terminal": {
+    "hostExitCode": 0,
+    "exitCode": 3,
+    "outcome": "protected_work_incomplete",
+    "confirmedDeliveries": 1
+  },
+  "requestedReads": 2,
+  "nativeCalls": 1,
+  "workloadComplete": false
+}

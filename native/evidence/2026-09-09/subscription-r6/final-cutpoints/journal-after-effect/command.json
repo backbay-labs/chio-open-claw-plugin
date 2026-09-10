@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-cutpoint-journal-after-effect-5e336b1b11554a14a19f4e8edc26f0dc/gateway.json",
+    "--state-dir",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-cutpoint-journal-after-effect-5e336b1b11554a14a19f4e8edc26f0dc/runtime",
+    "--image",
+    "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--prompt",
+    "Use chio_call with write_file exactly once to write /workspace/openclaw-cutpoint-0d0b1e1124204300931f5e3d7f109174.txt with content \"one original observed cutpoint effect\". Stop after the actual result. Never retry an uncertain or failed result."
+  ],
+  "exitCode": 2
+}

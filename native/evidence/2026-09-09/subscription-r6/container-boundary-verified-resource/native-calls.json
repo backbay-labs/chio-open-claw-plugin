@@ -1,0 +1,26 @@
+[
+  {
+    "type": "toolCall",
+    "id": "call_o8Zv1NApsPYAy43UkRo35apG|fc_028030d198e6cc78016aa21704150087d1a7e3e8b43532ed91",
+    "name": "chio_call",
+    "arguments": {
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "/workspace/openclaw-parallel-7d273e5bf5cf.txt"
+      }
+    },
+    "partialJson": "{\"tool\":\"read_text_file\",\"arguments\":{\"path\":\"/workspace/openclaw-parallel-7d273e5bf5cf.txt\"}}"
+  },
+  {
+    "type": "toolCall",
+    "id": "call_IxDAm2u2wLtV29u2dQsKUFJn|fc_02addf87112cc39e016aa21707dd6487d1aa3189f1908d9c74",
+    "name": "chio_call",
+    "arguments": {
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "/workspace/openclaw-parallel-7d273e5bf5cf.txt"
+      }
+    },
+    "partialJson": "{\"tool\":\"read_text_file\",\"arguments\":{\"path\":\"/workspace/openclaw-parallel-7d273e5bf5cf.txt\"}}"
+  }
+]

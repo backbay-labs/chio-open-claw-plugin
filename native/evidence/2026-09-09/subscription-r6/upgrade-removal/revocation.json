@@ -1,0 +1,18 @@
+[
+  {
+    "scope": "capability",
+    "status": 200,
+    "responseSha256": "b87bc532a1a1762d0b45fe08b1288e284e74df36326b24530524f8fd739b7730",
+    "capabilityId": "cap-01a08931-a196-7420-8e58-77b1d095e459",
+    "sessionId": null,
+    "resourceAndAuditUnchanged": true
+  },
+  {
+    "scope": "session-credential",
+    "status": 200,
+    "responseSha256": "26e74f43e944a18239872b6fb5b04a04dc1d22bbbb22864b2cd8d0d0b4aa7952",
+    "capabilityId": null,
+    "sessionId": "dbc9f8b4b5597c4271ded55701e6cfcd98e09c17a0a48cc5907cc3dff5a28a43",
+    "resourceAndAuditUnchanged": true
+  }
+]

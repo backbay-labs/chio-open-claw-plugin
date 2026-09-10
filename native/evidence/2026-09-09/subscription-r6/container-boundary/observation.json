@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "image": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "manifest": "/tmp/chio-openclaw-boundary-runtime-550f493740014addbef75a40fdf42d9b/launch.json",
+  "internalNetwork": true,
+  "readonlyRoot": true,
+  "capDrop": [
+    "ALL"
+  ],
+  "securityOpt": [
+    "no-new-privileges"
+  ],
+  "mounts": [
+    {
+      "Type": "volume",
+      "Name": "chio-required-openclaw-state-76040293-1e4f-4af3-8bd8-aa6b20264cca",
+      "Source": "/var/lib/docker/volumes/chio-required-openclaw-state-76040293-1e4f-4af3-8bd8-aa6b20264cca/_data",
+      "Destination": "/state",
+      "Driver": "local",
+      "Mode": "z",
+      "RW": true,
+      "Propagation": ""
+    },
+    {
+      "Type": "volume",
+      "Name": "chio-required-openclaw-control-76040293-1e4f-4af3-8bd8-aa6b20264cca",
+      "Source": "/var/lib/docker/volumes/chio-required-openclaw-control-76040293-1e4f-4af3-8bd8-aa6b20264cca/_data",
+      "Destination": "/config",
+      "Driver": "local",
+      "Mode": "z",
+      "RW": false,
+      "Propagation": ""
+    }
+  ],
+  "positiveRelayConnection": true,
+  "forbiddenHostConnections": 0,
+  "runs": [
+    {
+      "descendant": false,
+      "exitCode": 0,
+      "checks": {
+        "operator_config": "denied",
+        "protected_resource": "denied",
+        "docker_socket": "denied",
+        "configuration_write": "denied",
+        "plugin_write": "denied",
+        "root_write": "denied",
+        "isolated_state": "allowed",
+        "operator_credentials": "absent",
+        "no_privilege": "enforced",
+        "direct_host_tcp": "denied"
+      },
+      "stdout": "{\"operator_config\":\"denied\",\"protected_resource\":\"denied\",\"docker_socket\":\"denied\",\"configuration_write\":\"denied\",\"plugin_write\":\"denied\",\"root_write\":\"denied\",\"isolated_state\":\"allowed\",\"operator_credentials\":\"absent\",\"no_privilege\":\"enforced\",\"direct_host_tcp\":\"denied\"}\n"
+    },
+    {
+      "descendant": true,
+      "exitCode": 0,
+      "checks": {
+        "operator_config": "denied",
+        "protected_resource": "denied",
+        "docker_socket": "denied",
+        "configuration_write": "denied",
+        "plugin_write": "denied",
+        "root_write": "denied",
+        "isolated_state": "allowed",
+        "operator_credentials": "absent",
+        "no_privilege": "enforced",
+        "direct_host_tcp": "denied"
+      },
+      "stdout": "{\"operator_config\":\"denied\",\"protected_resource\":\"denied\",\"docker_socket\":\"denied\",\"configuration_write\":\"denied\",\"plugin_write\":\"denied\",\"root_write\":\"denied\",\"isolated_state\":\"allowed\",\"operator_credentials\":\"absent\",\"no_privilege\":\"enforced\",\"direct_host_tcp\":\"denied\"}\n"
+    }
+  ],
+  "claim": "independent OS processes inside the actual host container; full host gate remains open"
+}

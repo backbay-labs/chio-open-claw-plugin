@@ -1,0 +1,137 @@
+{
+  "requestId": "74471cd8-1897-4faf-8cb8-0753ca27a5d4:5fdfc65872167cb1d8230390b6382b2913e0fd00e8f4a3daf546b51184d94604",
+  "digest": "28336a0b64e66f9b22ed0d20ac76a893f9d2f5e2f2c7fdf3b7027f9c196b1163",
+  "state": "completed",
+  "outcome": {
+    "state": "completed",
+    "evidence": "verified",
+    "requestId": "74471cd8-1897-4faf-8cb8-0753ca27a5d4:5fdfc65872167cb1d8230390b6382b2913e0fd00e8f4a3daf546b51184d94604",
+    "receipt": {
+      "action": {
+        "parameter_hash": "8aaecfa360cc4a6ef68a9acd11e4871d27e9dd3e424473d15546a2b7149f8aad",
+        "parameters": {
+          "content": "second legitimate effect requiring its own evidence",
+          "path": "/workspace/openclaw-inflight-32522348b7e6.txt"
+        }
+      },
+      "boundary_class": "prevent",
+      "capability_id": "cap-01a08920-9fe2-7732-9de6-c219e2b0f940",
+      "content_hash": "b0e8920aac3e622ff4b63edfbc8bfc1ec4301f336eb813a5bae95587fdb83c46",
+      "decision": {
+        "verdict": "allow"
+      },
+      "evidence": [
+        {
+          "details": "sanitizer detected 2 findings (secret_high_entropy_token:2)",
+          "guard_name": "output-sanitizer",
+          "verdict": true
+        }
+      ],
+      "id": "e502406ae25be51dffcbdbe272dab1b3d7d07b8707ce16dda31f71ad1236e82a",
+      "kernel_key": "580cdf640c31f652ad3115569c77310c920c67aa3482c919b9faf52817524498",
+      "metadata": {
+        "admission_operation": {
+          "compensation_status": "not_compensated",
+          "coordinator_lease_epoch": 4,
+          "coordinator_lease_id": "01a0891f-1a5b-7f11-b6ba-f7cd7d2f0ce3",
+          "operation_id": "6b974242af6b31ea20cb8e3c5d3602e5614bfea15715b51e6a630373b1467494",
+          "projected_dispatch_state": "terminal",
+          "projected_operation_version": 8,
+          "projected_state": "completed",
+          "request_binding_hash": "72e6e62ec71f659fc7c113bcc92ca9fae32b757a9ad15cd03b946a441076385e",
+          "request_id": "74471cd8-1897-4faf-8cb8-0753ca27a5d4:5fdfc65872167cb1d8230390b6382b2913e0fd00e8f4a3daf546b51184d94604",
+          "request_namespace_digest": "edf272068a9927c2ba55738ac8b1190309fba7b9f1f65df05ae5ffc4e2dad860",
+          "retained_dispatch_commit": {
+            "committed_version": 6,
+            "coordinator_lease_epoch": 4,
+            "coordinator_lease_id": "01a0891f-1a5b-7f11-b6ba-f7cd7d2f0ce3",
+            "provider_attempt": {
+              "attempt_id": "attempt:6b974242af6b31ea20cb8e3c5d3602e5614bfea15715b51e6a630373b1467494",
+              "operation_id": "6b974242af6b31ea20cb8e3c5d3602e5614bfea15715b51e6a630373b1467494",
+              "transport_id": "kernel-tool-server:fs",
+              "transport_key_epoch": 4
+            },
+            "store_fence": {
+              "lease_id": "01a0891f-1a5b-7f11-b6ba-f7cd7d2f0ce3",
+              "owner_epoch": 4,
+              "store_uuid": "01a087d9-b634-7e61-ae80-a0c62ab7d36b"
+            }
+          },
+          "schema": "chio.admission-receipt.v1",
+          "store_fence": {
+            "lease_id": "01a0891f-1a5b-7f11-b6ba-f7cd7d2f0ce3",
+            "owner_epoch": 4,
+            "store_uuid": "01a087d9-b634-7e61-ae80-a0c62ab7d36b"
+          },
+          "tool_outcome_id": "a6f3257a54f84f290f0a16f22541bc395bfadd0522ecf438f3a7896f804cadb6",
+          "tool_outcome_version": 2,
+          "trusted_time_unix_ms": 1789007028175
+        },
+        "attribution": {
+          "delegation_depth": 0,
+          "grant_index": 0,
+          "issuer_key": "b6311d41a1a65feff88d18d1cbe02cc38fd28d478426ba00cdd0bb34221e768b",
+          "subject_key": "36a2a01922bae6d800003788e8825c704a3250ffb1b0db59b2db38e301033bcb"
+        },
+        "chio_receipt_signing_nonce": "rcpt-01a08920-e067-72c0-8e54-6a36e512c7cf",
+        "post_invocation": {
+          "sanitized": true
+        },
+        "receipt_context": {
+          "request_id": "74471cd8-1897-4faf-8cb8-0753ca27a5d4:5fdfc65872167cb1d8230390b6382b2913e0fd00e8f4a3daf546b51184d94604"
+        }
+      },
+      "policy_hash": "057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e",
+      "receipt_kind": "mediated_decision",
+      "redaction_mode": "none",
+      "signature": "ca2a3aa4b0f2abbf787acf3b53f7afab6a70e5b0d6d41b5f34853d9f86aec3b32ffd7a689c9cb0fdff68d7dabf1f75f6699ec653f3cdc6c81b3b52b44b5f7d05",
+      "timestamp": 1789007028,
+      "tool_name": "write_file",
+      "tool_origin": "caller_executed",
+      "tool_server": "fs",
+      "trust_level": "mediated"
+    },
+    "result": {
+      "content": [
+        {
+          "text": "Successfully wrote to ****.txt",
+          "type": "text"
+        }
+      ],
+      "isError": false,
+      "structuredContent": {
+        "content": "Successfully wrote to ****.txt"
+      }
+    },
+    "delivery": {
+      "acknowledgement": "tsdoVcIbLbgCvAHT79hrReYi4FIXHiHVWUmDu3O18z0",
+      "receiptId": "e502406ae25be51dffcbdbe272dab1b3d7d07b8707ce16dda31f71ad1236e82a",
+      "requestHash": "7d755695e59d7098fa44856c111ddad4905db4cedb546c06570ff42426c73a44",
+      "requestId": "74471cd8-1897-4faf-8cb8-0753ca27a5d4:5fdfc65872167cb1d8230390b6382b2913e0fd00e8f4a3daf546b51184d94604",
+      "resultHash": "b0e8920aac3e622ff4b63edfbc8bfc1ec4301f336eb813a5bae95587fdb83c46",
+      "schema": "chio.mcp.delivery-ack.v1"
+    }
+  },
+  "acknowledged": true,
+  "hostDeliveryRequired": true,
+  "request": {
+    "tool": "write_file",
+    "arguments": {
+      "path": "/workspace/openclaw-inflight-32522348b7e6.txt",
+      "content": "second legitimate effect requiring its own evidence"
+    },
+    "requestId": "74471cd8-1897-4faf-8cb8-0753ca27a5d4:5fdfc65872167cb1d8230390b6382b2913e0fd00e8f4a3daf546b51184d94604"
+  },
+  "hostDeliveryConfirmed": true,
+  "operatorReconciliation": {
+    "previousState": "unknown",
+    "previousOutcome": {
+      "state": "unknown",
+      "evidence": "unverified",
+      "requestId": "74471cd8-1897-4faf-8cb8-0753ca27a5d4:5fdfc65872167cb1d8230390b6382b2913e0fd00e8f4a3daf546b51184d94604",
+      "reason": "execution receipt failed trusted request verification"
+    },
+    "ownerRecordSha256": "c70609611e8210deb3a1d013409ace1f435bd7ff90accf5d8fa0fbc54321a85d",
+    "ownerSignature": "93df96cdfc5fad71f3f51263b043233459c97e9b00df7419d4f942bdbb69cb784dce7fc4d4fc7e5528b1618bde93fba8aca160753df73619c8c36932a6b9bb03"
+  }
+}

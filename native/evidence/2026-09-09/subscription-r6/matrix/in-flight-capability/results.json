@@ -1,0 +1,21 @@
+[
+  {
+    "case": "in-flight-capability",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-57340ea1f9e84f03910a17269739f115/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-4d3d932b0179406381eff2b821691952",
+      "--image",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. First call chio_call with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-17269739f115.txt\", \"content\": \"authorized before in-flight revocation\"}}. Wait for its successful result. Then Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-inflight-17269739f115.txt\", \"content\": \"forbidden after in-flight revocation\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  }
+]

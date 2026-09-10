@@ -1,0 +1,15 @@
+{
+  "case": "cancel-before-dispatch",
+  "passed": true,
+  "exitCode": 2,
+  "nativeCalls": 1,
+  "newDispatchRows": 0,
+  "terminal": {
+    "hostExitCode": 137,
+    "exitCode": 2,
+    "outcome": "unresolved",
+    "confirmedDeliveries": 0
+  },
+  "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-cutpoint-cancel-before-dispatch-eccaad58127d48d6babb0dd15982803c",
+  "sameAuthorityConfig": true
+}

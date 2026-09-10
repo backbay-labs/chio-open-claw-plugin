@@ -1,0 +1,27 @@
+{
+  "schema": "chio.openclaw.parallel-fixture.v1",
+  "calls": [
+    {
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-a.txt",
+          "content": "fixed native parallel fixture 158c21d5-6f48-4100-a764-318ddc116ee9 a"
+        }
+      }
+    },
+    {
+      "name": "chio_call",
+      "arguments": {
+        "tool": "write_file",
+        "arguments": {
+          "path": "/workspace/openclaw-forced-parallel-158c21d5-6f48-4100-a764-318ddc116ee9-b.txt",
+          "content": "fixed native parallel fixture 158c21d5-6f48-4100-a764-318ddc116ee9 b"
+        }
+      }
+    }
+  ],
+  "kernelEndpoint": "http://127.0.0.1:58498/",
+  "log": "/Users/connor/Medica/backbay/standalone/chio-open-claw-plugin/.worktrees/required-agent-integrations-20260909/native/evidence/2026-09-09/subscription-r6/parallel-native-fixture/fixture.jsonl"
+}

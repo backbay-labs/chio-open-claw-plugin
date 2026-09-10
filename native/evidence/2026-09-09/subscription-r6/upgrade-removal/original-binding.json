@@ -1,0 +1,29 @@
+{
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-4465769d79c643d09074ac0aac39b18a/gateway.json",
+  "privateSnapshot": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-4465769d79c643d09074ac0aac39b18a/upgrade-original-private",
+  "configurationSha256": "fa61fc0d27cd3f71f7ea244e5c15268aa760ba2e98f7938508c2a8b4584a76c9",
+  "authority": {
+    "sessionId": "dbc9f8b4b5597c4271ded55701e6cfcd98e09c17a0a48cc5907cc3dff5a28a43",
+    "capabilityId": "cap-01a08931-a196-7420-8e58-77b1d095e459",
+    "serverId": "fs",
+    "subjectKey": "344ae386641abf3a174deb13e02322384a22fc2fbedfe2a1cf90694fd73974c5"
+  },
+  "journalDir": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-4465769d79c643d09074ac0aac39b18a/journal",
+  "originalRecords": [
+    {
+      "file": "edba58ec1477e1661843fe8847d12b977db92854643b9735707ae296464e058f.json",
+      "sha256": "11f3fa41cee77fc1c8556c1db8811e4a8c7fd0b1e3010c158137883271aa0f33",
+      "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:96a145bb3583fa04b8edc0c1fbeea4155b3dacb9c0e683266272f006dc9e4466",
+      "state": "unknown"
+    },
+    {
+      "file": "7986db62870125060df7b00420dda40e90a0814ee2b67b25c8ceaa8d826bd2bc.json",
+      "sha256": "36788a876be1eb5698ed4e5c2730c9e4932ff8d24971a05b316a84b1a293da70",
+      "requestId": "659d784d-e281-4c02-a6d7-7f5df10343a7:1ad9d80244c061c2ef61952ae2a0be5a3cf4ef6e162edda5a72dc5a31a5a2b35",
+      "state": "completed"
+    }
+  ],
+  "oldArtifactSha256": "10429af214dfd12f4383749e1c106babd876a1377d53d55125630a2054dcec2c",
+  "oldImage": "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+  "oldArtifactClaim": "Superseded candidate fixture only; not current artifact acceptance"
+}

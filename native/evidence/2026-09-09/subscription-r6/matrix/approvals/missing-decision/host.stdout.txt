@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "Pending approval; stopped as requested.",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 11679,
+    "agentMeta": {
+      "sessionId": "d022d3b7-1c70-48c3-9f66-700e73e2192d",
+      "sessionFile": "/state/openclaw/agents/main/sessions/d022d3b7-1c70-48c3-9f66-700e73e2192d.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 4424,
+        "output": 134,
+        "cacheRead": 1792,
+        "total": 3331
+      },
+      "lastCallUsage": {
+        "input": 1528,
+        "output": 11,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "total": 3331
+      },
+      "promptTokens": 3320
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789006675094,
+      "sessionId": "d022d3b7-1c70-48c3-9f66-700e73e2192d",
+      "sessionKey": "agent:main:explicit:d022d3b7-1c70-48c3-9f66-700e73e2192d",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 244,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 244,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 563,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"ea8baf2e-4920-415d-8f08-e2a231d0ccfd:3bc6aa35bfde11941b0d3d8eccdb6c2bcd2e4bbf717fd584b14ef0a17862705d\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-f7e178debd0d.txt\", \"content\": \"exact operator-approved effect\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+    "finalAssistantVisibleText": "Pending approval; stopped as requested.",
+    "finalAssistantRawText": "Pending approval; stopped as requested.",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 1,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

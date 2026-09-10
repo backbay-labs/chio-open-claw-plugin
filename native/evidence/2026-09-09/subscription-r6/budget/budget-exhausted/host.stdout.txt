@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"44e17196-3d66-49eb-8233-ff30dc7edfb2:1d675c0f40845cc454186d5801f949adc701bd5753ea6bab6645be753d9aa61b\",\"receipt\":{\"action\":{\"parameter_hash\":\"acda0d21aae64c6f16c860dce985a6a79157d631474d0be08aa42fc3efa55f9a\",\"parameters\":{\"path\":\"/workspace\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a0891b-0383-76a0-a63f-7930f9d787ed\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"invocation budget exhausted for capability cap-01a0891b-0383-ff30dc7edfb2:1d675c0f40845cc454186d5801f949adc701bd5753ea6bab6645be753d9aa61b\",\"verdict\":\"deny\"},\"id\":\"9c6682f92997167ddb24f1cd1f9a4a0482c74bf59ea919b21e61b8d1796dae03\",\"kernel_key\":\"ea42c2aba07f5c40fbe2c962704f8b62271133c7485fbf197a0c603446edfdcd\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"211d1d4c57cb32051d3b7a54b3717595169774985b9c9cbb5b42631e399a225f\",\"subject_key\":\"81127505d5066f853b87ddb3bd1200f7d316cff99c6a255beb9f01fcb0aa7c9a\"},\"budget_authority\":{\"authority_profile\":\"authoritative_hold_event\",\"guarantee_level\":\"single_node_atomic\",\"metering_profile\":\"max_cost_preauthorize_then_reconcile_actual\"},\"chio_receipt_signing_nonce\":\"rcpt-01a0891c-bcd7-77f1-906d-9ca603790826\",\"receipt_context\":{\"request_id\":\"44e17196-3d66-49eb-8233-ff30dc7edfb2:1d675c0f40845cc454186d5801f949adc701bd5753ea6bab6645be753d9aa61b\"}},\"policy_hash\":\"2658c45f5bfe84e665c4fbf61cf9b3dd5f3da0d12d669466b3a778b196d01666\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"891f79a0d0eb8bd521fefa762717c2a14653fdd87c80a1a65d49acf5265f9b42b7a98b13dca1d67fbefdfb6d8167a740f3039c77f364f4673b6527e40b229208\",\"timestamp\":1789006756,\"tool_name\":\"list_directory\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"invocation budget exhausted for capability cap-01a0891b-0383-76a0-a63f-7930f9d787ed\"}",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 23046,
+    "agentMeta": {
+      "sessionId": "5f56a482-6a2e-40b5-881e-8a49d3a1bae4",
+      "sessionFile": "/state/openclaw/agents/main/sessions/5f56a482-6a2e-40b5-881e-8a49d3a1bae4.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 2789,
+        "output": 814,
+        "cacheRead": 3584,
+        "total": 4371
+      },
+      "lastCallUsage": {
+        "input": 1792,
+        "output": 787,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "total": 4371
+      },
+      "promptTokens": 3584
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789006753837,
+      "sessionId": "5f56a482-6a2e-40b5-881e-8a49d3a1bae4",
+      "sessionKey": "agent:main:explicit:5f56a482-6a2e-40b5-881e-8a49d3a1bae4",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 331,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"list_directory\", \"arguments\": {\"path\": \"/workspace\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+    "finalAssistantVisibleText": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"44e17196-3d66-49eb-8233-ff30dc7edfb2:1d675c0f40845cc454186d5801f949adc701bd5753ea6bab6645be753d9aa61b\",\"receipt\":{\"action\":{\"parameter_hash\":\"acda0d21aae64c6f16c860dce985a6a79157d631474d0be08aa42fc3efa55f9a\",\"parameters\":{\"path\":\"/workspace\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a0891b-0383-76a0-a63f-7930f9d787ed\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"invocation budget exhausted for capability cap-01a0891b-0383-ff30dc7edfb2:1d675c0f40845cc454186d5801f949adc701bd5753ea6bab6645be753d9aa61b\",\"verdict\":\"deny\"},\"id\":\"9c6682f92997167ddb24f1cd1f9a4a0482c74bf59ea919b21e61b8d1796dae03\",\"kernel_key\":\"ea42c2aba07f5c40fbe2c962704f8b62271133c7485fbf197a0c603446edfdcd\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"211d1d4c57cb32051d3b7a54b3717595169774985b9c9cbb5b42631e399a225f\",\"subject_key\":\"81127505d5066f853b87ddb3bd1200f7d316cff99c6a255beb9f01fcb0aa7c9a\"},\"budget_authority\":{\"authority_profile\":\"authoritative_hold_event\",\"guarantee_level\":\"single_node_atomic\",\"metering_profile\":\"max_cost_preauthorize_then_reconcile_actual\"},\"chio_receipt_signing_nonce\":\"rcpt-01a0891c-bcd7-77f1-906d-9ca603790826\",\"receipt_context\":{\"request_id\":\"44e17196-3d66-49eb-8233-ff30dc7edfb2:1d675c0f40845cc454186d5801f949adc701bd5753ea6bab6645be753d9aa61b\"}},\"policy_hash\":\"2658c45f5bfe84e665c4fbf61cf9b3dd5f3da0d12d669466b3a778b196d01666\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"891f79a0d0eb8bd521fefa762717c2a14653fdd87c80a1a65d49acf5265f9b42b7a98b13dca1d67fbefdfb6d8167a740f3039c77f364f4673b6527e40b229208\",\"timestamp\":1789006756,\"tool_name\":\"list_directory\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"invocation budget exhausted for capability cap-01a0891b-0383-76a0-a63f-7930f9d787ed\"}",
+    "finalAssistantRawText": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"44e17196-3d66-49eb-8233-ff30dc7edfb2:1d675c0f40845cc454186d5801f949adc701bd5753ea6bab6645be753d9aa61b\",\"receipt\":{\"action\":{\"parameter_hash\":\"acda0d21aae64c6f16c860dce985a6a79157d631474d0be08aa42fc3efa55f9a\",\"parameters\":{\"path\":\"/workspace\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a0891b-0383-76a0-a63f-7930f9d787ed\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"invocation budget exhausted for capability cap-01a0891b-0383-ff30dc7edfb2:1d675c0f40845cc454186d5801f949adc701bd5753ea6bab6645be753d9aa61b\",\"verdict\":\"deny\"},\"id\":\"9c6682f92997167ddb24f1cd1f9a4a0482c74bf59ea919b21e61b8d1796dae03\",\"kernel_key\":\"ea42c2aba07f5c40fbe2c962704f8b62271133c7485fbf197a0c603446edfdcd\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"211d1d4c57cb32051d3b7a54b3717595169774985b9c9cbb5b42631e399a225f\",\"subject_key\":\"81127505d5066f853b87ddb3bd1200f7d316cff99c6a255beb9f01fcb0aa7c9a\"},\"budget_authority\":{\"authority_profile\":\"authoritative_hold_event\",\"guarantee_level\":\"single_node_atomic\",\"metering_profile\":\"max_cost_preauthorize_then_reconcile_actual\"},\"chio_receipt_signing_nonce\":\"rcpt-01a0891c-bcd7-77f1-906d-9ca603790826\",\"receipt_context\":{\"request_id\":\"44e17196-3d66-49eb-8233-ff30dc7edfb2:1d675c0f40845cc454186d5801f949adc701bd5753ea6bab6645be753d9aa61b\"}},\"policy_hash\":\"2658c45f5bfe84e665c4fbf61cf9b3dd5f3da0d12d669466b3a778b196d01666\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"891f79a0d0eb8bd521fefa762717c2a14653fdd87c80a1a65d49acf5265f9b42b7a98b13dca1d67fbefdfb6d8167a740f3039c77f364f4673b6527e40b229208\",\"timestamp\":1789006756,\"tool_name\":\"list_directory\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"invocation budget exhausted for capability cap-01a0891b-0383-76a0-a63f-7930f9d787ed\"}",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 1,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

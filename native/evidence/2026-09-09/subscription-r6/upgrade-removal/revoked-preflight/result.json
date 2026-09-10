@@ -1,0 +1,20 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-upgrade-r6-kng62kju/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-4465769d79c643d09074ac0aac39b18a/gateway.json",
+    "--state-dir",
+    "/tmp/chio-openclaw-upgrade-r6-kng62kju/revoked-run",
+    "--image",
+    "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json",
+    "--prompt",
+    "Use chio_call with read_text_file exactly once for /workspace/approved.txt. Stop on refusal."
+  ],
+  "exitCode": 1,
+  "nativeLaunchCreated": false,
+  "resourceAndAuditUnchanged": true,
+  "configurationSha256": "fa61fc0d27cd3f71f7ea244e5c15268aa760ba2e98f7938508c2a8b4584a76c9"
+}

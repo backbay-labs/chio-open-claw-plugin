@@ -1,0 +1,41 @@
+[
+  {
+    "case": "missing-entrypoint",
+    "passed": true,
+    "baseImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "faultImage": "sha256:f2ec9d8775ad22a58909257d44af82f87cff861d7c94c6559fe821ebfe0099ba",
+    "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+    "exitCode": 1,
+    "actualHostStarted": false,
+    "nativeCallCount": 0,
+    "resourceAndAuditUnchanged": true,
+    "journalOperationCount": 0,
+    "claim": "explicit enforcer fault; prevention only, not useful-work or release acceptance"
+  },
+  {
+    "case": "crashing-executor",
+    "passed": true,
+    "baseImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "faultImage": "sha256:3e02f02f4a58cbaaf6021da27141621c18b2c107bd686284db8f79c93d8fdac6",
+    "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+    "exitCode": 2,
+    "actualHostStarted": true,
+    "nativeCallCount": 1,
+    "resourceAndAuditUnchanged": true,
+    "journalOperationCount": 0,
+    "claim": "explicit enforcer fault; prevention only, not useful-work or release acceptance"
+  },
+  {
+    "case": "silent-omission",
+    "passed": false,
+    "baseImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "faultImage": "sha256:2ea33fb3d69045b2d4c0d61a0aa28181f800c00d5bb5b5e4fce780671a456543",
+    "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+    "exitCode": 1,
+    "actualHostStarted": false,
+    "nativeCallCount": 0,
+    "resourceAndAuditUnchanged": true,
+    "journalOperationCount": 0,
+    "claim": "explicit enforcer fault; prevention only, not useful-work or release acceptance"
+  }
+]

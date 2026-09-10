@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "{\"state\":\"completed\",\"evidence\":\"verified\",\"requestId\":\"2e8dadec-30aa-4d64-915b-10bbe332f8a8:41716dd1094238389980463262fc2d40ae76574456ceed151c1a54b161e2b774\",\"result\":{\"content\":[{\"text\":\"Successfully wrote to /workspace/openclaw-approved-7c8e380a00e6.txt\",\"type\":\"text\"}],\"isError\":false,\"structuredContent\":{\"content\":\"Successfully wrote to /workspace/openclaw-approved-7c8e380a00e6.txt\"}}}",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 11989,
+    "agentMeta": {
+      "sessionId": "0a09b980-4c35-4f26-8e98-64b172a4537b",
+      "sessionFile": "/state/openclaw/agents/main/sessions/0a09b980-4c35-4f26-8e98-64b172a4537b.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 5889,
+        "output": 252,
+        "cacheRead": 1792,
+        "total": 4929
+      },
+      "lastCallUsage": {
+        "input": 4792,
+        "output": 137,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 4929
+      },
+      "promptTokens": 4792
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789006378811,
+      "sessionId": "0a09b980-4c35-4f26-8e98-64b172a4537b",
+      "sessionKey": "agent:main:explicit:0a09b980-4c35-4f26-8e98-64b172a4537b",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 244,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 244,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 563,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"2e8dadec-30aa-4d64-915b-10bbe332f8a8:41716dd1094238389980463262fc2d40ae76574456ceed151c1a54b161e2b774\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-7c8e380a00e6.txt\", \"content\": \"exact operator-approved effect\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+    "finalAssistantVisibleText": "{\"state\":\"completed\",\"evidence\":\"verified\",\"requestId\":\"2e8dadec-30aa-4d64-915b-10bbe332f8a8:41716dd1094238389980463262fc2d40ae76574456ceed151c1a54b161e2b774\",\"result\":{\"content\":[{\"text\":\"Successfully wrote to /workspace/openclaw-approved-7c8e380a00e6.txt\",\"type\":\"text\"}],\"isError\":false,\"structuredContent\":{\"content\":\"Successfully wrote to /workspace/openclaw-approved-7c8e380a00e6.txt\"}}}",
+    "finalAssistantRawText": "{\"state\":\"completed\",\"evidence\":\"verified\",\"requestId\":\"2e8dadec-30aa-4d64-915b-10bbe332f8a8:41716dd1094238389980463262fc2d40ae76574456ceed151c1a54b161e2b774\",\"result\":{\"content\":[{\"text\":\"Successfully wrote to /workspace/openclaw-approved-7c8e380a00e6.txt\",\"type\":\"text\"}],\"isError\":false,\"structuredContent\":{\"content\":\"Successfully wrote to /workspace/openclaw-approved-7c8e380a00e6.txt\"}}}",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 1,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

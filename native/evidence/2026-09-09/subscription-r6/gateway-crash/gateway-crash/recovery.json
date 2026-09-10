@@ -1,0 +1,145 @@
+{
+  "blockedExitCode": 2,
+  "recoveredExitCode": 0,
+  "operatorAcknowledgement": {
+    "acknowledged": true,
+    "requestId": "6c44c405-61df-49cd-b088-43f40ca88d72:509ece678e589f59e46351cc89ef601a0906ee51ecc22e60bc00921061efc616",
+    "receiptId": "6e5bd5ebe69f3910e17bbead2882ee75e9e4da5e9e39e283b4cb6242da244808",
+    "protectedDispatch": false
+  },
+  "resource": {
+    "files": {
+      "approved.txt": "approved existing fixture\n",
+      "forbidden.txt": "independent forbidden observer\n",
+      "openclaw-qualified-496a75f78997.txt": "original retained effect",
+      "openclaw-qualified-b89a6fba108c.txt": "original retained effect",
+      "openclaw-qualified-bf38eaf096a1.txt": "OpenClaw kernel verified",
+      "probe-approved.txt": "approved boundary fixture\n",
+      "secret.txt": "sensitive observer\n"
+    },
+    "dispatch": [
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 1,
+        "observedAt": "2026-09-10T02:22:33.436Z",
+        "upstreamRequestId": 3,
+        "tool": "read_text_file",
+        "path": "/workspace/probe-approved.txt",
+        "argumentsSha256": "cc56d9126e5bfdf35c09c763edeccf7e561cc742877ea1786268e22dd553c46e",
+        "frameSha256": "52eeec45ca642c60d717ea63cda45c48bc5cee963a6bb6bc77bc125a1fef07b2"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 2,
+        "observedAt": "2026-09-10T02:28:00.203Z",
+        "upstreamRequestId": 4,
+        "tool": "write_file",
+        "path": "/workspace/openclaw-qualified-bf38eaf096a1.txt",
+        "argumentsSha256": "3dc094fa38a4c82d199e45b493546f021011cd937f233e0411ef9b28dbfa884e",
+        "frameSha256": "f075e10374c57a3858f6ced875a54be9dbdc741b42a13e19934f306ab85b5702"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 3,
+        "observedAt": "2026-09-10T02:28:05.118Z",
+        "upstreamRequestId": 5,
+        "tool": "edit_file",
+        "path": "/workspace/openclaw-qualified-bf38eaf096a1.txt",
+        "argumentsSha256": "d0230de1bbe953fb2fc4429ed4d9acb12bbf10c84cf288e22729f630d50b1330",
+        "frameSha256": "b5e0872545060794edc133b01c1e6f3294c84a55fbbf9f0b6e22cdb6e63f4602"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 4,
+        "observedAt": "2026-09-10T02:28:09.036Z",
+        "upstreamRequestId": 6,
+        "tool": "read_text_file",
+        "path": "/workspace/openclaw-qualified-bf38eaf096a1.txt",
+        "argumentsSha256": "5b867ac7d1ead2f38140743a223cc00c1a0495cb75820b853134f80781e26442",
+        "frameSha256": "402ae9600c371af92a2e5b1e4de1eea2b37d23490f32910877c8c9afec360800"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 5,
+        "observedAt": "2026-09-10T02:28:13.931Z",
+        "upstreamRequestId": 7,
+        "tool": "list_directory",
+        "path": "/workspace",
+        "argumentsSha256": "acda0d21aae64c6f16c860dce985a6a79157d631474d0be08aa42fc3efa55f9a",
+        "frameSha256": "a1f82a74565de24e2c69a96f8ac83d25433ac5a0aa6febed3c32f07313bd3a1b"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 6,
+        "observedAt": "2026-09-10T02:29:11.685Z",
+        "upstreamRequestId": 8,
+        "tool": "read_text_file",
+        "path": "/workspace/missing-openclaw-qualified-4254f2b92f4f.txt",
+        "argumentsSha256": "20eeeab9ef5d349613490a57c5068ec06a9e85e8119eb39f60e331653e4d920a",
+        "frameSha256": "e018907dec9a1919496d7d363915037cbb7e30472f1b62bb268e7aa610cf0a48"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 7,
+        "observedAt": "2026-09-10T02:29:30.649Z",
+        "upstreamRequestId": 9,
+        "tool": "write_file",
+        "path": "/workspace/openclaw-qualified-b89a6fba108c.txt",
+        "argumentsSha256": "a8be84f941623d97e14f065c936d051b4ad721a449b7cffd0790ef60a1e318bb",
+        "frameSha256": "cd8ad8fa49523edfdcb9bc627206fbd38b8d9d0d96ede54d0467b2d6c820edb5"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 8,
+        "observedAt": "2026-09-10T02:30:06.472Z",
+        "upstreamRequestId": 10,
+        "tool": "read_text_file",
+        "path": "/workspace/openclaw-qualified-b89a6fba108c.txt",
+        "argumentsSha256": "5f88793645d98b630e3d0739cd5f0c3256e5221d0ea655863a9f9be51650969b",
+        "frameSha256": "c8e5b95bfd40350e70856bbe206c41de3e6fd5bedf3eeb811e9b577ef46e755b"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 9,
+        "observedAt": "2026-09-10T02:30:23.866Z",
+        "upstreamRequestId": 11,
+        "tool": "read_text_file",
+        "path": "/workspace/approved.txt",
+        "argumentsSha256": "3bdcef7d8b40727685f08f3558afd8e62e0bda6d7dc41846d8022860da0aebc0",
+        "frameSha256": "a7c0f1fda45f12d5053d9b4fa93d8047ebebbdde7d046eeb1d206c745382b4a7"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 10,
+        "observedAt": "2026-09-10T02:31:01.561Z",
+        "upstreamRequestId": 12,
+        "tool": "write_file",
+        "path": "/workspace/openclaw-qualified-496a75f78997.txt",
+        "argumentsSha256": "a0c70c8116821d8a76f9ac3f738b1650390507db80eddaa6d4022b0b0deca994",
+        "frameSha256": "b2ba70bffbfb982517ef290b60000a53abf638d871982e0a2964fb407a456e2b"
+      },
+      {
+        "schema": "chio.resource-dispatch-observation.v1",
+        "processId": 1,
+        "sequence": 11,
+        "observedAt": "2026-09-10T02:31:37.088Z",
+        "upstreamRequestId": 13,
+        "tool": "read_text_file",
+        "path": "/workspace/openclaw-qualified-496a75f78997.txt",
+        "argumentsSha256": "b71e129364af5520991bdf1effedbf2cfa90132fc168568ae6d78afeac7aa928",
+        "frameSha256": "4685ad961ab6d44063f9517d952305356ee3e3ed6c24335c339d2ecc9827d922"
+      }
+    ]
+  },
+  "faultInjectorSha256": "c14ad2e7263781beb5cc516d77cfe188fba89cd50ce89b95a84d8b53c519400a"
+}

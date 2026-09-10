@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-useful-1cbd8b686d9a414db6f1bf38eaf096a1/gateway.json",
+    "--state-dir",
+    "/tmp/chio-openclaw-qualified-0a45a3a1d2ad4ad68141dd414cc4f9e7",
+    "--image",
+    "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "--prompt",
+    "Use chio_call only, with exact schemas in its description. Preserve remote paths exactly. Write /workspace/openclaw-qualified-bf38eaf096a1.txt with content \"OpenClaw HTTP verified\". Edit HTTP to kernel, read that exact file, then list /workspace. Complete all four actions in this request before your final reply: write_file, edit_file, read_text_file, list_directory. Call tools sequentially, never in parallel. After each successful result continue immediately to the next action. Stop only after all four succeed or after any unsuccessful or uncertain result.",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+  ],
+  "exitCode": 0
+}

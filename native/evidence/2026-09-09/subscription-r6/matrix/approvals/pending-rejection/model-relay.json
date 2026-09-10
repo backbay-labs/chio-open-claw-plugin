@@ -1,0 +1,57 @@
+[
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  },
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call_SnNtc61PvA1kfiNsgBqTFohy",
+        "content": "{\"state\":\"awaiting_approval\",\"evidence\":\"unverified\",\"requestId\":\"ea8baf2e-4920-415d-8f08-e2a231d0ccfd:93e509302adc26f9393962bb91adec44654bf06ea64abc9a26d6db36e8b54a43\",\"proposal\":{\"session_id\":\"609a6e6778888e9fb7715916de1fcd0451eef8b0bfeb114ce78ba808243e650f\",\"capability_id\":\"cap-01a0891a-dead-7db2-97c9-9f8d942a5c0a\",\"request_id\":\"ea8baf2e-4920-415d-8f08-e2a231d0ccfd:93e509302adc26f9393962bb91adec44654bf06ea64abc9a26d6db36e8b54a43\",\"tool_name\":\"write_file\",\"arguments\":{\"content\":\"must never appear\",\"path\":\"/workspace/openclaw-rejected-f7e178debd0d.txt\"},\"purpose\":\"Qualify explicit exact local test approval\",\"ttl_seconds\":300},\"reason\":\"proposal retained without dispatch; operator decision and explicit chio_resume are required\"}"
+      }
+    ],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  }
+]

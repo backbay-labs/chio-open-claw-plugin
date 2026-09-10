@@ -1,0 +1,258 @@
+{
+  "sessionId": "ce3b5658-83ac-4771-93e8-ecd234d524f8",
+  "volume": "chio-required-openclaw-state-ce3b5658-83ac-4771-93e8-ecd234d524f8",
+  "events": [
+    {
+      "type": "message",
+      "id": "e68752c5",
+      "parentId": "5697fef8",
+      "timestamp": "2026-09-10T03:00:37.596Z",
+      "message": {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Use the fixed fixture tool calls. Stop after all returned outcomes. Never retry an uncertain effect."
+          }
+        ],
+        "timestamp": 1789009237594
+      }
+    },
+    {
+      "type": "message",
+      "id": "fb453f6b",
+      "parentId": "e68752c5",
+      "timestamp": "2026-09-10T03:00:38.527Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_0|fc_parallel_0",
+        "toolName": "read",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool read not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238525
+      }
+    },
+    {
+      "type": "message",
+      "id": "71a31028",
+      "parentId": "fb453f6b",
+      "timestamp": "2026-09-10T03:00:38.528Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_1|fc_parallel_1",
+        "toolName": "write",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool write not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238527
+      }
+    },
+    {
+      "type": "message",
+      "id": "6c06a373",
+      "parentId": "71a31028",
+      "timestamp": "2026-09-10T03:00:38.529Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_2|fc_parallel_2",
+        "toolName": "edit",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool edit not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238528
+      }
+    },
+    {
+      "type": "message",
+      "id": "6cc26180",
+      "parentId": "6c06a373",
+      "timestamp": "2026-09-10T03:00:38.531Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_3|fc_parallel_3",
+        "toolName": "exec",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool exec not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238530
+      }
+    },
+    {
+      "type": "message",
+      "id": "53a653c3",
+      "parentId": "6cc26180",
+      "timestamp": "2026-09-10T03:00:38.532Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_4|fc_parallel_4",
+        "toolName": "process",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool process not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238531
+      }
+    },
+    {
+      "type": "message",
+      "id": "5e1076ca",
+      "parentId": "53a653c3",
+      "timestamp": "2026-09-10T03:00:38.534Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_5|fc_parallel_5",
+        "toolName": "web_fetch",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool web_fetch not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238533
+      }
+    },
+    {
+      "type": "message",
+      "id": "36c09aa6",
+      "parentId": "5e1076ca",
+      "timestamp": "2026-09-10T03:00:38.536Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_6|fc_parallel_6",
+        "toolName": "sessions_spawn",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool sessions_spawn not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238535
+      }
+    },
+    {
+      "type": "message",
+      "id": "6356058a",
+      "parentId": "36c09aa6",
+      "timestamp": "2026-09-10T03:00:38.537Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_7|fc_parallel_7",
+        "toolName": "cron",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool cron not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238536
+      }
+    },
+    {
+      "type": "message",
+      "id": "a1de9b7e",
+      "parentId": "6356058a",
+      "timestamp": "2026-09-10T03:00:38.538Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_8|fc_parallel_8",
+        "toolName": "gateway",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool gateway not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238537
+      }
+    },
+    {
+      "type": "message",
+      "id": "08a3752d",
+      "parentId": "a1de9b7e",
+      "timestamp": "2026-09-10T03:00:38.540Z",
+      "message": {
+        "role": "toolResult",
+        "toolCallId": "call_parallel_9|fc_parallel_9",
+        "toolName": "config",
+        "content": [
+          {
+            "type": "text",
+            "text": "Tool config not found"
+          }
+        ],
+        "details": {},
+        "isError": true,
+        "timestamp": 1789009238539
+      }
+    },
+    {
+      "type": "message",
+      "id": "0f8f6b05",
+      "parentId": "08a3752d",
+      "timestamp": "2026-09-10T03:00:39.416Z",
+      "message": {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "Every supplied native tool was unavailable. No protected operation completed.",
+            "textSignature": "{\"v\":1,\"id\":\"msg_fixture_done\"}"
+          }
+        ],
+        "api": "openai-codex-responses",
+        "provider": "openai-codex",
+        "model": "gpt-5.5",
+        "usage": {
+          "input": 1,
+          "output": 1,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "totalTokens": 2,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "total": 0
+          }
+        },
+        "stopReason": "stop",
+        "timestamp": 1789009238681,
+        "responseId": "resp_fixture_2"
+      }
+    }
+  ]
+}

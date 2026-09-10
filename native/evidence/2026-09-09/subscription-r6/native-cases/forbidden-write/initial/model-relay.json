@@ -1,0 +1,57 @@
+[
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  },
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call_HeOjJOQZ3tDY80RsgotUKBE3",
+        "content": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"80e2191a-6b32-4040-80a0-a77dc8331a14:af252a42fdae91c26f6d8859e26f4fa070cc552cf4f0a3cb640c8af86043d8a1\",\"receipt\":{\"action\":{\"parameter_hash\":\"c5ac068ac5e2d89af0bdd6c3c4b111989fb9aea1c1fbd9f4435c56c8e0fcab0c\",\"parameters\":{\"content\":\"forbidden change\",\"path\":\"/workspace/forbidden.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a08925-51c9-74e0-a1e5-335ee53ac97c\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\",\"verdict\":\"deny\"},\"evidence\":[{\"details\":\"action=deny; reason=guard denied request\",\"guard_name\":\"forbidden-path\",\"verdict\":false}],\"id\":\"1b4593ee106b9dbd510270e6da87478c30ea0fa1f3618aefef50ff6a4fb6e41c\",\"kernel_key\":\"864cf16c64f04c943381bd61e5aefcceb625cc5866d8091bc6bdc9ad29bca599\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"394a5f21d4f02b4aacdbee85f9aa9018c598b5ed62ba4b6e4f84773da673f811\",\"subject_key\":\"ef3e326fdfb2f2d3cb447600e6b0d49860ecec156b07ce6536e0736ac7f7bc31\"},\"budget_authority\":{\"authority_profile\":\"authoritative_hold_event\",\"guarantee_level\":\"single_node_atomic\",\"metering_profile\":\"max_cost_preauthorize_then_reconcile_actual\"},\"chio_receipt_signing_nonce\":\"rcpt-01a08925-84c7-7250-a6a0-fe4b4529029a\",\"receipt_context\":{\"request_id\":\"80e2191a-6b32-4040-80a0-a77dc8331a14:af252a42fdae91c26f6d8859e26f4fa070cc552cf4f0a3cb640c8af86043d8a1\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"b56c41d27723afa78356a0cf18abebfae4543bf1c8bcec20c44c3a053e626007e40eb0bdefdb7fe34ec27438e21d63d8e3da575661a428234bda3a3c138b6c01\",\"timestamp\":1789007332,\"tool_name\":\"write_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\"}"
+      }
+    ],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  }
+]

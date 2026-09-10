@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "hostOrAgentDispatched": false,
+  "operatorDeliberatelyBypassedKernel": true,
+  "writeObserverDetectedChange": true,
+  "writeRestoredExactBytes": true,
+  "sensitiveReadObserverDetectedDispatch": true,
+  "resourceImage": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "claim": "negative observer controls only; actual native forbidden read/write cases remain separately required"
+}

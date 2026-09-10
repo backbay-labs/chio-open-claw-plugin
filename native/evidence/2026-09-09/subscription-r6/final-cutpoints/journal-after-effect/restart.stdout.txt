@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "Blocked: the write was refused/not dispatched because an unresolved operation is fencing the gateway. I stopped and did not retry.",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 8089,
+    "agentMeta": {
+      "sessionId": "6b81a600-015e-4816-98b3-c3071725cef8",
+      "sessionFile": "/state/openclaw/agents/main/sessions/6b81a600-015e-4816-98b3-c3071725cef8.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 2145,
+        "output": 90,
+        "cacheRead": 3584,
+        "total": 2977
+      },
+      "lastCallUsage": {
+        "input": 1157,
+        "output": 28,
+        "cacheRead": 1792,
+        "cacheWrite": 0,
+        "total": 2977
+      },
+      "promptTokens": 2949
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789008582171,
+      "sessionId": "6b81a600-015e-4816-98b3-c3071725cef8",
+      "sessionKey": "agent:main:explicit:6b81a600-015e-4816-98b3-c3071725cef8",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 181,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "Use chio_call with write_file once to replace /workspace/openclaw-cutpoint-0d0b1e1124204300931f5e3d7f109174.txt with \"must never replace the original\". Stop on refusal. Never retry.",
+    "finalAssistantVisibleText": "Blocked: the write was refused/not dispatched because an unresolved operation is fencing the gateway. I stopped and did not retry.",
+    "finalAssistantRawText": "Blocked: the write was refused/not dispatched because an unresolved operation is fencing the gateway. I stopped and did not retry.",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 1,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  },
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call_NUQ93TQCHWjVxACKFwojPNxQ",
+        "content": "{\"state\":\"completed\",\"evidence\":\"verified\",\"requestId\":\"268a9aca-bffe-43f4-a1ee-833efd9977f8:13aca67fa93febb6da82f44949569dfc7dd36b8ad2adbba263e2de918367e8ea\",\"receipt\":{\"action\":{\"parameter_hash\":\"2937f99c3ab1392f18834672cf0a60975a9e9bcaeb7a068acfdb52589489d34f\",\"parameters\":{\"path\":\"/workspace/missing-openclaw-qualified-a556d2d6ad4e.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a08918-7124-7450-a98b-37974c4ec920\",\"content_hash\":\"42ade69d8504a0e1443231a787c400bdcb78a10f700f692dbb6d5adb446e034a\",\"decision\":{\"verdict\":\"allow\"},\"id\":\"5f57a23a76c941dc0655546fafe7010dc53ff25c7185351b6a0a20c61fe51b6e\",\"kernel_key\":\"580cdf640c31f652ad3115569c77310c920c67aa3482c919b9faf52817524498\",\"metadata\":{\"admission_operation\":{\"compensation_status\":\"not_compensated\",\"coordinator_lease_epoch\":3,\"coordinator_lease_id\":\"01a0885e-8974-7941-a7fa-f493f214063f\",\"operation_id\":\"cea32ed1c042404f19d0a10b0a540ddd8bb618fe863202f35c701d3030af81a5\",\"projected_dispatch_state\":\"terminal\",\"projected_operation_version\":8,\"projected_state\":\"completed\",\"request_binding_hash\":\"e5a865fc4b387802501edcde79f8b5f6ca7aa303691e599cf3ea382aa8fbe2a7\",\"request_id\":\"268a9aca-bffe-43f4-a1ee-833efd9977f8:13aca67fa93febb6da82f44949569dfc7dd36b8ad2adbba263e2de918367e8ea\",\"request_namespace_digest\":\"edf272068a9927c2ba55738ac8b1190309fba7b9f1f65df05ae5ffc4e2dad860\",\"retained_dispatch_commit\":{\"committed_version\":6,\"coordinator_lease_epoch\":3,\"coordinator_lease_id\":\"01a0885e-8974-7941-a7fa-f493f214063f\",\"provider_attempt\":{\"attempt_id\":\"attempt:cea32ed1c042404f19d0a10b0a540ddd8bb618fe863202f35c701d3030af81a5\",\"operation_id\":\"cea32ed1c042404f19d0a10b0a540ddd8bb618fe863202f35c701d3030af81a5\",\"transport_id\":\"kernel-tool-server:fs\",\"transport_key_epoch\":3},\"store_fence\":{\"lease_id\":\"01a0885e-8974-7941-a7fa-f493f214063f\",\"owner_epoch\":3,\"store_uuid\":\"01a087d9-b634-7e61-ae80-a0c62ab7d36b\"}},\"schema\":\"chio.admission-receipt.v1\",\"store_fence\":{\"lease_id\":\"01a0885e-8974-7941-a7fa-f493f214063f\",\"owner_epoch\":3,\"store_uuid\":\"01a087d9-b634-7e61-ae80-a0c62ab7d36b\"},\"tool_outcome_id\":\"b9fc7f3993ed9866417a563af71164b75c97629e37e6ee06aedcaee90125501f\",\"tool_outcome_version\":2,\"trusted_time_unix_ms\":1789006489222},\"attribution\":{\"delegation_depth\":0,\"grant_index\":0,\"issuer_key\":\"b6311d41a1a65feff88d18d1cbe02cc38fd28d478426ba00cdd0bb34221e768b\",\"subject_key\":\"9cec76370eebd91d5a47f48a9e796428a4ead83beaab9d5f2f663d08913f893a\"},\"chio_receipt_signing_nonce\":\"rcpt-01a08918-a788-7c71-a2f1-ff1fc56e4127\",\"receipt_context\":{\"request_id\":\"268a9aca-bffe-43f4-a1ee-833efd9977f8:13aca67fa93febb6da82f44949569dfc7dd36b8ad2adbba263e2de918367e8ea\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"aa3d58b0fd25c7746904cbf64d244ba29d479ece5de865dbd3872aaff842ceacb8a413f4a101b51dcfd02011e36bc189e923e6b55153b07d675016eb27402405\",\"timestamp\":1789006489,\"tool_name\":\"read_text_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"result\":{\"content\":[{\"text\":\"ENOENT: no such file or directory, open '/workspace/missing-openclaw-qualified-a556d2d6ad4e.txt'\",\"type\":\"text\"}],\"isError\":true},\"delivery\":{\"acknowledgement\":\"J2h2B7e9g-OM3llqkuVGpDZffsaDr8EdoVPgh4KpncA\",\"receiptId\":\"5f57a23a76c941dc0655546fafe7010dc53ff25c7185351b6a0a20c61fe51b6e\",\"requestHash\":\"6211e0b278a7ac6ec29c84d3690e7241347224263c7a009f04a53f39f5f19f3b\",\"requestId\":\"268a9aca-bffe-43f4-a1ee-833efd9977f8:13aca67fa93febb6da82f44949569dfc7dd36b8ad2adbba263e2de918367e8ea\",\"resultHash\":\"42ade69d8504a0e1443231a787c400bdcb78a10f700f692dbb6d5adb446e034a\",\"schema\":\"chio.mcp.delivery-ack.v1\"}}"
+      }
+    ],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  }
+]

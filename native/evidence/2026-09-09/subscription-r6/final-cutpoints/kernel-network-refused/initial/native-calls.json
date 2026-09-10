@@ -1,0 +1,28 @@
+[
+  {
+    "type": "toolCall",
+    "id": "call_stfrYnby5BD59HVejeBn70FS|fc_02a99e191fd6c260016aa21a746c9487d194c8d598a28e42a4",
+    "name": "chio_call",
+    "arguments": {
+      "tool": "write_file",
+      "arguments": {
+        "path": "/workspace/openclaw-cutpoint-24b3471e2f8244deb0925a0aeac245e6.txt",
+        "content": "one original observed cutpoint effect"
+      }
+    },
+    "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/openclaw-cutpoint-24b3471e2f8244deb0925a0aeac245e6.txt\",\"content\":\"one original observed cutpoint effect\"}}"
+  },
+  {
+    "type": "toolCall",
+    "id": "call_l9SYEhDsX0obT97ELbC7cOlw|fc_06c73c38a2994dfa016aa21a78c3dc87d1b270101132102e27",
+    "name": "chio_call",
+    "arguments": {
+      "tool": "write_file",
+      "arguments": {
+        "path": "/workspace/openclaw-cutpoint-24b3471e2f8244deb0925a0aeac245e6.txt",
+        "content": "must never replace the original"
+      }
+    },
+    "partialJson": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"/workspace/openclaw-cutpoint-24b3471e2f8244deb0925a0aeac245e6.txt\",\"content\":\"must never replace the original\"}}"
+  }
+]

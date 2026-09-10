@@ -1,0 +1,87 @@
+{
+  "passed": false,
+  "supplementalOnly": true,
+  "liveModel": false,
+  "acceptance": false,
+  "mode": "disabled-tools",
+  "exit": {
+    "code": 1,
+    "signal": null
+  },
+  "timedOut": false,
+  "observed": [
+    {
+      "name": "read",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    },
+    {
+      "name": "write",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    },
+    {
+      "name": "edit",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    },
+    {
+      "name": "exec",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    },
+    {
+      "name": "process",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    },
+    {
+      "name": "web_fetch",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    },
+    {
+      "name": "sessions_spawn",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    },
+    {
+      "name": "cron",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    },
+    {
+      "name": "gateway",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    },
+    {
+      "name": "config",
+      "returned": false,
+      "text": "",
+      "disabled": false
+    }
+  ],
+  "nativeCalls": 0,
+  "nativeReturns": 10,
+  "terminal": {
+    "hostExitCode": 1,
+    "exitCode": 1,
+    "outcome": "host_failed",
+    "confirmedDeliveries": 0
+  },
+  "newResourceDispatches": 0,
+  "protectedResourceAndAuditUnchanged": true,
+  "journalRecords": 0,
+  "configurationUnchanged": true,
+  "claim": "Unavailable native tools returned errors; independent resource state and dispatch audit were unchanged. OS network and descendant coverage remains separate."
+}

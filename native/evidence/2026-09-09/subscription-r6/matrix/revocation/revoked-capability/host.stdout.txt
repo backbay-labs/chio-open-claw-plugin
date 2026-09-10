@@ -1,0 +1,165 @@
+{
+  "payloads": [
+    {
+      "text": "{\"state\":\"denied\",\"reason\":\"capability has been revoked: cap-01a0891d-7a17-77b2-a698-f280da9deef1\",\"requestId\":\"1562ccee-953b-46e1-880c-22380e092112:c050fa91a16b774463b1ec7f098a788b9a6be7922352e5b888814622dc7f3ed1\"}",
+      "mediaUrl": null
+    }
+  ],
+  "meta": {
+    "durationMs": 11106,
+    "agentMeta": {
+      "sessionId": "9dc7474e-5eb1-4226-a547-f40a8405d2a6",
+      "sessionFile": "/state/openclaw/agents/main/sessions/9dc7474e-5eb1-4226-a547-f40a8405d2a6.jsonl",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "contextTokens": 128000,
+      "agentHarnessId": "pi",
+      "usage": {
+        "input": 4624,
+        "output": 153,
+        "cacheRead": 1792,
+        "total": 3704
+      },
+      "lastCallUsage": {
+        "input": 3600,
+        "output": 104,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "total": 3704
+      },
+      "promptTokens": 3600
+    },
+    "aborted": false,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1789006832766,
+      "sessionId": "9dc7474e-5eb1-4226-a547-f40a8405d2a6",
+      "sessionKey": "agent:main:explicit:9dc7474e-5eb1-4226-a547-f40a8405d2a6",
+      "provider": "openai-codex",
+      "model": "gpt-5.5",
+      "workspaceDir": "/state/workspace",
+      "bootstrapMaxChars": 12000,
+      "bootstrapTotalMaxChars": 60000,
+      "bootstrapTruncation": {
+        "warningMode": "always",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 9145,
+        "projectContextChars": 545,
+        "nonProjectContextChars": 8600
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/state/workspace/AGENTS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 49,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/state/workspace/SOUL.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/state/workspace/TOOLS.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 48,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/state/workspace/IDENTITY.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 51,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/state/workspace/USER.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 47,
+          "truncated": false
+        },
+        {
+          "name": "BOOTSTRAP.md",
+          "path": "/state/workspace/BOOTSTRAP.md",
+          "missing": true,
+          "rawChars": 0,
+          "injectedChars": 0,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 0,
+        "entries": []
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 230,
+        "entries": [
+          {
+            "name": "chio_call",
+            "summaryChars": 2727,
+            "schemaChars": 230,
+            "propertiesCount": 2
+          }
+        ]
+      },
+      "currentTurn": {
+        "promptChars": 412,
+        "runtimeContextChars": 0
+      }
+    },
+    "finalPromptText": "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-revoke-14080555b20c.txt\", \"content\": \"forbidden after capability revocation\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+    "finalAssistantVisibleText": "{\"state\":\"denied\",\"reason\":\"capability has been revoked: cap-01a0891d-7a17-77b2-a698-f280da9deef1\",\"requestId\":\"1562ccee-953b-46e1-880c-22380e092112:c050fa91a16b774463b1ec7f098a788b9a6be7922352e5b888814622dc7f3ed1\"}",
+    "finalAssistantRawText": "{\"state\":\"denied\",\"reason\":\"capability has been revoked: cap-01a0891d-7a17-77b2-a698-f280da9deef1\",\"requestId\":\"1562ccee-953b-46e1-880c-22380e092112:c050fa91a16b774463b1ec7f098a788b9a6be7922352e5b888814622dc7f3ed1\"}",
+    "replayInvalid": false,
+    "livenessState": "working",
+    "stopReason": "stop",
+    "executionTrace": {
+      "winnerProvider": "openai-codex",
+      "winnerModel": "gpt-5.5",
+      "attempts": [
+        {
+          "provider": "openai-codex",
+          "model": "gpt-5.5",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "requestShaping": {
+      "thinking": "off"
+    },
+    "toolSummary": {
+      "calls": 1,
+      "tools": [
+        "chio_call"
+      ],
+      "failures": 0
+    },
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

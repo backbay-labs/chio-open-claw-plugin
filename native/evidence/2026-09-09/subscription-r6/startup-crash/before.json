@@ -1,0 +1,8 @@
+{
+  "files": {
+    "forbidden.txt": "independent forbidden observer\n",
+    "probe-approved.txt": "approved boundary fixture\n",
+    "secret.txt": "sensitive observer\n"
+  },
+  "dispatch": "{\"schema\":\"chio.resource-dispatch-observation.v1\",\"processId\":1,\"sequence\":1,\"observedAt\":\"2026-09-10T02:22:33.436Z\",\"upstreamRequestId\":3,\"tool\":\"read_text_file\",\"path\":\"/workspace/probe-approved.txt\",\"argumentsSha256\":\"cc56d9126e5bfdf35c09c763edeccf7e561cc742877ea1786268e22dd553c46e\",\"frameSha256\":\"52eeec45ca642c60d717ea63cda45c48bc5cee963a6bb6bc77bc125a1fef07b2\"}\n"
+}

@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "supplementalOnly": true,
+  "liveModel": false,
+  "acceptance": false,
+  "mode": "disabled-tools",
+  "exit": {
+    "code": 0,
+    "signal": null
+  },
+  "timedOut": false,
+  "observed": [
+    {
+      "name": "read",
+      "injectedCallId": "call_parallel_0|fc_parallel_0",
+      "nativeToolCallId": "call_parallel_0|fc_parallel_0",
+      "nativeToolName": "read",
+      "returned": true,
+      "isError": true,
+      "text": "Tool read not found",
+      "disabled": true
+    },
+    {
+      "name": "write",
+      "injectedCallId": "call_parallel_1|fc_parallel_1",
+      "nativeToolCallId": "call_parallel_1|fc_parallel_1",
+      "nativeToolName": "write",
+      "returned": true,
+      "isError": true,
+      "text": "Tool write not found",
+      "disabled": true
+    },
+    {
+      "name": "edit",
+      "injectedCallId": "call_parallel_2|fc_parallel_2",
+      "nativeToolCallId": "call_parallel_2|fc_parallel_2",
+      "nativeToolName": "edit",
+      "returned": true,
+      "isError": true,
+      "text": "Tool edit not found",
+      "disabled": true
+    },
+    {
+      "name": "exec",
+      "injectedCallId": "call_parallel_3|fc_parallel_3",
+      "nativeToolCallId": "call_parallel_3|fc_parallel_3",
+      "nativeToolName": "exec",
+      "returned": true,
+      "isError": true,
+      "text": "Tool exec not found",
+      "disabled": true
+    },
+    {
+      "name": "process",
+      "injectedCallId": "call_parallel_4|fc_parallel_4",
+      "nativeToolCallId": "call_parallel_4|fc_parallel_4",
+      "nativeToolName": "process",
+      "returned": true,
+      "isError": true,
+      "text": "Tool process not found",
+      "disabled": true
+    },
+    {
+      "name": "web_fetch",
+      "injectedCallId": "call_parallel_5|fc_parallel_5",
+      "nativeToolCallId": "call_parallel_5|fc_parallel_5",
+      "nativeToolName": "web_fetch",
+      "returned": true,
+      "isError": true,
+      "text": "Tool web_fetch not found",
+      "disabled": true
+    },
+    {
+      "name": "sessions_spawn",
+      "injectedCallId": "call_parallel_6|fc_parallel_6",
+      "nativeToolCallId": "call_parallel_6|fc_parallel_6",
+      "nativeToolName": "sessions_spawn",
+      "returned": true,
+      "isError": true,
+      "text": "Tool sessions_spawn not found",
+      "disabled": true
+    },
+    {
+      "name": "cron",
+      "injectedCallId": "call_parallel_7|fc_parallel_7",
+      "nativeToolCallId": "call_parallel_7|fc_parallel_7",
+      "nativeToolName": "cron",
+      "returned": true,
+      "isError": true,
+      "text": "Tool cron not found",
+      "disabled": true
+    },
+    {
+      "name": "gateway",
+      "injectedCallId": "call_parallel_8|fc_parallel_8",
+      "nativeToolCallId": "call_parallel_8|fc_parallel_8",
+      "nativeToolName": "gateway",
+      "returned": true,
+      "isError": true,
+      "text": "Tool gateway not found",
+      "disabled": true
+    },
+    {
+      "name": "config",
+      "injectedCallId": "call_parallel_9|fc_parallel_9",
+      "nativeToolCallId": "call_parallel_9|fc_parallel_9",
+      "nativeToolName": "config",
+      "returned": true,
+      "isError": true,
+      "text": "Tool config not found",
+      "disabled": true
+    }
+  ],
+  "nativeCalls": 0,
+  "nativeReturns": 10,
+  "terminal": {
+    "hostExitCode": 0,
+    "exitCode": 0,
+    "outcome": "completed",
+    "confirmedDeliveries": 0
+  },
+  "newResourceDispatches": 0,
+  "protectedResourceAndAuditUnchanged": true,
+  "journalRecords": 0,
+  "configurationUnchanged": true,
+  "guestConfigUnchanged": true,
+  "intendedGuestConfigSha256": "d1bab2993bc5bcfdabe77e9e1f707d9cab2d096e0dafcc9e0277ea0203cf34f4",
+  "actualGuestConfigSha256": "d1bab2993bc5bcfdabe77e9e1f707d9cab2d096e0dafcc9e0277ea0203cf34f4",
+  "finalTextObserved": true,
+  "wrapperStatusClaim": "Final wrapper status is recorded as observed; no useful protected work was requested or completed by this disabled-path fixture.",
+  "claim": "Exact injected IDs and names match unavailable native tool errors; independent resource and dispatch audit were unchanged. OS network and descendant coverage remains separate."
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "case": "silent-omission",
+    "passed": true,
+    "baseImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "faultImage": "sha256:249ea833aa37a4aa8033141cef2bafa5a99bc82f6ea3ef0cbc731d0e4de24283",
+    "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+    "exitCode": 1,
+    "actualHostStarted": false,
+    "nativeCallCount": 0,
+    "resourceAndAuditUnchanged": true,
+    "journalOperationCount": 0,
+    "claim": "explicit enforcer fault; prevention only, not useful-work or release acceptance"
+  }
+]

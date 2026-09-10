@@ -1,0 +1,36 @@
+#0 building with "colima" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 199B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/chio-openclaw-enforcer-base:2b277d66652d4f8a8f51c985d4b4cf41
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 206B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/chio-openclaw-enforcer-base:2b277d66652d4f8a8f51c985d4b4cf41@sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f
+#5 resolve docker.io/library/chio-openclaw-enforcer-base:2b277d66652d4f8a8f51c985d4b4cf41@sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f 0.0s done
+#5 CACHED
+
+#6 [2/2] COPY index.mjs /opt/chio/node_modules/@chio/openclaw-kernel/src/index.mjs
+#6 DONE 0.0s
+
+#7 exporting to image
+#7 exporting layers 0.0s done
+#7 exporting manifest sha256:7b726bb15eb8194127cbfe19f9f44df02dd99cf7220abdb37250f0aaba2d2f89 done
+#7 exporting config sha256:1b1e8c1c307c2224f889093ab61d0ccd55df72cc3bb11e548b6c05c217b4696a done
+#7 exporting attestation manifest sha256:a6e74240615fedad6819f72c30c4e4d7c697f7ac506e76bc227df55cc38c55dc done
+#7 exporting manifest list sha256:3e02f02f4a58cbaaf6021da27141621c18b2c107bd686284db8f79c93d8fdac6
+#7 exporting manifest list sha256:3e02f02f4a58cbaaf6021da27141621c18b2c107bd686284db8f79c93d8fdac6 done
+#7 naming to moby-dangling@sha256:3e02f02f4a58cbaaf6021da27141621c18b2c107bd686284db8f79c93d8fdac6 done
+#7 unpacking to moby-dangling@sha256:3e02f02f4a58cbaaf6021da27141621c18b2c107bd686284db8f79c93d8fdac6 0.0s done
+#7 DONE 0.1s
+
+View build details: docker-desktop://dashboard/build/colima/colima/l6mplmsso7m0ih2k6knm0flo4

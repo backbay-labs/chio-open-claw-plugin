@@ -1,0 +1,11 @@
+WARNING: Localhost DNS (127.0.0.1) may fail in containers.
+OpenClaw config is invalid
+File: /config/openclaw.json
+Problem:
+  - plugins.entries.chio-kernel: plugin chio-kernel: extension entry not found: src/index.mjs
+Legacy config keys detected:
+  - plugins.allow: plugins.allow now gates bundled provider discovery by default; run "openclaw doctor --fix" to preserve legacy bundled provider compatibility as plugins.bundledDiscovery="compat", or set plugins.bundledDiscovery="allowlist" to keep the stricter behavior.
+
+Fix: openclaw doctor --fix
+Inspect: openclaw config validate
+Status, health, logs, and doctor commands still run with invalid config.

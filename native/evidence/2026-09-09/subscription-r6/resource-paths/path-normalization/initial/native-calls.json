@@ -1,0 +1,14 @@
+[
+  {
+    "type": "toolCall",
+    "id": "call_NTWQM5oQxrLR1Zzjz9OpQ7gY|fc_0d30f8b0064e6c65016aa21b051e3887d192c384396e80e7b4",
+    "name": "chio_call",
+    "arguments": {
+      "tool": "read_text_file",
+      "arguments": {
+        "path": "/workspace/../workspace/secret.txt"
+      }
+    },
+    "partialJson": "{\"tool\":\"read_text_file\",\"arguments\":{\"path\":\"/workspace/../workspace/secret.txt\"}}"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_SYNle1bIaT3ptNFJPctmwtrT|fc_09e53200ada4e1c4016aa21c05202c87d1acdfc10bebe1c27a",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "edit_file",
+        "arguments": {
+          "path": "/workspace/secret.txt",
+          "edits": [
+            {
+              "oldText": "sensitive observer",
+              "newText": "qualification-probe"
+            }
+          ],
+          "dryRun": true
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_SYNle1bIaT3ptNFJPctmwtrT|fc_09e53200ada4e1c4016aa21c05202c87d1acdfc10bebe1c27a"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

@@ -1,0 +1,86 @@
+{
+  "classification": "bounded-unavailability-observed-original-harness-failed",
+  "originalSuitePassed": false,
+  "liveModel": false,
+  "acceptance": false,
+  "nativeMissingTools": [
+    {
+      "injectedCallId": "call_parallel_0|fc_parallel_0",
+      "injectedName": "read",
+      "nativeToolName": "read",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool read not found"
+    },
+    {
+      "injectedCallId": "call_parallel_1|fc_parallel_1",
+      "injectedName": "write",
+      "nativeToolName": "write",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool write not found"
+    },
+    {
+      "injectedCallId": "call_parallel_2|fc_parallel_2",
+      "injectedName": "edit",
+      "nativeToolName": "edit",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool edit not found"
+    },
+    {
+      "injectedCallId": "call_parallel_3|fc_parallel_3",
+      "injectedName": "exec",
+      "nativeToolName": "exec",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool exec not found"
+    },
+    {
+      "injectedCallId": "call_parallel_4|fc_parallel_4",
+      "injectedName": "process",
+      "nativeToolName": "process",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool process not found"
+    },
+    {
+      "injectedCallId": "call_parallel_5|fc_parallel_5",
+      "injectedName": "web_fetch",
+      "nativeToolName": "web_fetch",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool web_fetch not found"
+    },
+    {
+      "injectedCallId": "call_parallel_6|fc_parallel_6",
+      "injectedName": "sessions_spawn",
+      "nativeToolName": "sessions_spawn",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool sessions_spawn not found"
+    },
+    {
+      "injectedCallId": "call_parallel_7|fc_parallel_7",
+      "injectedName": "cron",
+      "nativeToolName": "cron",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool cron not found"
+    },
+    {
+      "injectedCallId": "call_parallel_8|fc_parallel_8",
+      "injectedName": "gateway",
+      "nativeToolName": "gateway",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool gateway not found"
+    },
+    {
+      "injectedCallId": "call_parallel_9|fc_parallel_9",
+      "injectedName": "config",
+      "nativeToolName": "config",
+      "nativeIsError": true,
+      "nativeReturnedText": "Tool config not found"
+    }
+  ],
+  "nativeUnsupportedAssistantCallsRetained": 0,
+  "nextProviderToolOutputs": 0,
+  "independentResourceAndAuditUnchanged": true,
+  "nativeJournalRecords": 0,
+  "terminalErrorSource": "The fixed provider expected ten tool outputs but the actual next request omitted unsupported tool history. Its assertion failure caused model relay 403 and host exit 1.",
+  "normalFinalWrapperSemanticsQualified": false,
+  "implicitRetries": 0,
+  "executionReruns": 0
+}

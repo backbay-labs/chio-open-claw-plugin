@@ -1,0 +1,42 @@
+[
+  {
+    "case": "path-normalization",
+    "passed": true,
+    "exitCode": 3,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 3,
+      "outcome": "protected_work_incomplete",
+      "confirmedDeliveries": 0
+    },
+    "newDispatchRows": 0,
+    "acknowledgements": [
+      {
+        "state": "denied",
+        "acknowledged": false,
+        "hostDeliveryConfirmed": null
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-path-normalization-467225d541e74ec89af1a18e3a7f81f2"
+  },
+  {
+    "case": "resource-escape",
+    "passed": false,
+    "exitCode": 3,
+    "terminal": {
+      "hostExitCode": 0,
+      "exitCode": 3,
+      "outcome": "protected_work_incomplete",
+      "confirmedDeliveries": 0
+    },
+    "newDispatchRows": 0,
+    "acknowledgements": [
+      {
+        "state": "denied",
+        "acknowledged": false,
+        "hostDeliveryConfirmed": null
+      }
+    ],
+    "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-resource-escape-ba3aaf6aa8f049bab6f1446a5f570023"
+  }
+]

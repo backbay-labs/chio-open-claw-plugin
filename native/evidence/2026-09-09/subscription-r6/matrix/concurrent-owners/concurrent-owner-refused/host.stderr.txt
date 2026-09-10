@@ -1,0 +1,17 @@
+node:fs:555
+  return binding.open(
+                 ^
+
+Error: EEXIST: file already exists, open '/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-adde4c99c8be465081f87d273e5bf5cf/journal/gateway.lock'
+    at openSync (node:fs:555:18)
+    at createGateway (file:///private/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/node_modules/@chio/bridge/dist/gateway.js:69:18)
+    at startGatewayHttp (file:///private/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/node_modules/@chio/bridge/dist/gateway-http.js:15:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///private/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs:35:17 {
+  errno: -17,
+  code: 'EEXIST',
+  syscall: 'open',
+  path: '/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-adde4c99c8be465081f87d273e5bf5cf/journal/gateway.lock'
+}
+
+Node.js v25.5.0

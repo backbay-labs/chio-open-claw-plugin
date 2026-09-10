@@ -1,0 +1,180 @@
+{
+  "schema": "chio.openclaw.subscription.native-cases.review.v1",
+  "result": "passed",
+  "operatorPort": 58618,
+  "artifactSha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "helperSha256Before": {
+    "qualify-http-host.py": "6330f9c9f08ab1ad7f807600dfb231e6828ef4f68077e614eade8629210f1dc1",
+    "drop-host-response.mjs": "b80337c4c9dd30697b375228ef4ceca724ff14867c9d3ca9fbe37fceb874c2fa",
+    "substitute-host-result.mjs": "babae5f7c5891610844418730c9b59f8af09b9f9dabeeeaec5e68b502ac8e91d",
+    "crash-host-gateway.mjs": "c14ad2e7263781beb5cc516d77cfe188fba89cd50ce89b95a84d8b53c519400a",
+    "cancel-host-response.mjs": "f3fe77d8ffe39815b5b478590b2e25a1cb9ab057faed94d7a6f8e43ea08a891b"
+  },
+  "helperSha256After": {
+    "qualify-http-host.py": "6330f9c9f08ab1ad7f807600dfb231e6828ef4f68077e614eade8629210f1dc1",
+    "drop-host-response.mjs": "b80337c4c9dd30697b375228ef4ceca724ff14867c9d3ca9fbe37fceb874c2fa",
+    "substitute-host-result.mjs": "babae5f7c5891610844418730c9b59f8af09b9f9dabeeeaec5e68b502ac8e91d",
+    "crash-host-gateway.mjs": "c14ad2e7263781beb5cc516d77cfe188fba89cd50ce89b95a84d8b53c519400a",
+    "cancel-host-response.mjs": "f3fe77d8ffe39815b5b478590b2e25a1cb9ab057faed94d7a6f8e43ea08a891b"
+  },
+  "cases": [
+    {
+      "group": "native-cases",
+      "case": "useful",
+      "passed": true,
+      "initialExitCode": 0,
+      "initialNativeToolCalls": [
+        "write_file",
+        "edit_file",
+        "read_text_file",
+        "list_directory"
+      ],
+      "initialReturnedToolResults": 4,
+      "initialResourceDispatches": 4,
+      "initialTerminal": {
+        "hostExitCode": 0,
+        "exitCode": 0,
+        "outcome": "completed",
+        "confirmedDeliveries": 4
+      }
+    },
+    {
+      "group": "native-cases",
+      "case": "secret",
+      "passed": true,
+      "initialExitCode": 3,
+      "initialNativeToolCalls": [
+        "read_text_file"
+      ],
+      "initialReturnedToolResults": 1,
+      "initialResourceDispatches": 0,
+      "initialTerminal": {
+        "hostExitCode": 0,
+        "exitCode": 3,
+        "outcome": "protected_work_incomplete",
+        "confirmedDeliveries": 0
+      }
+    },
+    {
+      "group": "native-cases",
+      "case": "forbidden-write",
+      "passed": true,
+      "initialExitCode": 3,
+      "initialNativeToolCalls": [
+        "write_file"
+      ],
+      "initialReturnedToolResults": 1,
+      "initialResourceDispatches": 0,
+      "initialTerminal": {
+        "hostExitCode": 0,
+        "exitCode": 3,
+        "outcome": "protected_work_incomplete",
+        "confirmedDeliveries": 0
+      }
+    },
+    {
+      "group": "native-cases",
+      "case": "tool-error",
+      "passed": true,
+      "initialExitCode": 3,
+      "initialNativeToolCalls": [
+        "read_text_file"
+      ],
+      "initialReturnedToolResults": 1,
+      "initialResourceDispatches": 1,
+      "initialTerminal": {
+        "hostExitCode": 0,
+        "exitCode": 3,
+        "outcome": "protected_work_incomplete",
+        "confirmedDeliveries": 1
+      }
+    },
+    {
+      "group": "native-cases",
+      "case": "host-response-loss",
+      "passed": true,
+      "initialExitCode": 2,
+      "initialNativeToolCalls": [
+        "write_file"
+      ],
+      "initialReturnedToolResults": 1,
+      "initialResourceDispatches": 1,
+      "initialTerminal": {
+        "hostExitCode": 0,
+        "exitCode": 2,
+        "outcome": "unresolved",
+        "confirmedDeliveries": 0
+      },
+      "restartNativeAttemptFenced": true,
+      "sameOriginalKernelAuthorityAndConfiguration": true,
+      "operatorAcknowledgementRedispatched": false,
+      "recoveryNativeReadDispatches": 1,
+      "originalResourceContentsPreserved": true
+    },
+    {
+      "group": "native-cases",
+      "case": "result-substitution",
+      "passed": true,
+      "initialExitCode": 2,
+      "initialNativeToolCalls": [
+        "read_text_file"
+      ],
+      "initialReturnedToolResults": 1,
+      "initialResourceDispatches": 1,
+      "initialTerminal": {
+        "hostExitCode": 0,
+        "exitCode": 2,
+        "outcome": "unresolved",
+        "confirmedDeliveries": 0
+      }
+    },
+    {
+      "group": "gateway-crash",
+      "case": "gateway-crash",
+      "passed": true,
+      "initialExitCode": -9,
+      "initialNativeToolCalls": [
+        "write_file"
+      ],
+      "initialReturnedToolResults": 0,
+      "initialResourceDispatches": 1,
+      "initialTerminal": {},
+      "restartNativeAttemptFenced": true,
+      "sameOriginalKernelAuthorityAndConfiguration": true,
+      "operatorAcknowledgementRedispatched": false,
+      "recoveryNativeReadDispatches": 1,
+      "originalResourceContentsPreserved": true,
+      "watchdogCleanupConfirmed": true
+    },
+    {
+      "group": "operator-cancellation",
+      "case": "host-response-loss",
+      "passed": true,
+      "initialExitCode": 2,
+      "initialNativeToolCalls": [
+        "write_file"
+      ],
+      "initialReturnedToolResults": 0,
+      "initialResourceDispatches": 1,
+      "initialTerminal": {
+        "hostExitCode": 137,
+        "exitCode": 2,
+        "outcome": "unresolved",
+        "confirmedDeliveries": 0
+      },
+      "restartNativeAttemptFenced": true,
+      "sameOriginalKernelAuthorityAndConfiguration": true,
+      "operatorAcknowledgementRedispatched": false,
+      "recoveryNativeReadDispatches": 1,
+      "originalResourceContentsPreserved": true
+    }
+  ],
+  "nativeToolCallsIncludingExplicitFenceAndRecoveryCases": 17,
+  "nativeReturnedToolResults": 15,
+  "implicitRetries": 0,
+  "explicitRecoverySequences": 3,
+  "skips": 0,
+  "claim": "Bounded actual OpenClaw host cases with resource observations and native transcript evidence; not full I01-I08 acceptance.",
+  "ownerDisposition": "Owner 58618 left running and released to parent; retained evidence/state volumes preserved."
+}

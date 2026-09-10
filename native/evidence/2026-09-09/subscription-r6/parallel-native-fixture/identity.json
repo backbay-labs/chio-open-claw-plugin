@@ -1,0 +1,32 @@
+{
+  "claim": "Supplemental deterministic provider batch against actual native OpenClaw and Chio kernel",
+  "liveModel": false,
+  "acceptance": false,
+  "archiveSha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "harnessSha256": "589554bdf5eee8f8b94b62559c28227afd6c45ee3fceafb24ae050ddf463b329",
+  "launcherSha256": "a812a250a990d21311dec47feb53f428b2fbeaeca1443b8eed2cb63ff8746752",
+  "configurationSha256": "485a1b8c02857c46cb2275c1acba65839dcd6b8d13382106242edea89f5ae39c",
+  "privateConfiguration": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-parallel-158c21d5-6f48-4100-a764-318ddc116ee9/gateway.json",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "resourceImage": "sha256:188cb84d5d0bb4063d4ce5a3b9c3832445a5acda5604911cda80a9136d1850a0",
+  "resourceVolume": "chio-required-openclaw-host-delivery-20260909",
+  "auditVolume": "chio-required-openclaw-host-delivery-20260909-audit",
+  "command": [
+    "/opt/homebrew/Cellar/node/25.5.0/bin/node",
+    "/tmp/chio-openclaw-subscription-r6-cold-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-parallel-158c21d5-6f48-4100-a764-318ddc116ee9/gateway.json",
+    "--state-dir",
+    "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-parallel-xyriyW/runtime",
+    "--image",
+    "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-parallel-158c21d5-6f48-4100-a764-318ddc116ee9/synthetic-model-auth.json",
+    "--prompt",
+    "Use the fixed fixture Chio tool calls. Stop after both returned outcomes. Never retry an uncertain effect."
+  ],
+  "runtime": "/var/folders/jy/95wms_mn265f0bpj_v6wc4zh0000gn/T/chio-openclaw-parallel-xyriyW/runtime",
+  "realProviderCredentials": false,
+  "startedAt": "2026-09-10T02:55:06.794Z"
+}

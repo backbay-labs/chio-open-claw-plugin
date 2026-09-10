@@ -1,0 +1,20 @@
+{
+  "launchPreflightRefused": false,
+  "calls": [
+    {
+      "id": "call_ZThFW1KLl1i2rTr9HRN0WRzR|fc_02bbbdd15fe70cba016aa219a5f4b087d1bfd33be1c41c883e",
+      "name": "chio_call",
+      "arguments": {
+        "tool": "read_text_file",
+        "arguments": {
+          "path": "/workspace/openclaw-inflight-ac0aac39b18a.txt"
+        }
+      }
+    }
+  ],
+  "returnedToolCallIds": [
+    "call_ZThFW1KLl1i2rTr9HRN0WRzR|fc_02bbbdd15fe70cba016aa219a5f4b087d1bfd33be1c41c883e"
+  ],
+  "expectedAttemptObserved": true,
+  "attemptCount": 1
+}

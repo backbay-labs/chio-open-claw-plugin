@@ -1,0 +1,8 @@
+{
+  "hostImage": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+  "kernelSha256": "33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25",
+  "faultInjectorSha256": "cb23f444647929bb265c9cb6f7531545b25e06e851b00ad09881b957df5840e3",
+  "driverSha256": "fad57c8fb23c4e04d4c969ed939bcd958a0da6c816eec9ea96cc9b5e3507812e",
+  "launcherSha256": "a812a250a990d21311dec47feb53f428b2fbeaeca1443b8eed2cb63ff8746752",
+  "scope": "actual native OpenClaw and live ChatGPT subscription; operator-only selected transport/journal fault"
+}

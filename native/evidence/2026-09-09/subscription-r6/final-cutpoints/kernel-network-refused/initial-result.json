@@ -1,0 +1,15 @@
+{
+  "case": "kernel-network-refused",
+  "passed": true,
+  "exitCode": 2,
+  "nativeCalls": 2,
+  "newDispatchRows": 1,
+  "terminal": {
+    "hostExitCode": 0,
+    "exitCode": 2,
+    "outcome": "unresolved",
+    "confirmedDeliveries": 1
+  },
+  "privateState": "/Users/connor/.local/share/chio-required-operators/openclaw-subscription-probes-20260909/openclaw-cutpoint-kernel-network-refused-55dddbfce263404d9742c1ad45555827",
+  "sameAuthorityConfig": true
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+    "--gateway-config",
+    "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-host-response-loss-cd3328a9d6674836b1b22591828f0467/gateway.json",
+    "--state-dir",
+    "/tmp/chio-openclaw-qualified-efd3141fb699414bac7309cfc428bd3c",
+    "--image",
+    "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+    "--prompt",
+    "The operator explicitly recovered and acknowledged the original completed write without redispatch. Use chio_call with tool read_text_file exactly once for /workspace/openclaw-qualified-2591828f0467.txt. Report its content. Do not write anything.",
+    "--model-auth-file",
+    "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+  ],
+  "exitCode": 0
+}

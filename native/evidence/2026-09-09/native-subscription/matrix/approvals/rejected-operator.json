@@ -1,0 +1,15 @@
+{
+  "submission": {
+    "output": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-9d88cb199cff490f875f7c8e380a00e6/rejected-submission.json",
+    "status": "pending",
+    "approvalId": "approval-f9afbecb9eae7439807464b4b5bb8ab2fbcc1788c7cc6db17dbd477e0311684a",
+    "protectedDispatch": false
+  },
+  "decision": {
+    "output": "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-9d88cb199cff490f875f7c8e380a00e6/journal/approvals/ecd9841ec5e4f30f51966bcd20d8121af793d8ef8710b1514bf1c1cfdc1af34c.json",
+    "status": "denied",
+    "approvalId": "approval-f9afbecb9eae7439807464b4b5bb8ab2fbcc1788c7cc6db17dbd477e0311684a",
+    "protectedDispatch": false
+  },
+  "protectedDispatch": false
+}

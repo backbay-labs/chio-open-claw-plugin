@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "configuredNativePluginTimeoutMs": 40000,
+  "observedNativeToolCallToResultSeconds": 40.111,
+  "operatorFault": "hold completed gateway HTTP response without changing installed host/plugin",
+  "newOriginalEffects": 1,
+  "acknowledgedAtTimeout": false,
+  "sameAuthorityRestartFenced": true,
+  "explicitOriginalResultRecoverySucceeded": true,
+  "automaticRedispatch": false
+}

@@ -1,0 +1,135 @@
+[
+  {
+    "case": "pending",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-9d88cb199cff490f875f7c8e380a00e6/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-4059bbbc058044b89362b5e379907562",
+      "--image",
+      "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-7c8e380a00e6.txt\", \"content\": \"exact operator-approved effect\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "missing-decision",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-9d88cb199cff490f875f7c8e380a00e6/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-2e1e9ddafc9a48b2a1bfa7d5605927e5",
+      "--image",
+      "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"2e8dadec-30aa-4d64-915b-10bbe332f8a8:41716dd1094238389980463262fc2d40ae76574456ceed151c1a54b161e2b774\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-7c8e380a00e6.txt\", \"content\": \"exact operator-approved effect\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "substituted-arguments",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-9d88cb199cff490f875f7c8e380a00e6/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-413c9fae4d8c4904a101e73382a968d0",
+      "--image",
+      "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"2e8dadec-30aa-4d64-915b-10bbe332f8a8:41716dd1094238389980463262fc2d40ae76574456ceed151c1a54b161e2b774\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-7c8e380a00e6.txt\", \"content\": \"revised test sample\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "approved-resume",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-9d88cb199cff490f875f7c8e380a00e6/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-5f8c4afe98324a189468bc7ace2288ad",
+      "--image",
+      "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"2e8dadec-30aa-4d64-915b-10bbe332f8a8:41716dd1094238389980463262fc2d40ae76574456ceed151c1a54b161e2b774\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-7c8e380a00e6.txt\", \"content\": \"exact operator-approved effect\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 1
+  },
+  {
+    "case": "completed-replay",
+    "exitCode": 0,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-9d88cb199cff490f875f7c8e380a00e6/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-8914f7b1797641d7a4c5e247cc6a1629",
+      "--image",
+      "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"2e8dadec-30aa-4d64-915b-10bbe332f8a8:41716dd1094238389980463262fc2d40ae76574456ceed151c1a54b161e2b774\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-approved-7c8e380a00e6.txt\", \"content\": \"exact operator-approved effect\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "pending-rejection",
+    "exitCode": 4,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-9d88cb199cff490f875f7c8e380a00e6/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-a71c55ccd9a644f0b50932f6fa2fd098",
+      "--image",
+      "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-rejected-7c8e380a00e6.txt\", \"content\": \"must never appear\"}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  },
+  {
+    "case": "rejected-resume",
+    "exitCode": 3,
+    "command": [
+      "node",
+      "/tmp/chio-openclaw-subscription-r4-cold-v5-20260909/consumer/node_modules/@chio/openclaw-kernel/scripts/protected.mjs",
+      "--gateway-config",
+      "/Users/connor/.local/share/chio-required-operators/openclaw-host-delivery-20260909/openclaw-approvals-9d88cb199cff490f875f7c8e380a00e6/gateway.json",
+      "--state-dir",
+      "/tmp/chio-openclaw-approval-runtime-2d9339ef8cf0428ab6f47bd7900f4341",
+      "--image",
+      "sha256:9aed9b78d3a0868c44e8960a72e821bfb5435eb8fe1b952be9c7667a3537d618",
+      "--prompt",
+      "I am testing the filesystem tool integration and need its actual returned result for this test case. Call chio_call exactly once with {\"tool\": \"chio_resume\", \"arguments\": {\"requestId\": \"2e8dadec-30aa-4d64-915b-10bbe332f8a8:e461876365432b377570db020f788136ef002a5064bf8b3a1a94f95260a8de71\", \"tool\": \"write_file\", \"arguments\": {\"path\": \"/workspace/openclaw-rejected-7c8e380a00e6.txt\", \"content\": \"must never appear\"}}}. Preserve all identifiers and remote paths exactly. Stop on any unsuccessful or pending result. Do not substitute tools or arguments.",
+      "--model-auth-file",
+      "/Users/connor/.local/share/chio-required-operators/native-subscription-auth-20260909/codex/profile/auth.json"
+    ],
+    "newDispatchRows": 0
+  }
+]

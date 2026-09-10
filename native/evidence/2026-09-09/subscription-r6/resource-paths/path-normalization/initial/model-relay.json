@@ -1,0 +1,87 @@
+[
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  },
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call_NTWQM5oQxrLR1Zzjz9OpQ7gY",
+        "content": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"0de219ee-25e5-43fb-aa40-54e2a6f44205:c97051cf9dfc79c20d1f396664679d7ce628b786a4fc8dd570313a6b9be1f886\",\"receipt\":{\"action\":{\"parameter_hash\":\"501c333a9af8c0fb18762fd213f4e55a9630268a698599f4e44181a3e41d2e31\",\"parameters\":{\"path\":\"/workspace/../workspace/secret.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a08939-5ba1-7a20-a1e3-8bdf06309a38\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\",\"verdict\":\"deny\"},\"evidence\":[{\"details\":\"action=deny; reason=guard denied request\",\"guard_name\":\"forbidden-path\",\"verdict\":false}],\"id\":\"141820652073729ec3b8d97e497c8f04d90b594046bda3cc4c2cb75ed3308421\",\"kernel_key\":\"864cf16c64f04c943381bd61e5aefcceb625cc5866d8091bc6bdc9ad29bca599\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"394a5f21d4f02b4aacdbee85f9aa9018c598b5ed62ba4b6e4f84773da673f811\",\"subject_key\":\"24c8d110c26a1379c4eb0e854797495fc32f59ab5270c448f7521bbf19f977e1\"},\"budget_authority\":{\"authority_profile\":\"authoritative_hold_event\",\"guarantee_level\":\"single_node_atomic\",\"metering_profile\":\"max_cost_preauthorize_then_reconcile_actual\"},\"chio_receipt_signing_nonce\":\"rcpt-01a08939-8eed-7e81-8edd-04471e0927e6\",\"receipt_context\":{\"request_id\":\"0de219ee-25e5-43fb-aa40-54e2a6f44205:c97051cf9dfc79c20d1f396664679d7ce628b786a4fc8dd570313a6b9be1f886\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"557e2b5f41d414ed41b19059e72bf98e757d98020731ff2dadccc750742cf71f34f0522cc6d2ad286fe90df03f99a7b55f12e177e18be953c9aff664a356d805\",\"timestamp\":1789008645,\"tool_name\":\"read_text_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\"}"
+      }
+    ],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  },
+  {
+    "forwarded": true,
+    "routeMatches": true,
+    "authorizationMatches": true,
+    "methodMatches": true,
+    "hostMatches": true,
+    "originAbsent": true,
+    "requestKeys": [
+      "model",
+      "input",
+      "stream",
+      "instructions",
+      "max_output_tokens",
+      "tools",
+      "store",
+      "text",
+      "parallel_tool_calls"
+    ],
+    "tools": [
+      "chio_call"
+    ],
+    "results": [
+      {
+        "toolCallId": "call_NTWQM5oQxrLR1Zzjz9OpQ7gY",
+        "content": "{\"state\":\"denied\",\"evidence\":\"verified\",\"requestId\":\"0de219ee-25e5-43fb-aa40-54e2a6f44205:c97051cf9dfc79c20d1f396664679d7ce628b786a4fc8dd570313a6b9be1f886\",\"receipt\":{\"action\":{\"parameter_hash\":\"501c333a9af8c0fb18762fd213f4e55a9630268a698599f4e44181a3e41d2e31\",\"parameters\":{\"path\":\"/workspace/../workspace/secret.txt\"}},\"boundary_class\":\"prevent\",\"capability_id\":\"cap-01a08939-5ba1-7a20-a1e3-8bdf06309a38\",\"content_hash\":\"74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b\",\"decision\":{\"guard\":\"kernel\",\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\",\"verdict\":\"deny\"},\"evidence\":[{\"details\":\"action=deny; reason=guard denied request\",\"guard_name\":\"forbidden-path\",\"verdict\":false}],\"id\":\"141820652073729ec3b8d97e497c8f04d90b594046bda3cc4c2cb75ed3308421\",\"kernel_key\":\"864cf16c64f04c943381bd61e5aefcceb625cc5866d8091bc6bdc9ad29bca599\",\"metadata\":{\"attribution\":{\"delegation_depth\":0,\"issuer_key\":\"394a5f21d4f02b4aacdbee85f9aa9018c598b5ed62ba4b6e4f84773da673f811\",\"subject_key\":\"24c8d110c26a1379c4eb0e854797495fc32f59ab5270c448f7521bbf19f977e1\"},\"budget_authority\":{\"authority_profile\":\"authoritative_hold_event\",\"guarantee_level\":\"single_node_atomic\",\"metering_profile\":\"max_cost_preauthorize_then_reconcile_actual\"},\"chio_receipt_signing_nonce\":\"rcpt-01a08939-8eed-7e81-8edd-04471e0927e6\",\"receipt_context\":{\"request_id\":\"0de219ee-25e5-43fb-aa40-54e2a6f44205:c97051cf9dfc79c20d1f396664679d7ce628b786a4fc8dd570313a6b9be1f886\"}},\"policy_hash\":\"057b9a8160375e7d90841325639bdd66050a454f393dae23e8c813b8df74b84e\",\"receipt_kind\":\"mediated_decision\",\"redaction_mode\":\"none\",\"signature\":\"557e2b5f41d414ed41b19059e72bf98e757d98020731ff2dadccc750742cf71f34f0522cc6d2ad286fe90df03f99a7b55f12e177e18be953c9aff664a356d805\",\"timestamp\":1789008645,\"tool_name\":\"read_text_file\",\"tool_origin\":\"caller_executed\",\"tool_server\":\"fs\",\"trust_level\":\"mediated\"},\"reason\":\"guard denied the request: guard \\\"guard-pipeline\\\" denied the request\"}"
+      }
+    ],
+    "status": 200,
+    "upstreamContentType": "other-or-missing"
+  }
+]

@@ -8,14 +8,14 @@ authority throughout, and normal verified delivery acknowledgements.
 import argparse,hashlib,json,os,pathlib,queue,shutil,statistics,subprocess,threading,time,uuid
 p=argparse.ArgumentParser(description=__doc__)
 for name in ['operator-state','package-dir','model-auth-file','output','archive']:p.add_argument('--'+name,type=pathlib.Path,required=True)
-p.add_argument('--image',required=True);p.add_argument('--path',required=True);a=p.parse_args();a.output=a.output.resolve();a.output.mkdir(mode=0o700)
+p.add_argument('--kernel-sha256',required=True);p.add_argument('--image',required=True);p.add_argument('--path',required=True);a=p.parse_args();a.output=a.output.resolve();a.output.mkdir(mode=0o700)
 op=json.loads((a.operator_state/'operator.json').read_text());instrument=pathlib.Path(__file__).with_name('kernel-read-timing.mjs').resolve();pairs=[]
 def save(path,value):path.write_text(json.dumps(value,indent=2)+'\n')
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def observe():
  code="const f=require('fs'),c=require('crypto');const files={};for(const n of f.readdirSync('/observe'))if(f.lstatSync('/observe/'+n).isFile())files[n]=c.createHash('sha256').update(f.readFileSync('/observe/'+n)).digest('hex');console.log(JSON.stringify({files,dispatch:f.readFileSync('/audit/dispatch.jsonl','utf8').trim().split('\\n').filter(Boolean).map(JSON.parse)}))"
  return json.loads(subprocess.check_output(['docker','run','--rm','--network','none','--read-only','--mount',f"type=volume,src={op['volume']},dst=/observe,readonly",'--mount',f"type=volume,src={op['auditVolume']},dst=/audit,readonly",'--entrypoint','node',op['image'],'-e',code],text=True))
-assert sha(a.archive)=='a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4';assert op['kernelSha256']=='33dd1dea21a4ca5ecddeab4f30f6b06b0b90c513f0987aef552b0633d9da1e25'
+assert sha(a.archive)=='a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4';assert op['kernelSha256']==a.kernel_sha256
 before=observe();save(a.output/'before.json',before);name=pathlib.Path(a.path).name;assert a.path=='/workspace/'+name and name in before['files'],'pre-existing independently observed allowed target required'
 private=a.operator_state/('paired-timing-'+uuid.uuid4().hex);private.mkdir(mode=0o700);conf=private/'gateway.json';request=private/'prepare.json'
 save(request,{'endpoint':f"http://127.0.0.1:{op['port']}",'bearerToken':op['agentToken'],'adminToken':op['adminToken'],'credentialTtlSeconds':900,'trustedSigners':[(a.operator_state/'sessions.sqlite.admission.kernel.pub').read_text().strip()],'serverId':'fs','sessionId':str(uuid.uuid4()),'journalDir':str(private/'journal'),'allowedTools':['read_text_file','write_file','edit_file','list_directory']});request.chmod(0o600)

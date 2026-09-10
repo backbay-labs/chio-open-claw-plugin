@@ -8,22 +8,24 @@ not replaced with an unsupported forced-ID mechanism.
 """
 import argparse,hashlib,json,os,pathlib,shutil,subprocess,sys,time
 p=argparse.ArgumentParser(description=__doc__)
-for name in ['helper','owner-launcher','policy','operator-bridge','package-dir','archive','model-auth-file','output','kernel']:p.add_argument('--'+name,type=pathlib.Path,required=True)
+for name in ['helper','owner-launcher','policy','operator-bridge','package-dir','archive','model-auth-file','output','kernel','owner-root','helper-output-root']:p.add_argument('--'+name,type=pathlib.Path,required=True)
 for name in ['name','cutpoint','host-image','resource-image','kernel-sha256']:p.add_argument('--'+name,required=True)
 p.add_argument('--port',type=int,required=True)
-a=p.parse_args();assert a.cutpoint in ['before-admission','after-admission','after-receipt']
+a=p.parse_args();assert a.name.startswith('final-openclaw-');assert a.cutpoint in ['before-admission','after-admission','after-receipt']
 a.output=a.output.resolve();a.output.mkdir(mode=0o700,parents=True)
 def save(path,value):path.write_text(json.dumps(value,indent=2)+'\n')
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+helper_prefix=[sys.executable,str(a.helper),'--owner-root',str(a.owner_root),'--output-root',str(a.helper_output_root)]
 def helper(action,*args):
- cmd=[sys.executable,str(a.helper),action,'--name',a.name,*args]
+ cmd=[*helper_prefix,action,'--name',a.name,*args]
  run=subprocess.run(cmd,capture_output=True,text=True,timeout=80)
  if run.returncode:raise RuntimeError('scoped helper failed; private diagnostics retained at owner')
  return run.stdout
 assert digest(a.archive)=='a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4'
-helper('create','--port',str(a.port),'--kernel',str(a.kernel),'--kernel-sha256',a.kernel_sha256,'--image',a.resource_image,'--policy',str(a.policy),'--owner-launcher',str(a.owner_launcher),'--bridge',str(a.operator_bridge))
-public=pathlib.Path('/tmp/chio-kernel-storage-fault-20260909')/a.name
-manifest=json.loads((public/'manifest.json').read_text());private=pathlib.Path(manifest['owner']);config_path=pathlib.Path(manifest['gatewayConfig']);config=json.loads(config_path.read_text());config_hash=digest(config_path)
+created=helper('create','--port',str(a.port),'--kernel',str(a.kernel),'--kernel-sha256',a.kernel_sha256,'--image',a.resource_image,'--policy',str(a.policy),'--owner-launcher',str(a.owner_launcher),'--bridge',str(a.operator_bridge))
+manifest=json.loads(created);public=pathlib.Path(manifest['output'])
+assert public.resolve()==(a.helper_output_root/a.name).resolve()
+private=pathlib.Path(manifest['owner']);config_path=pathlib.Path(manifest['gatewayConfig']);config=json.loads(config_path.read_text());config_hash=digest(config_path)
 op=json.loads((private/'operator.json').read_text());journaldir=pathlib.Path(config['journalDir']);runs=[]
 save(a.output/'identity.json',{'claim':'actual native host and live provider with real kernel SQLite contention; no direct synthetic tools/call','archiveSha256':digest(a.archive),'hostImage':a.host_image,'kernelSha256':a.kernel_sha256,'resourceImage':a.resource_image,'driverSha256':digest(pathlib.Path(__file__)),'helperSha256':digest(a.helper),'launcherSha256':digest(a.package_dir/'scripts/protected.mjs'),'cutpoint':a.cutpoint,'port':a.port,'privateConfiguration':str(config_path),'configurationSha256':config_hash,'sessionId':config['execution']['sessionId'],'capabilityId':config['execution']['capabilityId']})
 shutil.copy2(a.helper,a.output/'storage-helper-at-run.py');shutil.copy2(a.helper.with_name('stdio_response_barrier.py'),a.output/'resource-barrier-at-run.py')
@@ -54,7 +56,7 @@ initial=snapshot('initial');positive,records=native('positive','/workspace/posit
 assert positive['exitCode']==0 and positive['terminal']['confirmedDeliveries']==1 and len(records)==1 and records[0]['state']=='completed' and records[0].get('acknowledged') and records[0].get('hostDeliveryConfirmed')
 assert len(before['observation']['dispatch'])==len(initial['observation']['dispatch'])+1 and before['observation']['files'].get('positive.txt')=='OpenClaw storage positive '+a.cutpoint
 target='/workspace/before-fault.txt' if a.cutpoint=='before-admission' else '/workspace/uncertain.txt';content='OpenClaw original storage fault '+a.cutpoint
-fault_command=[sys.executable,str(a.helper),'fault','--name',a.name,'--cutpoint',a.cutpoint,'--wait-seconds','600','--hold-seconds','600'];save(a.output/'fault-command.json',fault_command)
+fault_command=[*helper_prefix,'fault','--name',a.name,'--cutpoint',a.cutpoint,'--wait-seconds','600','--hold-seconds','600'];save(a.output/'fault-command.json',fault_command)
 with (a.output/'fault.stdout.txt').open('w') as stdout,(a.output/'fault.stderr.txt').open('w') as stderr:
  fault=subprocess.Popen(fault_command,stdout=stdout,stderr=stderr)
  try:

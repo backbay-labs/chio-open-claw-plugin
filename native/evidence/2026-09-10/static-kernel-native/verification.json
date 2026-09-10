@@ -1,0 +1,182 @@
+{
+  "rawFiles": 1049,
+  "rawChecksumEntries": 1051,
+  "decompressionAndOriginalByteComparison": true,
+  "archiveSha256": "a79dbffa8356a608f22db847e100d1989cb7ff322ab1315144774decb2b13ab4",
+  "archiveFilesVerified": 1075,
+  "kernelSha256": "c03a8a711dbbd15da2c59655d9ab6d8f0068a20187363db7a78f4b5422ded93e",
+  "macOS": "ProductName:\t\tmacOS\nProductVersion:\t\t26.4\nBuildVersion:\t\t25E246",
+  "operatorArchitecture": "arm64",
+  "docker": {
+    "Client": {
+      "Platform": {
+        "Name": "Docker Engine - Community"
+      },
+      "Version": "28.3.3",
+      "ApiVersion": "1.51",
+      "DefaultAPIVersion": "1.51",
+      "GitCommit": "980b856816",
+      "GoVersion": "go1.24.5",
+      "Os": "darwin",
+      "Arch": "arm64",
+      "BuildTime": "Wed Jul 16 10:32:48 2025",
+      "Context": "colima"
+    },
+    "Server": {
+      "Platform": {
+        "Name": "Docker Engine - Community"
+      },
+      "Components": [
+        {
+          "Name": "Engine",
+          "Version": "28.3.3",
+          "Details": {
+            "ApiVersion": "1.51",
+            "Arch": "arm64",
+            "BuildTime": "Fri Jul 25 11:35:18 2025",
+            "Experimental": "false",
+            "GitCommit": "bea959c",
+            "GoVersion": "go1.24.5",
+            "KernelVersion": "6.8.0-64-generic",
+            "MinAPIVersion": "1.24",
+            "Os": "linux"
+          }
+        },
+        {
+          "Name": "containerd",
+          "Version": "1.7.27",
+          "Details": {
+            "GitCommit": "05044ec0a9a75232cad458027ca83437aae3f4da"
+          }
+        },
+        {
+          "Name": "runc",
+          "Version": "1.2.5",
+          "Details": {
+            "GitCommit": "v1.2.5-0-g59923ef"
+          }
+        },
+        {
+          "Name": "docker-init",
+          "Version": "0.19.0",
+          "Details": {
+            "GitCommit": "de40ad0"
+          }
+        }
+      ],
+      "Version": "28.3.3",
+      "ApiVersion": "1.51",
+      "MinAPIVersion": "1.24",
+      "GitCommit": "bea959c",
+      "GoVersion": "go1.24.5",
+      "Os": "linux",
+      "Arch": "arm64",
+      "KernelVersion": "6.8.0-64-generic",
+      "BuildTime": "2025-07-25T11:35:18.000000000+00:00"
+    }
+  },
+  "hostImage": {
+    "Id": "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+    "Created": "2026-09-09T22:15:54.703180726-04:00",
+    "Architecture": "arm64",
+    "Os": "linux"
+  },
+  "imageStaticPackageProbe": {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--entrypoint",
+      "node",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "-e",
+      "console.log(JSON.stringify({node:process.version,architecture:process.arch,openclaw:require('/opt/openclaw/package.json').version}))"
+    ],
+    "exitCode": 1
+  },
+  "claim": "post-run frozen artifact and evidence byte verification; image probe reads package metadata only",
+  "imageStaticPackageProbeR2": {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--entrypoint",
+      "node",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "-e",
+      "console.log(JSON.stringify({node:process.version,architecture:process.arch,openclaw:require('/usr/local/lib/node_modules/openclaw/package.json').version,pi:require('/usr/local/lib/node_modules/openclaw/node_modules/@mariozechner/pi-coding-agent/package.json').version}))"
+    ],
+    "exitCode": 1,
+    "reason": "read global npm package path specified by frozen Dockerfile; initial wrong /opt path failure retained"
+  },
+  "imageStaticPackageProbeR3": {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--entrypoint",
+      "node",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "-e",
+      "const p=require('/usr/local/lib/node_modules/openclaw/package.json');console.log(JSON.stringify({node:process.version,architecture:process.arch,openclaw:p.version,piDependencySpecs:Object.fromEntries(Object.entries(p.dependencies||{}).filter(([n])=>n.includes('/pi-')))}))"
+    ],
+    "exitCode": 0,
+    "reason": "read actual OpenClaw package dependency names before locating nested Pi package"
+  },
+  "hostPackageMetadata": {
+    "node": "v22.23.1",
+    "architecture": "arm64",
+    "openclaw": "2026.5.20",
+    "piDependencySpecs": {
+      "@earendil-works/pi-agent-core": "0.75.4",
+      "@earendil-works/pi-ai": "0.75.4",
+      "@earendil-works/pi-coding-agent": "0.75.4",
+      "@earendil-works/pi-tui": "0.75.4"
+    }
+  },
+  "imageStaticPackageProbeR4": {
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--entrypoint",
+      "node",
+      "sha256:7f925d68ced724f4a6314ab76dc117e9000515ba62149ee971a11c510be6637f",
+      "-e",
+      "const base='/usr/local/lib/node_modules/openclaw';const p=require(base+'/package.json');const names=Object.keys(p.dependencies).filter(n=>n.includes('/pi-'));console.log(JSON.stringify({node:process.version,architecture:process.arch,openclaw:p.version,installedPi:Object.fromEntries(names.map(n=>[n,require(base+'/node_modules/'+n+'/package.json').version]))}))"
+    ],
+    "exitCode": 0,
+    "reason": "read actual installed Pi dependency package metadata using names from OpenClaw manifest"
+  },
+  "hostPackageVersions": {
+    "node": "v22.23.1",
+    "architecture": "arm64",
+    "openclaw": "2026.5.20",
+    "installedPi": {
+      "@earendil-works/pi-agent-core": "0.75.4",
+      "@earendil-works/pi-ai": "0.75.4",
+      "@earendil-works/pi-coding-agent": "0.75.4",
+      "@earendil-works/pi-tui": "0.75.4"
+    }
+  }
+}
